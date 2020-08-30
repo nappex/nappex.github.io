@@ -7,7 +7,7 @@ SITEURL = ''
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Europe/Prague'
 
 DEFAULT_LANG = 'en'
 
@@ -50,7 +50,7 @@ MARKDOWN = {
         'markdown.extensions.meta': {},
         # This is for enabling the TOC generation
         'markdown.extensions.toc': {
-            'title': 'Table of Contents',
+            'title': 'Obsah kapitoly',
         },
     },
     'output_format': 'html5',

@@ -1,32 +1,19 @@
 Title: Introduction to git
 Date: 2020-8-26
-Modified: 2018-8-27
+Modified: 2020-8-27
 Category: git
 Tags: git, beginners
 Slug: Git Introduction
 Authors: David
-Summary: Some basics about git commands
+Summary: Basics about git - version file system
 
 
 
 ![git logo]({static}/images/git_logo.jpg)
 
-
-[TOC]
-
-
 # Git verzovací systém - Introduction
 
-1. [Co je to Git](##1.-Co-je-to-Git)
-2. [Instalace Git](#2.-Instalace-Git)
-3. [Stavy souboru v Git](#3.-Stavy-souborů-v-Git)
-4. [Git přehled příkazů](#4.-Přehled-Git-příkazů)
-5. [Git větvení](#5.-Příkazy-pro-větvení-v-Gitu)
-6. [Git Remote](#6.-Příkazy-pro-remote-v-Gitu)
-7. [Ignorování souborů](##7.-Ignorování-souborů)
-8. [Jak má vypadat soubor README.md](#8.-Jak-má-vypadat-soubor-README.md)
-9. [Další nástroje, které se používají společně s Gitem](#9.-Další-nástroje,-které-se-používají-společně-s-gitem)
-10. [Použité internetové zdroje (další studium)](#10.-Použité-internetové-zdroje-(další-studium))
+[TOC]
 
 ## 1. Co je to Git
 
@@ -34,13 +21,13 @@ Git je nástroj na správu revizí vašich souborů, které určíte, že mají 
 
 S tím souvisí i online služby jako GitHub nebo GitLab. Tyto služby pouze poskytují na webu naše git repozitáře s jejich historií. Nestarají se o udělání revize apod. Nahráváme tam revize na které se ostatní z týmu mohou podívat.
 
+## 2. Instalace Git
+
 Instalace Git je velmi pěkně popsána na těchto stránkách:
 
 [Naucsecz](naucse.python.cz/2020/brno-jaro-pondeli/git/install/)
 
 Instalace se liší dle vašeho OS.
-
-
 
 Celý Git workshop na youtube:
 
@@ -217,7 +204,7 @@ Můžeme použít také zkrácený příkaz, který se používal ve starších 
 
 Abychom to mohli poslat do `originu` který není náš, musíme nejdříve na githubu forknout originální projekt. Poslat naši zmenu na náš forknutý repo pomocí `git push <jmeno_remote> <jmeno_branch>`. Následně si na GitHubu najdou tlačítko `New pull request`. Pokud tedy budu chtít pushnout své změny na origin musím to udělat přes GitHub přes svůj forknutý repo. Postup by byl tedy `git clone <origin-url>`, potom na github `fork` origin projektu, poté udělám změny u sebe na localu pošlu je na svůj github a poté zmáčknu `New pull request`.
 
-        pull request: žádost o začlenění. pošlu autorovi prosbu o začlenění mých změn. Nastavuji na kterou větev to posílám na originu jakou větev svou chci začlenit.
+**pull request:** žádost o začlenění. pošlu autorovi prosbu o začlenění mých změn. Nastavuji na kterou větev to posílám na originu jakou větev svou chci začlenit.
 
 
 ![Diagram workflow](https://naucse.python.cz/course/pyladies/git/collaboration/static/gh-workflow-diagram.svg)
@@ -228,7 +215,7 @@ Abychom to mohli poslat do `originu` který není náš, musíme nejdříve na g
 
 Způsob ignorování souborů rozdělujeme do třech skupin, dle toho jaký typ souboru chceme ignorovat.
 
-#### 1. Ignorování souborů a složek, které automaticky vytváří pouze náš počítač dle OS apod.
+### 1. Ignorování souborů a složek, které automaticky vytváří pouze náš počítač dle OS apod.
 
 
 Jedná se o ignorování souborů či složek, které se vytváří pouze na našem počítači. Jedná se o soubory, které vytváří náš operační systém nebo náš editor textu (např. cache/, .vscode/). Tyto soubory se nám vytvoří automaticky při spuštění jekéhokoliv projektu a bylo by otravné je pokaždé znova nastavovat k ignoraci. Pro ignorování takových souborů je třeba si vytvořit svůj vlastní soubor do kterého napíšeme, které soubory či složky se mají ignorovat.
@@ -239,12 +226,12 @@ Jedná se o ignorování souborů či složek, které se vytváří pouze na na�
 
 Tímto příkazem nastavíte v gitu, který máte nainstalovaný na PC cestu k souboru, v kterém je zapsáno, které soubory a složky má git ignorovat a nevšímat si jich.
 
-#### 2. Soubory, které vytváří Váš pythonní program
+### 2. Soubory, které vytváří Váš pythonní program
 
 
 Jedná se o soubory, které jsou vytvořeny při běhu skriptu. Například nějaké csv, nějaký obrázek či graf.
 
-#### 3. Soubory, v kterých jsou napsány citlivé údaje
+### 3. Soubory, v kterých jsou napsány citlivé údaje
 
 Jedná se o soubory, v kterých jsou napsána hesla, API klíče nebo citlivé údaje ohledně soukromí. Tyto soubory se týkají většinou pouze jednoho specifického projektu a proto se nepíšou do souboru, který globálně ignoruje specifikované soubory a složky, jak bylo uvedeno výše. Mohou být totiž pro každý projekt jiné. Tyto soubory se specifikují v inicializované složce .git v daném projektu. Tedy v gitu, který sleduje pouze tento projekt.
 
