@@ -104,6 +104,7 @@ Pro lepší pochopení celého kontextu se nevyhneme detailnímu popsání pří
 Na začátek `git rebase` a `git merge` jsou v základu stejné příkazi. Oba dva slučují jednu větev do druhé. Ale každý to dělá jinak. Na konci článku je část, která se zabývá přímo srovnáním těchto dvou příkazů.
 
 Příkaz `git rebase` je možné používat ve dvou módech:
+
 1. standardní či manuální mód
 2. interaktivní mód (pomocí přepínače `-i` nebo `--interactive`)
 
@@ -118,6 +119,9 @@ Novou větev `feature_branch` jsme vytvořili když větev `master` měla posled
 # Užitečné odkazy - další studium
 
 Text článku byl čerpán hlavně z těchto zdrojů:
+
 * [https://www.atlassian.com/git/tutorials/rewriting-history](https://www.atlassian.com/git/tutorials/rewriting-history)
+
 * [https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
+
 * [https://dev.to/martinbelev/how-to-effectively-use-git-rebase-onto-5b85](https://dev.to/martinbelev/how-to-effectively-use-git-rebase-onto-5b85)
