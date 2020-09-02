@@ -1,15 +1,13 @@
 ---
-Title: Introduction to git
+Title: Git - introduction to basic commands
 Date: 2020-8-26
 Category: Git
 Tags: git, beginners
-Slug: Git Introduction
+Slug: git-introduction
 Authors: David
 Summary: Basics about using git
 Status: published
 ---
-
-
 
 ![git logo]({static}/images/git_logo.jpg)
 
@@ -353,7 +351,6 @@ Cesta k tomuto souboru je:
 8. informace o autorech projektu,
 9. informace o licenci (více se licencích dozvíš později).
 
-
 Více info na: [naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/](naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/)
 
 # 9. Další nástroje, které se používají společně s gitem
@@ -362,6 +359,8 @@ Více info na: [naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/](nauc
 
 Je to nástroj jehož název je git naopak. slouží ke seznamu všech commitů. Něco jako `git log`, ale daleko podrobnější.
 
-# 10. Použité internetové zdroje (další studium)
+# Použité zdroje - další studium
 
-Web z kterého čerpám nejvíce: [naucse.python.cz/course/pyladies/sessions/foss/](naucse.python.cz/course/pyladies/sessions/foss/)
+Web z kterého čerpám nejvíce:
+
+[naucse.python.cz/course/pyladies/sessions/foss/](naucse.python.cz/course/pyladies/sessions/foss/)
