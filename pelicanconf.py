@@ -56,7 +56,7 @@ SEARCH_URL = "search"
 # METADATA
 # status can be 'draft', 'hidden', 'published'
 DEFAULT_METADATA = {
-    'status': 'published',
+    'status': 'draft',
 }
 
 # EXTRA_PATH_METADATA = {
