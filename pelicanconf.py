@@ -20,7 +20,7 @@ DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
 STATIC_PATHS = ['images',
-                f'theme/images',
+                'theme/images',
                 'extra/robots.txt']
 
 PLUGIN_PATHS = ['pelican-plugins/']
@@ -58,6 +58,14 @@ SEARCH_URL = "search"
 DEFAULT_METADATA = {
     'status': 'draft',
 }
+
+# A list of filenames that should be retained and not deleted from the output directory.
+# One use case would be the preservation of version control data.
+OUTPUT_RETENTION = [".git"]
+OUTPUT_PATH = 'output/'
+
+SUMMARY_MAX_LENGTH = 50
+SUMMARY_END_SUFFIX = '…'
 
 # EXTRA_PATH_METADATA = {
 #     'extra/robots.txt': {'path': '/robots.txt'}
