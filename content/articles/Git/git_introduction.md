@@ -14,13 +14,13 @@ Status: published
 [TOC]
 
 
-# 1. Co je Git ?
+# Co je Git ?
 
 Git je nástroj na správu revizí vašich souborů, které určíte, že mají být sledovány Gitem. To znamená, že Git zaznamenává veškeré změny, které byly v souboru provedeny od jeho založení až po jeho dokončení. Můžeme se v historii díky gitu i vracet k úpravě, kterou jsme udělali třeba před půlrokem a tuto revizi si vytáhnout a pokračovat jiným směrem. Jinými slovy měli jsme-li nějaký soubor, který jsme nějak upravovali, ale usoudili jsme, že úpravy v posledním měsíci nebylo to pravé a zjistli jsme, že jsme se vydali slepou uličkou, můžeme se vrátit k verzi, kterou jsme udělali před měsícem a pokračovat jiným způsobem. Git nedělá nic automaticky je třeba mu vše říct a manuálně popsat co má udělat. Třeba Word, google zaznamenává změny automaticky oproti Gitu. U Gitu je nutné více přemýšlet co verzovat co commitovat apod. Ale pokud postupujete správně velmi pěkně se dá v historii verzí číst.
 
 S tím souvisí i online služby jako GitHub nebo GitLab. Tyto služby pouze poskytují na webu naše git repozitáře s jejich historií. Nestarají se o udělání revize apod. Nahráváme tam revize na které se ostatní z týmu mohou podívat.
 
-# 2. Instalace Git
+# Instalace Git
 
 Instalace se liší dle vašeho OS.
 
@@ -34,7 +34,7 @@ Celý Git workshop vč. instalace naleznete také na youtube:
 
 [www.youtube.com/watch?v=zOWcQezeyIU](www.youtube.com/watch?v=zOWcQezeyIU)
 
-# 3. Stavy souborů v Git
+# Stavy souborů v Git
 
 ![git stages](https://www.commercialprogression.com/sites/default/files/git-operations.png)
 
@@ -60,7 +60,7 @@ $ git add ...
 $ git commit -c ORIG_HEAD
 ```
 
-# 4. Základní příkazy
+# Základní příkazy
 
 **`git clone <URL>`**
 
@@ -188,7 +188,83 @@ Rozjede grafické okno gitu. Není moc hezké, ale je velmi funčkní.
 
 Změnu, kterou jsme v souboru provedli se smaže.
 
-# 5. Větvení v Gitu
+# Jak uložit změny bez "commitu"
+
+Čas od času se vyskytne následující situace: Pracujete na nějaké feature pro daný projekt. Pro tuto featuru jste si vytvořili novou větev a udělali jste první nástřel změn, o kteých máte pocit, že by mohli být těmi správnými k dosažení cíle.
+
+Teď nastane okamžik, kdy práci musíte ale přerušit a dodělat nějaký detail na jiné branchi. Ovšem Vaše změny na současné branchi nejsou vůbec dodělané ve fázi, že byste je chtěli commitnout. Jedná se o nějaký nástřel Vašich myšlenek, ale vůbec nevíte jestli je to správná cesta. Nechcete změny commitnout, ale zároveň o změny ani nechcete přijít. Chcete na ně po dokončení prioritnějšího úkolu navázat. Potřebujete je jen dočasně někam uložit. První vás napadne změny by se mohli uložit automaticky... Takhle ale Git nefunguje ve chvíli, kdy se budete chtít přepnout z větve, kde jsou provedené změny, ale nejsou commitnuté, měli byste dostat nějakou takovouhle hlášku:
+
+```
+$ git switch <different_branch>
+
+error: Your local changes to the following files would be overwritten by checkout:
+	<some_file_1.py>
+	<some_file_2.py>
+Please commit your changes or stash them before you switch branches.
+Aborting
+```
+
+Když si hlášku pozorně celou přečtete, tak uvidíte, že Git Vám na konci radí, že pokud chcete přepnout ze současné větve na jinou tak udělejte `commit` nebo `stash`.
+
+Commit už známe a `git stash` je přesně to co hledáme. Tento příkaz nám umožní své změny uložit do gitu a později se k nim vrátit.
+
+## Použití git stash
+
+Tento příkaz vám umožní uložit si změny, které jsou v danou chvíli ve `staged` nebo v `unstaged`. Po příkazu `git stash` můžete přepínat větve commitovat další změny apod. Je nutné si dát, ale pozor, že toto uložení je pouze ve vašem lokální repozitáři. Pokud provedete `git push` stashed files se na server neposílají.
+
+V praxi použití příkazu `git stash` může vypadata nějak takto:
+
+```
+$ git status
+
+On branch master Changes to be committed:
+    new file: hello.py
+Changes not staged for commit:
+    modified: index.html
+
+$ git stash
+
+Saved working directory and index state WIP on master:
+3022f53 our new homepage HEAD is now at 3022f53 our new homepage
+
+$ git status
+
+On branch master nothing to commit, working tree clean
+```
+
+Pokud budete chtít změny uložené v gitu zase aplikovat do svého projektu použijete `git stash pop` nebo `git stash apply`
+
+**`git stash pop`**
+
+Tento příkaz aplikuje změny ve stash do vašeho projektu a zároveň tyto změny ze stash vymaže.
+
+```
+$ git status
+On branch master nothing to commit, working tree clean
+
+$ git stash pop
+On branch master Changes to be committed:
+    new file: hello.py
+Changes not staged for commit:
+    modified: index.html
+Dropped refs/stash@{0} (32b3aa1d123dfe6d57b3c3cc2c45cbf3f456cc6a)
+```
+
+**`git stash apply`**
+
+Tento příkaz aplikuje změny ve stash do vašeho projektu (větve), ale změny uložené ve stash zachová. To se může hodit například pokud chcete stash aplikovat do více větví.
+
+```
+$ git stash apply
+On branch master Changes to be committed:
+    new file: hello.py
+Changes not staged for commit:
+    modified: index.html
+```
+
+**POZOR:** Git defaultně neukládá do stash untracked nebo ignore soubory.
+
+# Větvení v Gitu
 
 **`git branch`**
 
@@ -256,7 +332,7 @@ Tedy, nově se pro změnu větve používá `git switch <jmeno_vetve>` a pro zah
 
 Sloučí větev na které jsme zrovna přihlášeni (nejčastěji to bude větev master) s větví, kterou zadáme v příkazu jako "nazev_vetve".
 
-# 6. Remote příkazy
+# Remote příkazy
 
 Remote znamená vzdálené repozitáře na Githubu např. Jak už jste viděli někde `origin`, tak to je jméno jednoho z remote, konkrétně `origin` je jméno repozitáře odkud jsme prováděli `git clone`. Když si založíme na svém počítači repozitář pomocí `git init`, tak nebudeme mít nastavené žádné remote.
 `origin` znamená také základní remote, v kterém jsou všechna data, která jsme si stáhli pomocí `git clone`. Je to zdroj našeho stáhnutého repozitáře z online služeb jako je GitHub.
@@ -313,7 +389,7 @@ Abychom to mohli poslat do `originu` který není náš, musíme nejdříve na g
 
 ![scheme workflow]({static}/images/git_stages_flow.png)
 
-# 7. Ignorování souborů
+# Ignorování souborů
 
 Způsob ignorování souborů rozdělujeme do třech skupin, dle toho jaký typ souboru chceme ignorovat.
 
@@ -339,21 +415,7 @@ Cesta k tomuto souboru je:
 .git/info/exclude
 ```
 
-# 8. Jak má vypadat README.md
-
-1. název projektu,
-2. stručný popis projektu (jedna až dvě věty),
-3. krátký návod k instalaci projektu,
-4. krátký návod ke spuštění projektu,
-5. krátký návod k používání projektu, případně odkaz na rozsáhlejší dokumentaci,
-6. pokud má projekt testy, informace o tom, jak je spustit,
-7. informace o tom, jak se zapojit do vývoje projektu,
-8. informace o autorech projektu,
-9. informace o licenci (více se licencích dozvíš později).
-
-Více info na: [naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/](naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/)
-
-# 9. Další nástroje, které se používají společně s gitem
+# Další nástroje, které se používají společně s gitem
 
 **`tig`**
 
@@ -364,3 +426,7 @@ Je to nástroj jehož název je git naopak. slouží ke seznamu všech commitů.
 Web z kterého čerpám nejvíce:
 
 [naucse.python.cz/course/pyladies/sessions/foss/](naucse.python.cz/course/pyladies/sessions/foss/)
+
+Velmi povedená stránka na základní Git příkazy
+
+[atlassian.com - git](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
