@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'David'
-SITENAME = 'Sailing the IT sea'
+SITENAME = 'Snail IT journey'
 SITEURL = ''
 LANDING_PAGE_TITLE = "Welcome to " + SITENAME
 
