@@ -5,7 +5,7 @@ AUTHOR = 'David'
 SITENAME = "The Snail's journey"
 SITEURL = ''
 LANDING_PAGE_TITLE = "Welcome to " + SITENAME + \
-                    "through the IT world !"
+                    " through the IT world !"
 
 PATH = 'content'
 
@@ -49,6 +49,8 @@ USE_FOLDER_AS_CATEGORY = False
 ARTICLE_URL = "{slug}"
 PAGE_URL = "{slug}"
 PAGE_SAVE_AS = "{slug}.html"
+DRAFT_URL = 'drafts/{slug}.html'
+DRAFT_SAVE_AS = 'drafts/{slug}.html'
 TAGS_URL = "tags"
 CATEGORIES_URL = "categories"
 ARCHIVES_URL = "archives"
@@ -79,8 +81,12 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+            ('GitHub', 'https://github.com/nappex'),
+            ('gmail', 'd.stroch@gmail.com'),
+            ('You can add links in your config file', '#'),
+            ('Another social link', '#'),
+        )
 
 DEFAULT_PAGINATION = 10
 

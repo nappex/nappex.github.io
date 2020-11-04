@@ -1,5 +1,8 @@
 ---
-Title: About me
+title: About me
+date: 2020-08-28
+modified: 2020-11-04
+author: d.stroch@gmail.com
 slug: landing-page-about-hidden
 status: hidden
 ---
