@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'David'
-SITENAME = 'Snail IT journey'
+SITENAME = "The Snail's journey"
 SITEURL = ''
-LANDING_PAGE_TITLE = "Welcome to " + SITENAME
+LANDING_PAGE_TITLE = "Welcome to " + SITENAME + \
+                    "through the IT world !"
 
 PATH = 'content'
 
