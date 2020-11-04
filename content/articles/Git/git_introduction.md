@@ -1,6 +1,7 @@
 ---
 Title: Git - introduction to basic commands
 Date: 2020-8-26
+modified: 2020-11-4
 Category: Git
 Tags: git, beginners
 Slug: git-introduction

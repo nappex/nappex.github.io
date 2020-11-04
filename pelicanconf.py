@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'David'
@@ -7,22 +7,20 @@ SITEURL = ''
 LANDING_PAGE_TITLE = "Welcome to " + SITENAME + \
                     " through the IT world !"
 
+# PATHS
 PATH = 'content'
-
-TIMEZONE = 'Europe/Prague'
-
-DEFAULT_LANG = 'en'
-
-FAVICON = 'images/favicon.png'
-THEME = 'pelican-themes/elegant'
-TYPOGRIFY = True
-
-DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
 STATIC_PATHS = ['images',
-                'theme/images',
-                'extra/robots.txt']
+                'extra']
+
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},  # and this
+    # 'extra/CNAME': {'path': 'CNAME'},
+    # 'extra/LICENSE': {'path': 'LICENSE'},
+    # 'extra/README': {'path': 'README'},
+}
 
 PLUGIN_PATHS = ['pelican-plugins/']
 PLUGINS = [
@@ -35,7 +33,15 @@ PLUGINS = [
     "tipue_search",
 ]
 
+TIMEZONE = 'Europe/Prague'
 
+DEFAULT_LANG = 'en'
+
+FAVICON = 'images/favicon.png'
+THEME = 'pelican-themes/elegant'
+TYPOGRIFY = True
+
+DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 
 SITEMAP = {
     "format": "xml",
@@ -74,6 +80,10 @@ SUMMARY_END_SUFFIX = '…'
 #     'extra/robots.txt': {'path': '/robots.txt'}
 # }
 
+# global metadata to all the contents
+DEFAULT_METADATA = {'yeah': 'it is'}
+
+
 # Blogroll
 LINKS = (('Pelican', 'https://getpelican.com/'),
          ('Python.org', 'https://www.python.org/'),
@@ -83,7 +93,7 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
 # Social widget
 SOCIAL = (
             ('GitHub', 'https://github.com/nappex'),
-            ('gmail', 'd.stroch@gmail.com'),
+            ('gmail', 'mailto:d.stroch@gmail.com'),
             ('You can add links in your config file', '#'),
             ('Another social link', '#'),
         )
