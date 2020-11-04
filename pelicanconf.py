@@ -6,20 +6,27 @@ SITENAME = "The Snail's journey"
 SITEURL = ''
 LANDING_PAGE_TITLE = "Welcome to " + SITENAME + \
                     " through the IT world !"
+THEME = 'elegant'
+# FAVICON = 'content/extra/favicon.ico'
+# SITELOGO = 'content/extra/favicon.ico'
+TYPOGRIFY = True
+TIMEZONE = 'Europe/Prague'
+DEFAULT_LANG = 'en'
 
 # PATHS
 PATH = 'content'
 ARTICLE_PATHS = ['articles']
 PAGE_PATHS = ['pages']
-STATIC_PATHS = ['images', 'extra']
+STATIC_PATHS = ['images', 'theme/images', 'extra']
+USE_SHORTCUT_ICONS=True
 
-EXTRA_PATH_METADATA = {
-    'extra/robots.txt': {'path': 'robots.txt'},
-    'extra/favicon.ico': {'path': 'favicon.ico'},
-    # 'extra/CNAME': {'path': 'CNAME'},
-    # 'extra/LICENSE': {'path': 'LICENSE'},
-    # 'extra/README': {'path': 'README'},
-}
+# EXTRA_PATH_METADATA = {
+#     'extra/robots.txt': {'path': 'robots.txt'},
+#     'extra/favicon.ico': {'path': 'favicon.ico'},
+#     # 'extra/CNAME': {'path': 'CNAME'},
+#     # 'extra/LICENSE': {'path': 'LICENSE'},
+#     # 'extra/README': {'path': 'README'},
+# }
 
 PLUGIN_PATHS = ['pelican-plugins/']
 PLUGINS = [
@@ -32,13 +39,7 @@ PLUGINS = [
     "tipue_search",
 ]
 
-TIMEZONE = 'Europe/Prague'
 
-DEFAULT_LANG = 'en'
-
-FAVICON = 'images/favicon.png'
-THEME = 'pelican-themes/elegant'
-TYPOGRIFY = True
 
 DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 
