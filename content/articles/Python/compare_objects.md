@@ -1,6 +1,6 @@
 ---
 Title: Comparing objects in python
-Date: 2020-11-02
+Date: 2020-11-19
 Category: Python
 Tags: python, intermediate
 Slug: object-comparing
@@ -28,7 +28,7 @@ Operator | Name | Example
 `>=`     |bigger or equal to| x >= y
 `<=`     |lower or equal to | x <= y
 
-
+----
 **Python identical operators:**
 
 These operators compared if two objects are same objects.
@@ -68,7 +68,16 @@ Examples of singleton are:
 What does it means ? Whenever we create one of these object above in our code
 always will be one same object.
 
-It can't be create two objects of `None`. Although if we have two and more `None` in our code, always it is referenced to one object saved in memory.
+It can't be two `None` objects with different id number.
+
+Although if we have two and more `None` in our code, always it is referenced to one object saved in memory.
+
+```shell
+>>> id(None)
+4407467184
+```
+
+All `None` objects in my certain code have id number equal to **4407467184**.
 
 
 # Difference between `==` and `is` in examples
@@ -89,9 +98,9 @@ True
 
 ```
 
-Comparison `a is b` we can rewrite as -> `id_a == id_b`, so we just compare id number of each object, in other words if two id integers are same. In some cases it is much faster than compare values of objects, expecially when we compare list of values.
+Comparison `a is b` can be rewrite as `id_a == id_b`, so we just compare id number of each object, in other words if two id integers are same. In some cases it is much faster than compare values of objects, expecially when we compare list of values.
 
-Comparison `a == b` compare values saved in each variable. In this case we compare two integers saved in `3100 == 3100`.
+Comparison `a == b` compares values saved in each variable. In this case we compare two integers saved in `3100 == 3100`.
 
 This explanation is same for `!=` and `is not`. But with vice versa logic.
 
@@ -126,3 +135,36 @@ Python will evaluate like that:
 `3 == 3` = `True`, than `id(True) is id(True)` = `True`
 
 
+**Two lists:**
+
+```shell
+>>> a = [1, 2, 3]
+>>> b = a
+>>> a is b
+True
+>>> a == b
+True
+>>> b.append(4)
+>>> a
+[1, 2, 3, 4]
+>>> b
+[1, 2, 3, 4]
+>>> a is b
+True
+>>> a == b
+True
+>>> del a
+>>> a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> b
+[1, 2, 3, 4]
+>>> a = [1, 2, 3, 4]
+>>> a is b
+False
+>>> a == b
+True
+```
+
+Notice at the end of code I've created new list `a` which has same values as list `b`. But when I've created new list, than the new list is a new object with new `id` number.
