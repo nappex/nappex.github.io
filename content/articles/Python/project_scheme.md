@@ -20,9 +20,14 @@ But there are some common files or directories which you can notice in almost ev
 
 # Files
 
-## README - README, README.txt, README.rst, README.md
+## README
 
-### Jak má vypadat README.md
+- README
+- README.txt
+- README.rst
+- README.md
+
+### Jak má vypadat README
 
 1. název projektu,
 2. stručný popis projektu (jedna až dvě věty),
@@ -38,7 +43,10 @@ Více info na: [naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/](nauc
 
 ## LICENSE
 
-## setup - setup.py, setup.cfg
+## setup
+
+- setup.py
+- setup.cfg
 
 ## script
 
@@ -47,12 +55,21 @@ Více info na: [naucse.python.cz/2020/brno-jaro-pondeli/git/collaboration/](nauc
 ## tox.ini
 
 ## requirements.txt
-    - test_requirements.txt
-    - dev_requirements.txt
+
+- test_requirements.txt
+- dev_requirements.txt
+- requirements-dev.txt
 
 ## .gitignore
 
 ## .travis.yml
+
+## .python-version
+
+This file we can see in project which using tool [pyenv](https://github.com/pyenv).
+This library handle python versions in PC, virtual environments etc.
+With that file pyenv recognize which python version or which virtual
+environment is set for this project.
 
 ## Makefile
 
