@@ -108,24 +108,24 @@ Your output will be different in view of your OS.
 
 For Linux distributions you get these main variables:
 
-- `eth[0-x]`: ethernet interface, to connect with cable
-- `lo`: loopback or local, when you use localhost
-- `wlan[0-x]`: wireless interface, to connect with wifi
+- `eth[0-x]`: 	ethernet interface, to connect with cable
+- `lo`: 		loopback or local, when you use localhost
+- `wlan[0-x]`: 	wireless interface, to connect with wifi
 
 Output above is from macOS, there is some differents. See most of them below with explanation:
 
-- `lo0`: loopback (localhost)
-- `gif0`: Software Network Interface
-- `stf0`: 6to4 tunnel interface
-- `en0`: Ethernet 0 (ethernet), physical network connection
-- `en1`: Ethernet 1 (wireless), physical network connection
-- `fw0`: Firewire, IP over Firewire interface
-- `vmnet0`: Virtual Interface, interfaces are installed by VMware for network communication with virtual machines
-- `utun0`: Tunneling interface. Used for VPN connections to tunnel traffic or for software like Back To My Mack. creates VPN clients
-- `llw0`: Low-latency WLAN Interface. Used by the Skywalk system.
-- `ap1`: Access Point. This is used if you are using your MacBook as a wireless host where you are sharing its connection.
-- `awdl0`: Apple Wireless Direct Link. WIFI p2p connection for things like AirDrop, Airplay, etc. Also used for Bluetooth.
-- `llw0`: Low-latency WLAN Interface. Used by the Skywalk system
+- `lo0`: 	loopback (localhost)
+- `gif0`: 	Software Network Interface
+- `stf0`: 	6to4 tunnel interface
+- `en0`: 	Ethernet 0 (ethernet), physical network connection
+- `en1`: 	Ethernet 1 (wireless), physical network connection
+- `fw0`: 	Firewire, IP over Firewire interface
+- `vmnet0`: Virtual Interface, interfaces are installed by VMware for 				network communication with virtual machines
+- `utun0`: 	Tunneling interface. Used for VPN connections to tunnel 				traffic or for software like Back To My Mack. creates VPN 				clients
+- `llw0`: 	Low-latency WLAN Interface. Used by the Skywalk system.
+- `ap1`: 	Access Point. This is used if you are using your MacBook as 			a wireless host where you are sharing its connection.
+- `awdl0`: 	Apple Wireless Direct Link. WIFI p2p connection for things 				like AirDrop, Airplay, etc. Also used for Bluetooth.
+- `llw0`: 	Low-latency WLAN Interface. Used by the Skywalk system
 - `bridge0`: Thunderbolt Bridge
 
 If you want to get shorter output, where you will find your IP addresses easier, prompt:
@@ -235,7 +235,7 @@ Working for Host range:
 [Yahoo answers](https://answers.yahoo.com/question/index?qid=20110323232434AAaQVPk&guccounter=1&guce_referrer=aHR0cHM6Ly9kdWNrZHVja2dvLmNvbS8_dD1mZmFiJnE9d2hhdCttZWFucytwYXR0ZXIrMCUyRjI0KytpbitJUCthZGRyZXNzJmlhPXdlYg&guce_referrer_sig=AQAAAFh9QZDnWStZSqrEe8uTKCu7MsTb2C1EDJhGxeq5piTuel8GSAG0uf15O9hd9ihRR7L-rkFtukh2RcSKwPuNoXcja0XP_jmvw3F8bhI_9PnnZc9PUYC3SOxivVD5CH8W7OxuxKS2iDZL4h3iO1OGC_pByOwCll-AJWmQOsRA5CWv)
 
 
-Also see the subnet [calcultion](https://www.skullbox.net/subnetcalculator.php)
+Also see the subnet [calculation](https://www.skullbox.net/subnetcalculator.php)
 
 
 
