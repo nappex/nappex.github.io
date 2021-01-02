@@ -39,7 +39,7 @@ Pokud u monitoru budeme trávit většinu svého dne, tak stojí za to koupit kv
 
 ## Software f.lux
 
-I když si koupíte monitor, který nabízí filtr modrého světla musíte si tento filtr manuálně zapínat. Abyste si nemuseli neustále manuálně zapínat a vypínat filtr modrého světla, což je otrava existuje pro tento úkol aplikace [f.lux](https://justgetflux.com/), v které si vše nastavíte automaticky.
+I když si koupíte monitor, který nabízí filtr modrého světla musíte si tento filtr manuálně zapínat. Abyste si nemuseli neustále manuálně zapínat a vypínat filtr modrého světla, což je otrava, existuje pro tento úkol aplikace [f.lux](https://justgetflux.com/), v které si vše nastavíte automaticky.
 
 *f.lux makes the color of your computer's display adapt to the time of day, warm at night and like sunlight during the day.*
 
@@ -48,9 +48,9 @@ I když si koupíte monitor, který nabízí filtr modrého světla musíte si t
 
 # Cena
 
-Níže uvedené informace berte pouze jako můj laický názor, který jsem si utvořil po diskuzi s lidmi, kteří tomu rozumí lépe než já. Samozřejmě berte na zřetel, že ne každý monitor, který je drahý je kvalitní a naopak. Bohužel nelze hodnotit pouze na základě ceny. Pokud chcete nadupadný monitor, tak si budete muset připlatit, kvalitní produkt za kterým stojí dlouhý a náročný vývoj něco stojí. Orientovat se jen podle ceny není šťastné rozhodnutí, můžete klidně koupit předražený šmejd nebo nepovedený model vyhnaný marketingem.
+Níže uvedené informace berte pouze jako můj laický názor, který jsem si utvořil po diskuzi s lidmi, kteří tomu rozumí lépe než já. Samozřejmě berte na zřetel, že ne každý monitor, který je drahý je kvalitní a naopak. Bohužel nelze hodnotit pouze na základě ceny. Pokud chcete nadupadný monitor, tak si budete muset připlatit, kvalitní produkt, za kterým stojí dlouhý a náročný vývoj něco stojí. Orientovat se jen podle ceny není šťastné rozhodnutí, můžete klidně koupit předražený šmejd nebo nepovedený model vyhnaný marketingem.
 
-- do 5000 CZK, nejzákladnější monitory, dají se asi sehnat povedené monitory nicméně je to ta nejnižší cenová kategorie a tomu odpovídají funkce, provedení a horší pozorovací úhly
+- do 5000 CZK, nejzákladnější monitory, dají se sehnat i povedené monitory nicméně je to ta nejnižší cenová kategorie a tomu odpovídají funkce, provedení a horší pozorovací úhly
 - 5 - 10k CZK, zde už se najdou slušné monitory
 - nad 10k CZK, zde už začínají velmi dobré monitory
 
@@ -67,6 +67,7 @@ Z hlediska zdraví očí je lepší mít jas nastaven na co nejmenší hodnotu, 
 # Frekvence
 
 Tímto parametrem se u monitorů myslí tzv. **obnovovací frekvence**.
+
 **Obnovovací frekvence** udává maximální počet různých snímků, které dokáže monitor za jednu sekundu zobrazit, rozhoduje tedy o plynulosti obrazu. Standard u většiny monitorů je 60 Hz. Frekvence 60 Hz se bere také jako minimální doporučená hodnota. Dá se asi říct, že čím plynulejší obraz budeme mít, tím to pro naše oči bude příjemnější a budou se méně unavovat. Ovšem musíme si dát pozot na to, aby i náš hardware počítače byl schopen takovou frekvenci dodávat. Tedy můžeme si koupit monitor, který bude schopen zvládat obnovovací frekvenci 144 Hz, ale náš počítač nikoliv, zaplatíme si tedy za to co ani nevyužijeme....
 
 Vyšší frekvence (120, 144 atd) poznáte, kromě her, i třeba při scrollování a určitě to očím nevadí, spíš naopak.
@@ -80,7 +81,10 @@ Tedy je nutno si zkontrolovat všechny vstupy a výstupy obrazu, aby byli vzáje
 
 Vysoká obnovovací frekvence bývá někdy popdorována jen přes jeden z mnoha dostupných portů na monitoru. Zkontrolujte si tedy zda Vámi požadovaná frekvence je na vstupu, který hodláte používat. Většinou to bývá Display port, který podporuje vysoké frekvence. Je možno zakoupit redukce z HDMI na DP cena je cca 1000 Kč, protože je v tom aktivní elektronika, opačně to neplatí a není problém.
 
-Dále se můžeme také setkat s termínem **frekvence podsvícení**. Tato frekvence nemá nic společného s obnovovací frekvencí a dle mého názoru ani není uváděna mezi hlavními parametry. Nicméně je to důležitá veličina z hlediska únavy očí. Touto problematikou se zabývá článek, na který jsem odkazoval už výše [co je pwm](https://www.alza.cz/flicker-free-a-filtr-modreho-svetla#co-je-pwm).
+Dále se můžeme také setkat s termínem **frekvence podsvícení**.
+
+Tato frekvence není to samé jako obnovovací frekvence a dle mého názoru ani není uváděna mezi hlavními parametry. Nicméně je dobré o ní vědět z hlediska únavy očí. Touto problematikou se zabývá článek, na který jsem odkazoval už výše [co je pwm](https://www.alza.cz/flicker-free-a-filtr-modreho-svetla#co-je-pwm).
+
 V krátkosti jde o to, že když měníte jas na monitoru, tak monitor nedisponuje všemi úrovněmi jasu, ale pouze 0 a 100% vše mezi tím se moduluje pomocí tzv pulzně šířkové modulace, jinými slovy monitor mění frekvenci obrazu. Monitor tedy bliká, my to nevnímáme, ale naše oči ano a velmi je to namáhá. To je důvod proč vznikly technologie jako Flicker free....
 
 # Vstupy, výstupy a konektory (kabely)
@@ -88,21 +92,22 @@ V krátkosti jde o to, že když měníte jas na monitoru, tak monitor nedisponu
 Způsobů jak připojit monitor k našemu hardwaru je poměrně hodně. Dlouho jsem tuto část monitoru přehlížel z mé nevědomosti obsáhlosti a důležitosti tématu. Aby monitor fungoval dle našch představ musí být vstupy a výstupy v rovnováze. V opačném případě dostaneme pouze maximum toho nejhoršího členu, logicky. Můžeme si tedy koupit monitor za 20k CZK, který bude opravdová šajba mezi monitory, ale naše další komponenty nebudou s to mu dodávat obraz, který potřebuje pro své maximální využití, tak maximální výkon z něj nemáme jak dostat.
 
 Co sledovat:
-
 - obnovovací frekvence
 - rozlišení
 - přenosová rychlost
 - typ konektoru
 - podpora naší grafické karty
 
+
 Specifikace konektorů:
 
 existuje několik typů konektorů, ale to není vše. Každý typ má ještě několik svých verzí a každá verze je jinak výkonná.
 
-[Zde](https://www.gpumag.com/wp-content/uploads/2020/07/multiple-ports.jpg) můžete nalézt pěkný obrázek jak vypadaji jednotlivé kabely, kterými můžete připojit Váš monitor.
+[Zde](https://www.gpumag.com/wp-content/uploads/2020/07/multiple-ports.jpg) můžete nalézt pěkný obrázek jak vypadaji jednotlivé konektory, kterými lze připojit Váš monitor.
 
 Celý článek HDMI vs DisplayPort vs DVI vs VGA vs USB-C – Which To Use? najdete [zde](https://www.gpumag.com/hdmi-displayport-dvi-vga-usb-c/)
 
+Hlavní typy konektorů:
 - VGA
 - DVI
 - HDMI
@@ -123,8 +128,8 @@ Je nejstarší technologie a slouží pouze pro analog. Byl vytvořen pro staré
 Bílá koncovka...
 
 Známý jako digitální video signál bez podpory audio.
-Vyráběl se ve třech verzích:
 
+Vyráběl se ve třech verzích:
 - DVI-A, pouze analog
 - DVI-D, pouze digital
 - DVI-I, digital i analog
@@ -139,32 +144,34 @@ Jedná se o technologii už z roku 2003 takže je poměrně stará, nicméně za
 Tento konektor se těší velké oblibě a můžete jej nalézt opravdu všude od TV, monitorů až po herní konzole. Tato obliba je způsobena jeho velice univerzálním použitím.
 
 HDMI podporuje
-
 - multi-channel audio
 - ethernet data
 - superior color data
 - široké spektrum video formátů
 
-HDMI velikosti:
 
+HDMI velikosti:
 - Typ A (standard)
 - Typ C (mini)
 - Typ D (micro)
 
-HDMI verze:
 
+HDMI verze:
 - HDMI 1.4
     - rychlost přenosu dat 10.2 Gb/s
     - podpora 4K (4,096 x 2,160) s frekvencí 24Hz
     - 4K (3,840 x 2,160) s frekvencí 30Hz, nebo
     - 1080p s frekvencí 120Hz
 
+
 - HDMI 2.0
     - rychlost přenosu dat 18 Gb/s
     - 4K s frekvencí 60Hz
 
+
 - HDMI 2.0a a 2.0b
     - navíc podpora HDR (High Dynamic Range - rošiřuje rozsah barev, kterých si všimnete zejména při světlých nebo tmavých obrazech)
+
 
 - HDMI 2.1
     - rychlost přenosu dat 48 Gb/s
@@ -172,25 +179,25 @@ HDMI verze:
     - enhanced Audio Return Channel (eARC) který dovoluje posílání Dolby Atmos a DTS:X audio z displeje do příjmače
     - 10k rozlišení s frekvencí 120 Hz
 
-U všech typů HDMI je nutné si při koupi kabelu zkontrolovat, zda je schopen přenášet data maximální rychlostí, kterou monitor umožnňuje. Ne vždy tomu tak je. Je doporučeno kupovat certifikované kabely od ověřených prodejců.
+
+U všech typů HDMI je nutné si při koupi kabelu zkontrolovat, zda je schopen přenášet data maximální rychlostí, kterou monitor umožňuje. Ne vždy tomu tak je. Je doporučeno kupovat certifikované kabely od ověřených prodejců.
 
 ## Display port
 
 Digitální rozhraní navržené organizací VESA (Video Electronics Standards Association)
 
 Display port má dvě základní velikosti obě obsahují 20 pinů:
-
 - Standard
 - Mini
+
 
 Display port byl dlouho upřednostňován před HDMI například pro hraní her. Vše změnilo když se na trhu objevil HDMI 2.1, který svými technickými parametry display port předčil.
 
 Výhodou oproti HDMI můžou být upevňovací nožičky díky, kterým je konetor lépe zapojen a nemůže se stát, že by nebyl pořádně zastrčen, což občas způsobuje problémy..
 
 Další výhodou je podpora zapojení několika monitorů na jeden Display port
-
-- 2 monitorů
-- 4 monitorů
+- 2 monitory
+- 4 monitory
 - Existuje dokonce možnost řetězení až 6 displejů najednou, pokud váš grafický procesor umožňuje několik rozhraní DisplayPort
 
 
@@ -200,15 +207,18 @@ Display port verze:
     - přenosová rychlost až 17.28 Gbps
     - video rozlišení až 4K (3840 x 2190 pixels) s frekvencí 60 Hz, většina běžných 3D video formátů
 
+
 - DisplayPort 1.3
     - přenosová rychlost až 25.92 Gbps
     - video rozlišení 4K s frekvencí 120 Hz nebo
     - 8K s frekvencí 30 Hz
 
+
 - DisplayPort 1.4
     - přenosová rychlost až 25.92 Gbps
     - video rozlišení až 8K s frekvencí 60 Hz
     - HDR (High Dynamic Range)
+
 
 - Display port 2.0 (rok 2020)
     - přenosová rychlost až 77.4 Gbps
@@ -236,7 +246,6 @@ Na hraní her se tedy moc nehodí.
 Uvědomte si ale, že rozlišení je počet pixelů. Existují displeje se stejným počtem pixelů, ale jinou fyzickou velikostí, takže jsou pixely menší nebo větší. 4K se dělá od 6" mobilů po TV o desítkách palců !
 
 Seznam rozlišení s kterým se dnes můžete setkat.
-
 - 16K (15360 × 8640)
 - 10K (10240 × 4320)
 - 8K (7680 × 4320)
@@ -253,19 +262,19 @@ A něco jako 144 Hz bude asi taky smysluplný maximum pro běžný použití i h
 
 # Typ panelu
 
-Níže uvedené tři typy panelů sou na trhu nejvíce zastoupeny:
+Níže uvedené tři typy panelů jsou na trhu nejvíce zastoupeny:
 
 - TN (Twisted Nematic), nejstarší, má méně výrazné barvy a horší pozorovací úhly, pokud jste třeba programátor nebo mobilní developer, můžete používat monitor vertikálně a při tomto otočení se špatné pozorovaí úhly projeví. Naopak mají rychlou odezvu a vyšší obnovovací frekvenci. Hodí se na hraní her.
-    - výhody: rychlá odezva, vysoká obnovovací frekvence
-    - nevýhody: špatné barvy, špatné pozorovací úhly
+        - výhody: rychlá odezva, vysoká obnovovací frekvence
+        - nevýhody: špatné barvy, špatné pozorovací úhly
 
 - IPS (In-plain Switching) asi nejlepší volba v tuto chvíli z levnějších monitorů, ovšem mají obecně horší contrast ratio a horší odezvu. Naopak mají velmi pěkné barvy a velmi dobré pozorovací úhly 178°. Obecně se moc nehodí pro náročné hráče her jelikož, ti potřebují velmi dobrou obnovovací frekvenci a ten má lepší například TN panel. Nicméně i výrobci IPS se už dostávají na obnovovací frekvenci srovnatelnou s TN panely. Hodí se na editaci fotek a videa.
-    - výhody: velmi dobré a ostré barvy, dobré pozorovací úhly
-    - nevýhody: menší obnovovací frekvence než u TN a horší odezva
+        - výhody: velmi dobré a ostré barvy, dobré pozorovací úhly
+        - nevýhody: menší obnovovací frekvence než u TN a horší odezva. Dále občas trpí prosvítajícím podsvětlením a nižší svítivostí
 
 - VA (Vertical Alignment) je něco mezi IPS a TN. Mají obecně dobrý contrast ratio, ale na úkor response time. Hodí se na sledování videa.
-    - výhody: nejlepší conrast ratio, velmi dobré barevné hloubky
-    - nevýhody: velmi pomalá odezva
+        - výhody: nejlepší conrast ratio, velmi dobré barevné hloubky
+        - nevýhody: velmi pomalá odezva
 
 Více detailů [zde](https://www.geeksforgeeks.org/types-of-monitor-panels-and-which-one-is-better/)
 
