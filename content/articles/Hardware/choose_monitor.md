@@ -157,23 +157,23 @@ HDMI velikosti:
 
 
 HDMI verze:
-- HDMI 1.4
+**HDMI 1.4**
     - rychlost přenosu dat 10.2 Gb/s
     - podpora 4K (4,096 x 2,160) s frekvencí 24Hz
     - 4K (3,840 x 2,160) s frekvencí 30Hz, nebo
     - 1080p s frekvencí 120Hz
 
 
-- HDMI 2.0
+**HDMI 2.0**
     - rychlost přenosu dat 18 Gb/s
     - 4K s frekvencí 60Hz
 
 
-- HDMI 2.0a a 2.0b
+**HDMI 2.0a a 2.0b**
     - navíc podpora HDR (High Dynamic Range - rošiřuje rozsah barev, kterých si všimnete zejména při světlých nebo tmavých obrazech)
 
 
-- HDMI 2.1
+**HDMI 2.1**
     - rychlost přenosu dat 48 Gb/s
     - podpora Variabilní obnovovací frekvence (VRR), neboli dynamická změna obnovovací frekvence například v rozsahu 30 - 144 Hz. Není tak potřeba dále využívat technologie jako Nvidia’s G-Sync a AMD’s FreeSync
     - enhanced Audio Return Channel (eARC) který dovoluje posílání Dolby Atmos a DTS:X audio z displeje do příjmače
@@ -203,24 +203,24 @@ Další výhodou je podpora zapojení několika monitorů na jeden Display port
 
 Display port verze:
 
-- DisplayPort 1.2
+**DisplayPort 1.2**
     - přenosová rychlost až 17.28 Gbps
     - video rozlišení až 4K (3840 x 2190 pixels) s frekvencí 60 Hz, většina běžných 3D video formátů
 
 
-- DisplayPort 1.3
+**DisplayPort 1.3**
     - přenosová rychlost až 25.92 Gbps
     - video rozlišení 4K s frekvencí 120 Hz nebo
     - 8K s frekvencí 30 Hz
 
 
-- DisplayPort 1.4
+**DisplayPort 1.4**
     - přenosová rychlost až 25.92 Gbps
     - video rozlišení až 8K s frekvencí 60 Hz
     - HDR (High Dynamic Range)
 
 
-- Display port 2.0 (rok 2020)
+**Display port 2.0 (rok 2020)**
     - přenosová rychlost až 77.4 Gbps
     - video rozlišení 16K s HDR s frekvencí 60Hz
     - 10K bez HDR s frekvencí 80Hz
@@ -264,23 +264,31 @@ A něco jako 144 Hz bude asi taky smysluplný maximum pro běžný použití i h
 
 Níže uvedené tři typy panelů jsou na trhu nejvíce zastoupeny:
 
-- TN (Twisted Nematic), nejstarší, má méně výrazné barvy a horší pozorovací úhly, pokud jste třeba programátor nebo mobilní developer, můžete používat monitor vertikálně a při tomto otočení se špatné pozorovaí úhly projeví. Naopak mají rychlou odezvu a vyšší obnovovací frekvenci. Hodí se na hraní her.
-        - výhody: rychlá odezva, vysoká obnovovací frekvence
-        - nevýhody: špatné barvy, špatné pozorovací úhly
+**TN (Twisted Nematic)**
 
-- IPS (In-plain Switching) asi nejlepší volba v tuto chvíli z levnějších monitorů, ovšem mají obecně horší contrast ratio a horší odezvu. Naopak mají velmi pěkné barvy a velmi dobré pozorovací úhly 178°. Obecně se moc nehodí pro náročné hráče her jelikož, ti potřebují velmi dobrou obnovovací frekvenci a ten má lepší například TN panel. Nicméně i výrobci IPS se už dostávají na obnovovací frekvenci srovnatelnou s TN panely. Hodí se na editaci fotek a videa.
-        - výhody: velmi dobré a ostré barvy, dobré pozorovací úhly
-        - nevýhody: menší obnovovací frekvence než u TN a horší odezva. Dále občas trpí prosvítajícím podsvětlením a nižší svítivostí
+Nejstarší, má méně výrazné barvy a horší pozorovací úhly, pokud jste třeba programátor nebo mobilní developer, můžete používat monitor vertikálně a při tomto otočení se špatné pozorovaí úhly projeví. Naopak mají rychlou odezvu a vyšší obnovovací frekvenci. Hodí se na hraní her.
 
-- VA (Vertical Alignment) je něco mezi IPS a TN. Mají obecně dobrý contrast ratio, ale na úkor response time. Hodí se na sledování videa.
-        - výhody: nejlepší conrast ratio, velmi dobré barevné hloubky
-        - nevýhody: velmi pomalá odezva
+    - výhody: rychlá odezva, vysoká obnovovací frekvence, cenově jsou nejdostupnější
+    - nevýhody: špatné barvy, špatné pozorovací úhly
 
-Více detailů [zde](https://www.geeksforgeeks.org/types-of-monitor-panels-and-which-one-is-better/)
+**IPS (In-plain Switching)**
 
+Mají obecně horší contrast ratio a horší odezvu. Naopak mají velmi pěkné barvy a velmi dobré pozorovací úhly 178°. Obecně se moc nehodí pro náročné hráče her jelikož, ti potřebují velmi dobrou obnovovací frekvenci a ten má lepší například TN panel. Nicméně i výrobci IPS se už dostávají na obnovovací frekvenci srovnatelnou s TN panely. Hodí se na editaci fotek a videa.
+
+    - výhody: velmi dobré a ostré barvy, dobré pozorovací úhly
+    - nevýhody: menší obnovovací frekvence než u TN a horší odezva. Dále občas trpí prosvítajícím podsvětlením a nižší svítivostí
+
+**VA (Vertical Alignment)**
+
+Je něco mezi IPS a TN. Mají obecně dobrý contrast ratio, ale na úkor response time. Hodí se na sledování videa.
+
+    - výhody: nejlepší conrast ratio, velmi dobré barevné hloubky
+    - nevýhody: velmi pomalá odezva
+
+
+Více detailů naleznete [zde](https://www.geeksforgeeks.org/types-of-monitor-panels-and-which-one-is-better/)
 
 Další typy panelů, s kterými se můžete setkat:
-
 - MVA (Multi-domain Vertical Alignment)
 - PLS (Plane to line switching)
 - DLED ()
