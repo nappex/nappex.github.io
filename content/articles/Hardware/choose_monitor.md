@@ -1,9 +1,9 @@
 ---
 Title: Jak vybrat monitor ?
 Date: 2021-01-02
-Category: Networks
+Category: Hardware
 Tags: hardware, beginner, monitors, display
-Slug: basics-terminology-networks
+Slug: choose-right-monitor
 Authors: David
 Summary: Abychom mohli správně vybrat monitor musíme vědět co znamenají jednotlivé parametry, které jsou výrobci uváděny
 Status: published
@@ -69,11 +69,15 @@ Z hlediska zdraví očí je lepší mít jas nastaven na co nejmenší hodnotu, 
 Tímto parametrem se u monitorů myslí tzv. **obnovovací frekvence**.
 **Obnovovací frekvence** udává maximální počet různých snímků, které dokáže monitor za jednu sekundu zobrazit, rozhoduje tedy o plynulosti obrazu. Standard u většiny monitorů je 60 Hz. Frekvence 60 Hz se bere také jako minimální doporučená hodnota. Dá se asi říct, že čím plynulejší obraz budeme mít, tím to pro naše oči bude příjemnější a budou se méně unavovat. Ovšem musíme si dát pozot na to, aby i náš hardware počítače byl schopen takovou frekvenci dodávat. Tedy můžeme si koupit monitor, který bude schopen zvládat obnovovací frekvenci 144 Hz, ale náš počítač nikoliv, zaplatíme si tedy za to co ani nevyužijeme....
 
-Jako příklad mohu uvést svůj problém. Jako zdroj obrazu mám MacBook Air early 2015, kdybych si tedy koupit například monitor s rozlišením 4K a obnovovací frekvencí 144Hz, tak ji nikdy nevyužiji protože podpora mého hardwaru pro 4K rozlišení s takovou obnovovací frekvence není.
+Vyšší frekvence (120, 144 atd) poznáte, kromě her, i třeba při scrollování a určitě to očím nevadí, spíš naopak.
+Pokud by jste se pro to rozhodli, tak pozor, abys měli (třeba na notebooku) výstup, který to zvládne !
+
+Jako příklad mohu uvést svůj problém. Jako zdroj obrazu mám MacBook Air early 2015, kdybych si tedy koupil například monitor s rozlišením 4K a obnovovací frekvencí 144Hz, tak ji nikdy nevyužiji naplno, protože podpora mého hardwaru pro 4K rozlišení s takovou obnovovací frekvence není ideální.
 
 Tedy je nutno si zkontrolovat všechny vstupy a výstupy obrazu, aby byli vzájemně kompatibilní a to i co se týká výkonu. Budu se tomuto dále věnovat v další kapitole vstupy, výstupy a konektory.
 
 **Pozor**
+
 Vysoká obnovovací frekvence bývá někdy popdorována jen přes jeden z mnoha dostupných portů na monitoru. Zkontrolujte si tedy zda Vámi požadovaná frekvence je na vstupu, který hodláte používat. Většinou to bývá Display port, který podporuje vysoké frekvence. Je možno zakoupit redukce z HDMI na DP cena je cca 1000 Kč, protože je v tom aktivní elektronika, opačně to neplatí a není problém.
 
 Dále se můžeme také setkat s termínem **frekvence podsvícení**. Tato frekvence nemá nic společného s obnovovací frekvencí a dle mého názoru ani není uváděna mezi hlavními parametry. Nicméně je to důležitá veličina z hlediska únavy očí. Touto problematikou se zabývá článek, na který jsem odkazoval už výše [co je pwm](https://www.alza.cz/flicker-free-a-filtr-modreho-svetla#co-je-pwm).
@@ -229,11 +233,22 @@ Na hraní her se tedy moc nehodí.
 
 Čím větší rozlišení tím detailnější obraz získáme. Což může být pro naše oči příjemnější jelikož nemusí tolik zaostřovat.
 
+Uvědomte si ale, že rozlišení je počet pixelů. Existují displeje se stejným počtem pixelů, ale jinou fyzickou velikostí, takže jsou pixely menší nebo větší. 4K se dělá od 6" mobilů po TV o desítkách palců !
+
+Seznam rozlišení s kterým se dnes můžete setkat.
+
 - 16K (15360 × 8640)
 - 10K (10240 × 4320)
 - 8K (7680 × 4320)
 - 4K (3840 × 2160)
-- FullHD
+- FullHD (1920 x 1080)
+
+
+Dobrý je, že se blížíme rozlišení, kde už to nebude mít smysl zvyšovat, protože to prostě lidský oko nerozliší. Něco jako už je dávno s digitální hudbou, ani s nejlepší reprodukční technikou už nerozliší většina lidí vyšší vzorkovací frekvence atd. Většina lidí neslyší ani lepší ztrátovou kompresi ostatně.
+
+Pro TV je 8k skoro zbytečný a pro PC monitor asi tak akorát maximum, fajn jemný a fyzicky už prostě víc do strany koukat nechcete ani na zakřiveným, IMHO se tam zastavíme na dlouho.
+
+A něco jako 144 Hz bude asi taky smysluplný maximum pro běžný použití i hraní.
 
 
 # Typ panelu
@@ -264,7 +279,6 @@ Další typy panelů, s kterými se můžete setkat:
 - OLED (Organic light emitting diode)
 - AMVA
 
-
 # Odezva
 
 Označuje dobu, za kterou je monitor zvládne zpracovat požadavek na změnu obrazu z počítače. Čím nižší odezva je, tím ostřejší obraz monitor poskytuje v rychlých scénách. Doba odezvy je důležitá zejména pro hráče počítačových her. U herních monitorů by neměla činit více než 4 ms.
@@ -279,6 +293,11 @@ Barevná hloubka je termín používaný v počítačové grafice, který popisu
 Větší barevná hloubka zvětšuje škálu různých barev a přirozeně také paměťovou náročnost obrázku či videa.
 
 [Wikipedie](https://cs.wikipedia.org/wiki/Barevn%C3%A1_hloubka)
+
+
+Pro představu:
+
+12-bitový barvy jsou cca 200 Gbps datový tok, to 4× víc než nejnovější dostupný HDMI a více než 2x víc než nejnovější Display port 2.0
 
 # Kontrast
 
