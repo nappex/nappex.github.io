@@ -157,27 +157,32 @@ HDMI velikosti:
 
 
 HDMI verze:
+
 **HDMI 1.4**
-    - rychlost přenosu dat 10.2 Gb/s
-    - podpora 4K (4,096 x 2,160) s frekvencí 24Hz
-    - 4K (3,840 x 2,160) s frekvencí 30Hz, nebo
-    - 1080p s frekvencí 120Hz
+
+- rychlost přenosu dat 10.2 Gb/s
+- podpora 4K (4,096 x 2,160) s frekvencí 24Hz
+- 4K (3,840 x 2,160) s frekvencí 30Hz, nebo
+- 1080p s frekvencí 120Hz
 
 
 **HDMI 2.0**
-    - rychlost přenosu dat 18 Gb/s
-    - 4K s frekvencí 60Hz
+
+- rychlost přenosu dat 18 Gb/s
+- 4K s frekvencí 60Hz
 
 
 **HDMI 2.0a a 2.0b**
-    - navíc podpora HDR (High Dynamic Range - rošiřuje rozsah barev, kterých si všimnete zejména při světlých nebo tmavých obrazech)
+
+- navíc podpora HDR (High Dynamic Range - rošiřuje rozsah barev, kterých si všimnete zejména při světlých nebo tmavých obrazech)
 
 
 **HDMI 2.1**
-    - rychlost přenosu dat 48 Gb/s
-    - podpora Variabilní obnovovací frekvence (VRR), neboli dynamická změna obnovovací frekvence například v rozsahu 30 - 144 Hz. Není tak potřeba dále využívat technologie jako Nvidia’s G-Sync a AMD’s FreeSync
-    - enhanced Audio Return Channel (eARC) který dovoluje posílání Dolby Atmos a DTS:X audio z displeje do příjmače
-    - 10k rozlišení s frekvencí 120 Hz
+
+- rychlost přenosu dat 48 Gb/s
+- podpora Variabilní obnovovací frekvence (VRR), neboli dynamická změna obnovovací frekvence například v rozsahu 30 - 144 Hz. Není tak potřeba dále využívat technologie jako Nvidia’s G-Sync a AMD’s FreeSync
+- enhanced Audio Return Channel (eARC) který dovoluje posílání Dolby Atmos a DTS:X audio z displeje do příjmače
+- 10k rozlišení s frekvencí 120 Hz
 
 
 U všech typů HDMI je nutné si při koupi kabelu zkontrolovat, zda je schopen přenášet data maximální rychlostí, kterou monitor umožňuje. Ne vždy tomu tak je. Je doporučeno kupovat certifikované kabely od ověřených prodejců.
@@ -204,26 +209,30 @@ Další výhodou je podpora zapojení několika monitorů na jeden Display port
 Display port verze:
 
 **DisplayPort 1.2**
-    - přenosová rychlost až 17.28 Gbps
-    - video rozlišení až 4K (3840 x 2190 pixels) s frekvencí 60 Hz, většina běžných 3D video formátů
+
+- přenosová rychlost až 17.28 Gbps
+- video rozlišení až 4K (3840 x 2190 pixels) s frekvencí 60 Hz, většina běžných 3D video formátů
 
 
 **DisplayPort 1.3**
-    - přenosová rychlost až 25.92 Gbps
-    - video rozlišení 4K s frekvencí 120 Hz nebo
-    - 8K s frekvencí 30 Hz
+
+- přenosová rychlost až 25.92 Gbps
+- video rozlišení 4K s frekvencí 120 Hz nebo
+- 8K s frekvencí 30 Hz
 
 
 **DisplayPort 1.4**
-    - přenosová rychlost až 25.92 Gbps
-    - video rozlišení až 8K s frekvencí 60 Hz
-    - HDR (High Dynamic Range)
+
+- přenosová rychlost až 25.92 Gbps
+- video rozlišení až 8K s frekvencí 60 Hz
+- HDR (High Dynamic Range)
 
 
 **Display port 2.0 (rok 2020)**
-    - přenosová rychlost až 77.4 Gbps
-    - video rozlišení 16K s HDR s frekvencí 60Hz
-    - 10K bez HDR s frekvencí 80Hz
+
+- přenosová rychlost až 77.4 Gbps
+- video rozlišení 16K s HDR s frekvencí 60Hz
+- 10K bez HDR s frekvencí 80Hz
 
 
 ## USB-C
