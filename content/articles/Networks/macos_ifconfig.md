@@ -136,6 +136,9 @@ $ ifconfig -a inet
 
 It means show me all active and inactive connections and their inet. Inet means IPv4 and inet6 means IPv6. When you prompt ifconfig withou `-a` it shows only active connetctions see documentations or [there is nice explanation](https://www.computerhope.com/unix/uifconfi.htm) to other usage for example how configure addresses to an interface etc.
 
+- `inet`: IPv4
+- `ether`: MAC address
+
 Other approach can be use command `grep` with `ifconfig`
 
 ```shell
