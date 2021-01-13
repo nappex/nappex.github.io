@@ -280,7 +280,11 @@ Je to vlastně hustota pixelů na obrazovce, který se počítá z rozlišení s
 
 PPI si můžete sami spočítat, třeba v pythonu:
 
-Vzoreček je: $sqrt{(W^2 + H^2)} / inch_size$
+Vzorec:
+
+$sqrt{(W^2 + H^2)} / inch_size$
+
+$x^2$
 
 ```python
 >>> (2560**2 + 1440**2)**0.5 / 27
