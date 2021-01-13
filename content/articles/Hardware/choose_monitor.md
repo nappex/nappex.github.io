@@ -258,7 +258,12 @@ Seznam rozlišení s kterým se dnes můžete setkat.
 - 16K (15360 × 8640)
 - 10K (10240 × 4320)
 - 8K (7680 × 4320)
-- 4K (3840 × 2160)
+- 5K (5120 x 2880)
+- 4K (3840 × 2160) monitor, (4096 x 2160) cinema
+- 2K (2560 x 1440) monitor, (2048 x 1080) cinema
+- Ultra HD (UHD) (3840 × 2160)
+- Quad HD (QHD) (2560 x 1440)
+- WUXGA (1920 x 1200)
 - FullHD (1920 x 1080)
 
 
@@ -267,6 +272,20 @@ Dobrý je, že se blížíme rozlišení, kde už to nebude mít smysl zvyšovat
 Pro TV je 8k skoro zbytečný a pro PC monitor asi tak akorát maximum, fajn jemný a fyzicky už prostě víc do strany koukat nechcete ani na zakřiveným, IMHO se tam zastavíme na dlouho.
 
 A něco jako 144 Hz bude asi taky smysluplný maximum pro běžný použití i hraní.
+
+## Pixel per inch (PPI)
+
+PPI je docela důležitá hodnota, kterou Vám, ale málokterý prodejce u produktu uvede.
+Je to vlastně hustota pixelů na obrazovce, který se počítá z rozlišení s ohledem na jak velkém monitoru je použito. Čím více pixelů na inch tím je obraz jemnější a ostřejší a příjemnější pro oči. Obecně se nedoporučuje, aby hodnota byla pod 70 PPI - taková hodnota je nepoužitelná. Pro představu monitor o velikosti 25" s rozlišením WUXGA (1920 x 1200) má hodnotu PPI rovnu 90. Naopak 27" monitor s QHD (2560 x 1440) má hodnotu PPI 108,8.
+
+PPI si můžete sami spočítat, třeba v pythonu:
+
+Vzoreček je: $sqrt{(W^2 + H^2)} / inch_size$
+
+```python
+>>> (2560**2 + 1440**2)**0.5 / 27
+>>> 108.78553926332337
+```
 
 
 # Typ panelu
@@ -277,22 +296,46 @@ Níže uvedené tři typy panelů jsou na trhu nejvíce zastoupeny:
 
 Nejstarší, má méně výrazné barvy a horší pozorovací úhly, pokud jste třeba programátor nebo mobilní developer, můžete používat monitor vertikálně a při tomto otočení se špatné pozorovaí úhly projeví. Naopak mají rychlou odezvu a vyšší obnovovací frekvenci. Hodí se na hraní her.
 
-    - výhody: rychlá odezva, vysoká obnovovací frekvence, cenově jsou nejdostupnější
-    - nevýhody: špatné barvy, špatné pozorovací úhly
+Výhody:
+- rychlá odezva
+- vysoká obnovovací frekvence
+- cenově jsou nejpříznivější
+- dobré rozlišení odstínů šedé
+
+Nevýhody:
+- špatné barvy
+- špatné pozorovací úhly
+- prosvítání okrajů
 
 **IPS (In-plain Switching)**
 
 Mají obecně horší contrast ratio a horší odezvu. Naopak mají velmi pěkné barvy a velmi dobré pozorovací úhly 178°. Obecně se moc nehodí pro náročné hráče her jelikož, ti potřebují velmi dobrou obnovovací frekvenci a ten má lepší například TN panel. Nicméně i výrobci IPS se už dostávají na obnovovací frekvenci srovnatelnou s TN panely. Hodí se na editaci fotek a videa.
 
-    - výhody: velmi dobré a ostré barvy, dobré pozorovací úhly
-    - nevýhody: menší obnovovací frekvence než u TN a horší odezva. Dále občas trpí prosvítajícím podsvětlením a nižší svítivostí
+Výhody:
+- velmi dobré a ostré barvy
+- dobré široké pozorovací úhly
+
+Nevýhody:
+- menší obnovovací frekvence než u TN
+- horší odezva
+- občas trpí prosvítajícím podsvětlením a nižší svítivostí
+- vyšší cena
+- nižší kontrast (1000:1)
 
 **VA (Vertical Alignment)**
 
 Je něco mezi IPS a TN. Mají obecně dobrý contrast ratio, ale na úkor response time. Hodí se na sledování videa.
 
-    - výhody: nejlepší conrast ratio, velmi dobré barevné hloubky
-    - nevýhody: velmi pomalá odezva
+Výhody:
+- nejlepší conrast ratio (až 5000:1)
+- velmi dobré barevné hloubky
+- černá je opravdu černá
+- nulové prosvítání okolo okrajů
+
+Nevýhody:
+- pomalá odezva
+- špatné rozlišení odstínů šedé, což způsobuje horší vyhlazení písma
+- větší uhlopříčky trpí na off-center color/contrast shift
 
 
 Více detailů naleznete [zde](https://www.geeksforgeeks.org/types-of-monitor-panels-and-which-one-is-better/)
@@ -332,3 +375,4 @@ Kontrast udává poměr zobrazené černé a bílé barvy při aktuálním nasta
 # Doporučené odkazy
 
 [Alza slovník pro monitory](https://www.alza.cz/article/g970.htm)
+[Jak vybrat monitor (zivecz)](https://www.zive.cz/clanky/jak-vybrat-monitor-k-pocitaci/sc-3-a-188211/default.aspx)
