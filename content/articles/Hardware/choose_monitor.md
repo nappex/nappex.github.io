@@ -276,15 +276,20 @@ A něco jako 144 Hz bude asi taky smysluplný maximum pro běžný použití i h
 ## Pixel per inch (PPI)
 
 PPI je docela důležitá hodnota, kterou Vám, ale málokterý prodejce u produktu uvede.
-Je to vlastně hustota pixelů na obrazovce, který se počítá z rozlišení s ohledem na jak velkém monitoru je použito. Čím více pixelů na inch tím je obraz jemnější a ostřejší a příjemnější pro oči. Obecně se nedoporučuje, aby hodnota byla pod 70 PPI - taková hodnota je nepoužitelná. Pro představu monitor o velikosti 25" s rozlišením WUXGA (1920 x 1200) má hodnotu PPI rovnu 90. Naopak 27" monitor s QHD (2560 x 1440) má hodnotu PPI 108,8.
+Je to vlastně hustota pixelů na obrazovce, který se počítá z rozlišení s ohledem na jak velkém monitoru je použito. Čím více pixelů na inch tím je obraz jemnější a ostřejší a příjemnější pro oči. Obecně se nedoporučuje, aby hodnota byla pod 70 PPI - taková hodnota je nepoužitelná. Pro představu monitor o velikosti 25" s rozlišením WUXGA (1920 x 1200) má hodnotu PPI rovnu 90. Nebo 27" monitor s QHD (2560 x 1440) má hodnotu PPI 108,8.
 
 PPI si můžete sami spočítat, třeba v pythonu:
 
 Vzorec:
 
-$sqrt{W^2 + H^2} / inches$
+$d_p = \sqrt{W^2 + H^2}$
 
-$x^2$
+$PPI = \frac{d_p}{d_i}$
+
+- W widtht resolution in pixels
+- H height resolution in pixels
+- $d_p$ diagonal resolution in pixels
+- $d_i$ diagonal resolution in inches
 
 ```python
 >>> (2560**2 + 1440**2)**0.5 / 27
