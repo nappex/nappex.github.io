@@ -282,7 +282,7 @@ PPI si můžete sami spočítat, třeba v pythonu:
 
 Vzorec:
 
-$sqrt{(W^2 + H^2)} / inch_size$
+$sqrt{W^2 + H^2} / inches$
 
 $x^2$
 
