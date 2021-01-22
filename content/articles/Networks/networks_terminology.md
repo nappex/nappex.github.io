@@ -17,3 +17,15 @@ My article is just rewritten form from articles below in my words, which I under
 
 - **An Introduction to Networking Terminology, Interfaces, and Protocols** published on [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-networking-terminology-interfaces-and-protocols)
 
+
+# Local area network (LAN)
+
+Lokální síť u Vás doma. Ethernetová - vytvořená pomocí kabelů.
+
+# Wide area network (WAN)
+
+Jedná se o Internet tam venku.
+
+# Wireless local area network (WLAN)
+
+Bezdrátová lokální síť.
