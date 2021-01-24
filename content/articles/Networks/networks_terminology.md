@@ -78,11 +78,25 @@ Některé jiné zdroje uvádějí pouze čtyři úrovně:
 
 # Protokoly
 
-## TCP
+## Network layer
+
+### IP
+
+Internet protokol - protokol síťové vrstvy
+
+## Transport layer
+
+### TCP
 
 Transmission control protocol - primární přenosový protokol
 
-## IP
+### UDP
 
-Internet protokol - protokol síťové vrstvy
+User Datagram Protocol
+
+## Application layer
+
+### HTTP/HTTPS (Hypet Text Transfer Protocol)
+
+### FTP/FTPS (File Transfer Protocol)
 

@@ -13,7 +13,7 @@ Status: published
 
 # Repeater
 
-Pracuje na síťové vrstvě 1 - fyzická vrstva (physical layer)
+Pracuje na vrstvě 1 - fyzická vrstva (physical layer)
 
 Repeater je služebně nejstarší síťový prvek. V historii se v síťařině používal ikabely, ve kterých se signál se vzdáleností značně zeslaboval. Když jsme tedy chtěli zachovat sílu signálu (informace) na větší vzdálenosti, tak jsme museli po určité vzdálenosti signál zesílit. Toho se docílilo pomocí tzv. **REPEATERŮ**. Signál, který přišel do repeateru v něm byl pouze zesílen a poslán dále. Repeater vůbec neřeší jaký signál nebo informace je mu poslána pouze je zesílí.
 
@@ -21,19 +21,19 @@ Repeatery si můžete také představit jako čerpadla vody a kabely mezi repeat
 
 # HUB
 
-Pracuje na síťové vrstvě 1 - fyzická vrstva (physical layer)
+Pracuje na vrstvě 1 - fyzická vrstva (physical layer)
 
 Hub není nic jiného než multi repeater. Tedy dokáže zesílit signál z více vstupů na více výstupů. Opět u něj platí to co u repeaterů, že pouze zesiluje signály. Nijak je nevyhodnocuje ani jim nerozumí.
 
 # Bridge
 
-Pracuje na síťové vrstvě 2 - linková vrstva (data link layer)
+Pracuje na vrstvě 2 - linková vrstva (data link layer)
 
 Jedná se o zařízení, které funguje jak switch, ovšem chytré přeposílání signálu na základě protokolů a portů dělá pomocí softwaru. Je tedy daleko pomalejší než switch, který tento úkol řeší na úrovni hardwaru.
 
 # Switch (Přepínač)
 
-Pracuje na síťové vrstvě 2 - linková vrstva (data link layer)
+Pracuje na vrstvě 2 - linková vrstva (data link layer)
 
 Jedná se o takovou křižovatku síťového provozu na lokální úrovni, tedy spravuje pouze provoz na síti Local Area Network (LAN). Jinými slovy řídí síťový provoz pouze mezi zařízeními, které jsou připojeny na jednu stejnou síť. Toto není úplně správné protozže exituje i tzv. VLAN tedy virtual local area network a switch je schopen propojit i dvě různé lokální sítě. Switch se chytře snaží signál přeposílat dle jeho parametrů. Dokáže vyhodnotit, na jaký port a MAC adresu je signál posílán. Díky těchto informací je schopen efektivně řídit komunikaci, vyhodnotit jak bude nejefektivnější signál poslat, aby nedocházelo ke střetům a zpomalení síťového provozu. Switch posílá signál na správný port, čímž komunikaci zefektivňuje.
 Logika přeposílání signálu je řešena na úrovni hardwaru pomocí chytrých obvodů ASICs (Application Specific Integrated Circuits). Switch je schopen se učit na základě toho, že ví kdej sou síťová zařízení, kde jsou jejich MAC adresy v síti.
@@ -46,6 +46,8 @@ Switche pracují na tzv. linkové vrstvě neberou tedy v potaz nějaká práva a
 Switche se nejčastěji používají na rozšíření kabelové počítačové sítě (ethernet)
 
 # Router
+
+Pracuje na vrstvě 3 - síťová vrstva (Network layer)
 
 Spojuje dvě různé sítě většinou se bude jednat a propojení mezi sítí Local Area Network (LAN - lokální síť) a Wide Area Network (WAN - Internet).
 Routuje IP adresy mezi různými sítěmi.
