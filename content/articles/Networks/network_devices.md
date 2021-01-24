@@ -27,13 +27,13 @@ Hub není nic jiného než multi repeater. Tedy dokáže zesílit signál z víc
 
 # Bridge
 
-Pracuje na síťové vrstvě 2 - linková vrstva (link layer)
+Pracuje na síťové vrstvě 2 - linková vrstva (data link layer)
 
 Jedná se o zařízení, které funguje jak switch, ovšem chytré přeposílání signálu na základě protokolů a portů dělá pomocí softwaru. Je tedy daleko pomalejší než switch, který tento úkol řeší na úrovni hardwaru.
 
 # Switch (Přepínač)
 
-Pracuje na síťové vrstvě 2 - linková vrstva (link layer)
+Pracuje na síťové vrstvě 2 - linková vrstva (data link layer)
 
 Jedná se o takovou křižovatku síťového provozu na lokální úrovni, tedy spravuje pouze provoz na síti Local Area Network (LAN). Jinými slovy řídí síťový provoz pouze mezi zařízeními, které jsou připojeny na jednu stejnou síť. Toto není úplně správné protozže exituje i tzv. VLAN tedy virtual local area network a switch je schopen propojit i dvě různé lokální sítě. Switch se chytře snaží signál přeposílat dle jeho parametrů. Dokáže vyhodnotit, na jaký port a MAC adresu je signál posílán. Díky těchto informací je schopen efektivně řídit komunikaci, vyhodnotit jak bude nejefektivnější signál poslat, aby nedocházelo ke střetům a zpomalení síťového provozu. Switch posílá signál na správný port, čímž komunikaci zefektivňuje.
 Logika přeposílání signálu je řešena na úrovni hardwaru pomocí chytrých obvodů ASICs (Application Specific Integrated Circuits). Switch je schopen se učit na základě toho, že ví kdej sou síťová zařízení, kde jsou jejich MAC adresy v síti.
@@ -63,3 +63,9 @@ Access point nám vytvoří novou wireless local area network (WLAN). Pro předs
 If we have to manage and configure many access points. It is more efficient to manage them via Wireless LAN controller. But there is a problem Wireless LAN controller has not so many ports so if we have really a lot of access points we have to connect them to switch which is suitable for connection a very big number of devices and consequently switch is connected to Wireless LAN controller.
 
 # Firewall (Hardware)
+
+Dnes máme hardwarové firewally nové generace, které jsou vybaveny systémy jako Intrusion Detection System (IDS) a Intrusion Prevention System (IPS).
+
+- IDS, detekuje útok a upozorní na něj něco jako když máte doma psa, který Vás svým štěkotem upozorní, že máte doma zloděje, ale už ho nezastaví. Nejsou přímo v síťovém provozu. Dělá si kopie síťového provozu.
+
+- IPS útok detekuje a zároveň zablokuje, prevent the attack. Je přím osoučástí síťového provozu a provoz proudí přímo přes něj.
