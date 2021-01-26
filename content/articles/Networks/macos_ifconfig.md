@@ -252,6 +252,8 @@ External IP address is used when you communicate with Internet.
 
 You can notice that your External IP address change during the time. It is normal process because most of ISP gives you **dynamic IP address**. It means your ISP can change your External IP address how they need it. When you communicate with your devices from outside as a remote is good habit to have only one IP address without any change. For this purpose you need to get **static IP address** which is in most cases something extra and you have to pay for this service to your ISP.
 
+Make from private IP address the public is done via NAT (Network Address Translation)
+
 ### How to find out your external IP address
 
 #### From internet

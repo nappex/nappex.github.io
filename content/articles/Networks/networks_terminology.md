@@ -30,6 +30,10 @@ Jedná se o Internet tam venku.
 
 Bezdrátová lokální síť.
 
+# Network Address Translation (NAT)
+
+Přeloží z privátní (lokální) IP adresu na public IP adresu
+
 # OSI model
 
 Open Systems Interconnection model
@@ -60,10 +64,10 @@ Tvoří ho pouze 5 vrstev. To je způsobeno tím, že tento model slučuje 3 vrs
 
 Výsledný model potom vypadá následovně dle CCNA course:
 
-1. Physical
-2. Data link
-3. Network
-4. Transport
+1. Physical - we send **bits** 1 or 0
+2. Data link - we send **frames**
+3. Network  - we send **packets**
+4. Transport - we send **segments**
 5. Application
 
 Některé jiné zdroje uvádějí pouze čtyři úrovně:
@@ -76,13 +80,45 @@ Některé jiné zdroje uvádějí pouze čtyři úrovně:
 
 # DHCP (Dynamic Host Configuration Protocol)
 
+# PDU
+
+Protocol Data Unit
+
+1. Physical - PDU is **bit** 1 or 0
+2. Data link - PDU is **frame**
+3. Network  - PDU is **packet**
+4. Transport - PDU is **segment**
+5. Application
+
 # Protokoly
+
 
 ## Network layer
 
 ### IP
 
+IPv4 format is:
+
+x.x.x.x where x is 8-bits so total size is 32-bits
+
+so 10.1.1.1 is equal in binary -> 00001010.00000001.00000001.00000001
+
 Internet protokol - protokol síťové vrstvy
+Connectionless protocol - it does not create a session it just send
+Connection list protokol
+Every packets sends by IP is independet, every packets can be send by different path.
+Packets can be lost but TCP can resend losted packet.
+No data recovery features.
+
+Has hierarchical structure:
+- network address portion (Network ID)
+- host portion
+
+### ARP
+
+Address Resolution Protocol
+
+Hledá MAC adresu cílového zařízení, od kterého známe pouze IP adresu. Jinými slovy se na síti ptá jakou MAC Adresu má zařízení, které má tuto IP adresu ? Zařízení s hlednou IP adresou odpoví já mám tuto IP adresu a má MAC adresa je tato.
 
 ## Transport layer
 
@@ -90,6 +126,15 @@ Internet protokol - protokol síťové vrstvy
 
 Transmission control protocol - primární přenosový protokol
 
+It sends SYN (synchornization info) to receiver. Than receiver sends back SYN AcK (synchronization Acknowledgment) to sender adn than sender send AcK (acknowledgement) to receiver back.
+
+```
+Transmitter     ->(SYN)->       receiver
+transmitter     <-(SYN AcK)<-   receiver
+transmitter     ->(AcK)->       receiver
+```
+
+It can resend lost (dropped), corrupted or misdirected packets from IP.
 ### UDP
 
 User Datagram Protocol
