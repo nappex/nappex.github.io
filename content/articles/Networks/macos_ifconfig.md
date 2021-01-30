@@ -36,6 +36,16 @@ So no one can not to connect to your internal IP address from internet. Only **p
 
 ## Internal (private) IP address
 
+About Internal IP address is RFC 1918
+
+we can set three types of private IPv4 address:
+
+- Class A 10.0.0.0      -   10.255.255.255  (10/8 prefix)
+- Class B 172.16.0.0    -   172.31.255.255  (172.16/12 prefix)
+- Class C 192.168.0.0   -   192.168.255.255 (192.168/16 prefix)
+
+Another type of private address is 169.254.X.X - it is IPv4 Link Local Address, it is used when we connect two computer with cable. There can occure a problem when we want this pc add local IP address with DHCP. This can not allocate IP addres with DHCP because this PC will dynamicaly allocate IP address by itself
+
 Internal IP addresses use a special address range from a reserved non route-able address range. This range is same for every local network. Range is restricted for local usage. So the internal IP address ranges  are blocked by Internet routers, you can not see them from internet.
 
 Internal IP addresses have these schemes in most cases:

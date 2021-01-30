@@ -70,15 +70,19 @@ Výsledný model potom vypadá následovně dle CCNA course:
 4. Transport - we send **segments**
 5. Application
 
-Některé jiné zdroje uvádějí pouze čtyři úrovně:
+Jiné zdroje uvádějí zase tento model:
 
-1. Physical - Ethernet, ADSl, WiFi (předávání MAC address fyzických zařízení)
-1. Network - IP, ARP, DHCP, ICMP (předávání IP adres)
-1. Transport - TCP, UDP (Způsob přenosu TCP -> spojitě, UDP –> nespojitě (videa))
-1. Application - HTTP, FTP, SMTP, POP3, SSH, Telnet, NTP
+1. Physical Layer - Copper, Fiber Optic Cables, Wireless transmitter
+1. Network Layer - Ethernet, ADSl, WiFi (předávání MAC address fyzických zařízení)
+1. Internet Layer - IP, ARP, DHCP, ICMP (předávání IP adres)
+1. Transport Layer- TCP, UDP (Způsob přenosu TCP -> spojitě, UDP –> nespojitě (videa))
+1. Application Layer - HTTP, FTP, SMTP, POP3, SSH, Telnet, NTP
 
 
-# DHCP (Dynamic Host Configuration Protocol)
+# DHCP (Dynamic Host Configuration Protocol) Server
+
+Když se připojíme s naším počítačem do naší domácí sítě, tak náš počítač neví jakou má mít adresu a ani jakou adresu má náš router. Takže pošle tzv. Broadcast na tzv. Local Broadcast Address což je 255.255.255.255 a pokud máme zapnuté DHCP tak ten tento požadavek přijme a na základě něj nám přidělí Local IP Address z předdefinovaného DHCP Poolu což je rozsah lokálních address, které mohou být přiřazeny zařízením, které se připojují do naší lokální sítě. Díky toho nemusíme každému zařízení přiřazovat lokální IP adresu manuálně, ale je dynamicky a automaticky přiřazena díky DHCP serveru.
+Dynamicky přiřazovaná adresa ovšem může být někdy problém, protože pokaždé kdy se stejné zařízení připojuje do naší sítě tak může dostat jinou IP adresu než mělo naposledy. Nicméně dá se nastavit, aby určité zařízení mělo přidělovánu stále stejnou adresu.
 
 # PDU
 
@@ -106,13 +110,136 @@ so 10.1.1.1 is equal in binary -> 00001010.00000001.00000001.00000001
 Internet protokol - protokol síťové vrstvy
 Connectionless protocol - it does not create a session it just send
 Connection list protokol
-Every packets sends by IP is independet, every packets can be send by different path.
+Every packets sends by IP is independet, every packet can be send by different path.
 Packets can be lost but TCP can resend losted packet.
 No data recovery features.
 
-Has hierarchical structure:
+IPv4 has hierarchical structure, we divide to two parts:
 - network address portion (Network ID)
-- host portion
+- host address portion (Host ID)
+
+#### Network Address Portion (Network ID) and Host Address Portion (Host ID)
+
+**Network ID**
+
+Identifies certain network
+
+Routers maintain routing tables that contains network
+
+**Host ID**
+
+Identifies certain endpoints on network as Laptop, TV, Phone, Printers, etc.
+
+
+Analogy is that Nework ID is as Street name and Host ID is certain number of house. Routing protocol in networks search Network ID (name of street) and than ARP (Address resolution protocol) search for certain endpoint (certain house with certain number)
+
+#### Address Classes
+
+First three Class (A, B, C) are UNICAST Traffic
+
+**Class A**
+
+First octet binary of IPv4 starts with **0**, so range is from `0.0.0.0` to `127.255.255.255`. But `127` is reserved for loopback, (example `127.0.0.1`). And `0` is reserved for default network. These two number cannot be used at first position. SO real range which can be used is from `1.0.0.0` to `126.255.255.255`.
+
+First octet of IP address is Networks.
+The last three octer are Hosts.
+
+So when we have IP address `126.168.1.100` - 126 is Network portion and it determines Class A and `168.1.100` is Host portion.
+
+Example:
+
+`10.0.0.0` is Network ID (Network address portion)
+
+`10.1.2.3` is Host ID (Host address portion)
+
+So we can have same host portion in diferrent Network - `10.1.1.1` and `12.1.1.1`, these two IP addresses has same host portion and it is allowed because these devices are in different networks. One is in network with Network ID 10 and the other device is in Network with ID 12. You can imagine as houses with same number but on different streets. So imagine you have two houses - one house with street number 111 a the second house with street number 111. But first house is on Oxford street and the second one is on Long avenue street. So there are two different houses and there is no any conflict.
+
+**Class B**
+
+First octet binary of IPv4 starts with **10** one and zero not ten (1000 0000), so range is from `128.0.0.0` to `191.255.255.255`.
+
+First two octet of IP address is Networks.
+The last two octet are Hosts.
+
+So when we have IP address 130.168.1.100 - 130.168 is Networks, 130 -> Class B and Network portion, 168 -> Network portion and 1.100 is Host portion.
+
+Example:
+
+172.16.0.0 is Network ID
+172.16.1.2 is Host ID
+
+172.17.0.0 is Network ID
+172.17.1.2 is Host ID
+
+173.16.0.0 is Network ID
+173.16.3.3 is Host ID
+
+**Class C**
+
+First octet binary of IPv4 starts with **110** one, one, zero not one hundred ten (1100 0000). Zero moved to third place. So range is from `192.0.0.0` to `223.255.255.255`. But `127` is reserved for loopback, (example `127.0.0.1`). And `0` is reserved for default network. These two number cannot be used at first position. SO real range which can be used is from `1.0.0.0` to `126.255.255.255`.
+
+First three octet of IP address are Networks.
+The last one octet are Hosts.
+
+So when we have IP address 130.168.1.100 - 130.168 is Networks, 130 -> Class B and Network portion, 168 -> Network portion and 1.100 is Host portion.
+
+**Class D**
+
+is MULTICAST Traffic
+
+First octet binary of IPv4 starts with **1110** one, one, one, zero (1110 0000). Zero moved to **fourth place** so range is from `224.0.0.0` to `239.255.255.255`.
+
+Link Local Multitask - 224.0.0.X
+OSPF - 239.1.1.1
+
+OSPF (Open Shortest Path First) routing technology
+
+**Class E**
+
+is for reserved for future or experimental purposes (testing)
+
+First octet binary of IPv4 starts with **1111** one, one, one, one (1111 0000). Zero moved to **fourth place** so range is from `240.0.0.0` to `255.255.255.255`.
+
+
+Classes were replaced in 1993 by CIDR (Classless Inter-Domain Routing)
+
+#### Directed Broadcast Address and Denial of Service Attacks (DoS)
+
+First binary of host portion is fullfilled with ones as 1111 1111.
+binary 1111 1111 = decimal 255
+
+Example: 172.16.255.255 , all hosts on network 172.16.0.0 receive the broadcast
+
+It is disable by default because of Denial of Service Attacks (DoS Attacks).
+
+Denial of service attacks is done by from device which is destination of attack. This device send a broadcast to another network and all device will reply to that broadcast.
+
+#### Local Broadcast Address
+
+all octet are filled with binary 1s.
+
+1111 1111.1111 1111.1111 1111.1111 1111 = 255.255.255.255
+
+Your computer sends broadcast to DHCP server on that broadcast the DHCP server create your local IP Address.
+
+#### Local Loopback Address
+
+**IPv4**
+
+it is address which start with 127, so it is IP address class A.
+It is testing address. This address tests TCP/IP stack. It can be `127.0.0.1` or `127.127.127.127`.
+
+Generally `127.X.X.X` is local loopback address.
+
+It makes 16 million address that can not be used and range of IPv4 is limited.
+
+**IPv6**
+
+local loopback address is ::1
+
+#### Router's or switches loopback address
+
+Is something different than local loopback address. It is 10.1.1.1/32
 
 ### ARP
 
@@ -123,6 +250,7 @@ Hledá MAC adresu cílového zařízení, od kterého známe pouze IP adresu. Ji
 ## Transport layer
 
 ### TCP
+
 
 Transmission control protocol - primární přenosový protokol
 
