@@ -65,9 +65,9 @@ Tvoří ho pouze 5 vrstev. To je způsobeno tím, že tento model slučuje 3 vrs
 Výsledný model potom vypadá následovně dle CCNA course:
 
 1. Physical - we send **bits** 1 or 0
-2. Data link - we send **frames**
-3. Network  - we send **packets**
-4. Transport - we send **segments**
+2. Data link - we send **frames**, MAC addresses
+3. Network  - we send **packets**, IP addresses
+4. Transport - we send **segments**, TCP, UDP
 5. Application
 
 Jiné zdroje uvádějí zase tento model:
@@ -83,6 +83,27 @@ Jiné zdroje uvádějí zase tento model:
 
 Když se připojíme s naším počítačem do naší domácí sítě, tak náš počítač neví jakou má mít adresu a ani jakou adresu má náš router. Takže pošle tzv. Broadcast na tzv. Local Broadcast Address což je 255.255.255.255 a pokud máme zapnuté DHCP tak ten tento požadavek přijme a na základě něj nám přidělí Local IP Address z předdefinovaného DHCP Poolu což je rozsah lokálních address, které mohou být přiřazeny zařízením, které se připojují do naší lokální sítě. Díky toho nemusíme každému zařízení přiřazovat lokální IP adresu manuálně, ale je dynamicky a automaticky přiřazena díky DHCP serveru.
 Dynamicky přiřazovaná adresa ovšem může být někdy problém, protože pokaždé kdy se stejné zařízení připojuje do naší sítě tak může dostat jinou IP adresu než mělo naposledy. Nicméně dá se nastavit, aby určité zařízení mělo přidělovánu stále stejnou adresu.
+
+# CAM Table
+
+Also known as **CONTENT ADDRESSABLE MEMORY**
+
+or
+
+**FORWARDING TABLE**
+
+It is a table where are saved MAC (Media address control) addresses.
+
+This table we can found in switches (layer 2 - data link). Many hosts can connect to switch. Every MAC address has certain number of interface by which can connect to switch.
+
+Example of table:
+
+|   MAC address |   Interface   |   TTL |
+|   :---------: |   :-------:   |   :-: |
+|   48:1B:34:ED:44:22 |   1   |   3 |
+|   89:1B:34:ED:99:22 |   2   |   6 |
+|   12:1C:34:ED:44:11 |   2   |   6 |
+|   14:1F:14:EF:44:07 |   3   |   25 |
 
 # PDU
 
@@ -139,7 +160,7 @@ First three Class (A, B, C) are UNICAST Traffic
 
 **Class A**
 
-First octet binary of IPv4 starts with **0**, so range is from `0.0.0.0` to `127.255.255.255`. But `127` is reserved for loopback, (example `127.0.0.1`). And `0` is reserved for default network. These two number cannot be used at first position. SO real range which can be used is from `1.0.0.0` to `126.255.255.255`.
+First octet binary of IPv4 starts with **0**, so range is from `0.0.0.0` to `127.255.255.255`. But `127` is reserved for loopback (localhost), (example `127.0.0.1`). And `0` is reserved for default network. These two number cannot be used at first position. SO real range which can be used is from `1.0.0.0` to `126.255.255.255`.
 
 First octet of IP address is Networks.
 The last three octer are Hosts.
@@ -229,7 +250,7 @@ Your computer sends broadcast to DHCP server on that broadcast the DHCP server c
 it is address which start with 127, so it is IP address class A.
 It is testing address. This address tests TCP/IP stack. It can be `127.0.0.1` or `127.127.127.127`.
 
-Generally `127.X.X.X` is local loopback address.
+Generally `127.X.X.X` is local loopback address, it is reserved for localhost. You can see it when you trying some web application. You've been trying it on localhost then you push to internet.
 
 It makes 16 million address that can not be used and range of IPv4 is limited.
 
@@ -240,6 +261,90 @@ local loopback address is ::1
 #### Router's or switches loopback address
 
 Is something different than local loopback address. It is 10.1.1.1/32
+
+#### Subnet mask or netmask
+
+It tells you which part of IPv4 address is for network and which part is for hosts.
+
+So imagine that your IP address is `192.168.1.3`
+
+- every bits equal to one (1) is for network.
+- every bits equal to zero (0) is for host.
+
+If we have subnet mast 255.0.0.0 in bits 11111111.00000000.00000000.00000000 -> than network is 192 and host portion is 168.1.3
+
+If we have netmast 255.255.0.0 in bits 11111111.11111111.00000000.00000000 -> than network portion is 192.168 and host protion is 1.3
+
+These is contiguous implemetation it means that we have ones in row and zeroes in row.
+
+Theres is also discontiguous it can be like that 11111111.00011111.00000000.00000000 but this implementation you should not meet in reality fortunately.
+
+##### CIDR - Class Inter-Domain Routing
+With these concept you can meet CIDR when you have IP address written like that 192.168.1.3/16 -> /16 this means subnet characterization. It means 16 bits of ones = 255.255.0.0. 1111 1111 is 8 bits of ones in binary is equal to 255 in decimal.
+
+Examples:
+
+- 11111111.00000000.00000000.00000000 = /8
+- 11111111.11111111.00000000.00000000 = /16
+- 11111111.11111111.11111111.00000000 = /24
+- 11111111.11111111.11111111.11111111 = /32 -> 4 * 8 bits = 32 bits
+
+Joke is that in reality you can have this type of subnet:
+
+255.255.224.0 -> 11111111.11111111.11100000.00000000
+
+How to recognize what is network and host by this subnet ?
+
+With bitwise AND
+
+
+**For Network**
+
+IP address: 192.168.33.12 (decimal)
+
+11000000.10101000.00100001.00001100 (binary)
+
+Netmast: 255.255.224.0 (decimal)
+
+11111111.11111111.11100000.00000000 (binary)
+
+–––––––––––––––––––––––––––––––––––––––––––––––––
+
+11000000.10101000.00100001.00001100
+
+&
+
+11111111.11111111.11100000.00000000
+
+–––––––––––––––––––––––––––––––––––––––––––––––––
+
+11000000.10101000.00100000.00000000 (binary)
+
+192.168.32.0 (decimal) –> Network prefix is 192.168.32.0/19 (16 + 3)
+
+
+**For Host**
+
+11000000.10101000.00100001.00001100 (192.168.)
+
+&
+
+NOT(11111111.11111111.11100000.00000000)
+
+=
+
+00000000.00000000.00011111.11111111 (13 bits)
+
+–––––––––––––––––––––––––––––––––––––––––––––––––
+
+00000000.00000000.00000001.00001100 (binary)
+
+0.0.1.12 (decimal) –> Host prefix is 0.0.1.12
+
+We have 8 + 5 bits = 13 bits of hosts -> 2^13 = 8192 available addresses for hosts
+
+
+
 
 ### ARP
 
