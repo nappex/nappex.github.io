@@ -36,7 +36,19 @@ Jedná se o zařízení, které funguje jak switch, ovšem chytré přeposílán
 Pracuje na vrstvě 2 - linková vrstva (data link layer)
 
 Jedná se o takovou křižovatku síťového provozu na lokální úrovni, tedy spravuje pouze provoz na síti Local Area Network (LAN). Jinými slovy řídí síťový provoz pouze mezi zařízeními, které jsou připojeny na jednu stejnou síť. Toto není úplně správné protozže exituje i tzv. VLAN tedy virtual local area network a switch je schopen propojit i dvě různé lokální sítě. Switch se chytře snaží signál přeposílat dle jeho parametrů. Dokáže vyhodnotit, na jaký port a MAC adresu je signál posílán. Díky těchto informací je schopen efektivně řídit komunikaci, vyhodnotit jak bude nejefektivnější signál poslat, aby nedocházelo ke střetům a zpomalení síťového provozu. Switch posílá signál na správný port, čímž komunikaci zefektivňuje.
-Logika přeposílání signálu je řešena na úrovni hardwaru pomocí chytrých obvodů ASICs (Application Specific Integrated Circuits). Switch je schopen se učit na základě toho, že ví kdej sou síťová zařízení, kde jsou jejich MAC adresy v síti.
+Logika přeposílání signálu je řešena na úrovni hardwaru pomocí chytrých obvodů ASICs (Application Specific Integrated Circuits). Switch je schopen se učit na základě toho, že ví kde jsou síťová zařízení, kde jsou jejich MAC adresy v síti. Switch zkoumá tzv. header od zasíláného požadavku, kde vyčte informaci o MAC adrese. Tuto informaci si dynamicky ukládá do tzv. CAM table, což je tabulka, která je vyplněná MAC adresama, které se switch naučil, díky toho ví, kam rychle poslat MAC adresu s kterou se už jednou setkal. Tyto MAC adresy si ale swithc neukládá do nekončna, každá MAC adresa je doplněna tzv. parametrem TTL (time to live), tento parametr udává, jak dlouho má být MAC adresa ve CAM table uložena a když je tato doba překročena MAC adresa se z této tabulky smaže. K mazání musí docházet protože paměť na ukládání MAC adres není nekonečná. Kromě TTL se také ukládá konrétní číslo interface switche ke konrétní MAC adrese.
+
+
+## Zdrojová MAC adresa
+
+Celý proces vypadá asi takto, požadavek na zaslání informace přijde do switche. Ten se podívá do Headers (hlavičky) požadavku, tam vyčte MAC adresu zdroje informace (tedy unikátní adresu síťového zařízení, které požadavek posílá). Tuto MAC adresu porovná s adresami ve své tabulce, pokud tam není, tak ji přidá s číslem interface a TTL. Pokud už v tabulce MAC adresa je uložena, tak aktualizuje TTL. Pokud se připojila MAC adresa na jiné číslo interface, tak aktualizuje číslo interface.
+
+## Cílová MAC adresa
+
+Tzv. forwarding
+
+Z hlaviček opět přečte switch destination MAC address. Podívá se do CAM table, pokud tam je posílá požadavek na interface spojen s touto MAC adresou. Pokud MAC adresa v CAM table není zašle požadavek dále přes všechny své interface.
+
 Switch se také hodí pokud potřebuje příchozí signál rozdělit, tedy máme jeden vstup a potřebujeme je rozdělit na dalších 5 výstupů. Dá se tedy říct, že je to takový chytrý multi rozbočovač. Funguje tedy i jako klasická roztrojka, kterou máme doma a zvyšujeme pomocí ní počet výstupů ze zásuvky 240 V.
 
 Switche obsahují většinou různé množství portů. Počet portů se pohybuje nejčastěji 5, 8, 16, 24, 48. Rychlosti switchů jsou 10, 100, 1000 Mb/s.

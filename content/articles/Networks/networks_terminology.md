@@ -34,6 +34,20 @@ Bezdrátová lokální síť.
 
 Přeloží z privátní (lokální) IP adresu na public IP adresu
 
+# MAC address (Media address control)
+
+Jedná se o unikátní adresu, která je pevné spojená se síťovým zařízením (síťová karta). Jedná se o adresu používanou ve vrstvě 2 - data link.
+
+Unikátní adresa je zařízení přiřazena výrobcem zařízení a nedá se změnit.
+
+Adresa se skládá z 6-ti octetů nebo bytů. Obsahuje tedy celkem 48 bitů. A zapisuje se v hexadecimální soustavě.
+
+Jak jsme si řekli, každé zařízení má svou unikátní adresu a v síti se tedy nemůže stát, že by dvě zařízení měli dvě stejné MAC adresy. Jedna adresa je ale speciální a to je **broadcast address**.
+
+Broadcast address má tvar -> FF:FF:FF:FF:FF:FF
+
+Broad cast adresa se používá když neznáme MAC adresu cílovéhé zařízení v takovém případě do požadavku k IP adrese připíšeme broadcast adresu, díky této adrese pošleme požadavek na všechny zařízení v síti a ozve se nám zařízení, které má požadovanou IP adresu.
+
 # OSI model
 
 Open Systems Interconnection model
@@ -104,6 +118,12 @@ Example of table:
 |   89:1B:34:ED:99:22 |   2   |   6 |
 |   12:1C:34:ED:44:11 |   2   |   6 |
 |   14:1F:14:EF:44:07 |   3   |   25 |
+
+TTL - Time to live, it is a time how long the host will stay in table. The size of table is finite so when host exceed the time to live then the host is removed for table.
+
+Table is saved in RAM of device. Device constantly refresh information in the table.
+
+If we see two or more hosts (MAC addresses) connected to one interface we can supposed that these hosts are connected via additional switch.
 
 # PDU
 
@@ -351,6 +371,28 @@ We have 8 + 5 bits = 13 bits of hosts -> 2^13 = 8192 available addresses for hos
 Address Resolution Protocol
 
 Hledá MAC adresu cílového zařízení, od kterého známe pouze IP adresu. Jinými slovy se na síti ptá jakou MAC Adresu má zařízení, které má tuto IP adresu ? Zařízení s hlednou IP adresou odpoví já mám tuto IP adresu a má MAC adresa je tato.
+
+Počítače totiž většinou znají různé IP adresy, ale k nim neznají příslušné MAC adresy, abychom mohli zaslat plnohodnotný požadavek. Tak tento požadavek musí obsahovat, jak IP adresu tak MAC adresu, IP adresu známe, ale potřebujeme ji doplnit o MAC adresu to zjistíme právě pomocí ARP. Počítač neboli HOST se tedy učí MAC adresy na síti díky **ARP**.
+
+V praxi ARP funguje takto, aby byl požadavek úplná musí mít IP adresu a MAC adresu, když ale MAC adresu nemáme tak se místo konkrétní MAC adresy do požadavku dá tzv. broadcast MAC adresa (FF:FF:FF:FF:FF:FF). Tato adresa udává, že se má požadavek zaslat na všechny hosty v síti. Jakmile tento ARP požadavek připutuje i k HOST, který má požadovanou cílovou IP adresu, tak zašle nazpět svou konkrétní MAC adresu. Tímto způsobem pomocí ARP získá počítač A, který byl zdrojem požadavku MAC adresu počítače B, který je cílem komunikace.
+
+Informace o MAC adrese cíle se uloží do tzv ARP Cache. Při další komunikaci se tak už nezjišťuje jakou MAC adresu má cílový B počítač, protože tato informace už je v ARP počítače A uložena.
+
+ARP Cache se s informací o MAC adrese maže po vypršení TTL, která se vypočítává na základě velikosti paměti RAM nebo když zařízení A vypneme.
+
+Na svém pc se můžete podívat na ARP informace pomocí příkazů:
+
+Windows/MacOS
+
+```shell
+arp -a
+```
+
+Linux
+
+```shell
+ip neighbour
+```
 
 ## Transport layer
 
