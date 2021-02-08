@@ -35,7 +35,9 @@ Jedná se o zařízení, které funguje jak switch, ovšem chytré přeposílán
 
 Pracuje na vrstvě 2 - linková vrstva (data link layer)
 
-Jedná se o takovou křižovatku síťového provozu na lokální úrovni, tedy spravuje pouze provoz na síti Local Area Network (LAN). Jinými slovy řídí síťový provoz pouze mezi zařízeními, které jsou připojeny na jednu stejnou síť. Toto není úplně správné protozže exituje i tzv. VLAN tedy virtual local area network a switch je schopen propojit i dvě různé lokální sítě. Switch se chytře snaží signál přeposílat dle jeho parametrů. Dokáže vyhodnotit, na jaký port a MAC adresu je signál posílán. Díky těchto informací je schopen efektivně řídit komunikaci, vyhodnotit jak bude nejefektivnější signál poslat, aby nedocházelo ke střetům a zpomalení síťového provozu. Switch posílá signál na správný port, čímž komunikaci zefektivňuje.
+Ukládá MAC adresy zařízení na příslušné číslo portu, na kterém je zařízení ve switch připojen. Switch tedy vykonává rozhodovací proces na základě MAC adres. Jednoduch& mspojením MAC adresy s číslem portu v CAM Table.
+
+Jedná se o takovou křižovatku síťového provozu na lokální úrovni, tedy spravuje pouze provoz na síti Local Area Network (LAN). Jinými slovy řídí síťový provoz pouze mezi zařízeními, které jsou připojeny na jednu stejnou síť. Toto není úplně správné protože exituje i tzv. VLAN tedy virtual local area network a switch je schopen propojit i dvě různé lokální sítě. Switch se chytře snaží signál přeposílat dle jeho parametrů. Dokáže vyhodnotit, na jaký port a MAC adresu je signál posílán. Díky těchto informací je schopen efektivně řídit komunikaci, vyhodnotit jak bude nejefektivnější signál poslat, aby nedocházelo ke střetům a zpomalení síťového provozu. Switch posílá signál na správný port, čímž komunikaci zefektivňuje.
 Logika přeposílání signálu je řešena na úrovni hardwaru pomocí chytrých obvodů ASICs (Application Specific Integrated Circuits). Switch je schopen se učit na základě toho, že ví kde jsou síťová zařízení, kde jsou jejich MAC adresy v síti. Switch zkoumá tzv. header od zasíláného požadavku, kde vyčte informaci o MAC adrese. Tuto informaci si dynamicky ukládá do tzv. CAM table, což je tabulka, která je vyplněná MAC adresama, které se switch naučil, díky toho ví, kam rychle poslat MAC adresu s kterou se už jednou setkal. Tyto MAC adresy si ale swithc neukládá do nekončna, každá MAC adresa je doplněna tzv. parametrem TTL (time to live), tento parametr udává, jak dlouho má být MAC adresa ve CAM table uložena a když je tato doba překročena MAC adresa se z této tabulky smaže. K mazání musí docházet protože paměť na ukládání MAC adres není nekonečná. Kromě TTL se také ukládá konrétní číslo interface switche ke konrétní MAC adrese.
 
 
@@ -60,6 +62,15 @@ Switche se nejčastěji používají na rozšíření kabelové počítačové s
 # Router
 
 Pracuje na vrstvě 3 - síťová vrstva (Network layer)
+
+Na rozdíl od Switche, Router vyhodnocuje IP adresy a na základě její hodnoty vyhodnocuje zda je nutné požadavek poslat do další sítě či nikoliv. Informace o IP adresách si router neukládá. Místo toho si ukládá informace o sítích do Routing Table, tedy do routing table si ukládá IP adresu sítě (Network portion) a Network mask.
+
+Router používá dvě interfaces:
+
+* Serial interface - používá PPP
+* Ethernet interface - používá MAC adresy
+
+PC_1, které chce poslat request na PC_2, které je na jiné síti, tak dochází k přwnosu informací následovně. PC_1 vyhodnotí zda IP adresa kterou hledáme je na stejné síti či nikoliv. Toho docílí pomocí AND. Kde kontroluje Network ID vlastní sítě a masky s cílovou IP adresou. Pokud vyhodnotí, že IP adresa není na stejné síti doplní požadavek nsáledovně - Layer 2 vyplní pomocí své MAC adresy jako Source address a destination address vyplni pomocí broadcast MAC adresy FF:FF:FF:FF:FF:FF. To se zašle na všechny zařízení v lokální síti. Na ni se najde IP adresa default gateway, což je náš router a ARP protokolem vrátí zpět svou MAC adresu. PC_1 si uloží do ARP cache dvojici IP adresu default gateway s MAC adresou našeho routeru.
 
 Spojuje dvě různé sítě většinou se bude jednat a propojení mezi sítí Local Area Network (LAN - lokální síť) a Wide Area Network (WAN - Internet).
 Routuje IP adresy mezi různými sítěmi.

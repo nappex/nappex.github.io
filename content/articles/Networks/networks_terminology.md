@@ -78,7 +78,7 @@ Pro lepčí zapamatování slouží tyto mnemotechnické pomůcky:
 Jednotlivé vsrtvy jsou:
 
 1. Physical layer (fyzická vrstva)
-2. Data link layer (linková vrstva)
+2. Data link layer (linková vrstva) - ARP
 3. Network layer (síťová vrstva) - IP, DHCP, ARP, ICMP
 4. Transport layer (transportní vrstva) - TCP, UDP
 5. Session layer (relační vrstva)

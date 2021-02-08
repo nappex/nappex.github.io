@@ -1,5 +1,5 @@
 ---
-Title: How I publish my blog
+Title: How I've published my pelican blog
 Date: 2020-11-02
 Category: Python
 Tags: python, beginners
