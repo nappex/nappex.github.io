@@ -48,6 +48,22 @@ Broadcast address má tvar -> FF:FF:FF:FF:FF:FF
 
 Broad cast adresa se používá když neznáme MAC adresu cílovéhé zařízení v takovém případě do požadavku k IP adrese připíšeme broadcast adresu, díky této adrese pošleme požadavek na všechny zařízení v síti a ozve se nám zařízení, které má požadovanou IP adresu.
 
+# Communications types
+
+## Unicast
+
+One to one communication. One speaking one listening
+
+## Broadcast
+
+One to many. One speaking and everybody listening. It is little bit spammer beacuse it is sent you information also in case if you dont want to receive any.
+
+With broadcast is a lot of problems.
+
+## Multicast
+
+One to many. Same as broadcast but multicast speaking just to who wants to listen. It means that I have register that I want to listen. If I dont let know to speaker that I want to listen then I dont receive any information. It works similar as when you subscribe some mail informations.
+
 # OSI model
 
 Open Systems Interconnection model
