@@ -1,0 +1,190 @@
+/* GENERAL */
+
+
+body {
+    margin: 0;
+    background: #eeefed;
+    font-family: 'Open Sans', sans-serif;
+    padding: 30px;
+}
+
+section > h1 {
+    font-weight: 300;
+    font-size: 27px;
+    text-align: center;
+    text-decoration:  solid underline #000 1px;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+
+h1 > i {
+    margin-right: 10px;
+}
+
+#about h1,
+#contact h1 {
+    text-decoration-color: #fff;
+}
+
+section {
+    margin-top: 30px;
+    padding: 20px 20%;
+    /* overflow: hidden; */
+    /* clear: both; */
+}
+
+section p {
+    text-align: justify;
+}
+
+#about {
+    background-color: #67cde4;
+    color: #fff;
+}
+
+#about img {
+    float: right;
+    margin: 15px 35px;
+    margin-left: 50px;
+    width: 220px;
+    border: #fff 5px solid;
+    border-radius: 50%;
+}
+
+.post-about {
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;
+
+
+}
+
+#contact {
+    background-color: #3b4141;
+    color: #fff;
+}
+
+.btn-down {
+    display: inline-block;
+    padding: 15px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #fff;
+    background-color:rgb(243, 95, 95);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+a.btn-down:hover {
+    background-color: grey;
+    color: lightgrey;
+}
+
+.intro-site {
+    margin-bottom: 80px;
+}
+
+.menu {
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.nav-bar {
+    background: #fff;
+    border: 2px solid grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.nav-bar li {
+    margin: 30px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-size: 16pt;
+    font-weight: 700;
+    color: #504A4B;
+    margin: 0 5px;
+    padding: 14px 22px;
+
+}
+
+.nav-bar a:hover {
+	text-shadow: -1px -1px 0px #fff, -2px -2px 0px #000;
+    background-color:rgb(243, 95, 95);
+    border-radius: 5px;
+    color: black;
+
+}
+
+.social,
+.personal,
+.tools {
+    text-align: center;
+}
+
+.social {
+    background-color: #00bdbd;
+}
+
+.social li,
+.personal li {
+    margin: 50px;
+    margin-right: 25px;
+}
+
+.personal li {
+    margin-top: 30px;
+}
+
+.tools li {
+    margin-top: 50px;
+    margin-right: 50px;
+}
+
+.social a,
+.personal a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.social i:hover,
+.personal i:hover {
+    color:lightgrey;
+}
+
+.social i,
+.personal i {
+    color: #fff;
+    margin-right: 5px;
+}
+
+.social i > span,
+.personal i > span {
+    font-size: 20px;
+}
+
+.group:before,
+.group:after {
+    content: " ";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    *zoom: 1;
+}
