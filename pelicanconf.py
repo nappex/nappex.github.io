@@ -71,7 +71,7 @@ DEFAULT_METADATA = {
 # A list of filenames that should be retained and not deleted from the output directory.
 # One use case would be the preservation of version control data.
 OUTPUT_RETENTION = [".git"]
-OUTPUT_PATH = 'output/myblog/'
+OUTPUT_PATH = 'myblog/'
 
 SUMMARY_MAX_LENGTH = 50
 SUMMARY_END_SUFFIX = '…'
