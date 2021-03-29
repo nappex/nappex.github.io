@@ -3,7 +3,7 @@
 
 AUTHOR = 'David'
 SITENAME = "The Snail's journey"
-SITEURL = ''
+SITEURL = 'https://nappex.github.io/myblog'
 LANDING_PAGE_TITLE = "Welcome to " + SITENAME + \
                     " through the IT world !"
 THEME = 'elegant'
