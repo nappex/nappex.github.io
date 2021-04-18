@@ -1,5 +1,5 @@
 ---
-Title: Solve secret of all configuration format
+Title: Discover secrets of config formats
 Date: 2020-12-04
 Category: Python
 Tags: python, intermediate
