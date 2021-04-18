@@ -10,13 +10,6 @@
     </head>
 
     <body>
-        <header class="intro-site">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quos maxime dolorum similique sequi qui mollitia saepe ut blanditiis! Officiis quae omnis illo minus facere exercitationem at id numquam impedit!
-            </p>
-
-        </header>
-
         <main>
             <nav>
                 <ul class="menu nav-bar">
@@ -24,30 +17,41 @@
                     <li><a href="#experience">EXPERIENCE</a></li>
                     <li><a href="#education">EDUCATION</a></li>
                     <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#volunteer">VOLUNTEER</a></li>
+                    <li><a href="#courses">COURSES</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
 
-            <section id="about" class="group">
+            <section id="about">
                 <h1>
                     <i class="fas fa-info-circle fa-2x"></i>
                     About me
                 </h1>
 
-                <aside>
-                    <img src="static/img/me_to_CV.png" alt="Photo of me">
-                </aside>
 
-                <div class="post-about">
+
+                <h3>
                     David Štroch
+                </h3>
+
+                <h4>
+                    Self-learn IT geek
+                </h4>
+                <div class="flex-sections">
+                    <div>
+                        <p class="p-exp">
+                            I've been walking around computers since my 14 years old. I've been always fascinated how computers work, unfortunately my attempts to get deeper to computers never worked out. Situation was changed when I found PyLadies courses. I've learnt the fundamentals about programming and computers. And everything seems much easier with this community behind my back. Since then, I've been trying push my bounderies of knowledge every day. My study and experience journey not seems as typical journey of programmer in common. Despite the circumstances I've kept my enthusiasm for computers to these days.
+                        </p>
+                        <p class="p-exp">
+                            I enjoy work with these technologies: Python, Linux, networks, Flask
+                        </p>
+
+                        <a class="btn-down" href="static/docs/dstroch_CV_ver2_en.pdf">Download printable CV</a>
+                    </div>
+                    <aside>
+                        <img src="static/img/me_to_CV.png" alt="Photo of me">
+                    </aside>
                 </div>
-
-                <p>
-                    I've been walking around computers since my 14 years. I've never been a genius of electronics or PC but its always fascinated me how can work these technologies. My study and experience journey not seems as typical journey of programmer in common. Despite the circumstances I've kept my enthusiasm for computers to these days.
-                </p>
-
-                <a class="btn-down" href="static/docs/dstroch_CV_ver2_en.pdf">Download printable CV</a>
 
             </section>
 
@@ -56,9 +60,45 @@
                     <i class="fas fa-briefcase fa-2x"></i>
                     Experience
                 </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, cupiditate quasi? Aliquid laboriosam nam, blanditiis eius impedit, accusamus libero explicabo pariatur harum laudantium et doloribus minus molestias vel dolores officiis.
-                </p>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>RSBP spol. s.r.o.</h4>
+                        <p class="p-exp">
+                            Project manager of gas fire protection systems. Technical drawing, technical documentation, technical realisation of orders. Preparing a schedule for technicians. Care about customers.
+                        </p>
+
+                    </div>
+                    <div>
+                        09/2017 - present
+                    </div>
+                </div>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>ArcelorMittal</h4>
+                        <p class="p-exp">
+                            Firefighter. Eliminate dangerous states as fires, accidents, injuries and work at hegihts.
+                        </p>
+                    </div>
+                    <div>
+                        09/2014 - 05/2017
+                    </div>
+                </div>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>Theatry of puppet Ostrava</h4>
+                        <p class="p-exp">
+                            Fire watch. Checking compliance with fire protection regulations at events with large audience.
+                        </p>
+                    </div>
+                    <div>
+                        09/2014 - 05/2017
+                    </div>
+                </div>
+
+
             </section>
 
             <section id="education">
@@ -66,9 +106,43 @@
                     <i class="fas fa-user-graduate fa-2x"></i>
                     Education
                 </h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fugiat atque, exercitationem eaque nulla architecto nesciunt? Architecto corporis aperiam tenetur iste deserunt delectus aspernatur voluptates repellendus modi. Eos, pariatur aliquam?
-                </p>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>Technical university of Ostrava</h4>
+                        <p class="p-exp">
+                            Fire and explosion protection in industry - Master's degree
+                        </p>
+                    </div>
+                    <div>
+                        09/2011 - 05/2017
+                    </div>
+                </div>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>Czech Technical University in Prague</h4>
+                        <p class="p-exp">
+                            Cybernetics and robotics - Unfinished
+                        </p>
+                    </div>
+                    <div>
+                        09/2010 - 04/2011
+                    </div>
+                </div>
+
+                <div class="flex-box">
+                    <div>
+                        <h4>Gymnasium Hladnov</h4>
+                        <p class="p-exp">
+                            High school
+                        </p>
+                    </div>
+                    <div>
+                        09/2002 - 05/2010
+                    </div>
+                </div>
+
             </section>
 
             <section id="skills">
@@ -79,7 +153,7 @@
 
                 <ul class="menu tools">
                     <li>
-                        <i class="fab fa-python fa-7x"></i>
+                        <i class="fab fa-python fa-7x python-logo"></i>
                         <div class="progress-circle p60 over50">
                             <span>60%</span>
                             <div class="left-half-clipper">
@@ -90,7 +164,7 @@
                     </li>
 
                     <li>
-                        <i class="fab fa-html5 fa-7x"></i>
+                        <i class="fab fa-html5 fa-7x html-logo"></i>
                         <div class="progress-circle p70 over50">
                             <span>70%</span>
                             <div class="left-half-clipper">
@@ -101,7 +175,7 @@
                     </li>
 
                     <li>
-                        <i class="fab fa-css3-alt fa-7x"></i>
+                        <i class="fab fa-css3-alt fa-7x css-logo"></i>
                         <div class="progress-circle p30">
                             <span>30%</span>
                             <div class="left-half-clipper">
@@ -114,7 +188,7 @@
 
                 <ul class="menu tools">
                     <li>
-                        <i class="fab fa-js-square fa-7x"></i>
+                        <i class="fab fa-js-square fa-7x js-logo"></i>
                         <div class="progress-circle p10">
                             <span>10%</span>
                             <div class="left-half-clipper">
@@ -136,7 +210,7 @@
                     </li>
 
                     <li>
-                        <i class="fab fa-git-square fa-7x"></i>
+                        <i class="fab fa-git-square fa-7x git-logo"></i>
                         <div class="progress-circle p60 over50">
                             <span>60%</span>
                             <div class="left-half-clipper">
@@ -148,21 +222,180 @@
                     </li>
                 </ul>
 
-
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit ullam eius perspiciatis impedit voluptate repellendus velit, consequatur, tenetur possimus quidem nisi soluta est tempore magni obcaecati magnam dolorum autem? Nostrum!
-                </p>
             </section>
 
-            <section id="volunteer">
+            <section id="courses">
                 <h1>
-                    <i class="fas fa-people-carry fa-2x"></i>
-                    Volunteering
+                    <i class="fas fa-book-reader fa-2x"></i>
+                    Courses & Workshops
                 </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit ullam eius perspiciatis impedit voluptate repellendus velit, consequatur, tenetur possimus quidem nisi soluta est tempore magni obcaecati magnam dolorum autem? Nostrum!
-                </p>
+                <div class="grid-container">
+                    <div class="g-item">
+                        <i class="fab fa-python python-logo"></i>
+                    </div>
+                    <div class="g-item">
+                        Python beginners – environment Canvas
+                    </div>
+                    <div class="g-item">
+                        1 month, 2018
+                    </div>
+
+                    <div class="g-item">
+                        <i class="fab fa-python python-logo"></i>
+                    </div>
+                    <div class="g-item">
+                        PyLadies - Python for beginners
+                    </div>
+                    <div class="g-item">
+                        4 months, 2019
+                    </div>
+
+                    <div class="g-item">
+                        <i class="fab fa-python python-logo"></i>
+                    </div>
+                    <div class="g-item">
+                        Python's libraries (advanced)
+                    </div>
+                    <div class="g-item">
+                        4 months, 2020
+                    </div>
+
+                    <div class="g-item">
+                        <i class="fab fa-python python-logo"></i>
+                         + Jupyter
+                    </div>
+                    <div class="g-item">
+                        Data analysis
+                    </div>
+                    <div class="g-item">
+                        4 months, 2020
+                    </div>
+
+                    <div class="g-item">
+                        <i class="fab fa-python python-logo"></i>
+                         + Jupyter
+                    </div>
+                    <div class="g-item">
+                        Data analysis - workshop
+                    </div>
+                    <div class="g-item">
+                        1 day, 2019
+                    </div>
+
+                    <div class="g-item">
+                        <div>Hack The Box</div>
+                        <div>Engeto (Linux, Python)</div>
+                        <div>Udemy CCNA (David Bombal)</div>
+                    </div>
+                    <div class="g-item">
+                        Online courses
+                    </div>
+                    <div class="g-item">
+                        Never ending story
+                    </div>
+
+                </div>
+
             </section>
+
+            <div class="flex-sections">
+                <section id="projects">
+                    <h1>
+                        <i class="fas fa-hands-helping fa-2x"></i>
+                        Projects
+                    </h1>
+                    <ul>
+                        <li>
+                            Freezeyt - static site generator
+                            <a href="https://github.com/encukou/freezeyt">
+                            <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            Inovice generator
+                            <a href="https://github.com/nappex/invoice_generator">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            My Blog
+                            <a href="https://nappex.github.io/myblog/">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+                <section id="volunteer">
+                    <h1>
+                        <i class="fas fa-people-carry fa-2x"></i>
+                        Volunteering
+                    </h1>
+                    <ul>
+                        <li>
+                            Contribute project freezeyt
+                            <a href="https://github.com/encukou/freezeyt">
+                            <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                        <li>
+                            PyLadies - assistent coach
+                        </li>
+                        <li>
+                            Voluntary firefighter 2014-2018
+                        </li>
+                    </ul>
+                </section>
+                <section id="hobbies">
+                    <h1>
+                        <i class="fas fa-mountain fa-2x"></i>
+                        Hobbies
+                    </h1>
+                    <ul>
+                        <li>
+                            Linux / Unix
+                        </li>
+                        <li>
+                            Cryptocurrencies
+                        </li>
+                        <li>
+                            Programming
+                        </li>
+                        <li>
+                            CyberSecurity
+                        </li>
+                        <li>
+                            Data analysis
+                        </li>
+                        <li>
+                            Books - biography
+                        </li>
+                        <li>
+                            Walks in mountain / forest with dog
+                        </li>
+                        <li>
+                            Sport - (basketball, football)
+                        </li>
+                        <li>
+                            Discover unknown places by bicycle
+                        </li>
+                    </ul>
+                </section>
+                <section id="languages">
+                    <h1>
+                        <i class="fas fa-language fa-2x"></i>
+                        Languages
+                    </h1>
+                    <ul>
+                        <li>
+                            English - intermediate
+                        </li>
+                        <li>
+                            French - beginner
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
 
             <section id="contact">
                 <h1>
@@ -198,15 +431,6 @@
                 <li>
                     <a href="https://github.com/nappex">
                         <i class="fab fa-github fa-3x"></i>
-                        <span>Repo</span>
-
-                    </a>
-
-                </li>
-                <li>
-                    <a href="https://nappex.github.io">
-                        <i class="fab fa-github fa-3x"></i>
-                        <span>Blog</span>
                     </a>
                 </li>
                 <li>
