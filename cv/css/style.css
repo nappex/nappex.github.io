@@ -59,9 +59,8 @@ section p {
     border-radius: 50%;
 }
 
-#about h3,
-#about h4 {
-    margin-left: 15%;
+#about aside {
+    align-self: center;
 }
 
 .p-exp {
@@ -73,17 +72,16 @@ ul li {
     margin-bottom: 10px;
 }
 
-.flex-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
 .flex-sections {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 70%;
-    margin: auto auto
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .flex-box div:first-child {
@@ -194,7 +192,6 @@ a.btn-down:hover {
     color: #504A4B;
     margin: 0 5px;
     padding: 14px 22px;
-
 }
 
 .nav-bar a:hover {
@@ -202,7 +199,6 @@ a.btn-down:hover {
     background-color:rgb(243, 95, 95);
     border-radius: 5px;
     color: black;
-
 }
 
 .social,
