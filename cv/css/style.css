@@ -12,6 +12,7 @@ section > h1 {
     font-weight: 300;
     font-size: 27px;
     text-align: center;
+
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1 > i {
 
 section {
     margin-top: 30px;
-    padding: 20px;
+    padding: 20px 30px;
     /* overflow: hidden; */
     /* clear: both; */
 }
@@ -40,8 +41,6 @@ section p {
     /* background-color: #67cde4; */
     background-color: #00bdbd;
     color: #fff;
-    padding-left: 10%;
-    padding-right: 10%;
     border-radius: 10px;
 
 }
@@ -51,9 +50,6 @@ section p {
 }
 
 #about img {
-    float: right;
-    margin: 15px 35px;
-    margin-left: 50px;
     width: 220px;
     border: #fff 5px solid;
     border-radius: 50%;
@@ -61,6 +57,12 @@ section p {
 
 #about aside {
     align-self: center;
+    margin-left: 40px;
+    max-width: 300px;
+}
+
+#about p {
+    font-style: italic;
 }
 
 .p-exp {
@@ -74,8 +76,14 @@ ul li {
 
 .flex-sections {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#about .flex-sections div:first-child {
+    max-width: 800px;
 }
 
 .flex-box {
