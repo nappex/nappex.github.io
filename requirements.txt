@@ -15,3 +15,4 @@ smartypants
 soupsieve
 typogrify
 Unidecode
+pyyaml
