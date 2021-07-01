@@ -1,0 +1,13 @@
+- title: PyLadies Ostrava
+  name: Python for beginners - python basics
+  lecturer: Lumír Balhar
+  start_date: 02/2019
+  end_date: 05/2019
+  length: 4 months
+  cost: free
+  complete: true
+  technology: Python
+  type: course
+  materials:
+    - [PyLadies Ostrava 2019](https://naucse.python.cz/2019/pyladies-ostrava-jaro/)
+  estimate_time: 80+ hours with all homeworks
