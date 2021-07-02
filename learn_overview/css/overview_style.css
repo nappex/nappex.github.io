@@ -1,0 +1,60 @@
+h1, caption {
+    font-family: fantasy;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 50px 50px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table caption {
+    font-size: 20px;
+    font-weight: bold;
+    caption-side: top;
+    margin: 10px;
+    text-align: left;
+}
+
+.styled-table thead tr {
+    background-color: #00bdbd;
+    color: #ffffff;
+    text-align: center;
+}
+
+.styled-table th {
+    padding: 25px 0 25px 0;
+}
+
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: thin solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 4px solid #00bdbd;
+}
+
+.styled-table tbody tr:hover {
+    color: #00bdbd;
+}
+
+.styled-table ul {
+    padding: 0;
+    list-style-type: none;
+    text-align: left;
+}
+
+.styled-table ul li {
+    margin: 7px 0 7px 0;
+}
