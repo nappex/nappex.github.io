@@ -1,0 +1,239 @@
+- title: PyLadies Ostrava
+  description: Python for beginners
+  level: beginner
+  lecturer: Lumír Balhar
+  start_date: 02/2019
+  end_date: 05/2019
+  cost: free
+  completed: true
+  technology: Python
+  type: course
+  form: classroom
+  materials:
+    - text: texts - naucse.python.cz
+      href: https://naucse.python.cz/2019/pyladies-ostrava-jaro/
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PLtMx05xox2Ej5-C_rbh75Bb3PKmP3bCTc
+  estimate_time: 80+ hours with all homeworks
+
+- title: PyLadies Ostrava
+  description: Python's libraries
+  level: advanced
+  lecturer: Lumír Balhar
+  start_date: 09/2020
+  end_date: 12/2020
+  cost: free
+  completed: true
+  technology: Python
+  type: course
+  form: online
+  materials:
+    - text: texts - naucse.python.cz
+      href: https://naucse.python.cz/2020/pyladies-ostrava-podzim-pokrocili/
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PLtMx05xox2EiASl8pnXmssbxA2rHa4s0s
+    - text: source code - GitHub
+      href: https://github.com/frenzymadness/Advanced_PyLadies
+  estimate_time: 40+ hours with all homeworks
+
+- title: PyLadies Ostrava
+  description: Data analysis with python
+  level: advanced
+  lecturer: Lumír Balhar
+  start_date: 02/2020
+  end_date: 06/2020
+  cost: free
+  completed: true
+  technology: Python
+  type: course
+  form: online
+  materials:
+    - text: texts - naucse.python.cz
+      href: https://naucse.python.cz/2020/pydata-ostrava-jaro/
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PLtMx05xox2Eipf5I1Be5VbYNoAd1Xs3IU
+  estimate_time: 40+ hours with all homeworks
+
+- title: PyLadies Ostrava
+  description: Data analysis with python
+  level: advanced
+  lecturer: Lumír Balhar
+  start_date: 02/2020
+  end_date: 06/2020
+  cost: free
+  completed: true
+  technology: Python
+  type: course
+  form: online
+  materials:
+    - text: texts - naucse.python.cz
+      href: https://naucse.python.cz/2020/pydata-ostrava-jaro/
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PLtMx05xox2Eipf5I1Be5VbYNoAd1Xs3IU
+  estimate_time: 40+ hours with all homeworks
+
+- title: PyLadies Plzeň
+  description: Advanced python
+  level: advanced
+  lecturer: Filip Vaculík
+  start_date: 01/2021
+  end_date: 05/2021
+  cost: free
+  completed: false
+  technology: Python
+  type: course
+  form: online
+  materials:
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PL2svwyZ8kybw4zDC7_Gz4_-zsJWS3ngKc
+    - text: GitHub materials
+      href: https://github.com/Mintaka/mypyladies_sqlite
+  estimate_time: unknown hours
+
+- title: Freezeyt
+  description: Static sites generator
+  level: advanced
+  lecturer: Petr Viktorin
+  start_date: 09/2020
+  end_date: today
+  cost: free
+  completed: false
+  technology: Python
+  type: project
+  form: online
+  materials:
+    - text: text - freezeyt blog
+      href: https://encukou.github.io/freezeyt/
+    - text: videos - youtube playlist
+      href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3EU5Oez3ZSVjY5pZJttP2lT
+    - text: source code - GitHub
+      href: https://github.com/encukou/freezeyt
+  estimate_time: 250+ hours
+
+- title: Donors registry
+  description: Web application for czech red cross
+  level: advanced
+  lecturer: Lumír Balhar
+  start_date: 09/2020
+  end_date: today
+  cost: free
+  completed: false
+  technology: Python
+  type: project
+  form: online
+  materials:
+    - text: source code - GitHub
+      href: https://github.com/frenzymadness/donors_registry
+  estimate_time: 75+ hours
+
+- title: Hack the Box Academy
+  description: Linux fundamentals
+  level: beginner
+  lecturer: unknown
+  start_date: 12/2020
+  end_date: today
+  cost: free
+  completed: false
+  technology: linux
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://academy.hackthebox.eu/module/details/18
+  estimate_time: 8+ hours
+
+- title: Engeto Academy
+  description: Git basics
+  level: beginner
+  lecturer: unknown
+  start_date: 12/2019
+  end_date: 01/2020
+  cost: paid
+  completed: true
+  technology: git
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://learn.engeto.com/cs/kurz/git-zaklady-pro-uzivatele/lekce
+  estimate_time: 8+ hours
+
+- title: Engeto Academy
+  description: Linux basics
+  level: beginner
+  lecturer: unknown
+  start_date: 01/2020
+  end_date: 06/2020
+  cost: paid
+  completed: false
+  technology: linux
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://learn.engeto.com/cs/katalog/linux/
+  estimate_time: 10+ hours
+
+- title: Udemy
+  description: Anonymity, privacy and security
+  level: beginner
+  lecturer: Zaid Sabih
+  start_date: 04/2020
+  end_date: 07/2020
+  cost: paid
+  completed: true
+  technology: tor, VPN, gpg
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.udemy.com/course/the-ultimate-dark-web-anonymity-privacy-security-course/
+  estimate_time: 15+ hours
+
+- title: Udemy
+  description: Network fundamentals
+  level: beginner
+  lecturer: David Bombal
+  start_date: 01/2021
+  end_date: unknown
+  cost: paid
+  completed: false
+  technology: networks
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.udemy.com/course/complete-networking-fundamentals-course-ccna-start/
+  estimate_time: 15+ hours
+
+- title: INE
+  description: Cyber Security - penetration testing
+  level: beginner
+  lecturer: Lukasz Mikula
+  start_date: 02/2021
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: networks, linux
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://my.ine.com/CyberSecurity/courses/309de2a5/penetration-testing-prerequisites
+  estimate_time: 10 hours
+
+- title: cyberyozh
+  description: Internet privacy and security
+  level: beginner
+  lecturer: cyberyozh
+  start_date: 01/2021
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: networks, linux
+  type: book
+  form: online
+  materials:
+    - text: course url
+      href: https://book.cyberyozh.com/what-will-you-learn-from-this-book/
+  estimate_time: 30+ hours

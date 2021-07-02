@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview</title>
+    <link rel="stylesheet" href="css/overview_style.css">
+</head>
+<body>
+    <h1>Learn path overview</h1>
+
+    <table class="styled-table">
+        <caption>Completed tasks</caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Difficult</th>
+                <th>Lecturer</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Cost</th>
+                <th>Technology</th>
+                <th>Type</th>
+                <th>Form</th>
+                <th>Materials</th>
+                <th>Estimated time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in completed %}
+            <tr>
+                <td>{{ task.title | title }}</td>
+                <td>{{ task.description | title }}</td>
+                <td>{{ task.level }}</td>
+                <td>{{ task.lecturer | title }}</td>
+                <td>{{ task.start_date }}</td>
+                <td>{{ task.end_date }}</td>
+                <td>{{ task.cost }}</td>
+                <td>{{ task.technology }}</td>
+                <td>{{ task.type | title }}</td>
+                <td>{{ task.form | title }}</td>
+                <td>
+                    <ul>
+                    {% for material in task.materials %}
+                        <li>
+                            <a href="{{ material.href}}">{{ material.text }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+
+                </td>
+                <td>{{ task.estimate_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+    <table class="styled-table">
+        <caption>Tasks in queue</caption>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Difficult</th>
+                <th>Lecturer</th>
+                <th>Start date</th>
+                <th>End date</th>
+                <th>Cost</th>
+                <th>Technology</th>
+                <th>Type</th>
+                <th>Form</th>
+                <th>Materials</th>
+                <th>Estimated time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in uncompleted %}
+            <tr>
+                <td>{{ task.title | title }}</td>
+                <td>{{ task.description | title }}</td>
+                <td>{{ task.level }}</td>
+                <td>{{ task.lecturer | title }}</td>
+                <td>{{ task.start_date }}</td>
+                <td>{{ task.end_date }}</td>
+                <td>{{ task.cost }}</td>
+                <td>{{ task.technology }}</td>
+                <td>{{ task.type | title }}</td>
+                <td>{{ task.form | title }}</td>
+                <td>
+                    <ul>
+                    {% for material in task.materials %}
+                        <li>
+                            <a href="{{ material.href }}">{{ material.text }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ task.estimate_time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+
+</body>
+</html>
