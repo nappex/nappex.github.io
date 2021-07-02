@@ -6,7 +6,7 @@ from yaml import safe_load
 
 TEMPLATE_FILE = Path('templates', 'index.html')
 INPUT_FILE = Path('data.yaml')
-OUTPUT_FILE = Path(__file__).parents[1] / 'output' / 'learn_review' / 'index.html'
+OUTPUT_FILE = Path(__file__).parents[1] / 'output' / 'learn_overview' / 'index.html'
 
 env = Environment(loader=FileSystemLoader(TEMPLATE_FILE.parent))
 template = env.get_template(TEMPLATE_FILE.name)
