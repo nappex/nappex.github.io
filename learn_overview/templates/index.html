@@ -31,8 +31,8 @@
         <tbody>
             {% for task in completed %}
             <tr>
-                <td>{{ task.title | title }}</td>
-                <td>{{ task.description | title }}</td>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
                 <td>{{ task.level }}</td>
                 <td>{{ task.lecturer | title }}</td>
                 <td>{{ task.start_date }}</td>
@@ -81,8 +81,8 @@
         <tbody>
             {% for task in uncompleted %}
             <tr>
-                <td>{{ task.title | title }}</td>
-                <td>{{ task.description | title }}</td>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
                 <td>{{ task.level }}</td>
                 <td>{{ task.lecturer | title }}</td>
                 <td>{{ task.start_date }}</td>
