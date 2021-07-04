@@ -237,3 +237,53 @@
     - text: course url
       href: https://book.cyberyozh.com/what-will-you-learn-from-this-book/
   estimate_time: 30+ hours
+
+- title: Learn2code
+  description: Webrebel1
+  level: beginner
+  lecturer: Roman Hraška (Yablko)
+  start_date: 03/2021
+  end_date: unknown
+  cost: paid
+  completed: false
+  technology: HTML, CSS, Javascript, jQuery
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.learn2code.sk/aplikacia/skupiny#/webrebel-1-html-css-javascript/chapters/00-zaciatok-html-css-kurzu-5313
+  estimate_time: 50+ hours
+
+- title: Learn2code
+  description: javascript ES6
+  level: advanced
+  lecturer: Roman Hraška (Yablko)
+  start_date: unknown
+  end_date: unknown
+  cost: paid
+  completed: false
+  technology: Javascript
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.learn2code.sk/kurzy/online-kurz-javascript-es6
+  estimate_time: 50+ hours
+
+- title: PyLadies Brno
+  description: Linuxová administrace
+  level: beginner
+  lecturer: Petr Viktorin
+  start_date: 09/2020
+  end_date: 12/2020
+  cost: free
+  completed: true
+  technology: Linux, Fedora
+  type: course
+  form: online
+  materials:
+    - text: text - naucse.python.cz
+      href: https://naucse.python.cz/2020/linux-admin/
+    - text: youtube playlist
+      href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3HNjtAXCCeQPyRioItF1egJ
+  estimate_time: 50+ hours
