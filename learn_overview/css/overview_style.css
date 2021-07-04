@@ -25,11 +25,7 @@ h1, caption {
     text-align: center;
 }
 
-.styled-table th {
-    padding: 25px 0 25px 0;
-}
-
-.styled-table td {
+.styled-table td, th {
     padding: 12px 15px;
 }
 
