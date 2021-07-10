@@ -287,3 +287,35 @@
     - text: youtube playlist
       href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3HNjtAXCCeQPyRioItF1egJ
   estimate_time: 50+ hours
+
+- title: Ethical Hacking Countermeasures
+  description: CEH Lab manual
+  level: beginner
+  lecturer: Grey Hat Hacker
+  start_date: 07/2021
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: security, networks
+  type: book
+  form: online
+  materials:
+    - text: text-GitHub
+      href: https://github.com/khanhnnvn/CEHv10
+  estimate_time: 50+ hours
+
+- title: abatchy blog
+  description: Kernel exploitation
+  level: advanced
+  lecturer: abatchy
+  start_date: 07/2021
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: security, networks
+  type: tutorial
+  form: online
+  materials:
+    - text: text-blog
+      href: https://www.abatchy.com/
+  estimate_time: 50+ hours
