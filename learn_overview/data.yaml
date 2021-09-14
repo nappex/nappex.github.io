@@ -319,3 +319,35 @@
     - text: text-blog
       href: https://www.abatchy.com/
   estimate_time: 50+ hours
+
+- title: Edx Harvard CS50
+  description: CS50's Introduction to Computer Science
+  level: beginner
+  lecturer: David J. Malan, Doug Lloyd
+  start_date: 09/2021
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: C, SQL, JavaScript, Linux, Python
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://learning.edx.org/course/course-v1:HarvardX+CS50+X/home
+  estimate_time: 50+ hours
+
+- title: Udemy course web design
+  description: Complete Web Design HTML, CSS, Javascript and jQuery
+  level: beginner
+  lecturer: Ivan Lourenço Gomes
+  start_date: 09/2021
+  end_date: unknown
+  cost: 15$
+  completed: false
+  technology: JavaScript, HTML, CSS
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.udemy.com/course/get-started-with-html-css-the-frontend-developer-bootcamp/
+  estimate_time: 30+ hours
