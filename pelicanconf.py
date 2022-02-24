@@ -40,7 +40,6 @@ PLUGINS = [
 ]
 
 
-
 DIRECT_TEMPLATES = ["index", "tags", "categories", "archives", "search", "404"]
 
 SITEMAP = {
