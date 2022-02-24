@@ -30,12 +30,11 @@ USE_SHORTCUT_ICONS=True
 
 PLUGIN_PATHS = ['pelican-plugins/']
 PLUGINS = [
-    "extract_toc",
     "neighbors",
     "related_posts",
     "render_math",
     "series",
-    "share_post",
+    "share-post",
     "search",
 ]
 
