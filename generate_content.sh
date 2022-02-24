@@ -26,14 +26,21 @@ then
         "related-posts"
         "neighbors"
     )
+    #for plugin in "${pelican_plugins[@]}"
+    #do
+    #    mkdir -p pelican-plugins/$plugin
+    #    src="https://github.com/pelican-plugins/${plugin}"
+    #    dst="pelican-plugins/${plugin}"
+    #    git clone --recursive $src $dst 1>/dev/null
+    #    echo "[INFO] pelican-plugin ${plugin} was created"
+    #    sleep 0.5
+    #done
     for plugin in "${pelican_plugins[@]}"
     do
-        mkdir -p pelican-plugins/$plugin
-        src="https://github.com/pelican-plugins/${plugin}"
-        dst="pelican-plugins/${plugin}"
-        git clone --recursive $src $dst 1>/dev/null
+        pkg="pelican-${plugin}"
+        python -m pip install $pkg
         echo "[INFO] pelican-plugin ${plugin} was created"
-        sleep 0.5
+        sleep 1
     done
 fi
 
