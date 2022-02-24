@@ -31,8 +31,8 @@ USE_SHORTCUT_ICONS=True
 PLUGIN_PATHS = ['pelican-plugins/']
 PLUGINS = [
     "neighbors",
-    "related_posts",
-    "render_math",
+    "related-posts",
+    "render-math",
     "series",
     "share-post",
     "search",
