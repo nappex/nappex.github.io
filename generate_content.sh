@@ -18,29 +18,23 @@ source __venv__/bin/activate
 
 if [ ! -d $PWD/pelican-plugins ]
 then
-    plugins=(
-        "extract_toc"
-        "neighbors"
-        "related_posts"
-        "render_math"
+    pelican_plugins=(
+        "search"
         "series"
-        "share_post"
+        "share-post"
+        "render-math"
+        "related-posts"
+        "neighbors"
     )
-
-    for plugin in "${plugins[@]}"
+    for plugin in "${pelican_plugins[@]}"
     do
         mkdir -p pelican-plugins/$plugin
-        src="https://github.com/getpelican/pelican-plugins/tree/master/${plugin}"
+        src="https://github.com/pelican-plugins/${plugin}"
         dst="pelican-plugins/${plugin}"
         git clone --recursive $src $dst 1>/dev/null
         echo "[INFO] pelican-plugin ${plugin} was created"
         sleep 0.5
     done
-
-    mkdir -p pelican-plugins/search
-    git clone --recursive https://github.com/pelican-plugins/search pelican-plugins/search 1>/dev/null
-    echo "[INFO] pelican-plugin search was created"
-    sleep 0.5
 fi
 
 if [ ! $(pelican-themes -l | grep elegant) ]
