@@ -325,9 +325,9 @@
   level: beginner
   lecturer: David J. Malan, Doug Lloyd
   start_date: 09/2021
-  end_date: unknown
+  end_date: 12/2021
   cost: free
-  completed: false
+  completed: true
   technology: C, SQL, JavaScript, Linux, Python
   type: course
   form: online
