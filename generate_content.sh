@@ -14,7 +14,8 @@ then
 fi
 
 ./learn_overview/make_html.py
-source __venv__/bin/activate
+source __venv__/bin/activate || exit 1
+python -m pip install --upgrade pip || exit 1
 
 if [ ! -d $PWD/pelican-plugins ]
 then
@@ -38,7 +39,7 @@ then
     for plugin in "${pelican_plugins[@]}"
     do
         pkg="pelican-${plugin}"
-        python -m pip install $pkg
+        python -m pip install $pkg 1>/dev/null || exit 1
         echo "[INFO] pelican-plugin ${plugin} was created"
         sleep 1
     done
@@ -53,7 +54,7 @@ then
     echo "[INFO] pelican-themes created"
 fi
 
-pelican
+pelican || exit 1
 git add .
 git commit -m "$1"
 git push origin master
