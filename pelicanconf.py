@@ -31,11 +31,13 @@ USE_SHORTCUT_ICONS=True
 PLUGIN_PATHS = ['pelican-plugins/']
 PLUGINS = [
     "neighbors",
-    "related-posts",
-    "render-math",
+    "related_posts",
+    "render_math",
     "series",
-    "share-post",
-    "search",
+    "share_post",
+    #"search", https://github.com/stork-search/homebrew-stork-tap/issues/1
+    #https://github.com/pelican-plugins/search
+
 ]
 
 
