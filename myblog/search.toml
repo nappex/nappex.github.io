@@ -1,0 +1,108 @@
+[input]
+base_directory = "/Users/dstroch/develop/nappex.github.io/output/myblog"
+html_selector = "main"
+
+[[input.files]]
+path = "grub-fix.html"
+url = "grub-fix"
+title = "Jak vyřešit problémy pomocí zavaděče GRUB"
+
+[[input.files]]
+path = "workflow-automation.html"
+url = "workflow-automation"
+title = "Automate your workflow with shell script"
+
+[[input.files]]
+path = "handle_recursion.html"
+url = "handle_recursion"
+title = "Handle recursion"
+
+[[input.files]]
+path = "git-special-syntax.html"
+url = "git-special-syntax"
+title = "Git - advanced syntax"
+
+[[input.files]]
+path = "basics-networks-devices.html"
+url = "basics-networks-devices"
+title = "Introduction to network devices"
+
+[[input.files]]
+path = "choose-right-monitor.html"
+url = "choose-right-monitor"
+title = "Jak vybrat monitor ?"
+
+[[input.files]]
+path = "basics-terminology-networks.html"
+url = "basics-terminology-networks"
+title = "Introduction to terminology in networks"
+
+[[input.files]]
+path = "ip-address-info-macos.html"
+url = "ip-address-info-macos"
+title = "How get info about my IP address on macOS"
+
+[[input.files]]
+path = "configuration-simple.html"
+url = "configuration-simple"
+title = "Discover secrets of config formats"
+
+[[input.files]]
+path = "python-virtualenvs-installation.html"
+url = "python-virtualenvs-installation"
+title = "Install python and handle virtual environments on MacOS"
+
+[[input.files]]
+path = "build-your-privacy.html"
+url = "build-your-privacy"
+title = "Build and keep your privacy on top"
+
+[[input.files]]
+path = "object-comparing.html"
+url = "object-comparing"
+title = "Comparing objects in python"
+
+[[input.files]]
+path = "blog-publish-me.html"
+url = "blog-publish-me"
+title = "How I’ve published my pelican blog"
+
+[[input.files]]
+path = "python-scheme.html"
+url = "python-scheme"
+title = "Python project structure"
+
+[[input.files]]
+path = "exercises.html"
+url = "exercises"
+title = "Cvičení k programování"
+
+[[input.files]]
+path = "python-scraping-introduction.html"
+url = "python-scraping-introduction"
+title = "Introduction to web scraping with python"
+
+[[input.files]]
+path = "databases-relations.html"
+url = "databases-relations"
+title = "Relace (vztah) mezi databázemi (tabulkami)"
+
+[[input.files]]
+path = "files-introduction.html"
+url = "files-introduction"
+title = "Python knihovny pro práci se soubory"
+
+[[input.files]]
+path = "jupyter-convertion.html"
+url = "jupyter-convertion"
+title = "Konverze Jupyter notebooku do dalších formátů"
+
+[[input.files]]
+path = "git-fix-history.html"
+url = "git-fix-history"
+title = "Git - fix your history"
+
+[[input.files]]
+path = "git-introduction.html"
+url = "git-introduction"
+title = "Git - introduction to basic commands"
