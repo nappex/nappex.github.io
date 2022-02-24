@@ -41,6 +41,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
 
 
+
     </head>
     <body>
         <div id="content">
@@ -85,42 +86,41 @@
 </div>
 
 <div class="row-fluid">
-    <div class="span2 table-of-content">
-        <nav>
-        <h4>Contents</h4>
-        <div class="toc">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
 <ul>
 <li><a href="#intro">Intro</a></li>
 <li><a href="#install-python-to-macos">Install python to MacOS</a><ul>
 <li><a href="#homebrew">Homebrew</a><ul>
-<li><a href="#what-is-homebrew">What is Homebrew</a></li>
-<li><a href="#what-is-homebrew-cask">What is Homebrew Cask</a></li>
-<li><a href="#why-homebrew">Why Homebrew</a></li>
-<li><a href="#install-homebrew-to-macos">Install Homebrew to MacOS</a></li>
+<li><a href="#what-is-homebrew">What is&nbsp;Homebrew</a></li>
+<li><a href="#what-is-homebrew-cask">What is Homebrew&nbsp;Cask</a></li>
+<li><a href="#why-homebrew">Why&nbsp;Homebrew</a></li>
+<li><a href="#install-homebrew-to-macos">Install Homebrew to&nbsp;MacOS</a></li>
 <li><a href="#how-to-use-homebrew">How to use homebrew</a><ul>
 <li><a href="#some-basic-command">Some basic command</a><ul>
-<li><a href="#brew-list">brew list</a></li>
-<li><a href="#brew-install">brew install</a></li>
+<li><a href="#brew-list">brew&nbsp;list</a></li>
+<li><a href="#brew-install">brew&nbsp;install</a></li>
 </ul>
 </li>
 <li><a href="#how-to-keep-your-macos-clean">How to keep your macOS clean</a><ul>
-<li><a href="#brew-update">brew update</a></li>
-<li><a href="#brew-upgrade">brew upgrade</a></li>
-<li><a href="#brew-cleanup-s">brew cleanup -s</a></li>
-<li><a href="#brew-doctor-and-brew-missing">brew doctor and brew missing</a></li>
+<li><a href="#brew-update">brew&nbsp;update</a></li>
+<li><a href="#brew-upgrade">brew&nbsp;upgrade</a></li>
+<li><a href="#brew-cleanup-s">brew cleanup&nbsp;-s</a></li>
+<li><a href="#brew-doctor-and-brew-missing">brew doctor and brew&nbsp;missing</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#install-python-via-brew">Install python via brew</a></li>
+<li><a href="#install-python-via-brew">Install python via&nbsp;brew</a></li>
 <li><a href="#manage-different-version-of-python">Manage different version of python</a><ul>
-<li><a href="#with-brew">With brew</a></li>
+<li><a href="#with-brew">With&nbsp;brew</a></li>
 <li><a href="#with-pyenv">With pyenv</a><ul>
-<li><a href="#install-pyenv-with-homebrew">Install pyenv with homebrew</a></li>
+<li><a href="#install-pyenv-with-homebrew">Install pyenv with&nbsp;homebrew</a></li>
 <li><a href="#settings-of-path">Settings of <span class="caps">PATH</span></a></li>
-<li><a href="#advanced-configuration">Advanced configuration</a></li>
+<li><a href="#advanced-configuration">Advanced&nbsp;configuration</a></li>
 </ul>
 </li>
 </ul>
@@ -128,15 +128,15 @@
 </ul>
 </li>
 <li><a href="#virtual-environments">Virtual environments</a><ul>
-<li><a href="#why-use-virtual-environments">Why use virtual environments</a></li>
-<li><a href="#how-use-virtual-environment">How use virtual environment</a></li>
+<li><a href="#why-use-virtual-environments">Why use virtual&nbsp;environments</a></li>
+<li><a href="#how-use-virtual-environment">How use virtual&nbsp;environment</a></li>
 <li><a href="#tools-for-comfortable-use-of-virtual-environments">Tools for comfortable use of virtual environments</a><ul>
 <li><a href="#virtualwrapper">virtualwrapper</a><ul>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
 <li><a href="#basic-commands">Basic commands</a><ul>
 <li><a href="#workon"><span class="caps">WORKON</span></a></li>
-<li><a href="#create-and-remove-virtual-environment">Create and remove virtual environment</a></li>
+<li><a href="#create-and-remove-virtual-environment">Create and remove virtual&nbsp;environment</a></li>
 </ul>
 </li>
 </ul>
@@ -150,14 +150,9 @@
 </li>
 </ul>
 </div>
-        </nav>
-    </div>
-    <div class="span8 article-content">
-            
-            
-<h1 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">¶</a></h1>
-<h1 id="install-python-to-macos">Install python to MacOS<a class="headerlink" href="#install-python-to-macos" title="Permanent link">¶</a></h1>
-<p>There are two main ways how to install python to MacOS:</p>
+<h1 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h1>
+<h1 id="install-python-to-macos">Install python to MacOS<a class="headerlink" href="#install-python-to-macos" title="Permanent link">&para;</a></h1>
+<p>There are two main ways how to install python to&nbsp;MacOS:</p>
 <ol>
 <li>
 <p>Easy way for beginner - install by official package download from <a href="https://www.python.org/downloads/">python.org</a></p>
@@ -169,306 +164,344 @@
 <p>Master way for developer - install different versions of python via manager <a href="https://github.com/pyenv">pyenv</a></p>
 </li>
 </ol>
-<p>In this article are mentioned ways 2. and 3.</p>
-<h2 id="homebrew">Homebrew<a class="headerlink" href="#homebrew" title="Permanent link">¶</a></h2>
-<h3 id="what-is-homebrew">What is Homebrew<a class="headerlink" href="#what-is-homebrew" title="Permanent link">¶</a></h3>
-<p>Homebrew is a free and open-source software <strong>package management</strong> system that simplifies the installation of software on Apple’s macOS operating system and Linux. <a href="https://en.wikipedia.org/wiki/Homebrew_(package_manager)"><span class="caps">WIKIPEDIA</span></a></p>
-<p>It is same package manager as <strong>apt</strong> in Debian or <strong>dnf</strong> in Fedora distro.</p>
-<h3 id="what-is-homebrew-cask">What is Homebrew Cask<a class="headerlink" href="#what-is-homebrew-cask" title="Permanent link">¶</a></h3>
-<p><a href="https://github.com/Homebrew/homebrew-cask">Homebrew Cask</a> extends Homebrew and brings its elegance, simplicity, and speed to the installation and management of <strong><span class="caps">GUI</span> macOS applications</strong> such as Atom and Google Chrome.</p>
-<h3 id="why-homebrew">Why Homebrew<a class="headerlink" href="#why-homebrew" title="Permanent link">¶</a></h3>
-<p>With using homebrew you have these benefits:</p>
+<p>In this article are mentioned ways 2. and&nbsp;3.</p>
+<h2 id="homebrew">Homebrew<a class="headerlink" href="#homebrew" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-homebrew">What is Homebrew<a class="headerlink" href="#what-is-homebrew" title="Permanent link">&para;</a></h3>
+<p>Homebrew is a free and open-source software <strong>package management</strong> system that simplifies the installation of software on Apple&rsquo;s macOS operating system and Linux. <a href="https://en.wikipedia.org/wiki/Homebrew_(package_manager)"><span class="caps">WIKIPEDIA</span></a></p>
+<p>It is same package manager as <strong>apt</strong> in Debian or <strong>dnf</strong> in Fedora&nbsp;distro.</p>
+<h3 id="what-is-homebrew-cask">What is Homebrew Cask<a class="headerlink" href="#what-is-homebrew-cask" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/Homebrew/homebrew-cask">Homebrew Cask</a> extends Homebrew and brings its elegance, simplicity, and speed to the installation and management of <strong><span class="caps">GUI</span> macOS applications</strong> such as Atom and Google&nbsp;Chrome.</p>
+<h3 id="why-homebrew">Why Homebrew<a class="headerlink" href="#why-homebrew" title="Permanent link">&para;</a></h3>
+<p>With using homebrew you have these&nbsp;benefits:</p>
 <ul>
-<li>better overview about your installed software</li>
-<li>comfortable installation and uninstallation process of software</li>
-<li>less probability that you destroy other things by installation process</li>
-<li>your MacOS can be in better condition, it simplier to hold your system clean with homebrew</li>
+<li>better overview about your installed&nbsp;software</li>
+<li>comfortable installation and uninstallation process of&nbsp;software</li>
+<li>less probability that you destroy other things by installation&nbsp;process</li>
+<li>your MacOS can be in better condition, it simplier to hold your system clean with&nbsp;homebrew</li>
 </ul>
-<h3 id="install-homebrew-to-macos">Install Homebrew to MacOS<a class="headerlink" href="#install-homebrew-to-macos" title="Permanent link">¶</a></h3>
+<h3 id="install-homebrew-to-macos">Install Homebrew to MacOS<a class="headerlink" href="#install-homebrew-to-macos" title="Permanent link">&para;</a></h3>
 <p>Detailed installation steps are described in <a href="https://docs.brew.sh/Installation">Homevbrew-docs</a></p>
 <p>Requirements:</p>
 <ol>
 <li>A 64-bit Intel <span class="caps">CPU</span></li>
-<li>macOS Mojave (10.14) (or higher)</li>
-<li>A Bourne-compatible shell for installation (bash or zsh)</li>
-<li>Command Line Tools (<span class="caps">CLT</span>) for Xcode</li>
+<li>macOS Mojave (10.14) (or&nbsp;higher)</li>
+<li>A Bourne-compatible shell for installation (bash or&nbsp;zsh)</li>
+<li>Command Line Tools (<span class="caps">CLT</span>) for&nbsp;Xcode</li>
 </ol>
-<p>If you own macOS you will meet criteria 1 - 3 for sure.</p>
-<p>But point 4. must not be meet.</p>
-<p>So to install Command Line Tools fo Xcode just write to terminal:</p>
+<p>If you own macOS you will meet criteria 1 - 3 for&nbsp;sure.</p>
+<p>But point 4. must not be&nbsp;meet.</p>
+<p>So to install Command Line Tools fo Xcode just write to&nbsp;terminal:</p>
 <div class="highlight"><pre><span></span><code>$ xcode-select --install
 </code></pre></div>
-<p>Next step is install homebrew package manager:</p>
-<div class="highlight"><pre><span></span><code>$ /bin/bash -c <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh<span class="k">)</span><span class="s2">"</span>
+
+<p>Next step is install homebrew package&nbsp;manager:</p>
+<div class="highlight"><pre><span></span><code>$ /bin/bash -c <span class="s2">&quot;</span><span class="k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p>Finally check if installation was success</p>
+
+<p>Finally check if installation was&nbsp;success</p>
 <div class="highlight"><pre><span></span><code>$ brew doctor
 Your system is ready to brew.
 </code></pre></div>
-<h3 id="how-to-use-homebrew">How to use homebrew<a class="headerlink" href="#how-to-use-homebrew" title="Permanent link">¶</a></h3>
-<h4 id="some-basic-command">Some basic command<a class="headerlink" href="#some-basic-command" title="Permanent link">¶</a></h4>
-<h5 id="brew-list">brew list<a class="headerlink" href="#brew-list" title="Permanent link">¶</a></h5>
-<p>Shows you what is installed</p>
+
+<h3 id="how-to-use-homebrew">How to use homebrew<a class="headerlink" href="#how-to-use-homebrew" title="Permanent link">&para;</a></h3>
+<h4 id="some-basic-command">Some basic command<a class="headerlink" href="#some-basic-command" title="Permanent link">&para;</a></h4>
+<h5 id="brew-list">brew list<a class="headerlink" href="#brew-list" title="Permanent link">&para;</a></h5>
+<p>Shows you what is&nbsp;installed</p>
 <div class="highlight"><pre><span></span><code>$ brew list
 </code></pre></div>
-<p>resp. for cask</p>
+
+<p>resp. for&nbsp;cask</p>
 <div class="highlight"><pre><span></span><code>$ brew list --cask
 </code></pre></div>
-<h5 id="brew-install">brew install<a class="headerlink" href="#brew-install" title="Permanent link">¶</a></h5>
+
+<h5 id="brew-install">brew install<a class="headerlink" href="#brew-install" title="Permanent link">&para;</a></h5>
 <div class="highlight"><pre><span></span><code>$ brew install python3
 </code></pre></div>
+
 <p>resp.</p>
 <div class="highlight"><pre><span></span><code>$ brew uninstall python3
 </code></pre></div>
-<h4 id="how-to-keep-your-macos-clean">How to keep your macOS clean<a class="headerlink" href="#how-to-keep-your-macos-clean" title="Permanent link">¶</a></h4>
-<p>Below are common steps to keep your brew clean:</p>
+
+<h4 id="how-to-keep-your-macos-clean">How to keep your macOS clean<a class="headerlink" href="#how-to-keep-your-macos-clean" title="Permanent link">&para;</a></h4>
+<p>Below are common steps to keep your brew&nbsp;clean:</p>
 <p>Steps are take from this article <a href="https://medium.com/@waxzce/keeping-macos-clean-this-is-my-osx-brew-update-cli-command-6c8f12dc1731"><span class="caps">KEEP</span> <span class="caps">MACOS</span> <span class="caps">CLEAN</span></a></p>
-<h5 id="brew-update">brew update<a class="headerlink" href="#brew-update" title="Permanent link">¶</a></h5>
-<p>Update command will update the local base of available packages and versions, to be able to know what is updatable.</p>
+<h5 id="brew-update">brew update<a class="headerlink" href="#brew-update" title="Permanent link">&para;</a></h5>
+<p>Update command will update the local base of available packages and versions, to be able to know what is&nbsp;updatable.</p>
 <div class="highlight"><pre><span></span><code>$ brew update
 </code></pre></div>
-<h5 id="brew-upgrade">brew upgrade<a class="headerlink" href="#brew-upgrade" title="Permanent link">¶</a></h5>
-<p>It actually installs new version of outdated packages</p>
+
+<h5 id="brew-upgrade">brew upgrade<a class="headerlink" href="#brew-upgrade" title="Permanent link">&para;</a></h5>
+<p>It actually installs new version of outdated&nbsp;packages</p>
 <div class="highlight"><pre><span></span><code>$ brew upgrade
 </code></pre></div>
-<h5 id="brew-cleanup-s">brew cleanup -s<a class="headerlink" href="#brew-cleanup-s" title="Permanent link">¶</a></h5>
-<p>By default, brew keeps all versions of the software, and you can link the one you want.</p>
-<p>This allow you to keep only linked versions <strong>(by default, the last)</strong> and save some disk space.</p>
-<p>This cleanup will apply to homebrew-cask also.</p>
-<p>Homebrew cask is a brew extension for <span class="caps">GUI</span> and binary packages, some software are installed with it for simplicity of updates.</p>
+
+<h5 id="brew-cleanup-s">brew cleanup -s<a class="headerlink" href="#brew-cleanup-s" title="Permanent link">&para;</a></h5>
+<p>By default, brew keeps all versions of the software, and you can link the one you&nbsp;want.</p>
+<p>This allow you to keep only linked versions <strong>(by default, the last)</strong> and save some disk&nbsp;space.</p>
+<p>This cleanup will apply to homebrew-cask&nbsp;also.</p>
+<p>Homebrew cask is a brew extension for <span class="caps">GUI</span> and binary packages, some software are installed with it for simplicity of&nbsp;updates.</p>
 <div class="highlight"><pre><span></span><code>$ brew cleanup -s
 </code></pre></div>
-<h5 id="brew-doctor-and-brew-missing">brew doctor and brew missing<a class="headerlink" href="#brew-doctor-and-brew-missing" title="Permanent link">¶</a></h5>
-<p>Will show you any problem with your brew installation, it will help a lot to maintain a healthy system all the time.</p>
+
+<h5 id="brew-doctor-and-brew-missing">brew doctor and brew missing<a class="headerlink" href="#brew-doctor-and-brew-missing" title="Permanent link">&para;</a></h5>
+<p>Will show you any problem with your brew installation, it will help a lot to maintain a healthy system all the&nbsp;time.</p>
 <div class="highlight"><pre><span></span><code>$ brew doctor
 $ brew missing
 </code></pre></div>
-<h2 id="install-python-via-brew">Install python via brew<a class="headerlink" href="#install-python-via-brew" title="Permanent link">¶</a></h2>
-<p>With homebrew you can install latest version of python3.</p>
+
+<h2 id="install-python-via-brew">Install python via brew<a class="headerlink" href="#install-python-via-brew" title="Permanent link">&para;</a></h2>
+<p>With homebrew you can install latest version of&nbsp;python3.</p>
 <div class="highlight"><pre><span></span><code>$ brew install python3
 </code></pre></div>
-<p>If you want to install python2</p>
+
+<p>If you want to install&nbsp;python2</p>
 <div class="highlight"><pre><span></span><code>$ brew install python@2
 </code></pre></div>
-<p>Installation Python with brew has disadvantage that we want to install multiply versions of python 3 it is very painfull process.</p>
-<h2 id="manage-different-version-of-python">Manage different version of python<a class="headerlink" href="#manage-different-version-of-python" title="Permanent link">¶</a></h2>
-<p>For managing different versions of python it is handy to know some commands which will help you to understand what is happened in background.</p>
-<p>Check what version of python is used:</p>
+
+<p>Installation Python with brew has disadvantage that we want to install multiply versions of python 3 it is very painfull&nbsp;process.</p>
+<h2 id="manage-different-version-of-python">Manage different version of python<a class="headerlink" href="#manage-different-version-of-python" title="Permanent link">&para;</a></h2>
+<p>For managing different versions of python it is handy to know some commands which will help you to understand what is happened in&nbsp;background.</p>
+<p>Check what version of python is&nbsp;used:</p>
 <div class="highlight"><pre><span></span><code>$ python -V
 
 Python <span class="m">2</span>.7.16
 </code></pre></div>
+
 <p>or</p>
 <div class="highlight"><pre><span></span><code>$ python3 --version
 
 Python <span class="m">3</span>.9.0
 </code></pre></div>
-<p>If we want to check where is situated executable file of python which we promt <code>python</code> in terminal we will find out with:</p>
+
+<p>If we want to check where is situated executable file of python which we promt <code>python</code> in terminal we will find out&nbsp;with:</p>
 <div class="highlight"><pre><span></span><code>$ which python
 
 /usr/bin/python
 </code></pre></div>
+
 <p>or</p>
 <div class="highlight"><pre><span></span><code>$ which python3
 
 /usr/local/bin/python3
 </code></pre></div>
-<h3 id="with-brew">With brew<a class="headerlink" href="#with-brew" title="Permanent link">¶</a></h3>
-<p>Theres is no way to install mulitply version of python 3 with homebrew.</p>
-<h3 id="with-pyenv">With pyenv<a class="headerlink" href="#with-pyenv" title="Permanent link">¶</a></h3>
-<p><a href="https://github.com/pyenv/pyenv">Pyenv</a> is simple Python version management. This tool was created because of painfull process when we need multiply versions of python on one <span class="caps">PC</span>. If we have several project where we needs specific version of python on each, then pyenv comes to scene.</p>
-<h4 id="install-pyenv-with-homebrew">Install pyenv with homebrew<a class="headerlink" href="#install-pyenv-with-homebrew" title="Permanent link">¶</a></h4>
-<p>pyenv can be installed with homebrew easily:</p>
+
+<h3 id="with-brew">With brew<a class="headerlink" href="#with-brew" title="Permanent link">&para;</a></h3>
+<p>Theres is no way to install mulitply version of python 3 with&nbsp;homebrew.</p>
+<h3 id="with-pyenv">With pyenv<a class="headerlink" href="#with-pyenv" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/pyenv/pyenv">Pyenv</a> is simple Python version management. This tool was created because of painfull process when we need multiply versions of python on one <span class="caps">PC</span>. If we have several project where we needs specific version of python on each, then pyenv comes to&nbsp;scene.</p>
+<h4 id="install-pyenv-with-homebrew">Install pyenv with homebrew<a class="headerlink" href="#install-pyenv-with-homebrew" title="Permanent link">&para;</a></h4>
+<p>pyenv can be installed with homebrew&nbsp;easily:</p>
 <div class="highlight"><pre><span></span><code>$ brew install pyenv
 </code></pre></div>
-<p>After installation pyenv with brew to macOS we have to make some settings for properly run pyenv.</p>
-<p>Next step is set <code>pyenv init</code> to end of config file of your shell. This will ensure atuocompletion and enable shims.</p>
+
+<p>After installation pyenv with brew to macOS we have to make some settings for properly run&nbsp;pyenv.</p>
+<p>Next step is set <code>pyenv init</code> to end of config file of your shell. This will ensure atuocompletion and enable&nbsp;shims.</p>
 <ul>
 <li>for <strong>zsh</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s1">'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi'</span> &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s1">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &quot;$(pyenv init -)&quot;\nfi&#39;</span> &gt;&gt; ~/.zshrc
 </code></pre></div>
+
 <ul>
 <li>for <strong>bash</strong></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s1">'if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval "$(pyenv init -)"\nfi'</span> &gt;&gt; ~/.bash_profile
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s1">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &quot;$(pyenv init -)&quot;\nfi&#39;</span> &gt;&gt; ~/.bash_profile
 </code></pre></div>
+
 <p>Some systems (Ubuntu or Fedora) with bash use for config <code>.bashrc</code> instead of <code>.bash_profile</code></p>
-<p>When <code>pyenv init</code> with <code>echo</code> <strong>restart</strong> your shell:</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">exec</span> <span class="s2">"</span><span class="nv">$SHELL</span><span class="s2">"</span>
+<p>When <code>pyenv init</code> with <code>echo</code> <strong>restart</strong> your&nbsp;shell:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">exec</span> <span class="s2">&quot;</span><span class="nv">$SHELL</span><span class="s2">&quot;</span>
 </code></pre></div>
+
 <p>or</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">source</span> ~/.zshrc
 </code></pre></div>
+
 <p>It is highly recommended to install with brew other dependecies for installing python with <code>pyenv</code>.</p>
-<p>So before installing any python to pyenv, install these dependecies:</p>
+<p>So before installing any python to pyenv, install these&nbsp;dependecies:</p>
 <div class="highlight"><pre><span></span><code>$ brew install openssl readline sqlite3 xz zlib
 </code></pre></div>
-<p>After installation of these dependecies, brew write message for zlib:</p>
+
+<p>After installation of these dependecies, brew write message for&nbsp;zlib:</p>
 <p><strong>zlib</strong> is keg-only, which means it was not symlinked into <code>/usr/local</code>,
 because macOS already provides this software and installing another version in
-parallel can cause all kinds of trouble.</p>
-<p>For compilers to find zlib you may need to set:</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">"-L/usr/local/opt/zlib/lib"</span>
-$ <span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">"-I/usr/local/opt/zlib/include"</span>
+parallel can cause all kinds of&nbsp;trouble.</p>
+<p>For compilers to find zlib you may need to&nbsp;set:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/opt/zlib/lib&quot;</span>
+$ <span class="nb">export</span> <span class="nv">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/opt/zlib/include&quot;</span>
 </code></pre></div>
-<p>For pkg-config to find zlib you may need to set:</p>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">"/usr/local/opt/zlib/lib/pkgconfig"</span>
+
+<p>For pkg-config to find zlib you may need to&nbsp;set:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">PKG_CONFIG_PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/opt/zlib/lib/pkgconfig&quot;</span>
 </code></pre></div>
-<p>It is not necessary to set up. Set these variables just if problems occured</p>
-<p>Finally we can install certain version python with pyenv</p>
+
+<p>It is not necessary to set up. Set these variables just if problems&nbsp;occured</p>
+<p>Finally we can install certain version python with&nbsp;pyenv</p>
 <div class="highlight"><pre><span></span><code>$ pyenv install <span class="m">3</span>.8.6
 </code></pre></div>
-<p>If we want se what is installable prompt:</p>
+
+<p>If we want se what is installable&nbsp;prompt:</p>
 <div class="highlight"><pre><span></span><code>$ pyenv install --list
 </code></pre></div>
-<p>If we want to set certain version of python as global version prompt:</p>
+
+<p>If we want to set certain version of python as global version&nbsp;prompt:</p>
 <div class="highlight"><pre><span></span><code>$ pyenv global <span class="m">3</span>.8.6
 </code></pre></div>
-<p>If we want to see installed versions:</p>
+
+<p>If we want to see installed&nbsp;versions:</p>
 <div class="highlight"><pre><span></span><code>$ pyenv versions
 
   system
 * <span class="m">3</span>.8.6 <span class="o">(</span><span class="nb">set</span> by /Users/user_1/.pyenv/version<span class="o">)</span>
 </code></pre></div>
-<p>system = python2 on macOS</p>
-<p>Now prompt:</p>
+
+<p>system = python2 on&nbsp;macOS</p>
+<p>Now&nbsp;prompt:</p>
 <div class="highlight"><pre><span></span><code>$ which python3
 
 /Users/user_1/.pyenv/shims/python3
 </code></pre></div>
+
 <p>Sometimes <code>rehash</code> is needed,
-if your output is <code>/usr/local/bin/python3</code> then prompt:</p>
+if your output is <code>/usr/local/bin/python3</code> then&nbsp;prompt:</p>
 <div class="highlight"><pre><span></span><code>$ pyenv rehash
 </code></pre></div>
-<p><strong>Rehashes shims:</strong></p>
-<p>From time to time you’ll need to rebuild your shim files. Doing this on init makes sure everything is up to date. You can always run pyenv rehash manually.</p>
+
+<p><strong>Rehashes&nbsp;shims:</strong></p>
+<p>From time to time you&rsquo;ll need to rebuild your shim files. Doing this on init makes sure everything is up to date. You can always run pyenv rehash&nbsp;manually.</p>
 <p>If everything is set up correctly, then the python source should be located in <code>shims</code></p>
-<h4 id="settings-of-path">Settings of <span class="caps">PATH</span><a class="headerlink" href="#settings-of-path" title="Permanent link">¶</a></h4>
+<h4 id="settings-of-path">Settings of <span class="caps">PATH</span><a class="headerlink" href="#settings-of-path" title="Permanent link">&para;</a></h4>
 <p>Configuration of <span class="caps">PATH</span> should be done automatically by <code>pyenv init</code>.</p>
-<p>Sometimes is necessary to set up path of <code>shims</code> manually to variable <code>PATH</code> of shell configuration. We have to add configuration of <code>PATH</code> above the code of <code>pyenv init</code> in shell configuration file (.zshrc, .bashrc, .bash_profile).</p>
-<p>Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add <code>$PYENV_ROOT/bin</code> to your <code>$PATH</code> for access to the pyenv command-line utility.</p>
+<p>Sometimes is necessary to set up path of <code>shims</code> manually to variable <code>PATH</code> of shell configuration. We have to add configuration of <code>PATH</code> above the code of <code>pyenv init</code> in shell configuration file (.zshrc, .bashrc,&nbsp;.bash_profile).</p>
+<p>Define environment variable PYENV_ROOT to point to the path where pyenv repo is cloned and add <code>$PYENV_ROOT/bin</code> to your <code>$PATH</code> for access to the pyenv command-line&nbsp;utility.</p>
 <ul>
-<li>For bash:</li>
+<li>For&nbsp;bash:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> &gt;&gt; ~/.bash_profile
-$ <span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> &gt;&gt; ~/.bash_profile
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;</span> &gt;&gt; ~/.bash_profile
+$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bash_profile
 </code></pre></div>
+
 <ul>
-<li>For Ubuntu Desktop:</li>
+<li>For Ubuntu&nbsp;Desktop:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> &gt;&gt; ~/.bashrc
-$ <span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> &gt;&gt; ~/.bashrc
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;</span> &gt;&gt; ~/.bashrc
+$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.bashrc
 </code></pre></div>
+
 <ul>
-<li>For Zsh:</li>
+<li>For&nbsp;Zsh:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">'export PYENV_ROOT="$HOME/.pyenv"'</span> &gt;&gt; ~/.zshrc
-$ <span class="nb">echo</span> <span class="s1">'export PATH="$PYENV_ROOT/bin:$PATH"'</span> &gt;&gt; ~/.zshrc
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s1">&#39;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&#39;</span> &gt;&gt; ~/.zshrc
+$ <span class="nb">echo</span> <span class="s1">&#39;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&#39;</span> &gt;&gt; ~/.zshrc
 </code></pre></div>
-<h4 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">¶</a></h4>
-<p>Check <a href="https://github.com/pyenv/pyenv#advanced-configuration">Advanced configuration of pyenv - GitHub</a></p>
-<h1 id="virtual-environments">Virtual environments<a class="headerlink" href="#virtual-environments" title="Permanent link">¶</a></h1>
-<h2 id="why-use-virtual-environments">Why use virtual environments<a class="headerlink" href="#why-use-virtual-environments" title="Permanent link">¶</a></h2>
-<p>Because we need for each project different verions of packages.</p>
-<p>There is problem - managing Python dependencies. Python has one big problem - you can’t have multiple versions of the same package (e.g. pandas) installed on one version of python installed on your computer.</p>
-<p>So each time you run pip install <some_package>, pip will check if that package is already installed on your computer. If it’s not, it will install the latest version.</some_package></p>
-<p>Text above taken from <a href="https://pycon.switowski.com/02-packages/virtualenv/">Python developer’s toolkit</a></p>
-<h2 id="how-use-virtual-environment">How use virtual environment<a class="headerlink" href="#how-use-virtual-environment" title="Permanent link">¶</a></h2>
-<h2 id="tools-for-comfortable-use-of-virtual-environments">Tools for comfortable use of virtual environments<a class="headerlink" href="#tools-for-comfortable-use-of-virtual-environments" title="Permanent link">¶</a></h2>
-<h3 id="virtualwrapper">virtualwrapper<a class="headerlink" href="#virtualwrapper" title="Permanent link">¶</a></h3>
-<p>See <a href="https://virtualenvwrapper.readthedocs.io/en/stable/install.html">virtualwrapper documentation</a> for more information</p>
-<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h4>
+
+<h4 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h4>
+<p>Check <a href="https://github.com/pyenv/pyenv#advanced-configuration">Advanced configuration of pyenv -&nbsp;GitHub</a></p>
+<h1 id="virtual-environments">Virtual environments<a class="headerlink" href="#virtual-environments" title="Permanent link">&para;</a></h1>
+<h2 id="why-use-virtual-environments">Why use virtual environments<a class="headerlink" href="#why-use-virtual-environments" title="Permanent link">&para;</a></h2>
+<p>Because we need for each project different verions of&nbsp;packages.</p>
+<p>There is problem - managing Python dependencies. Python has one big problem - you can’t have multiple versions of the same package (e.g. pandas) installed on one version of python installed on your&nbsp;computer.</p>
+<p>So each time you run pip install <some_package>, pip will check if that package is already installed on your computer. If it’s not, it will install the latest&nbsp;version.</p>
+<p>Text above taken from <a href="https://pycon.switowski.com/02-packages/virtualenv/">Python developer&rsquo;s&nbsp;toolkit</a></p>
+<h2 id="how-use-virtual-environment">How use virtual environment<a class="headerlink" href="#how-use-virtual-environment" title="Permanent link">&para;</a></h2>
+<h2 id="tools-for-comfortable-use-of-virtual-environments">Tools for comfortable use of virtual environments<a class="headerlink" href="#tools-for-comfortable-use-of-virtual-environments" title="Permanent link">&para;</a></h2>
+<h3 id="virtualwrapper">virtualwrapper<a class="headerlink" href="#virtualwrapper" title="Permanent link">&para;</a></h3>
+<p>See <a href="https://virtualenvwrapper.readthedocs.io/en/stable/install.html">virtualwrapper documentation</a> for more&nbsp;information</p>
+<h4 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h4>
 <p>Virtualenvwrapper should be installed on your main python version and nothing else.
 The rest of all your programing magic and installation you have to make with with new virtual environment of python created by <code>virtualenvwrapper</code> or with built-in <code>venv</code>.</p>
-<p>If you don’t want to install virtualwrapper on your <span class="caps">OS</span> python then there are options:</p>
+<p>If you don&rsquo;t want to install virtualwrapper on your <span class="caps">OS</span> python then there are&nbsp;options:</p>
 <ul>
 <li><a href="https://github.com/pyenv/pyenv">pyenv</a></li>
 <li><a href="https://github.com/pipxproject/pipx">pipx</a></li>
 </ul>
-<p>with these tools you are able to create new virtual envinronment as your main python and there is no need to handle with <span class="caps">OS</span> python. So your <span class="caps">OS</span> python will stay untouched.</p>
-<p>Installation command:</p>
+<p>with these tools you are able to create new virtual envinronment as your main python and there is no need to handle with <span class="caps">OS</span> python. So your <span class="caps">OS</span> python will stay&nbsp;untouched.</p>
+<p>Installation&nbsp;command:</p>
 <div class="highlight"><pre><span></span><code>$ python3 -m pip install virtualenvwrapper
 </code></pre></div>
-<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">¶</a></h4>
-<p>Main configuration of virtualenvwrapper</p>
+
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<p>Main configuration of&nbsp;virtualenvwrapper</p>
 <ol>
 <li>central dir where are saved all yours virtual environments. This <span class="caps">DIR</span> is called <code>WORKON_HOME</code> and default it should be set as <code>$HOME/.virtualenvs</code></li>
 <li>Another central dir is where are save all yours development project - your sources of code of each project. This <span class="caps">DIR</span> is called <code>PROJECT_HOME</code> and default path will be in most cases <code>$HOME/Devel</code></li>
 <li>location of your <code>virtualenvwrapper.sh</code> in most cases it will be <code>/usr/local/bin/virtualenvwrapper.sh</code> but if you want to be sure just prompt <code>$ which virtualenvwrapper.sh</code></li>
-<li>this point is not in documentation but in my case I have to configure <code>VIRTUALENVWRAPPER_PYTHON</code>, because my default configuration was <code>VIRTUALENVWRAPPER_PYTHON=/usr/bin/python</code> that is path to my <span class="caps">OS</span> python2 in my case, but I’ve installed virtualenvwrapper to my <span class="caps">OS</span> python3 which is located in <code>/usr/local/bin/python3</code></li>
+<li>this point is not in documentation but in my case I have to configure <code>VIRTUALENVWRAPPER_PYTHON</code>, because my default configuration was <code>VIRTUALENVWRAPPER_PYTHON=/usr/bin/python</code> that is path to my <span class="caps">OS</span> python2 in my case, but I&rsquo;ve installed virtualenvwrapper to my <span class="caps">OS</span> python3 which is located in <code>/usr/local/bin/python3</code></li>
 </ol>
-<p>So I added this configuration to my .zshrc file:</p>
-<div class="highlight"><pre><span></span><code><span class="o">~/</span><span class="p">.</span><span class="n">zshrc</span>
+<p>So I added this configuration to my .zshrc&nbsp;file:</p>
+<div class="highlight"><pre><span></span><code><span class="o">~/.</span><span class="n">zshrc</span><span class="w"></span>
 
-<span class="n">export</span> <span class="n">WORKON_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="p">.</span><span class="n">virtualenvs</span>
-<span class="n">export</span> <span class="n">PROJECT_HOME</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">develop</span>
-<span class="n">export</span> <span class="n">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python3</span>
-<span class="k">source</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="k">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="p">.</span><span class="n">sh</span>
+<span class="k">export</span><span class="w"> </span><span class="n">WORKON_HOME</span><span class="o">=$</span><span class="n">HOME</span><span class="o">/.</span><span class="n">virtualenvs</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">PROJECT_HOME</span><span class="o">=$</span><span class="n">HOME</span><span class="o">/</span><span class="n">Documents</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">develop</span><span class="w"></span>
+<span class="k">export</span><span class="w"> </span><span class="n">VIRTUALENVWRAPPER_PYTHON</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">python3</span><span class="w"></span>
+<span class="n">source</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">virtualenvwrapper</span><span class="o">.</span><span class="n">sh</span><span class="w"></span>
 </code></pre></div>
-<p>Basic workflow of virtualenvwrapper:</p>
-<p>You have one location for your all virtual environments each environments can be linked with some project, so you can create project and connect with certain virtual environment at the start of project. Or you can connected already created project with new environment.</p>
-<p>Nice thing is that when you have linked your environment with your project and then you activate your environment with <code>workon your_env</code>, wrapper will move you to your project dir automatically.</p>
-<h4 id="basic-commands">Basic commands<a class="headerlink" href="#basic-commands" title="Permanent link">¶</a></h4>
-<h5 id="workon"><span class="caps">WORKON</span><a class="headerlink" href="#workon" title="Permanent link">¶</a></h5>
-<p>to activate your virtual environemnt or show your environments</p>
+
+<p>Basic workflow of&nbsp;virtualenvwrapper:</p>
+<p>You have one location for your all virtual environments each environments can be linked with some project, so you can create project and connect with certain virtual environment at the start of project. Or you can connected already created project with new&nbsp;environment.</p>
+<p>Nice thing is that when you have linked your environment with your project and then you activate your environment with <code>workon your_env</code>, wrapper will move you to your project dir&nbsp;automatically.</p>
+<h4 id="basic-commands">Basic commands<a class="headerlink" href="#basic-commands" title="Permanent link">&para;</a></h4>
+<h5 id="workon"><span class="caps">WORKON</span><a class="headerlink" href="#workon" title="Permanent link">&para;</a></h5>
+<p>to activate your virtual environemnt or show your&nbsp;environments</p>
 <div class="highlight"><pre><span></span><code>$ workon
 
 your_env_1
 your_env_2
 </code></pre></div>
-<p>The command below will activate your_env if linked to project it will move to your project dir.</p>
+
+<p>The command below will activate your_env if linked to project it will move to your project&nbsp;dir.</p>
 <div class="highlight"><pre><span></span><code>$ workon your_env_1
 </code></pre></div>
-<p>Deactivation env</p>
+
+<p>Deactivation&nbsp;env</p>
 <div class="highlight"><pre><span></span><code>$ deactivate
 </code></pre></div>
-<h5 id="create-and-remove-virtual-environment">Create and remove virtual environment<a class="headerlink" href="#create-and-remove-virtual-environment" title="Permanent link">¶</a></h5>
-<p>Probably you’ve already known way to make virtual environment with built-in <code>venv</code>
+
+<h5 id="create-and-remove-virtual-environment">Create and remove virtual environment<a class="headerlink" href="#create-and-remove-virtual-environment" title="Permanent link">&para;</a></h5>
+<p>Probably you&rsquo;ve already known way to make virtual environment with built-in <code>venv</code>
 as <code>$ python -m venv name_your_venv</code>. Make virtual env with vrtualenvwrapper is very similar but commands are different. At the end you have same virtual env as with built-in <code>venv</code>.</p>
 <p><strong>mkvirtualenv</strong>
-Create a new environment, in the WORKON_HOME.</p>
+Create a new environment, in the&nbsp;WORKON_HOME.</p>
 <div class="highlight"><pre><span></span><code>$ mkvirtualenv your_env_name
 </code></pre></div>
+
 <p>Options:</p>
 <ul>
 <li>
-<p>-a option can be used to associate an existing project directory with the new environment.</p>
+<p>-a option can be used to associate an existing project directory with the new&nbsp;environment.</p>
 </li>
 <li>
-<p>-i option can be used to install one or more packages (by repeating the option) after the environment is created.</p>
+<p>-i option can be used to install one or more packages (by repeating the option) after the environment is&nbsp;created.</p>
 </li>
 <li>
-<p>-r option can be used to specify a text file listing packages to be installed. The argument value is passed to pip -r to be installed.</p>
+<p>-r option can be used to specify a text file listing packages to be installed. The argument value is passed to pip -r to be&nbsp;installed.</p>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code>mkvirtualenv -a <span class="nv">$HOME</span>/myproject -r <span class="nv">$HOME</span>/myproject/requirements.txt -r <span class="nv">$HOME</span>/myproject/requirements-dev.txt your_env_name
 </code></pre></div>
+
 <p><strong>mktmpenv</strong></p>
-<p>Create a new <strong>temporary</strong> virtualenv in the WORKON_HOME directory.</p>
+<p>Create a new <strong>temporary</strong> virtualenv in the WORKON_HOME&nbsp;directory.</p>
 <div class="highlight"><pre><span></span><code>$ mktmpenv
 
 This is a temporary environment. It will be deleted when deactivated
 </code></pre></div>
+
 <p><strong>rmvirtualenv</strong></p>
 <div class="highlight"><pre><span></span><code><span class="o">(</span>mynewenv<span class="o">)</span>$ deactivate
 $ rmvirtualenv mynewenv
 $ workon
 $
 </code></pre></div>
-<h3 id="pyenv-virtualenv">pyenv-virtualenv<a class="headerlink" href="#pyenv-virtualenv" title="Permanent link">¶</a></h3>
-<h3 id="pyenv-virtualwrapper">pyenv-virtualwrapper<a class="headerlink" href="#pyenv-virtualwrapper" title="Permanent link">¶</a></h3>
-<h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">¶</a></h3>
+
+<h3 id="pyenv-virtualenv">pyenv-virtualenv<a class="headerlink" href="#pyenv-virtualenv" title="Permanent link">&para;</a></h3>
+<h3 id="pyenv-virtualwrapper">pyenv-virtualwrapper<a class="headerlink" href="#pyenv-virtualwrapper" title="Permanent link">&para;</a></h3>
+<h3 id="pipenv">pipenv<a class="headerlink" href="#pipenv" title="Permanent link">&para;</a></h3>
 
 
              
  
-                <p id="post-share-links">
-    Share on:
-      <a href="https://twitter.com/intent/tweet?text=Install%20python%20and%20handle%20virtual%20environments%20on%C2%A0MacOS&url=https%3A//nappex.github.io/myblog/python-virtualenvs-installation&hashtags=python,intermediate" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/python-virtualenvs-installation" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Install%20python%20and%20handle%20virtual%20environments%20on%C2%A0MacOS&amp;body=https%3A//nappex.github.io/myblog/python-virtualenvs-installation" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -479,25 +512,6 @@ $
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Introduction to web scraping with python">Introduction to web scraping with python</a></li>
-<li><a href="https://nappex.github.io/myblog/blog-publish-me" title="How I’ve published my pelican blog">How I’ve published my pelican blog</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scheme" title="Python project structure">Python project structure</a></li>
-<li><a href="https://nappex.github.io/myblog/object-comparing" title="Comparing objects in python">Comparing objects in python</a></li>
-<li><a href="https://nappex.github.io/myblog/configuration-simple" title="Discover secrets of config formats">Discover secrets of config formats</a></li>
-</ul>
-<hr />
-</section>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/build-your-privacy" title="Previous: Build and keep your privacy on top">Build and keep your privacy on top</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/configuration-simple" title="Next: Discover secrets of config formats">Discover secrets of config formats</a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>

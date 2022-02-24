@@ -41,6 +41,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
 
 
+
     </head>
     <body>
         <div id="content">
@@ -85,48 +86,37 @@
 </div>
 
 <div class="row-fluid">
-    <div class="span2 table-of-content">
-        <nav>
-        <h4>Contents</h4>
-        <div class="toc">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
 <ul>
-<li><a href="#databaze-obecne">Databáze - obecně</a></li>
-<li><a href="#1-zadny-vztah">1. Žádný vztah</a></li>
-<li><a href="#2-vztah-11-one-to-one">2. Vztah 1:1 one-to-one</a></li>
-<li><a href="#3-vztah-1n-one-to-many">3. Vztah 1:N one-to-many</a></li>
-<li><a href="#4-vztah-mn-many-to-many">4. Vztah M:N many-to-many</a></li>
-<li><a href="#pouzite-zdroje-dalsi-studium">Použité zdroje - další studium</a></li>
+<li><a href="#databaze-obecne">Databáze -&nbsp;obecně</a></li>
+<li><a href="#1-zadny-vztah">1. Žádný&nbsp;vztah</a></li>
+<li><a href="#2-vztah-11-one-to-one">2. Vztah 1:1&nbsp;one-to-one</a></li>
+<li><a href="#3-vztah-1n-one-to-many">3. Vztah 1:N&nbsp;one-to-many</a></li>
+<li><a href="#4-vztah-mn-many-to-many">4. Vztah M:N&nbsp;many-to-many</a></li>
+<li><a href="#pouzite-zdroje-dalsi-studium">Použité zdroje - další&nbsp;studium</a></li>
 </ul>
 </div>
-        </nav>
-    </div>
-    <div class="span8 article-content">
-            
-            
-<h1 id="databaze-obecne">Databáze - obecně<a class="headerlink" href="#databaze-obecne" title="Permanent link">¶</a></h1>
-<p>Každá databáze se skládá z entit. Třeba databáze uživatelů je databáze entit, kde každý uživatel je jedna entita. Tato entita je definována svými atributy. Tyto atributy mohou být rodné číslo, jméno, přezdívka, email apod. A každý atribut má svou hodnotu. Hodnota emailu může být třeba pepanovak@seznam.cz.</p>
-<h1 id="1-zadny-vztah">1. Žádný vztah<a class="headerlink" href="#1-zadny-vztah" title="Permanent link">¶</a></h1>
-<p>Mezi tabulkami nebo databázemi není žádný vztah.</p>
-<h1 id="2-vztah-11-one-to-one">2. Vztah 1:1 one-to-one<a class="headerlink" href="#2-vztah-11-one-to-one" title="Permanent link">¶</a></h1>
+<h1 id="databaze-obecne">Databáze - obecně<a class="headerlink" href="#databaze-obecne" title="Permanent link">&para;</a></h1>
+<p>Každá databáze se skládá z entit. Třeba databáze uživatelů je databáze entit, kde každý uživatel je jedna entita. Tato entita je definována svými atributy. Tyto atributy mohou být rodné číslo, jméno, přezdívka, email apod. A každý atribut má svou hodnotu. Hodnota emailu může být třeba&nbsp;pepanovak@seznam.cz.</p>
+<h1 id="1-zadny-vztah">1. Žádný vztah<a class="headerlink" href="#1-zadny-vztah" title="Permanent link">&para;</a></h1>
+<p>Mezi tabulkami nebo databázemi není žádný&nbsp;vztah.</p>
+<h1 id="2-vztah-11-one-to-one">2. Vztah 1:1 one-to-one<a class="headerlink" href="#2-vztah-11-one-to-one" title="Permanent link">&para;</a></h1>
 <p>Tento vztah není příliš častý, jelikož z dvou tabulek, které mají mezi sebou tento vztah můžeme většinou vytvořit jednu. <a href="#link1">[1]</a></p>
-<h1 id="3-vztah-1n-one-to-many">3. Vztah 1:N one-to-many<a class="headerlink" href="#3-vztah-1n-one-to-many" title="Permanent link">¶</a></h1>
+<h1 id="3-vztah-1n-one-to-many">3. Vztah 1:N one-to-many<a class="headerlink" href="#3-vztah-1n-one-to-many" title="Permanent link">&para;</a></h1>
 <p>Můžeme si představit jako jednoho zákazníka z nějaké databáze, který vytvoří novou databázi ve formě několika objednávek. Nebo máme jednoho uživatele na blogu, který vytvoří několik postů. Ale každý post má pouze jednoho autora. V tomto případě se vztah nejčastěji řeší přidáním jednoznačného identifikátoru (foreign key) zákazníka nebo uživatele (např. user_id, customer_id) do každého řádku databáze objednávek či postů blogu. Každá objednávka nebo post tak bude identifikovatelná, kým byla vytvořena.<a href="#link1">[1]</a></p>
-<h1 id="4-vztah-mn-many-to-many">4. Vztah M:N many-to-many<a class="headerlink" href="#4-vztah-mn-many-to-many" title="Permanent link">¶</a></h1>
-<p>Tato relace je mezi tabulkami Výrobky a Objednávky. Jedna objednávka může obsahovat více výrobků. Na druhou stranu se jeden výrobek může objevit v mnoha objednávkách. Pro řešení tohoto vztahu se musí vytvořit třetí tabulka, která je charakterizovaná vztahem 1:N a 1:M.</p>
-<h1 id="pouzite-zdroje-dalsi-studium">Použité zdroje - další studium<a class="headerlink" href="#pouzite-zdroje-dalsi-studium" title="Permanent link">¶</a></h1>
+<h1 id="4-vztah-mn-many-to-many">4. Vztah M:N many-to-many<a class="headerlink" href="#4-vztah-mn-many-to-many" title="Permanent link">&para;</a></h1>
+<p>Tato relace je mezi tabulkami Výrobky a Objednávky. Jedna objednávka může obsahovat více výrobků. Na druhou stranu se jeden výrobek může objevit v mnoha objednávkách. Pro řešení tohoto vztahu se musí vytvořit třetí tabulka, která je charakterizovaná vztahem 1:N a&nbsp;1:M.</p>
+<h1 id="pouzite-zdroje-dalsi-studium">Použité zdroje - další studium<a class="headerlink" href="#pouzite-zdroje-dalsi-studium" title="Permanent link">&para;</a></h1>
 <p>[1] - https://support.microsoft.com/cs-cz/office/p%c5%99%c3%adru%c4%8dka-k-relac%c3%adm-mezi-tabulkami-30446197-4fbe-457b-b992-2f6fb812b58f?ui=cs-cz&amp;rs=cs-cz&amp;ad=cz <a name="link1"></a></p>
-<p>[2] - https://docs.microsoft.com/cs-cz/office/troubleshoot/access/define-table-relationships</p>
-<p>[3] - https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers</p>
+<p>[2] -&nbsp;https://docs.microsoft.com/cs-cz/office/troubleshoot/access/define-table-relationships</p>
+<p>[3] -&nbsp;https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers</p>
 
 
              
  
-                <p id="post-share-links">
-    Share on:
-      <a href="https://twitter.com/intent/tweet?text=Relace%20%28vztah%29%20mezi%20datab%C3%A1zemi%C2%A0%28tabulkami%29&url=https%3A//nappex.github.io/myblog/databases-relations&hashtags=databases,beginners,relations" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/databases-relations" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Relace%20%28vztah%29%20mezi%20datab%C3%A1zemi%C2%A0%28tabulkami%29&amp;body=https%3A//nappex.github.io/myblog/databases-relations" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -137,25 +127,6 @@
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/exercises" title="Cvičení k programování">Cvičení k programování</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Introduction to web scraping with python">Introduction to web scraping with python</a></li>
-<li><a href="https://nappex.github.io/myblog/blog-publish-me" title="How I’ve published my pelican blog">How I’ve published my pelican blog</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scheme" title="Python project structure">Python project structure</a></li>
-<li><a href="https://nappex.github.io/myblog/handle_recursion" title="Handle recursion">Handle recursion</a></li>
-</ul>
-<hr />
-</section>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/files-introduction" title="Previous: Python knihovny pro práci se soubory">Python knihovny pro práci se soubory</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Next: Introduction to web scraping with python">Introduction to web scraping with python</a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>

@@ -41,6 +41,7 @@
         <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
 
 
+
     </head>
     <body>
         <div id="content">
@@ -99,7 +100,6 @@ $ git commit -m <span class="s2">&quot;your message&quot;</span>
 $ git push origin master
 </code></pre></div>
 
-
 <h1 id="blog-output-with-static-pages-subfolder-output">Blog output (with static pages) - subfolder (output/)<a class="headerlink" href="#blog-output-with-static-pages-subfolder-output" title="Permanent link">&para;</a></h1>
 <p>When you want to run static sites on GitHub pages, theres is recommendation to push your statis pages to branch with name <code>gh-pages</code></p>
 <p>So you&rsquo;ve created new folder with name output which is situates as subfolder of folder pelican-blog. And you make another repo from this folder&nbsp;with:</p>
@@ -109,18 +109,15 @@ $ git push origin master
 <div class="highlight"><pre><span></span><code>$ <span class="nb">source</span> venv/bin/activate
 </code></pre></div>
 
-
 <p>for activation virtual environment where is installed pelican&nbsp;tool</p>
 <div class="highlight"><pre><span></span><code>$ make html
 </code></pre></div>
 
-
 <p><a href="https://docs.getpelican.com/en/stable/publish.html">more info in pelican&nbsp;documentation</a></p>
 <p>After that we generate new content of output/ folder. By default is rewrite whole content of this folder with new files so <code>.git</code> file will be deleted. When we want to preserve file <code>.git</code> we have to append variable <code>OUTPUT_RETENTION</code>, with values as a list with names of files to be preserved, to configuration file <code>pelicanconf.py</code> situated in factory folder. The second variable describe path to output folder for html&nbsp;files.</p>
-<div class="highlight"><pre><span></span><code><span class="err">OUTPUT_RETENTION = [&quot;.git&quot;]</span>
-<span class="err">OUTPUT_PATH = &#39;output/&#39;</span>
+<div class="highlight"><pre><span></span><code>OUTPUT_RETENTION = [&quot;.git&quot;]
+OUTPUT_PATH = &#39;output/&#39;
 </code></pre></div>
-
 
 <p>When all files are generated we can push our changes to see them all world.
 You have to change your main repo to subrepo of output&nbsp;folder.</p>
@@ -133,12 +130,7 @@ $ git push origin gh-pages
 
              
  
-                <p id="post-share-links">
-    Share on:
-      <a href="https://twitter.com/intent/tweet?text=How%20I%E2%80%99ve%20published%20my%20pelican%C2%A0blog&url=https%3A//nappex.github.io/myblog/blog-publish-me&hashtags=python,beginners" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/blog-publish-me" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=How%20I%E2%80%99ve%20published%20my%20pelican%C2%A0blog&amp;body=https%3A//nappex.github.io/myblog/blog-publish-me" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -149,25 +141,6 @@ $ git push origin gh-pages
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/files-introduction" title="Python knihovny pro práci se soubory">Python knihovny pro práci se soubory</a></li>
-<li><a href="https://nappex.github.io/myblog/jupyter-convertion" title="Konverze Jupyter notebooku do dalších formátů">Konverze Jupyter notebooku do dalších formátů</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Introduction to web scraping with python">Introduction to web scraping with python</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scheme" title="Python project structure">Python project structure</a></li>
-<li><a href="https://nappex.github.io/myblog/configuration-simple" title="Discover secrets of config formats">Discover secrets of config formats</a></li>
-</ul>
-<hr />
-</section>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/python-scheme" title="Previous: Python project structure">Python project structure</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/object-comparing" title="Next: Comparing objects in python">Comparing objects in python</a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
