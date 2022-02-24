@@ -36,7 +36,7 @@ PLUGINS = [
     "render_math",
     "series",
     "share_post",
-    "search",
+    "tipue_search",
 ]
 
 
