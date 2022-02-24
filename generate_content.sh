@@ -16,11 +16,19 @@ fi
 ./learn_overview/make_html.py
 source __venv__/bin/activate
 
+if ! [ -d $PWD/pelican-plugins ]
+then
+    mkdir pelican-plugins
+    git clone --recursive https://github.com/getpelican/pelican-plugins pelican-plugins/
+    echo "[INFO] pelican-plugins created"
+fi
+
 if ! [ $(pelican-themes -l | grep elegant) ]
 then
     mkdir -p pelican-themes/elegant
     git clone --recursive https://github.com/Pelican-Elegant/elegant pelican-themes/elegant
     pelican-themes -i pelican-themes/elegant
+    echo "[INFO] pelican-themes created"
 fi
 
 pelican
