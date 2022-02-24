@@ -30,7 +30,7 @@ then
     for plugin in "${plugins[@]}"
     do
         mkdir -p pelican-plugins/$plugin
-        src="https://github.com/getpelican/pelican-plugins/${plugin}"
+        src="https://github.com/getpelican/pelican-plugins/tree/master/${plugin}"
         dst="pelican-plugins/${plugin}"
         git clone --recursive $src $dst 1>/dev/null
         echo "[INFO] pelican-plugin ${plugin} was created"
