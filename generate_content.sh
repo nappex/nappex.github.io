@@ -14,11 +14,20 @@ then
 fi
 
 ./learn_overview/make_html.py
+source __venv__/bin/activate
+
+if ! [ $(pelican-themes -l | grep elegant) ]
+then
+    mkdir -p pelican-themes/elegant
+    git clone --recursive https://github.com/Pelican-Elegant/elegant pelican-themes/elegant
+    pelican-themes -i pelican-themes/elegant
+fi
 
 pelican
 git add .
 git commit -m "$1"
 git push origin master
+sleep 1
 
 cd output/
 git add .
