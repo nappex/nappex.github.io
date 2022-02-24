@@ -86,26 +86,20 @@
 </div>
 
 <div class="row-fluid">
-    <div class="span2 table-of-content">
-        <nav>
-        <h4>Contents</h4>
-        <div class="toc">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
 <ul>
-<li><a href="#comparison-operators">Comparison operators</a></li>
-<li><a href="#identical-objects-the-singletones">Identical objects - The singletones</a></li>
-<li><a href="#difference-between-and-is-in-examples">Difference between == and is in examples</a></li>
-<li><a href="#compare-objects-identical-number-in-examples">Compare objects identical number in examples</a></li>
+<li><a href="#comparison-operators">Comparison&nbsp;operators</a></li>
+<li><a href="#identical-objects-the-singletones">Identical objects - The&nbsp;singletones</a></li>
+<li><a href="#difference-between-and-is-in-examples">Difference between == and is in&nbsp;examples</a></li>
+<li><a href="#compare-objects-identical-number-in-examples">Compare objects identical number in&nbsp;examples</a></li>
 </ul>
 </div>
-        </nav>
-    </div>
-    <div class="span8 article-content">
-            
-            
-<h1 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">¶</a></h1>
-<p><strong>Python basic comparison operators:</strong></p>
-<p>These operators compare the <strong>values</strong> of comparing objects. In other words we are comparing values saved inside the variable. Each int, float or string type is saved in memory as object in python. And we want to compare content of these objects with operators below.</p>
-<p>In generally, its are operators which we’ve already known from school.</p>
+<h1 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">&para;</a></h1>
+<p><strong>Python basic comparison&nbsp;operators:</strong></p>
+<p>These operators compare the <strong>values</strong> of comparing objects. In other words we are comparing values saved inside the variable. Each int, float or string type is saved in memory as object in python. And we want to compare content of these objects with operators&nbsp;below.</p>
+<p>In generally, its are operators which we&rsquo;ve already known from&nbsp;school.</p>
 <table>
 <thead>
 <tr>
@@ -147,12 +141,12 @@
 </tr>
 </tbody>
 </table>
-<hr/>
-<p><strong>Python identical operators:</strong></p>
+<hr>
+<p><strong>Python identical&nbsp;operators:</strong></p>
 <p>These operators compared if two objects are same objects.
 For better understanding. Every object in python has its own <strong>id number</strong>.
 We can get id number of certain object in python by method <code>id()</code>.
-So when two objects are identical than they have same id number.</p>
+So when two objects are identical than they have same id&nbsp;number.</p>
 <table>
 <thead>
 <tr>
@@ -174,8 +168,8 @@ So when two objects are identical than they have same id number.</p>
 </tr>
 </tbody>
 </table>
-<p>See example below.</p>
-<p>Variable <code>a</code> and <code>b</code> have same values saved in but they have different id.</p>
+<p>See example&nbsp;below.</p>
+<p>Variable <code>a</code> and <code>b</code> have same values saved in but they have different&nbsp;id.</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="m">3100</span>
 &gt;&gt;&gt; <span class="nv">b</span> <span class="o">=</span> <span class="m">3100</span>
 &gt;&gt;&gt; id<span class="o">(</span>a<span class="o">)</span>
@@ -183,23 +177,25 @@ So when two objects are identical than they have same id number.</p>
 &gt;&gt;&gt; id<span class="o">(</span>b<span class="o">)</span>
 <span class="m">4332864880</span>
 </code></pre></div>
-<h1 id="identical-objects-the-singletones">Identical objects - The singletones<a class="headerlink" href="#identical-objects-the-singletones" title="Permanent link">¶</a></h1>
-<p>The singleton is one of the simplest design pattern of object in Python.</p>
-<p>Examples of singleton are:</p>
+
+<h1 id="identical-objects-the-singletones">Identical objects - The singletones<a class="headerlink" href="#identical-objects-the-singletones" title="Permanent link">&para;</a></h1>
+<p>The singleton is one of the simplest design pattern of object in&nbsp;Python.</p>
+<p>Examples of singleton&nbsp;are:</p>
 <ul>
 <li><code>None</code></li>
 <li><code>True</code></li>
 <li><code>False</code></li>
 </ul>
 <p>What does it means ? Whenever we create one of these object above in our code
-always will be one same object.</p>
-<p>It can’t be two <code>None</code> objects with different id number.</p>
-<p>Although if we have two and more <code>None</code> in our code, always it is referenced to one object saved in memory.</p>
+always will be one same&nbsp;object.</p>
+<p>It can&rsquo;t be two <code>None</code> objects with different id&nbsp;number.</p>
+<p>Although if we have two and more <code>None</code> in our code, always it is referenced to one object saved in&nbsp;memory.</p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; id<span class="o">(</span>None<span class="o">)</span>
 <span class="m">4407467184</span>
 </code></pre></div>
+
 <p>All <code>None</code> objects in my certain code have id number equal to <strong>4407467184</strong>.</p>
-<h1 id="difference-between-and-is-in-examples">Difference between <code>==</code> and <code>is</code> in examples<a class="headerlink" href="#difference-between-and-is-in-examples" title="Permanent link">¶</a></h1>
+<h1 id="difference-between-and-is-in-examples">Difference between <code>==</code> and <code>is</code> in examples<a class="headerlink" href="#difference-between-and-is-in-examples" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="m">3100</span>
 &gt;&gt;&gt; <span class="nv">b</span> <span class="o">=</span> <span class="m">3100</span>
 &gt;&gt;&gt; <span class="nv">id_a</span> <span class="o">=</span> id<span class="o">(</span>a<span class="o">)</span>
@@ -213,31 +209,34 @@ False
 &gt;&gt;&gt; <span class="nv">a</span> <span class="o">==</span> b
 True
 </code></pre></div>
-<p>Comparison <code>a is b</code> can be rewrite as <code>id_a == id_b</code>, so we just compare id number of each object, in other words if two id integers are same. In some cases it is much faster than compare values of objects, expecially when we compare list of values.</p>
+
+<p>Comparison <code>a is b</code> can be rewrite as <code>id_a == id_b</code>, so we just compare id number of each object, in other words if two id integers are same. In some cases it is much faster than compare values of objects, expecially when we compare list of&nbsp;values.</p>
 <p>Comparison <code>a == b</code> compares values saved in each variable. In this case we compare two integers saved in <code>3100 == 3100</code>.</p>
-<p>This explanation is same for <code>!=</code> and <code>is not</code>. But with vice versa logic.</p>
-<h1 id="compare-objects-identical-number-in-examples">Compare objects identical number in examples<a class="headerlink" href="#compare-objects-identical-number-in-examples" title="Permanent link">¶</a></h1>
+<p>This explanation is same for <code>!=</code> and <code>is not</code>. But with vice versa&nbsp;logic.</p>
+<h1 id="compare-objects-identical-number-in-examples">Compare objects identical number in examples<a class="headerlink" href="#compare-objects-identical-number-in-examples" title="Permanent link">&para;</a></h1>
 <p><strong><code>None</code> examples:</strong></p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; def my_func<span class="o">()</span>:
 ...     <span class="k">return</span> None
 ...
-&gt;&gt;&gt; <span class="nv">oliver</span> <span class="o">=</span> <span class="o">{</span><span class="s2">"age"</span>: <span class="m">20</span><span class="o">}</span>
+&gt;&gt;&gt; <span class="nv">oliver</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;age&quot;</span>: <span class="m">20</span><span class="o">}</span>
 &gt;&gt;&gt; my_func<span class="o">()</span> is None
 True
-&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">"height"</span>, None<span class="o">)</span> is None
+&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">&quot;height&quot;</span>, None<span class="o">)</span> is None
 True
-&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">"age"</span>, None<span class="o">)</span> is None
+&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">&quot;age&quot;</span>, None<span class="o">)</span> is None
 False
-&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">"age"</span>, None<span class="o">)</span> is not None
+&gt;&gt;&gt; oliver.get<span class="o">(</span><span class="s2">&quot;age&quot;</span>, None<span class="o">)</span> is not None
 True
 </code></pre></div>
+
 <p><strong><code>True</code> examples:</strong></p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">3</span> <span class="o">==</span> <span class="m">3</span> is True
 True
 </code></pre></div>
-<p>Python will evaluate like that:</p>
+
+<p>Python will evaluate like&nbsp;that:</p>
 <p><code>3 == 3</code> = <code>True</code>, than <code>id(True) is id(True)</code> = <code>True</code></p>
-<p><strong>Two lists:</strong></p>
+<p><strong>Two&nbsp;lists:</strong></p>
 <div class="highlight"><pre><span></span><code>&gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span><span class="o">]</span>
 &gt;&gt;&gt; <span class="nv">b</span> <span class="o">=</span> a
 &gt;&gt;&gt; a is b
@@ -256,8 +255,8 @@ True
 &gt;&gt;&gt; del a
 &gt;&gt;&gt; a
 Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
-  File <span class="s2">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
-NameError: name <span class="s1">'a'</span> is not defined
+  File <span class="s2">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, <span class="k">in</span> &lt;module&gt;
+NameError: name <span class="s1">&#39;a&#39;</span> is not defined
 &gt;&gt;&gt; b
 <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">]</span>
 &gt;&gt;&gt; <span class="nv">a</span> <span class="o">=</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span><span class="o">]</span>
@@ -266,17 +265,13 @@ False
 &gt;&gt;&gt; <span class="nv">a</span> <span class="o">==</span> b
 True
 </code></pre></div>
-<p>Notice at the end of code I’ve created new list <code>a</code> which has same values as list <code>b</code>. But when I’ve created new list, than the new list is a new object with new <code>id</code> number.</p>
+
+<p>Notice at the end of code I&rsquo;ve created new list <code>a</code> which has same values as list <code>b</code>. But when I&rsquo;ve created new list, than the new list is a new object with new <code>id</code> number.</p>
 
 
              
  
-                <p id="post-share-links">
-    Share on:
-      <a href="https://twitter.com/intent/tweet?text=Comparing%20objects%20in%C2%A0python&url=https%3A//nappex.github.io/myblog/object-comparing&hashtags=python,intermediate" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/object-comparing" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Comparing%20objects%20in%C2%A0python&amp;body=https%3A//nappex.github.io/myblog/object-comparing" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
-
+            
             
             
 
@@ -287,25 +282,6 @@ True
 
 
             <hr/>
-<section>
-    <h2>Related Posts</h2>
-<ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Introduction to web scraping with python">Introduction to web scraping with python</a></li>
-<li><a href="https://nappex.github.io/myblog/blog-publish-me" title="How I’ve published my pelican blog">How I’ve published my pelican blog</a></li>
-<li><a href="https://nappex.github.io/myblog/python-scheme" title="Python project structure">Python project structure</a></li>
-<li><a href="https://nappex.github.io/myblog/python-virtualenvs-installation" title="Install python and handle virtual environments on MacOS">Install python and handle virtual environments on MacOS</a></li>
-<li><a href="https://nappex.github.io/myblog/configuration-simple" title="Discover secrets of config formats">Discover secrets of config formats</a></li>
-</ul>
-<hr />
-</section>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/blog-publish-me" title="Previous: How I’ve published my pelican blog">How I’ve published my pelican blog</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/build-your-privacy" title="Next: Build and keep your privacy on top">Build and keep your privacy on top</a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
