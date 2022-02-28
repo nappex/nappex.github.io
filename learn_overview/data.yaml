@@ -351,3 +351,35 @@
     - text: course url
       href: https://www.udemy.com/course/get-started-with-html-css-the-frontend-developer-bootcamp/
   estimate_time: 30+ hours
+
+- title: Úvod do příkazové řádky
+  description: Learn everything about command line
+  level: beginner
+  lecturer: Lukáš Bařinka
+  start_date: 03/2022
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: Shell, bash
+  type: course
+  form: online
+  materials:
+    - text: course url
+      href: https://www.youtube.com/watch?v=gGfDy9-Y2CM&list=PLHS-Uhp7t2Ys5lwy-5jops3t_DCfpXu_j&index=1
+  estimate_time: 50 hours
+
+- title: CMD challenge
+  description: Practice your knowledge about shell commands with the game
+  level: beginner
+  lecturer: no lecture
+  start_date: 01/2022
+  end_date: unknown
+  cost: free
+  completed: false
+  technology: Shell, bash
+  type: game
+  form: online
+  materials:
+    - text: game url
+      href: https://cmdchallenge.com/
+  estimate_time: entire life

@@ -17,24 +17,28 @@ fi
 source __venv__/bin/activate || exit 1
 python -m pip install --upgrade pip || exit 1
 
-if [ ! -d $PWD/pelican-plugins ]
-then
-    pelican_plugins=(
-        "pelican-search"
-        "pelican-series"
-        "pelican-share-post"
-        "pelican-render-math"
-        "pelican-related-posts"
-        "pelican-neighbors"
-    )
 
-    for plugin in "${pelican_plugins[@]}"
-    do
+pelican_plugins=(
+    "pelican-search"
+    "pelican-series"
+    "pelican-share-post"
+    "pelican-render-math"
+    "pelican-related-posts"
+    "pelican-neighbors"
+)
+
+for plugin in "${pelican_plugins[@]}"
+do
+    if [ ! $(pip freeze | grep $plugin) ]
+    then
         python -m pip install $plugin 1>/dev/null || exit 1
-        echo "[INFO] pelican-plugin ${plugin} was created"
+        echo "[INSTALLING] pelican-plugin ${plugin}..."
         sleep 1
-    done
-fi
+    else
+        echo "[INFO] pelican-plugin ${plugin} is already installed"
+    fi
+done
+
 
 if [ ! $(pelican-themes -l | grep elegant) ]
 then
