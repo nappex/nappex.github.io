@@ -26,10 +26,11 @@ pelican_plugins=(
     "pelican-related-posts"
     "pelican-neighbors"
 )
+pip_plugins=$(pip freeze)
 
 for plugin in "${pelican_plugins[@]}"
 do
-    if [ ! $(pip freeze | grep $plugin) ]
+    if [ ! $(echo $pip_plugins | grep $plugin) ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
         echo "[INSTALLING] pelican-plugin ${plugin}..."
