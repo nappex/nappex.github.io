@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! "$1" ]
 then
@@ -7,15 +7,26 @@ then
     exit 1
 fi
 
+if [ ! -d $PWD/__venv__ ]
+then
+    echo "Creating python virtual env..."
+    sleep 1
+    python3 -m venv __venv__
+fi
+
 if [ ! -d $PWD/output ]
 then
     echo "[INFO] Create output dir"
     git clone -b gh-pages git@github.com:nappex/nappex.github.io.git output
 fi
 
-./learn_overview/make_html.py
-source __venv__/bin/activate || exit 1
+source $PWD/__venv__/bin/activate || exit 1
 python -m pip install --upgrade pip || exit 1
+
+# install requirements, only if not satisfied
+
+
+python learn_overview/make_html.py || exit 1
 
 
 pelican_plugins=(

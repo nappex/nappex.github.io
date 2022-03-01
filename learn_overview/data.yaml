@@ -383,3 +383,19 @@
     - text: game url
       href: https://cmdchallenge.com/
   estimate_time: entire life
+
+- title: PyLadies Brno - linuxová administrace
+  description: Linuxová administrace
+  level: beginner
+  lecturer: Petr Viktorin
+  start_date: 09/2021
+  end_date: 12/2021
+  cost: free
+  completed: false
+  technology: Linux, Fedora
+  type: course
+  form: online
+  materials:
+    - text: text - naucse.python.cz
+      href: https://naucse.python.cz/2021/linuxadmin-podzim/
+  estimate_time: 50+ hours

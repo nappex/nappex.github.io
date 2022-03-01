@@ -1,4 +1,3 @@
-#!/Users/dstroch/develop/nappex.github.io/__venv__/bin/python3
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
