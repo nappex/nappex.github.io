@@ -28,9 +28,9 @@
   type: course
   form: online
   materials:
-    - text: texts - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2020/pyladies-ostrava-podzim-pokrocili/
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLtMx05xox2EiASl8pnXmssbxA2rHa4s0s
     - text: source code - GitHub
       href: https://github.com/frenzymadness/Advanced_PyLadies
@@ -48,9 +48,9 @@
   type: course
   form: online
   materials:
-    - text: texts - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2020/pydata-ostrava-jaro/
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLtMx05xox2Eipf5I1Be5VbYNoAd1Xs3IU
   estimate_time: 40+ hours with all homeworks
 
@@ -66,9 +66,9 @@
   type: course
   form: online
   materials:
-    - text: texts - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2020/pydata-ostrava-jaro/
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLtMx05xox2Eipf5I1Be5VbYNoAd1Xs3IU
   estimate_time: 40+ hours with all homeworks
 
@@ -84,7 +84,7 @@
   type: course
   form: online
   materials:
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PL2svwyZ8kybw4zDC7_Gz4_-zsJWS3ngKc
     - text: GitHub materials
       href: https://github.com/Mintaka/mypyladies_sqlite
@@ -104,7 +104,7 @@
   materials:
     - text: text - freezeyt blog
       href: https://encukou.github.io/freezeyt/
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3EU5Oez3ZSVjY5pZJttP2lT
     - text: source code - GitHub
       href: https://github.com/encukou/freezeyt
@@ -282,7 +282,7 @@
   type: course
   form: online
   materials:
-    - text: text - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2020/linux-admin/
     - text: youtube playlist
       href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3HNjtAXCCeQPyRioItF1egJ
@@ -384,8 +384,8 @@
       href: https://cmdchallenge.com/
   estimate_time: entire life
 
-- title: PyLadies Brno - linuxová administrace
-  description: Linuxová administrace
+- title: PyLadies Brno
+  description: Linux administrace Fedora
   level: beginner
   lecturer: Petr Viktorin
   start_date: 09/2021
@@ -396,8 +396,8 @@
   type: course
   form: online
   materials:
-    - text: text - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2021/linuxadmin-podzim/
-    - text: youtube-videos
+    - text: youtube-videa
       href: https://www.youtube.com/watch?v=wOmveCLfs3o&list=PLFt-PM7J_H3FKcDLuIPu1UNIzg2M57xXp
   estimate_time: 30+ hours
