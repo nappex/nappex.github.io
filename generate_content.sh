@@ -36,7 +36,6 @@ do
         echo "[INSTALLING] python package ${pkg}..."
         sleep 1
     else
-        echo $found
         echo "[INFO] python package ${pkg} is already installed"
     fi
 done
