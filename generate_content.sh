@@ -29,7 +29,7 @@ needed_pkgs=$(cat $PWD/requirements.txt)
 # install requirements, only if not satisfied
 for pkg in $needed_pkgs
 do
-    found=$(echo $pip_plugins | grep -o "${pkg}=")
+    found=$(echo $pip_plugins | grep -io "${pkg}=")
     if [ ! $found ]
     then
         python -m pip install $pkg 1>/dev/null || exit 1
@@ -53,7 +53,7 @@ pelican_plugins=(
 
 for plugin in "${pelican_plugins[@]}"
 do
-    found=$(echo $pip_plugins | grep -o $plugin)
+    found=$(echo $pip_plugins | grep -io $plugin)
     if [ ! $found ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
