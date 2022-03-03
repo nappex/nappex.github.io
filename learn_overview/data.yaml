@@ -398,4 +398,6 @@
   materials:
     - text: text - naucse.python.cz
       href: https://naucse.python.cz/2021/linuxadmin-podzim/
-  estimate_time: 50+ hours
+    - text: youtube-videos
+      href: https://www.youtube.com/watch?v=wOmveCLfs3o&list=PLFt-PM7J_H3FKcDLuIPu1UNIzg2M57xXp
+  estimate_time: 30+ hours

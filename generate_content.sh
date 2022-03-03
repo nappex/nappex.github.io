@@ -24,7 +24,7 @@ source $PWD/__venv__/bin/activate || exit 1
 python -m pip install --upgrade pip || exit 1
 
 pip_plugins=$(pip freeze)
-needed_pkgs=$(cat requirements.txs)
+needed_pkgs=$(cat $PWD/requirements.txt)
 
 # install requirements, only if not satisfied
 for pkg in $needed_pkgs
@@ -52,7 +52,9 @@ pelican_plugins=(
 
 for plugin in "${pelican_plugins[@]}"
 do
-    if [ ! $(echo $pip_plugins | grep $plugin) ]
+    cond=$(echo $pip_plugins | grep $plugin)
+    echo $plugin
+    if [ ! $cond ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
         echo "[INSTALLING] pelican-plugin ${plugin}..."
