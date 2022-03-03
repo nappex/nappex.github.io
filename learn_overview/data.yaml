@@ -10,9 +10,9 @@
   type: course
   form: classroom
   materials:
-    - text: texts - naucse.python.cz
+    - text: text na naucse
       href: https://naucse.python.cz/2019/pyladies-ostrava-jaro/
-    - text: videos - youtube playlist
+    - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLtMx05xox2Ej5-C_rbh75Bb3PKmP3bCTc
   estimate_time: 80+ hours with all homeworks
 
@@ -102,7 +102,7 @@
   type: project
   form: online
   materials:
-    - text: text - freezeyt blog
+    - text: freezeyt blog
       href: https://encukou.github.io/freezeyt/
     - text: youtube videa
       href: https://www.youtube.com/playlist?list=PLFt-PM7J_H3EU5Oez3ZSVjY5pZJttP2lT
