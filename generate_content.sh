@@ -29,12 +29,14 @@ needed_pkgs=$(cat $PWD/requirements.txt)
 # install requirements, only if not satisfied
 for pkg in $needed_pkgs
 do
-    if [ ! $(echo $pip_plugins | grep $pkg) ]
+    found=$(echo $pip_plugins | grep -o "${pkg}=")
+    if [ ! $found ]
     then
         python -m pip install $pkg 1>/dev/null || exit 1
         echo "[INSTALLING] python package ${pkg}..."
         sleep 1
     else
+        echo $found
         echo "[INFO] python package ${pkg} is already installed"
     fi
 done
@@ -52,9 +54,8 @@ pelican_plugins=(
 
 for plugin in "${pelican_plugins[@]}"
 do
-    cond=$(echo $pip_plugins | grep $plugin)
-    echo $plugin
-    if [ ! $cond ]
+    found=$(echo $pip_plugins | grep -o $plugin)
+    if [ ! $found ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
         echo "[INSTALLING] pelican-plugin ${plugin}..."
