@@ -23,11 +23,23 @@ fi
 source $PWD/__venv__/bin/activate || exit 1
 python -m pip install --upgrade pip || exit 1
 
-# install requirements, only if not satisfied
+pip_plugins=$(pip freeze)
+needed_pkgs=$(cat requirements.txs)
 
+# install requirements, only if not satisfied
+for pkg in $needed_pkgs
+do
+    if [ ! $(echo $pip_plugins | grep $pkg) ]
+    then
+        python -m pip install $pkg 1>/dev/null || exit 1
+        echo "[INSTALLING] python package ${pkg}..."
+        sleep 1
+    else
+        echo "[INFO] python package ${pkg} is already installed"
+    fi
+done
 
 python learn_overview/make_html.py || exit 1
-
 
 pelican_plugins=(
     "pelican-search"
@@ -37,7 +49,6 @@ pelican_plugins=(
     "pelican-related-posts"
     "pelican-neighbors"
 )
-pip_plugins=$(pip freeze)
 
 for plugin in "${pelican_plugins[@]}"
 do
