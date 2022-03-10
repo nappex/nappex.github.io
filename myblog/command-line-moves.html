@@ -231,12 +231,13 @@ $ ls <span class="s1">&#39;(press ESC + .)&#39;</span>
 <h2 id="where-to-find-all-shortcuts">Where to find all shortcuts<a class="headerlink" href="#where-to-find-all-shortcuts" title="Permanent link">&para;</a></h2>
 <p>If some of shortcuts does not work, there is settings in shell config file. Name of config file is <code>.inputrc</code> and it is located in your home&nbsp;directory.</p>
 <p>You can set your <code>.inputrc</code> on your&nbsp;own:</p>
-<blockquote>
-<p>.inputrc
-  set blink-matching-paren on # blink to parenthes which is paired with
-  set expand-tilde on # expand tilda to absolute path when you press <span class="caps">TAB</span></p>
-<p><span class="dquo">&ldquo;</span>\C-t&rdquo;: forward-search-history # keyboard shortcut <span class="caps">CTRL</span>+T</p>
-</blockquote>
+<p><code>.inputrc</code></p>
+<div class="highlight"><pre><span></span><code>set blink-matching-paren on # blink to parenthes which is paired with
+set expand-tilde on # expand tilda to absolute path when you press TAB
+
+&quot;\C-t&quot;: forward-search-history # keyboard shortcut CTRL+T
+</code></pre></div>
+
 <p>You can list all shortcuts to your shell by&nbsp;command:</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">bind</span> -p <span class="p">|</span> less
 </code></pre></div>
