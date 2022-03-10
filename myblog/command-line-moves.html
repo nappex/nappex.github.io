@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David S" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="linux, beginner, Linux, Shell, Command_line, " />
+
+<meta property="og:title" content="Use your command line more effectively "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/command-line-moves" />
+<meta property="og:description" content="How to control your command line with shortcuts" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David S" />
+<meta property="og:article:published_time" content="2022-03-10T00:00:00+01:00" />
+<meta name="twitter:title" content="Use your command line more effectively ">
+<meta name="twitter:description" content="How to control your command line with shortcuts">
+
+        <title>Use your command line more effectively  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/command-line-moves">
+                Use your command line more&nbsp;effectively
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#useful-shortcuts-to-control-you-command-line">Useful shortcuts to control you command line</a><ul>
+<li><a href="#explanation">Explanation</a></li>
+<li><a href="#shortcuts">Shortcuts</a><ul>
+<li><a href="#special-cases">Special cases</a><ul>
+<li><a href="#ctrl-v"><span class="caps">CTRL</span> +&nbsp;V</a></li>
+</ul>
+</li>
+<li><a href="#autocompletion">Autocompletion</a><ul>
+<li><a href="#tab"><span class="caps">TAB</span></a></li>
+<li><a href="#esc"><span class="caps">ESC</span> +&nbsp;.</a></li>
+</ul>
+</li>
+<li><a href="#interruptions">Interruptions</a><ul>
+<li><a href="#ctrl-c"><span class="caps">CTRL</span> +&nbsp;C</a></li>
+</ul>
+</li>
+<li><a href="#control-stdin-to-terminal">Control <span class="caps">STDIN</span> to terminal</a><ul>
+<li><a href="#ctrl-s"><span class="caps">CTRL</span> +&nbsp;S</a></li>
+<li><a href="#ctrl-q"><span class="caps">CTRL</span> +&nbsp;Q</a></li>
+</ul>
+</li>
+<li><a href="#browsing-command-history">Browsing command history</a><ul>
+<li><a href="#up-arrow-or-ctrl-p">⇧ <span class="caps">UP</span>-<span class="caps">ARROW</span> or (<span class="caps">CTRL</span> +&nbsp;P)</a></li>
+<li><a href="#down-arrow-or-ctrl-n">⇩ <span class="caps">DOWN</span>-<span class="caps">ARROW</span> or (<span class="caps">CTRL</span> +&nbsp;N)</a></li>
+<li><a href="#ctrl-r-ctrl-r-pattern"><span class="caps">CTRL</span> + R (<span class="caps">CTRL</span> + R&nbsp;&ldquo;pattern&rdquo;)</a></li>
+</ul>
+</li>
+<li><a href="#moving-cursor-on-line">Moving cursor on line</a><ul>
+<li><a href="#ctrl-a-or-home"><span class="caps">CTRL</span> + A or (<span class="caps">HOME</span>)</a></li>
+<li><a href="#ctrl-e-or-end"><span class="caps">CTRL</span> + E or (<span class="caps">END</span>)</a></li>
+<li><a href="#ctrl-or-alt-b"><span class="caps">CTRL</span> + ⇦ or (<span class="caps">ALT</span> +&nbsp;B)</a></li>
+<li><a href="#ctrl-or-alt-f"><span class="caps">CTRL</span> + ⇨ or (<span class="caps">ALT</span> +&nbsp;F)</a></li>
+</ul>
+</li>
+<li><a href="#remove">Remove</a><ul>
+<li><a href="#ctrl-k"><span class="caps">CTRL</span> +&nbsp;K</a></li>
+<li><a href="#esc-d"><span class="caps">ESC</span> +&nbsp;D</a></li>
+<li><a href="#ctrl-w"><span class="caps">CTRL</span> +&nbsp;W</a></li>
+<li><a href="#ctrl-l"><span class="caps">CTRL</span> +&nbsp;L</a></li>
+<li><a href="#ctrl-u"><span class="caps">CTRL</span> +&nbsp;U</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#where-to-find-all-shortcuts">Where to find all&nbsp;shortcuts</a></li>
+</ul>
+</li>
+<li><a href="#useful-links">Useful&nbsp;links</a></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>If you want to operate your computer as master, then necessary skill is to control your <code>command line</code>. Each of beginners have a strange feelings about <code>command line</code>. I undestand it. <code>Graphical</code> environment is for basic work more intuitive without any extra knowledge. At first view of somebody who has no experience with terminal it could seem as something more difficult for same result as we can do with <code>graphical</code> env. The half of that opinion is true, you need to learn some extra knowledge to use terminal and the learning path will be more difficult and longer than to learn how to use <code>graphical</code> env. But when you learn the terminal you will be faster, preciser, and more powerful user of your computer because you get option to setup whatever you want. The <code>graphical</code> environment is just layer around commands in terminal with buttons and fancy windows. If you setup something in <code>graphical</code> env and click to button <code>apply</code> or <code>OK</code>, then some command is sent to computer and the command will be somthing in shell on background. And there you can see limitation of <code>graphical</code> environment. You can not have buttons to all setup, all commands, or the all combinations of commands. Then the <code>graphical</code> environment will lost their simplicity and intuitive. So if you don&rsquo;t want to use your computer more deep and you wanna just browsing the internet than <code>graphical</code> environment is absolutely ok without touch the terminal&nbsp;tool.</p>
+<p>Also it is not necessary to use just only graphical env or command line. The best usage is combination of both. Each of approach has some advantages and disadvantages. Some guys who are really master in command line using just command line but it is really hard way for people who really know what they are doing. Or lots of admins of servers are using just command line, because it is simple and fast way how to operate servers remote by ssh for example. Some other guys really enjoy combination fo command line and <code>tilling window managers</code> for example
+<a href="https://dwm.suckless.org/">dwm</a> or <a href="https://i3wm.org/">i3wm</a>.</p>
+<h1 id="useful-shortcuts-to-control-you-command-line">Useful shortcuts to control you command line<a class="headerlink" href="#useful-shortcuts-to-control-you-command-line" title="Permanent link">&para;</a></h1>
+<h2 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h2>
+<p><strong><span class="caps">CTRL</span></strong> means <span class="caps">CONTROL</span> button. Button is located near to <code>alt</code> buttons in keyboard layout.
+<strong><span class="caps">ALT</span></strong> means <span class="caps">OPTION</span> button.
+<strong><span class="caps">CMD</span></strong> means <span class="caps">COMMAND</span> or <span class="caps">ACTION</span> button. Windows: button with window. MacOS:&nbsp;cmd.</p>
+<p>Uppercases letters don&rsquo;t mean to use with <code>SHIFT</code> button. Uppercase is used because letters are in keyboard are print as uppercase. If <code>SHIFT</code> should be used, then its name will be mentioned in&nbsp;combination.</p>
+<p>Shorcuts are mentioned for operation system <code>Linux</code>. Some of these shortcuts will not work on diff <span class="caps">OS</span>.</p>
+<h2 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="Permanent link">&para;</a></h2>
+<h3 id="special-cases">Special cases<a class="headerlink" href="#special-cases" title="Permanent link">&para;</a></h3>
+<h4 id="ctrl-v"><span class="caps">CTRL</span> + V<a class="headerlink" href="#ctrl-v" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> enable mode where special button as arrows, control, alt lost its function and we will see chars which are sending to terminal when we pressed these special buttons in normal&nbsp;mode.</p>
+<h3 id="autocompletion">Autocompletion<a class="headerlink" href="#autocompletion" title="Permanent link">&para;</a></h3>
+<h4 id="tab"><span class="caps">TAB</span><a class="headerlink" href="#tab" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> single press or twice&nbsp;press</p>
+<p><strong>Action:</strong>
+* single press: autocomplete command from chars we&rsquo;ve already written
+* twice press: if autocomplete cannot autocomplete command because there are to many options of suitable command, then we can press <code>TAB</code> twice and shell list all available&nbsp;options.</p>
+<p>It is a helpful habit to use <code>TAB</code> button, it helps to avoid&nbsp;typos.</p>
+<h4 id="esc"><span class="caps">ESC</span> + .<a class="headerlink" href="#esc" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> autocomplete last used&nbsp;argument</p>
+<p><strong>examples:</strong></p>
+<div class="highlight"><pre><span></span><code>$ mkdir <span class="s2">&quot;Hello world&quot;</span>
+$ ls <span class="s1">&#39;(press ESC + .)&#39;</span>
+</code></pre></div>
+
+<p>you should&nbsp;get:</p>
+<div class="highlight"><pre><span></span><code>$ ls <span class="s2">&quot;Hello world&quot;</span>
+</code></pre></div>
+
+<h3 id="interruptions">Interruptions<a class="headerlink" href="#interruptions" title="Permanent link">&para;</a></h3>
+<h4 id="ctrl-c"><span class="caps">CTRL</span> + C<a class="headerlink" href="#ctrl-c" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> interrupt running command, process in your terminal. This shorcut will invoked <code>exception</code>, in python it is called as <code>KeyboardInterrupt</code>. It is really helpful way how to interrupt for example infinite&nbsp;cycle.</p>
+<h3 id="control-stdin-to-terminal">Control <span class="caps">STDIN</span> to terminal<a class="headerlink" href="#control-stdin-to-terminal" title="Permanent link">&para;</a></h3>
+<h4 id="ctrl-s"><span class="caps">CTRL</span> + S<a class="headerlink" href="#ctrl-s" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> stop <code>stdin</code> of running command. All outputs from file descriptor to terminal are&nbsp;stopped.</p>
+<h4 id="ctrl-q"><span class="caps">CTRL</span> + Q<a class="headerlink" href="#ctrl-q" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> start <code>stdin</code> of running command. All outputs from file descriptor to terminal are started&nbsp;again.</p>
+<h3 id="browsing-command-history">Browsing command history<a class="headerlink" href="#browsing-command-history" title="Permanent link">&para;</a></h3>
+<h4 id="up-arrow-or-ctrl-p">⇧ <span class="caps">UP</span>-<span class="caps">ARROW</span> or (<span class="caps">CTRL</span> + P)<a class="headerlink" href="#up-arrow-or-ctrl-p" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> autocomplete with previous command. To your relative position in commands&nbsp;history.</p>
+<h4 id="down-arrow-or-ctrl-n">⇩ <span class="caps">DOWN</span>-<span class="caps">ARROW</span> or (<span class="caps">CTRL</span> + N)<a class="headerlink" href="#down-arrow-or-ctrl-n" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> autocomplete with next command. To your relative position in commands&nbsp;history.</p>
+<h4 id="ctrl-r-ctrl-r-pattern"><span class="caps">CTRL</span> + R (<span class="caps">CTRL</span> + R &ldquo;pattern&rdquo;)<a class="headerlink" href="#ctrl-r-ctrl-r-pattern" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> search in commands history. When you pressed these buttons combinations, then search mode is activated. You have to write some pattern which you want to looking for. Search mode find the youngest command as first result which contains your pattern. If you want find older command you have to pressed <code>CTRL+R</code> again and you will move to older and older commands which sit to your pattern. If you want to quit the search mode with run the command hit <code>Enter</code>. If you want to leave search mode with any action double press <code>ESC</code>.</p>
+<h3 id="moving-cursor-on-line">Moving cursor on line<a class="headerlink" href="#moving-cursor-on-line" title="Permanent link">&para;</a></h3>
+<h4 id="ctrl-a-or-home"><span class="caps">CTRL</span> + A or (<span class="caps">HOME</span>)<a class="headerlink" href="#ctrl-a-or-home" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> move cursor at the start of&nbsp;line</p>
+<h4 id="ctrl-e-or-end"><span class="caps">CTRL</span> + E or (<span class="caps">END</span>)<a class="headerlink" href="#ctrl-e-or-end" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> move cursor at the <strong>e</strong>nd of&nbsp;line</p>
+<h4 id="ctrl-or-alt-b"><span class="caps">CTRL</span> + ⇦ or (<span class="caps">ALT</span> + B)<a class="headerlink" href="#ctrl-or-alt-b" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> move cursor to left. Cursor move is done word by&nbsp;word.</p>
+<p><strong>macOS:</strong> <span class="caps">CMD</span>+⇦</p>
+<h4 id="ctrl-or-alt-f"><span class="caps">CTRL</span> + ⇨ or (<span class="caps">ALT</span> + F)<a class="headerlink" href="#ctrl-or-alt-f" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> move cursor to right. Cursor move is done word by&nbsp;word.</p>
+<p><strong>macOS:</strong> <span class="caps">CMD</span>+⬅︎</p>
+<h3 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
+<h4 id="ctrl-k"><span class="caps">CTRL</span> + K<a class="headerlink" href="#ctrl-k" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> remove all chars from cursor to the end of&nbsp;line.</p>
+<h4 id="esc-d"><span class="caps">ESC</span> + D<a class="headerlink" href="#esc-d" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> remove all chars from cursor to the end of&nbsp;word.</p>
+<h4 id="ctrl-w"><span class="caps">CTRL</span> + W<a class="headerlink" href="#ctrl-w" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> remove all chars from cursor to the beginning of&nbsp;word.</p>
+<h4 id="ctrl-l"><span class="caps">CTRL</span> + L<a class="headerlink" href="#ctrl-l" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> remove all lines in terminal except the active one. Clear the terminal window from old&nbsp;commands.</p>
+<h4 id="ctrl-u"><span class="caps">CTRL</span> + U<a class="headerlink" href="#ctrl-u" title="Permanent link">&para;</a></h4>
+<p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
+<p><strong>Action:</strong> remove whole&nbsp;line</p>
+<h2 id="where-to-find-all-shortcuts">Where to find all shortcuts<a class="headerlink" href="#where-to-find-all-shortcuts" title="Permanent link">&para;</a></h2>
+<p>If some of shortcuts does not work, there is settings in shell config file. Name of config file is <code>.inputrc</code> and it is located in your home&nbsp;directory.</p>
+<p>You can set your <code>.inputrc</code> on your&nbsp;own:</p>
+<div class="highlight"><pre><span></span><code><span class="na">.inputrc</span><span class="w"></span>
+<span class="nf">set</span><span class="w"> </span><span class="no">blink-matching-paren</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="c1"># blink to parenthes which is paired with</span>
+<span class="nf">set</span><span class="w"> </span><span class="no">expand-tilde</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="c1"># expand tilda to absolute path when you press TAB</span>
+
+<span class="err">&quot;\</span><span class="nf">C-t</span><span class="err">&quot;</span><span class="p">:</span><span class="w"> </span><span class="no">forward-search-history</span><span class="w"> </span><span class="c1"># keyboard shortcut CTRL+T</span>
+</code></pre></div>
+
+<p>You can list all shortcuts to your shell by&nbsp;command:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">bind</span> -p <span class="p">|</span> less
+</code></pre></div>
+
+<ul>
+<li><code>\C</code> means <code>CONTROL</code> button. So <code>"\C-r"</code> means <code>CTRL + R</code> in our&nbsp;convention.</li>
+<li><code>\e</code> means <code>escape</code></li>
+</ul>
+<h1 id="useful-links">Useful links<a class="headerlink" href="#useful-links" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Whole article was written thanks to online lecture of Lukas Barinka.
+Thanks Lukas for great <a href="https://www.youtube.com/watch?v=SWJj1hGgA8g&amp;list=PLHS-Uhp7t2Ys5lwy-5jops3t_DCfpXu_j&amp;index=8">youtube-video</a> and your whole course about command line. Video is in czech&nbsp;language.</li>
+</ul>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Use%20your%20command%20line%20more%C2%A0effectively&url=https%3A//nappex.github.io/myblog/command-line-moves&hashtags=linux,beginner" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/command-line-moves" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Use%20your%20command%20line%20more%C2%A0effectively&amp;body=https%3A//nappex.github.io/myblog/command-line-moves" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/basics-terminology-networks" title="Introduction to terminology in networks">Introduction to terminology in networks</a></li>
+<li><a href="https://nappex.github.io/myblog/choose-right-monitor" title="Jak vybrat monitor ?">Jak vybrat monitor ?</a></li>
+<li><a href="https://nappex.github.io/myblog/basics-networks-devices" title="Introduction to network devices">Introduction to network devices</a></li>
+<li><a href="https://nappex.github.io/myblog/workflow-automation" title="Automate your workflow with shell script">Automate your workflow with shell script</a></li>
+<li><a href="https://nappex.github.io/myblog/grub-fix" title="Jak vyřešit problémy pomocí zavaděče GRUB">Jak vyřešit problémy pomocí zavaděče GRUB</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/grub-fix" title="Previous: Jak vyřešit problémy pomocí zavaděče GRUB">Jak vyřešit problémy pomocí zavaděče GRUB</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2022-03-10T00:00:00+01:00">Thu 10 March 2022</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#linux-shell-command_line-ref">Linux, Shell, Command_line</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#beginner-ref">beginner
+                    <span class="superscript">6</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#linux-ref">linux
+                    <span class="superscript">3</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
