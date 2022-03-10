@@ -179,12 +179,13 @@ If some of shortcuts does not work, there is settings in shell config file. Name
 
 You can set your `.inputrc` on your own:
 
-> .inputrc
->   set blink-matching-paren on # blink to parenthes which is paired with
->   set expand-tilde on # expand tilda to absolute path when you press TAB
+`.inputrc`
+```
+set blink-matching-paren on # blink to parenthes which is paired with
+set expand-tilde on # expand tilda to absolute path when you press TAB
 
->   "\C-t": forward-search-history # keyboard shortcut CTRL+T
-
+"\C-t": forward-search-history # keyboard shortcut CTRL+T
+```
 
 You can list all shortcuts to your shell by command:
 ```shell
