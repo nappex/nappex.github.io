@@ -207,11 +207,11 @@ $ ls <span class="s1">&#39;(press ESC + .)&#39;</span>
 <h4 id="ctrl-or-alt-b"><span class="caps">CTRL</span> + ⇦ or (<span class="caps">ALT</span> + B)<a class="headerlink" href="#ctrl-or-alt-b" title="Permanent link">&para;</a></h4>
 <p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
 <p><strong>Action:</strong> move cursor to left. Cursor move is done word by&nbsp;word.</p>
-<p><strong>macOS:</strong> <span class="caps">CMD</span>+⇦</p>
+<p><strong>macOS:</strong> <span class="caps">CMD</span> +&nbsp;⇦</p>
 <h4 id="ctrl-or-alt-f"><span class="caps">CTRL</span> + ⇨ or (<span class="caps">ALT</span> + F)<a class="headerlink" href="#ctrl-or-alt-f" title="Permanent link">&para;</a></h4>
 <p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
 <p><strong>Action:</strong> move cursor to right. Cursor move is done word by&nbsp;word.</p>
-<p><strong>macOS:</strong> <span class="caps">CMD</span>+⬅︎</p>
+<p><strong>macOS:</strong> <span class="caps">CMD</span> +&nbsp;⇨</p>
 <h3 id="remove">Remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h3>
 <h4 id="ctrl-k"><span class="caps">CTRL</span> + K<a class="headerlink" href="#ctrl-k" title="Permanent link">&para;</a></h4>
 <p><strong>Keypressing:</strong> gradually (one after&nbsp;another)</p>
@@ -231,13 +231,12 @@ $ ls <span class="s1">&#39;(press ESC + .)&#39;</span>
 <h2 id="where-to-find-all-shortcuts">Where to find all shortcuts<a class="headerlink" href="#where-to-find-all-shortcuts" title="Permanent link">&para;</a></h2>
 <p>If some of shortcuts does not work, there is settings in shell config file. Name of config file is <code>.inputrc</code> and it is located in your home&nbsp;directory.</p>
 <p>You can set your <code>.inputrc</code> on your&nbsp;own:</p>
-<div class="highlight"><pre><span></span><code><span class="na">.inputrc</span><span class="w"></span>
-<span class="nf">set</span><span class="w"> </span><span class="no">blink-matching-paren</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="c1"># blink to parenthes which is paired with</span>
-<span class="nf">set</span><span class="w"> </span><span class="no">expand-tilde</span><span class="w"> </span><span class="no">on</span><span class="w"> </span><span class="c1"># expand tilda to absolute path when you press TAB</span>
-
-<span class="err">&quot;\</span><span class="nf">C-t</span><span class="err">&quot;</span><span class="p">:</span><span class="w"> </span><span class="no">forward-search-history</span><span class="w"> </span><span class="c1"># keyboard shortcut CTRL+T</span>
-</code></pre></div>
-
+<blockquote>
+<p>.inputrc
+  set blink-matching-paren on # blink to parenthes which is paired with
+  set expand-tilde on # expand tilda to absolute path when you press <span class="caps">TAB</span></p>
+<p><span class="dquo">&ldquo;</span>\C-t&rdquo;: forward-search-history # keyboard shortcut <span class="caps">CTRL</span>+T</p>
+</blockquote>
 <p>You can list all shortcuts to your shell by&nbsp;command:</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">bind</span> -p <span class="p">|</span> less
 </code></pre></div>
