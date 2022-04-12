@@ -127,12 +127,17 @@ PROJECTS = [
     {
         "name": "Invoice generator",
         "url": "https://github.com/nappex/invoice_generator",
-        "description": "Simple invoice generatot in python",
+        "description": "Simple invoice generator in python",
     },
     {
-        "name": "Freezeyt (NOT MINE PROJECT)",
+        "name": "Freezeyt (contributor)",
         "url": "https://github.com/encukou/freezeyt",
-        "description": "Static web site generator created by czech community of PyLadies",
+        "description": "Static web site generator",
+    },
+    {
+        "name": "Onigumo (contributor)",
+        "url": "https://github.com/glutexo/onigumo",
+        "description": "Serialize content of web html sites",
     },
 
 ]
