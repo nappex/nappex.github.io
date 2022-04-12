@@ -23,13 +23,13 @@ fi
 source $PWD/__venv__/bin/activate || exit 1
 python -m pip install --upgrade pip || exit 1
 
-pip_plugins=$(pip freeze)
-needed_pkgs=$(cat $PWD/requirements.txt)
+pip_plugins=$( pip freeze )
+needed_pkgs=$( cat $PWD/requirements.txt )
 
 # install requirements, only if not satisfied
 for pkg in $needed_pkgs
 do
-    found=$(echo $pip_plugins | grep -io "${pkg}=")
+    found=$( echo $pip_plugins | grep -io "${pkg}=" )
     if [ ! $found ]
     then
         python -m pip install $pkg 1>/dev/null || exit 1
@@ -53,7 +53,7 @@ pelican_plugins=(
 
 for plugin in "${pelican_plugins[@]}"
 do
-    found=$(echo $pip_plugins | grep -io $plugin)
+    found=$( echo $pip_plugins | grep -io $plugin )
     if [ ! $found ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
@@ -65,7 +65,7 @@ do
 done
 
 
-if [ ! $(pelican-themes -l | grep elegant) ]
+if [ ! $( pelican-themes -l | grep elegant ) ]
 then
     mkdir -p pelican-themes/elegant
     src="https://github.com/Pelican-Elegant/elegant/"
