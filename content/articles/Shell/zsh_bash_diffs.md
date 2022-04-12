@@ -1,6 +1,6 @@
 ---
 Title: Differences between zsh and bash
-Date: 2021-11-22
+Date: 2022-04-11
 Category: Shell
 Tags: linux, shell, beginner
 Slug: zsh-bash-diffs
