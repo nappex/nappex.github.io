@@ -29,11 +29,13 @@ There is also [Czech]() translation of transcript.
 NSA annual state report by Poul-Henning Kamp (FreeBSD developer) - FOSDEM 2014
 
 video links:
+
 * [youtube](https://www.youtube.com/watch?v=fwcl17Q0bpk)
 * [vimeo](https://vimeo.com/86567061)
 * [FOSDEM](https://ftp.fau.de/fosdem/2014/Janson/Sunday/NSA_operation_ORCHESTRA_Annual_Status_Report.webm)
 
 presentation links:
+
 * [Poul-Henning Kamp personal page](http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf)
 
 
