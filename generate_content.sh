@@ -57,7 +57,7 @@ do
     if [ ! $found ]
     then
         python -m pip install $plugin 1>/dev/null || exit 1
-        echo "[INSTALLING] pelican-plugin ${plugin}..."
+        echo "[INSTALLED] pelican-plugin ${plugin}..."
         sleep 1
     else
         echo "[INFO] pelican-plugin ${plugin} is already installed"
@@ -65,14 +65,19 @@ do
 done
 
 
-if [ ! $( pelican-themes -l | grep elegant ) ]
+if [ ! -d "pelican-themes/elegant" ]
 then
     mkdir -p pelican-themes/elegant
     src="https://github.com/Pelican-Elegant/elegant/"
     dst="pelican-themes/elegant"
     git clone --recursive $src $dst 1>/dev/null || exit 1
+    echo "[INFO] dir pelican-themes/elegant created"
+fi
+
+if [ ! $( pelican-themes -l | grep elegant ) ]
+then
     pelican-themes -i pelican-themes/elegant || exit 1
-    echo "[INFO] pelican-themes created"
+    echo "[INSTALLED] pelican-themes/elegant"
 fi
 
 pelican || exit 1
