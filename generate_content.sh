@@ -82,7 +82,8 @@ then
     printf " ✅\n"
 fi
 
-printf "[INFO] Generating output files..."
+printf "[INFO] Generating output files...\n" # this is not write to stdout it is very strange behaviour
+
 pelican || exit 1
 printf " ✅\n"
 
