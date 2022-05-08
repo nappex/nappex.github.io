@@ -48,25 +48,25 @@ NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014.
 
 1. Q: Could you briefly introduce yourself?
 
-I’m a six foot ape-descendant who makes a living doing weird stuff with computers.
-I’ve been in computing for 30 years and open source for 29.
-I used to be one of the central developers in FreeBSD,
-these days I am the man behind the Varnish HTTP accelerator.
+    I’m a six foot ape-descendant who makes a living doing weird stuff with computers.
+    I’ve been in computing for 30 years and open source for 29.
+    I used to be one of the central developers in FreeBSD,
+    these days I am the man behind the Varnish HTTP accelerator.
 
 2. Q: What will your talk be about, exactly?
 
-My talk is about the NSA - FOSS relationship.
+    My talk is about the NSA - FOSS relationship.
 
-I think we need to reevaluate it.
+    I think we need to reevaluate it.
 
 3. Q: What brought you to this topic, why do you care about it?
-Why is it so important for you to talk about it?
+    Why is it so important for you to talk about it?
 
-The inspiration is the disclosures by Edward Snowden,
-but while they have mainly been aimed at the general
-population and politicians,
-there is a different message for the IT world and in
-particular for the FOSS community, but most people seem to miss it.
+    The inspiration is the disclosures by Edward Snowden,
+    but while they have mainly been aimed at the general
+    population and politicians,
+    there is a different message for the IT world and in
+    particular for the FOSS community, but most people seem to miss it.
 
 4. Q: Could you shed some light on the main message you want
 to convey in your talk? If there’s one thing that people
