@@ -9,9 +9,9 @@ fi
 
 if [ ! -d $PWD/__venv__ ]
 then
-    echo "Creating python virtual env..."
-    sleep 0.5
+    echo "[INFO] Creating python virtual env..."
     python3 -m venv __venv__
+    printf " ✅\n"
 fi
 
 if [ ! -d $PWD/output ]
@@ -56,9 +56,9 @@ do
     found=$( echo $pip_plugins | grep -io $plugin )
     if [ ! $found ]
     then
+        printf "[INSTALLING] pelican-plugin ${plugin}..."
         python -m pip install $plugin 1>/dev/null || exit 1
-        echo "[INSTALLED] pelican-plugin ${plugin}..."
-        sleep 0.5
+        printf " ✅\n"
     else
         echo "[INFO] pelican-plugin ${plugin} is already installed"
     fi
@@ -77,19 +77,29 @@ fi
 
 if [ ! $( pelican-themes -l | grep elegant ) ]
 then
+    printf "[INSTALLING] pelican-themes/elegant..."
     pelican-themes -i pelican-themes/elegant || exit 1
-    echo "[INSTALLING] pelican-themes/elegant"
+    printf " ✅\n"
 fi
 
+printf "[INFO] Generating output files..."
 pelican || exit 1
+printf " ✅\n"
+
+# push changes to github
+printf "[INFO] Push changes to master..."
 git add .
 git commit -m "$1"
 git push origin master
-sleep 1
+sleep 0.5
+printf " ✅\n"
 
+printf "[INFO] Push changes to gh-pages..."
 cd output/
 git add .
 git commit -m "$1"
 git push origin gh-pages
+sleep 0.5
+printf " ✅\n"
 
-echo Generating completed
+echo Process completed
