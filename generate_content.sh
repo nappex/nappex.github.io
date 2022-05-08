@@ -10,7 +10,7 @@ fi
 if [ ! -d $PWD/__venv__ ]
 then
     echo "Creating python virtual env..."
-    sleep 1
+    sleep 0.5
     python3 -m venv __venv__
 fi
 
@@ -32,9 +32,9 @@ do
     found=$( echo $pip_plugins | grep -io "${pkg}=" )
     if [ ! $found ]
     then
+        printf "[INSTALLING] python package ${pkg}..."
         python -m pip install $pkg 1>/dev/null || exit 1
-        echo "[INSTALLING] python package ${pkg}..."
-        sleep 1
+        printf " ✅\n"
     else
         echo "[INFO] python package ${pkg} is already installed"
     fi
@@ -58,7 +58,7 @@ do
     then
         python -m pip install $plugin 1>/dev/null || exit 1
         echo "[INSTALLED] pelican-plugin ${plugin}..."
-        sleep 1
+        sleep 0.5
     else
         echo "[INFO] pelican-plugin ${plugin} is already installed"
     fi
@@ -72,12 +72,13 @@ then
     dst="pelican-themes/elegant"
     git clone --recursive $src $dst 1>/dev/null || exit 1
     echo "[INFO] dir pelican-themes/elegant created"
+    sleep 0.5
 fi
 
 if [ ! $( pelican-themes -l | grep elegant ) ]
 then
     pelican-themes -i pelican-themes/elegant || exit 1
-    echo "[INSTALLED] pelican-themes/elegant"
+    echo "[INSTALLING] pelican-themes/elegant"
 fi
 
 pelican || exit 1
