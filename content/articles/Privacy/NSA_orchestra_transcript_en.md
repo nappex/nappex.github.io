@@ -376,7 +376,7 @@ So please don't go away.
 
 Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
-**1. Question:** So one of the biggest security leaks for the OpenSSL for instance
+1. **Question**: So one of the biggest security leaks for the OpenSSL for instance
     is actually their documentation and all the stuff,
     people generally say like: I'd rather be coding?
 
@@ -386,7 +386,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     And should be thrown out and started from scratch,
     written in a readable style and documented.
 
-**2. Question:** Yeah, I found your last remark very interesting referring
+2. **Question**: Yeah, I found your last remark very interesting referring
     to politics and especially in FOSDEM. Well we had this a little
     encounter where it was about politics and FOSDEM and then the
     reaction was like "no no no politics it's FOSDEM it's only about
@@ -402,7 +402,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     So you can ignore politics, but the politics will not ignore you.
 
 
-**3. Question:** Thank you for your awesome presentation.
+3. **Question**: Thank you for your awesome presentation.
     I might have been experiencing with friends some of those situations.
     I just wonder about the OpenSSL bit, if it's your guess because
     maybe there is a little bit of guessing or.
@@ -416,7 +416,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     Show me.
 
 
-**4. Question:** Yes, thank you very much for the presentation very interesting,
+4. **Question**: Yes, thank you very much for the presentation very interesting,
     very inspiring for the NSA wannabes.
     You mentioned that some of the Snowden documents may never be leaked
     those are your exact words.
@@ -464,7 +464,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     They're not competent.
 
 
-**5. Question:** Well first of all, thanks for a great talk.
+5. **Question**: Well first of all, thanks for a great talk.
     I would like to ask, answer you, what is the level on the European
     level, not just politics in the the countries, but on the European level.
     We saw that was it CIA or NSA hacking into until Americans mobile phone.
@@ -504,7 +504,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     people's mobile phones.
 
 
-**6. Question:** So discussing politics I have a very short remark to make.
+6. **Question**: So discussing politics I have a very short remark to make.
     Techie people usually believe that we can overcome political
     issues by using technical tools like "oh they are spying
     on us, hmm!? Now we have encryption, we have Tor things like that."
@@ -532,7 +532,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     you who have kids will see what I mean when I say this
     is about what your grandchildren will live in.
 
-**7. Question:** Hi, very good presentation ?nerves? and impressed.
+7. **Question**: Hi, very good presentation ?nerves? and impressed.
     So you mentioned the strategy that it's quite easy to disturb
     important open source projects by just creating some discord
     over issues that have been problematic issues for a very
@@ -601,7 +601,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     So yes I think OpenSSL is a big problem because people
     think it gives security and it doesn't.
 
-**8. Question:** Yes and I agree with you that this is more over a political
+8. **Question**: Yes and I agree with you that this is more over a political
     issue but I wonder what should I or we ask or try to explain
     to a politician if I can get hold of one.
     What is what is a concrete thing I can suggest or,  yeah.
@@ -612,7 +612,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     of our device..... VIDEO CUT!
 
 
-**9. Question:**...............work technically speaking should we go and repair
+9. **Question**:...............work technically speaking should we go and repair
     to OpenSSL everywhere or should we start a new SSL stack.
     Or what should what's our homework we've just had a weekend
     of technical inundation what should we now go and do other
