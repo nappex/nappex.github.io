@@ -376,16 +376,17 @@ So please don't go away.
 
 Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
-1. Q: So one of the biggest security leaks for the OpenSSL for instance
+**1. Question:** So one of the biggest security leaks for the OpenSSL for instance
     is actually their documentation and all the stuff,
     people generally say like: I'd rather be coding?
 
     **Answer:**
+
     Yes. Yeah I mean OpenSSL is a catastrophy in my eyes.
     And should be thrown out and started from scratch,
     written in a readable style and documented.
 
-2. Q: Yeah, I found your last remark very interesting referring
+**2. Question:** Yeah, I found your last remark very interesting referring
     to politics and especially in FOSDEM. Well we had this a little
     encounter where it was about politics and FOSDEM and then the
     reaction was like "no no no politics it's FOSDEM it's only about
@@ -394,13 +395,14 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     just said in the end.
 
     **Answer:**
+
     I have the same feeling about it I have about global warming.
     It may be that the open source community doesn't believe in
     politics that doesn't mean politics doesn't apply to them.
     So you can ignore politics, but the politics will not ignore you.
 
 
-3. Q: Thank you for your awesome presentation.
+**3. Question:** Thank you for your awesome presentation.
     I might have been experiencing with friends some of those situations.
     I just wonder about the OpenSSL bit, if it's your guess because
     maybe there is a little bit of guessing or.
@@ -410,10 +412,11 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     I'm not sure where you got your analysis.
 
     **Answer:**
+
     Show me.
 
 
-4. Q: Yes, thank you very much for the presentation very interesting,
+**4. Question:** Yes, thank you very much for the presentation very interesting,
     very inspiring for the NSA wannabes.
     You mentioned that some of the Snowden documents may never be leaked
     those are your exact words.
@@ -422,16 +425,18 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     wraps and people will forget about it? why?
 
     **Answer:**
+
     Three reasons:
-    One of them is - that Glenn Greenwald is a very responsible person.
+
+    *One of them is* - that Glenn Greenwald is a very responsible person.
     So there's undoubtedly stuff in there that he will not publish because
     there would be too damaging for whatever reason.
 
-    Second - some of them will be so technical that he will not be able
+    *Second* - some of them will be so technical that he will not be able
     to explain them to the readers of The Guardian, much
     less other newspapers and.
 
-    Third - because I think USA is getting ready to make a deal with
+    *Third* - because I think USA is getting ready to make a deal with
     Snowden to stop the flow. This has been Chinese water torture
     for them every time.
     They've said something in public one week, two weeks later
@@ -459,13 +464,14 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     They're not competent.
 
 
-5. Q: Well first of all, thanks for a great talk.
+**5. Question:** Well first of all, thanks for a great talk.
     I would like to ask, answer you, what is the level on the European
     level, not just politics in the the countries, but on the European level.
     We saw that was it CIA or NSA hacking into until Americans mobile phone.
     So I don't know where ?veto? stand there?
 
     **Answer:**
+
     I'm pretty sure that they do not have a public relations
     department that have any influence on that kind of decision,
     but if they had, I'm pretty sure that public relations
@@ -498,7 +504,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     people's mobile phones.
 
 
-6. Q: So discussing politics I have a very short remark to make.
+**6. Question:** So discussing politics I have a very short remark to make.
     Techie people usually believe that we can overcome political
     issues by using technical tools like "oh they are spying
     on us, hmm!? Now we have encryption, we have Tor things like that."
@@ -514,6 +520,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     of fact I run for a seat.
 
     **Answer:**
+
     I can only agree that this is very much a matter of what
     kind of society we leave to our kids.
     Some of the opportunities for goofing around that we had
@@ -525,7 +532,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     you who have kids will see what I mean when I say this
     is about what your grandchildren will live in.
 
-7. Q: Hi, very good presentation ?nerves? and impressed.
+**7. Question:** Hi, very good presentation ?nerves? and impressed.
     So you mentioned the strategy that it's quite easy to disturb
     important open source projects by just creating some discord
     over issues that have been problematic issues for a very
@@ -535,6 +542,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     How is that any different?
 
     **Answer:**
+
     Do you think is it really a controversial opinion to think
     that OpenSSL is a pile of crap.
 
@@ -548,6 +556,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     you're suggesting the NSA and other evil forces do with other open-source project.
 
     **Answer continue ...:**
+
     So how do you know I don't work for NSA?
 
     **Q7 continue ...:**
@@ -555,6 +564,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     exactly
 
     **A continue ...:**
+
     It's a tricky question right?
     And there's a lot of, if you want to take the technical path on it.
     The FreeBSD patch collection last time I looked had thirteen
@@ -591,23 +601,25 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     So yes I think OpenSSL is a big problem because people
     think it gives security and it doesn't.
 
-8. Q: Yes and I agree with you that this is more over a political
+**8. Question:** Yes and I agree with you that this is more over a political
     issue but I wonder what should I or we ask or try to explain
     to a politician if I can get hold of one.
     What is what is a concrete thing I can suggest or,  yeah.
 
     **Answer:**
+
     I think a very good place to start is to demand ownership
     of our device..... VIDEO CUT!
 
 
-9. Q:...............work technically speaking should we go and repair
+**9. Question:**...............work technically speaking should we go and repair
     to OpenSSL everywhere or should we start a new SSL stack.
     Or what should what's our homework we've just had a weekend
     of technical inundation what should we now go and do other
     than harassing our politicians.
 
     **Answer:**
+
     I don't know.
     Fair enough.
     And the reason why I don't know is I don't see a technical solution.
