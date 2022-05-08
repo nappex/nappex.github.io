@@ -82,10 +82,9 @@ then
     printf " ✅\n"
 fi
 
-printf "[INFO] Generating output files...\n" # this is not write to stdout it is very strange behaviour
-
+printf "[INFO] Generating output files...\n"
 pelican || exit 1
-printf " ✅\n"
+printf "[INFO] Output files generated ✅\n"
 
 # push changes to github
 printf "[INFO] Pushing changes to master...\n"
