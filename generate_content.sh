@@ -88,17 +88,12 @@ printf " ✅\n"
 
 # push changes to github
 printf "[INFO] Push changes to master..."
-git add .
-git commit -m "$1"
-git push origin master
+(git add .; git commit -m "$1"; git push origin master)
 sleep 0.5
 printf " ✅\n"
 
 printf "[INFO] Push changes to gh-pages..."
-cd output/
-git add .
-git commit -m "$1"
-git push origin gh-pages
+(cd output/; git add .; git commit -m "$1"; git push origin gh-pages)
 sleep 0.5
 printf " ✅\n"
 
