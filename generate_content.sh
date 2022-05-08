@@ -87,19 +87,19 @@ pelican || exit 1
 printf " ✅\n"
 
 # push changes to github
-printf "[INFO] Push changes to master..."
-git add . 1>/dev/null || exit 1
-git commit -m "$1" 1>/dev/null || exit 1
-git push origin master 1>/dev/null || exit 1
+printf "[INFO] Pushing changes to master...\n"
+git add .
+git commit -m "$1"
+git push origin master || printf "[INFO] Changes not pushed to master ❌\n"
 sleep 0.5
-printf " ✅\n"
+printf "[INFO] Changes pushed to master ✅\n"
 
-printf "[INFO] Push changes to gh-pages..."
-cd output/ 1>/dev/null || exit 1
-git add . 1>/dev/null || exit 1
-git commit -m "$1" 1>/dev/null || exit 1
-git push origin gh-pages 1>/dev/null || exit 1
+printf "[INFO] Pushing changes to gh-pages...\n"
+cd output/
+git add .
+git commit -m "$1"
+git push origin gh-pages || printf "[INFO] Changes not pushed in gh-pages ❌\n"
 sleep 0.5
-printf " ✅\n"
+printf "[INFO] Changes pushed to gh-pages ✅\n"
 
 echo Process completed
