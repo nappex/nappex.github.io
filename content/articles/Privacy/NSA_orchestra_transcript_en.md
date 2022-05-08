@@ -69,25 +69,25 @@ NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014.
     particular for the FOSS community, but most people seem to miss it.
 
 4. Q: Could you shed some light on the main message you want
-to convey in your talk? If there’s one thing that people
-should remember after your talk, what should it be?
+    to convey in your talk? If there’s one thing that people
+    should remember after your talk, what should it be?
 
-“Who do you trust, and why?”
+    “Who do you trust, and why...”
 
-5. Q: What do you hope to accomplish by giving this talk?
-What do you expect?
+5. Q: What do you hope to accomplish by giving this talk? What do you expect?
 
-I hope that people will laugh and think.
+    I hope that people will laugh and think.
 
 6. Q: What’s the role of FOSS in this age of surveillance
-by the NSA and other shady agencies? Can we fight
-the current privacy crisis with FOSS?
+    by the NSA and other shady agencies? Can we fight
+    the current privacy crisis with FOSS?
 
-Those are very good questions, and I hope my talk will inspire people to think about and investigate evidence to find the answers.
+    Those are very good questions, and I hope my talk will inspire people
+    to think about and investigate evidence to find the answers.
 
 7. Q: Have you enjoyed previous FOSDEM editions?
 
-No, I have never been to FOSDEM before.
+    No, I have never been to FOSDEM before.
 
 
 # Transcript of talk NSA operation ORCHESTRA: Annual Status Report
@@ -98,7 +98,7 @@ on annual status report on NSA operation orchestra, welcome thank you.
 
 
 ## Presentation
-**PHK:**
+**Poul-Henning Kamp:**
 
 So couple a years ago there was a news item that made me sit up in the chair and think. It's probably not the one you think about now, the director of CIA had his love affair exposed by the FBI, because they trade this telecommunication being a security researcher which is not normally something I called myself is a matter of imagination in a situation like that.
 You need to sit back and try to think like the minds who did that.
@@ -376,167 +376,253 @@ So please don't go away.
 
 Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
-1. Q: So one of the biggest security leaks for the OpenSSL for instance is actually their documentation and all the stuff, people generally say like: I'd rather be coding?
+1. Q: So one of the biggest security leaks for the OpenSSL for instance
+    is actually their documentation and all the stuff,
+    people generally say like: I'd rather be coding?
 
-**Answer:**
+    **Answer:**
+    Yes. Yeah I mean OpenSSL is a catastrophy in my eyes.
+    And should be thrown out and started from scratch,
+    written in a readable style and documented.
 
-Yes. Yeah I mean OpenSSL is a catastrophy in my eyes.
-And should be thrown out and started from scratch, written in a readable style and documented.
+2. Q: Yeah, I found your last remark very interesting referring
+    to politics and especially in FOSDEM. Well we had this a little
+    encounter where it was about politics and FOSDEM and then the
+    reaction was like "no no no politics it's FOSDEM it's only about
+    open source but how would you feel about that the relationship
+    between open source and politics apart from what you
+    just said in the end.
 
-2. Q: Yeah, I found your last remark very interesting referring to politics and especially in FOSDEM. Well we had this a little encounter where it was about politics and FOSDEM and then the reaction was like "no no no politics it's FOSDEM it's only about open source but how would you feel about that the relationship between open source and politics apart from what you just said in the end.
-
-**Answer:**
-
-I have the same feeling about it I have about global warming.
-It may be that the open source community doesn't believe in politics that doesn't mean politics doesn't apply to them.
-So you can ignore politics, but the politics will not ignore you.
+    **Answer:**
+    I have the same feeling about it I have about global warming.
+    It may be that the open source community doesn't believe in
+    politics that doesn't mean politics doesn't apply to them.
+    So you can ignore politics, but the politics will not ignore you.
 
 
 3. Q: Thank you for your awesome presentation.
-I might have been experiencing with friends some of those situations.
-I just wonder about the OpenSSL bit, if it's your guess because maybe there is a little bit of guessing or.
-And I wonder if we should really start having some investigations ourself as the open source community into these cases.
-Maybe in the OpenSSL case there is no malignity intended I'm not sure where you got your analysis.
+    I might have been experiencing with friends some of those situations.
+    I just wonder about the OpenSSL bit, if it's your guess because
+    maybe there is a little bit of guessing or.
+    And I wonder if we should really start having some
+    investigations ourself as the open source community into these cases.
+    Maybe in the OpenSSL case there is no malignity intended
+    I'm not sure where you got your analysis.
 
-**Answer:**
+    **Answer:**
+    Show me.
 
-Show me.
 
+4. Q: Yes, thank you very much for the presentation very interesting,
+    very inspiring for the NSA wannabes.
+    You mentioned that some of the Snowden documents may never be leaked
+    those are your exact words.
+    Why do you think that why do you think that the largest leak
+    in basically human history at this point, could go quietly under
+    wraps and people will forget about it? why?
 
-4. Q: Yes, thank you very much for the presentation very interesting, very inspiring for the NSA wannabes.
-You mentioned that some of the Snowden documents may never be leaked those are your exact words.
-Why do you think that why do you think that the largest leak in basically human history at this point, could go quietly under wraps and people will forget about it? why?
+    **Answer:**
+    Three reasons:
+    One of them is - that Glenn Greenwald is a very responsible person.
+    So there's undoubtedly stuff in there that he will not publish because
+    there would be too damaging for whatever reason.
 
-**Answer:**
+    Second - some of them will be so technical that he will not be able
+    to explain them to the readers of The Guardian, much
+    less other newspapers and.
 
-Three reasons:
-One of them is - that Glenn Greenwald is a very responsible person.
-So there's undoubtedly stuff in there that he will not publish because there would be too damaging for whatever reason.
-Second - some of them will be so technical that he will not be able to explain them to the readers of The Guardian, much less other newspapers and.
-Third - because I think USA is getting ready to make a deal with Snowden to stop the flow. This has been Chinese water torture for them every time.
-They've said something in public one week, two weeks later Snowden document come out showing they're lying.
-And I think they're kind of tired of that now so I would be surprised if there is not already known negotiations going on for terms that will allow Snowden to return to the USA in return for the flow of documents to stop.
-And what the terms will be we'll probably never know.
-I presume at some point the documents will just stop and we'll never hear from Snowden again.
-So I don't think they'll have time to leak all of it, however much it is not that NSA might know.
-I mean that's the aspect of this that. I think is most interesting is that NSA has absolutely no idea what's going on.
-They know that 4,000 of their employees and contractors have used that data to check up on their love interests but they know this because people have volunteered the information they don't know it because they have like locked files or anything showing it.
-So it's a totally leaky bucket with no idea what they're doing.
-That should be the real scandal.
-They're not competent.
+    Third - because I think USA is getting ready to make a deal with
+    Snowden to stop the flow. This has been Chinese water torture
+    for them every time.
+    They've said something in public one week, two weeks later
+    Snowden document come out showing they're lying.
+    And I think they're kind of tired of that now so I would be
+    surprised if there is not already known negotiations going on
+    for terms that will allow Snowden to return to the USA
+    in return for the flow of documents to stop.
+    And what the terms will be we'll probably never know.
+
+    I presume at some point the documents will just stop and we'll never
+    hear from Snowden again.
+    So I don't think they'll have time to leak all of it,
+    however much it is not that NSA might know.
+    I mean that's the aspect of this that.
+    I think is most interesting is that NSA has absolutely
+    no idea what's going on.
+    They know that 4,000 of their employees and contractors have used
+    that data to check up on their love interests but they know
+    this because people have volunteered the information
+    they don't know it because they have like locked files or anything
+    showing it.
+    So it's a totally leaky bucket with no idea what they're doing.
+    That should be the real scandal.
+    They're not competent.
 
 
 5. Q: Well first of all, thanks for a great talk.
-I would like to ask, answer you, what is the level on the European level, not just politics in the the countries, but on the European level.
-We saw that was it CIA or NSA hacking into until Americans mobile phone.
-So I don't know where ?veto? stand there?
+    I would like to ask, answer you, what is the level on the European
+    level, not just politics in the the countries, but on the European level.
+    We saw that was it CIA or NSA hacking into until Americans mobile phone.
+    So I don't know where ?veto? stand there?
 
-**Answer:**
+    **Answer:**
+    I'm pretty sure that they do not have a public relations
+    department that have any influence on that kind of decision,
+    but if they had, I'm pretty sure that public relations
+    department would said whatever you do, do not hack into Merkle.
+    Merkle is the one person in Europe you do not want to spy on,
+    because she's from the eastern Germany.
+    They would have been better off not knowing what she said in her
+    phone than having what came out now.
+    I would never have taken that risk if I'd been sitting there.
 
-I'm pretty sure that they do not have a public relations department that have any influence on that kind of decision,
-but if they had, I'm pretty sure that public relations department would said whatever you do, do not hack into Merkle.
-Merkle is the one person in Europe you do not want to spy on, because she's from the eastern Germany.
-They would have been better off not knowing what she said in her phone than having what came out now.
- I would never have taken that risk if I'd been sitting there.
-
-The other thing is that I don't think anybody who think they can trust the mobile phone, I deceived themselves.
-All mobile phones are controlled by everybody else, but the guy who has it in his pocket.
-Same thing goes for iPads, computers pretty much anything I don't think we have many devices where we can say this one is by guaranteed not rooted at this point in time.
-That's one place where the European Union could step in.
-They could actually go in and mandate computing platforms that can be verified as free from all kind of trap.
-And Angela Merkel is actually a scientist.
-She may get the idea behind this.
-I could hope that she would do something like that and push it through the European Union.
-Unfortunately she's kept busy with the economy in southern EU.
-I don't know if she has a time but a good place to go in would be to say the person who pays for the device controls it, only that person.
-And Tell-Telcos and people like that to get the fuck out of people's mobile phones.
+    The other thing is that I don't think anybody who think they can
+    trust the mobile phone, I deceived themselves.
+    All mobile phones are controlled by everybody else,
+    but the guy who has it in his pocket.
+    Same thing goes for iPads, computers pretty much anything
+    I don't think we have many devices where we can say this one
+    is by guaranteed not rooted at this point in time.
+    That's one place where the European Union could step in.
+    They could actually go in and mandate computing platforms
+    that can be verified as free from all kind of trap.
+    And Angela Merkel is actually a scientist.
+    She may get the idea behind this.
+    I could hope that she would do something like that and push it
+    through the European Union.
+    Unfortunately she's kept busy with the economy in southern EU.
+    I don't know if she has a time but a good place to go in
+    would be to say the person who pays for the device controls it,
+    only that person.
+    And Tell-Telcos and people like that to get the fuck out of
+    people's mobile phones.
 
 
 6. Q: So discussing politics I have a very short remark to make.
-Techie people usually believe that we can overcome political issues by using technical tools like "oh they are spying on us, hmm!? Now we have encryption, we have Tor things like that."
+    Techie people usually believe that we can overcome political
+    issues by using technical tools like "oh they are spying
+    on us, hmm!? Now we have encryption, we have Tor things like that."
 
-But that is not actually the question, because of course we can avoid being tracked by doing technical stuff.
-But the question rather is: Do we really want to have a society like that?
-And I believe that us as people, who understand things more from the technical point of view should help the rest of the society the dozens.
-So I think that this really is a political issue so there are elections this May in the European Parliament as a matter of fact I run for a seat.
+    But that is not actually the question, because of course
+    we can avoid being tracked by doing technical stuff.
+    But the question rather is: Do we really want to have a society like that?
+    And I believe that us as people, who understand
+    things more from the technical point of view should help
+    the rest of the society the dozens.
+    So I think that this really is a political issue so there
+    are elections this May in the European Parliament as a matter
+    of fact I run for a seat.
 
-**Answer:**
-
-I can only agree that this is very much a matter of what kind of society we leave to our kids.
-Some of the opportunities for goofing around that we had our kids will never have without having it pasted all over YouTube ten minutes later.
-And I realized this big.
-You start thinking differently once you have kids.
-I have to admit it myself, but I'm pretty sure those of you who have kids will see what I mean when I say this is about what your grandchildren will live in.
+    **Answer:**
+    I can only agree that this is very much a matter of what
+    kind of society we leave to our kids.
+    Some of the opportunities for goofing around that we had
+    our kids will never have without having it pasted all over
+    YouTube ten minutes later.
+    And I realized this big.
+    You start thinking differently once you have kids.
+    I have to admit it myself, but I'm pretty sure those of
+    you who have kids will see what I mean when I say this
+    is about what your grandchildren will live in.
 
 7. Q: Hi, very good presentation ?nerves? and impressed.
-So you mentioned the strategy that it's quite easy to disturb important open source projects by just creating some discord over issues that have been problematic issues for a very long time and then like 10 minutes later, you suggest ripping OpenSSL out of everything and replacing it with something that's a new implementation.
-How is that any different?
+    So you mentioned the strategy that it's quite easy to disturb
+    important open source projects by just creating some discord
+    over issues that have been problematic issues for a very
+    long time and then like 10 minutes later, you suggest
+    ripping OpenSSL out of everything and replacing it with
+    something that's a new implementation.
+    How is that any different?
 
-**Answer:**
+    **Answer:**
+    Do you think is it really a controversial opinion to think
+    that OpenSSL is a pile of crap.
 
-Do you think is it really a controversial opinion to think that OpenSSL is a pile of crap.
+    **Q7 continue...**
 
-**Q7 continue...**
+    It actually a lot of components in the internet rely on that for encryption.
+    So if you rip that out it's not getting any more secure is it.
+    It's a controversial issue you just can accepted that.
+    And your comment. how's that making anything more secure
+    I think this is the same kind of strategy that,
+    you're suggesting the NSA and other evil forces do with other open-source project.
 
-It actually a lot of components in the internet rely on that for encryption.
-So if you rip that out it's not getting any more secure is it.It's a controversial issue you just can accepted that.
-And your comment. how's that making anything more secure I think this is the same kind of strategy that, you're suggesting the NSA and other evil forces do with other open-source project.
+    **Answer continue ...:**
+    So how do you know I don't work for NSA?
 
-**Answer continue ...:**
+    **Q7 continue ...:**
 
-So how do you know I don't work for NSA?
+    exactly
 
-**Q7 continue ...:**
+    **A continue ...:**
+    It's a tricky question right?
+    And there's a lot of, if you want to take the technical path on it.
+    The FreeBSD patch collection last time I looked had thirteen
+    hundred and forty two copies of the md5 algorithm.
+    That's bogus from a software engineering perspective, right.
+    OpenSSL is sort of the non solution to that in that
+    we have this library that has any encryption algorithm
+    anybody has ever thought up and the defaults will let you use them.
+    All the downgrade attacks is no SSL is ?pill areas?.
+    So if we want to use technical means to reduce the ability
+    of governmental players to spy on people.
+    We'll have to start acting like grown-up software developers.
+    Who do things a sensible way, rather than saying
+    "Oh I have this fancy new algorithm I'll stick
+    it into a OpenSSL with the rest of them so now we have 50".
+    And that would probably require some kind of architectural
+    oversight which means we'd probably have to find you
+    know maximum of eight persons globally we could agree on probably trust.
+    We can start out with Bruce Schneier and seven others.
+    But I don't think that the cat herding is up to that
+    level of ability, yet.
+    So I don't simply don't believe we will have technical
+    solutions to this problem.
+    There's always going to be some bungholes somewhere
+    who does something stupid.
 
-exactly
+    And you pretty soon are up against some very big companies
+    who has a very big interest in defending certain protocols
+    and stuff like that.
+    So I think the OpenSSL is making things worse because people think it works.
+    And people trust it without understanding it.
+    And I met two persons who claimed to understand OpenSSL
+    one of them was absolutely lying.
+    So yes I think OpenSSL is a big problem because people
+    think it gives security and it doesn't.
 
-**A continue ...:**
+8. Q: Yes and I agree with you that this is more over a political
+    issue but I wonder what should I or we ask or try to explain
+    to a politician if I can get hold of one.
+    What is what is a concrete thing I can suggest or,  yeah.
 
-It's a tricky question right?
-And there's a lot of, if you want to take the technical path on it.
-The FreeBSD patch collection last time I looked had thirteen hundred and forty two copies of the md5 algorithm.
-That's bogus from a software engineering perspective, right.
-OpenSSL is sort of the non solution to that in that we have this library that has any encryption algorithm anybody has ever thought up and the defaults will let you use them.
-All the downgrade attacks is no SSL is ?pill areas?.
-So if we want to use technical means to reduce the ability of governmental players to spy on people.
-We'll have to start acting like grown-up software developers.
-Who do things a sensible way, rather than saying "Oh I have this fancy new algorithm I'll stick it into a OpenSSL with the rest of them so now we have 50".
-And that would probably require some kind of architectural oversight which means we'd probably have to find you know maximum of eight persons globally we could agree on probably trust.
-We can start out with Bruce Schneier and seven others.
-But I don't think that the cat herding is up to that level of ability, yet.
-So I don't simply don't believe we will have technical solutions to this problem.
-There's always going to be some bungholes somewhere who does something stupid.
-
-And you pretty soon are up against some very big companies who has a very big interest in defending certain protocols and stuff like that.
-So I think the OpenSSL is making things worse because people think it works.
-And people trust it without understanding it.
-And I met two persons who claimed to understand OpenSSL one of them was absolutely lying.
-So yes I think OpenSSL is a big problem because people think it gives security and it doesn't.
-
-8. Q: Yes and I agree with you that this is more over a political issue but I wonder what should I or we ask or try to explain to a politician if I can get hold of one.
-What is what is a concrete thing I can suggest or,  yeah.
-
-**Answer:**
-
-I think a very good place to start is to demand ownership of our device..... VIDEO CUT!
+    **Answer:**
+    I think a very good place to start is to demand ownership
+    of our device..... VIDEO CUT!
 
 
-9. Q:...............work technically speaking should we go and repair to OpenSSL everywhere or should we start a new SSL stack.
-Or what should what's our homework we've just had a weekend of technical inundation what should we now go and do other than harassing our politicians.
+9. Q:...............work technically speaking should we go and repair
+    to OpenSSL everywhere or should we start a new SSL stack.
+    Or what should what's our homework we've just had a weekend
+    of technical inundation what should we now go and do other
+    than harassing our politicians.
 
-**Answer:**
+    **Answer:**
+    I don't know.
+    Fair enough.
+    And the reason why I don't know is I don't see a technical solution.
+    With 1 billion dollars of budget to collect information
+    we are not going to be able to stand up to that with any kind of technical solution.
+    I only see political solutions.
+    But I mean obviously we can write better code we can stop copying
+    and pasting code we don't understand and use
+    libraries instead of copy and pasting and so on.
+    And that will help.
+    But it's not gonna solve the problem.
+    It's just gonna close some of the security holes.
+    Which is a good idea but that's not a real problem right now.
+    So know, I mean yes write better code!
 
-I don't know.
-Fair enough.
-And the reason why I don't know is I don't see a technical solution.
-With 1 billion dollars of budget to collect information we are not going to be able to stand up to that with any kind of technical solution.
-I only see political solutions.
-But I mean obviously we can write better code we can stop copying and pasting code we don't understand and use libraries instead of copy and pasting and so on.
-And that will help.
-But it's not gonna solve the problem.
-It's just gonna close some of the security holes.
-Which is a good idea but that's not a real problem right now.
-So know, I mean yes write better code!
 
 **Moderator:**
 
