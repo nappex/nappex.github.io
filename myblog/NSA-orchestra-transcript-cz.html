@@ -18,13 +18,13 @@
 <meta name="keywords" content="networks, privacy, talk, Privacy, Networks, " />
 
 <meta property="og:title" content="Transcript of FOSDEM talk NSA operation orchestra "/>
-<meta property="og:url" content="https://nappex.github.io/myblog/NSA-orchestra-transcript-en" />
-<meta property="og:description" content="English transcript of FOSDEM talk about NSA habits" />
+<meta property="og:url" content="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" />
+<meta property="og:description" content="Czech transcript of FOSDEM talk about NSA habits" />
 <meta property="og:site_name" content="The Snail&#39;s journey" />
 <meta property="og:article:author" content="David" />
-<meta property="og:article:published_time" content="2022-05-07T00:00:00+02:00" />
+<meta property="og:article:published_time" content="2022-05-11T00:00:00+02:00" />
 <meta name="twitter:title" content="Transcript of FOSDEM talk NSA operation orchestra ">
-<meta name="twitter:description" content="English transcript of FOSDEM talk about NSA habits">
+<meta name="twitter:description" content="Czech transcript of FOSDEM talk about NSA habits">
 
         <title>Transcript of FOSDEM talk NSA operation orchestra  · The Snail&#39;s journey
 </title>
@@ -78,7 +78,7 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-en">
+            <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz">
                 Transcript of <span class="caps">FOSDEM</span> talk <span class="caps">NSA</span> operation&nbsp;orchestra
             </a>
         </h1>
@@ -90,11 +90,11 @@
             
             <div class="toc">
 <ul>
-<li><a href="#introduction">Introduction</a><ul>
-<li><a href="#transcript-subject">Transcript&nbsp;subject</a></li>
+<li><a href="#uvod">Úvod</a><ul>
+<li><a href="#zakladni-informace-k-prednasce">Základní informace k&nbsp;přednášce</a></li>
 </ul>
 </li>
-<li><a href="#interview-with-poul-henning-kamp-before-talk">Interview with Poul-Henning Kamp before&nbsp;talk:</a></li>
+<li><a href="#rozhovor-s-poul-henning-kamp-pred-prednaskou">Rozhovor s Poul-Henning Kamp před&nbsp;přednáškou:</a></li>
 <li><a href="#transcript-of-talk-nsa-operation-orchestra-annual-status-report">Transcript of talk <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report</a><ul>
 <li><a href="#presentation">Presentation</a></li>
 <li><a href="#qa-section">Q&amp;A <span class="caps">SECTION</span></a></li>
@@ -102,60 +102,55 @@
 </li>
 </ul>
 </div>
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
-<p>This is text representation of <span class="caps">FOSDEM</span> 2014 talk about <span class="caps">NSA</span>, privacy and&nbsp;security.</p>
-<p>This transcript was came out to facilitate understanding
-the video of the talk to people who dont speak english very&nbsp;well.</p>
-<p>This transcript was created also because of incorrect automatic english
-subtitles available in youtube video.
-Sometimes it is really difficult to understand to speaker.
-Especially non native speaker audience will have a problem to understand this interesting talk.
-But reading the transcript should be help to understand difficult parts.
-There is also <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz">Czech</a> translation of&nbsp;transcript.</p>
-<h2 id="transcript-subject">Transcript subject<a class="headerlink" href="#transcript-subject" title="Permanent link">&para;</a></h2>
-<p><span class="caps">NSA</span> annual state report by Poul-Henning Kamp (FreeBSD developer) - <span class="caps">FOSDEM</span>&nbsp;2014</p>
-<p>video&nbsp;links:</p>
+<h1 id="uvod">Úvod<a class="headerlink" href="#uvod" title="Permanent link">&para;</a></h1>
+<p>Tento text slouží jako český překlad přednášky <span class="caps">NSA</span> operation orchestra
+z konference <span class="caps">FOSDEM</span>, která proběhla v roce&nbsp;2014.</p>
+<p>Originální přepis přednášky v anglickém jazyce nalezenete na těchto
+stránkách <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-en">zde</a>.</p>
+<h2 id="zakladni-informace-k-prednasce">Základní informace k přednášce<a class="headerlink" href="#zakladni-informace-k-prednasce" title="Permanent link">&para;</a></h2>
+<p><span class="caps">NSA</span> annual state report by Poul-Henning Kamp (FreeBSD vývojář) - <span class="caps">FOSDEM</span>&nbsp;2014</p>
+<p>odkazy na&nbsp;video:</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=fwcl17Q0bpk">youtube</a></li>
 <li><a href="https://vimeo.com/86567061">vimeo</a></li>
 <li><a href="https://ftp.fau.de/fosdem/2014/Janson/Sunday/NSA_operation_ORCHESTRA_Annual_Status_Report.webm"><span class="caps">FOSDEM</span></a></li>
 </ul>
-<p>presentation&nbsp;links:</p>
+<p>odkaz na&nbsp;prezentaci:</p>
 <ul>
 <li><a href="http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf">Poul-Henning Kamp personal&nbsp;page</a></li>
 </ul>
-<h1 id="interview-with-poul-henning-kamp-before-talk">Interview with Poul-Henning Kamp before talk:<a class="headerlink" href="#interview-with-poul-henning-kamp-before-talk" title="Permanent link">&para;</a></h1>
-<p>Interview with Poul-Henning Kamp
+<h1 id="rozhovor-s-poul-henning-kamp-pred-prednaskou">Rozhovor s Poul-Henning Kamp před přednáškou:<a class="headerlink" href="#rozhovor-s-poul-henning-kamp-pred-prednaskou" title="Permanent link">&para;</a></h1>
+<p>Rozhovor s Poul-Henning Kamp
 <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report
-Poul-Henning Kamp will give a talk about
-<span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report at <span class="caps">FOSDEM</span>&nbsp;2014.</p>
+Poul-Henning Kamp bude mít přednášku s názvem
+<em><span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report at <span class="caps">FOSDEM</span>&nbsp;2014</em></p>
 <ol>
 <li>
-<p>Q: Could you briefly introduce&nbsp;yourself?</p>
-<p>I’m a six foot ape-descendant who makes a living doing weird stuff with computers.
-I’ve been in computing for 30 years and open source for 29.
-I used to be one of the central developers in FreeBSD,
-these days I am the man behind the Varnish <span class="caps">HTTP</span>&nbsp;accelerator.</p>
+<p>Q: Mohl byste se stručně&nbsp;představit?</p>
+<p>Jsem šest stop vysoký lidoop, který si vydělává děláním divných věcí
+na počítačích.
+Jsem v počítačové branži 30 let a v open source 29.
+Býval jsem jeden z hlavních vývojařů ve FreeBSD, nyní jsem ten
+člověk, který stojí za projektem Varnish <span class="caps">HTTP</span>&nbsp;accelerator.</p>
 </li>
 <li>
-<p>Q: What will your talk be about,&nbsp;exactly?</p>
-<p>My talk is about the <span class="caps">NSA</span> - <span class="caps">FOSS</span>&nbsp;relationship.</p>
-<p>I think we need to reevaluate&nbsp;it.</p>
+<p>Q: O čem přesně bude vaše&nbsp;přednáška?</p>
+<p>Má přednáška je o vztahu <span class="caps">NSA</span> - <span class="caps">FOSS</span>.</p>
+<p>Myslím si, že jej potřebujeme&nbsp;přehodnotit.</p>
 </li>
 <li>
-<p>Q: What brought you to this topic, why do you care about it?
-    Why is it so important for you to talk about&nbsp;it?</p>
-<p>The inspiration is the disclosures by Edward Snowden,
-but while they have mainly been aimed at the general
-population and politicians,
-there is a different message for the <span class="caps">IT</span> world and in
-particular for the <span class="caps">FOSS</span> community, but most people seem to miss&nbsp;it.</p>
+<p>Q: Co vás k tomuto tématu přivedlo, proč se vlastně o něj zajímáte?
+    Proč je pro vás tak důležité o tomto tématu&nbsp;přednášet?</p>
+<p>Inspirací pro mě je odhalení, které udělal Edward Snowden,
+ale mezitímco se hlavně zaměřili na širokou veřejnost a politiky,
+objevuje se zde zcela odlišné sdělení pro <span class="caps">IT</span> svět a obzvláště pro
+<span class="caps">FOSS</span> komunitu, ale většině lidí to&nbsp;uniká.</p>
 </li>
 <li>
-<p>Q: Could you shed some light on the main message you want
-    to convey in your talk? If there’s one thing that people
-    should remember after your talk, what should it&nbsp;be?</p>
-<p>“Who do you trust, and&nbsp;why&hellip;”</p>
+<p>Q: Mohl byste objasnit hlavní sdělení, které chcete přednáškou předat?
+    Kdyby si lidé měli odnést jednu věc z vaší přednášky,
+    co by to mělo&nbsp;být?</p>
+<p>“Komu věříte a&nbsp;proč&hellip;”</p>
 </li>
 <li>
 <p>Q: What do you hope to accomplish by giving this talk? What do you&nbsp;expect?</p>
@@ -652,9 +647,9 @@ So know, I mean yes write better&nbsp;code!</p>
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&url=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-en&hashtags=networks,privacy,talk" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-en" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&amp;body=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-en" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&url=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz&hashtags=networks,privacy,talk" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&amp;body=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -673,22 +668,21 @@ So know, I mean yes write better&nbsp;code!</p>
 <li><a href="https://nappex.github.io/myblog/ip-address-info-macos" title="How get info about my IP address on macOS">How get info about my IP address on macOS</a></li>
 <li><a href="https://nappex.github.io/myblog/basics-terminology-networks" title="Introduction to terminology in networks">Introduction to terminology in networks</a></li>
 <li><a href="https://nappex.github.io/myblog/basics-networks-devices" title="Introduction to network devices">Introduction to network devices</a></li>
-<li><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a></li>
+<li><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-en" title="Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/zsh-bash-diffs" title="Previous: Differences between zsh and bash">Differences between zsh and bash</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Next: Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a> »</li>
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-en" title="Previous: Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-05-07T00:00:00+02:00">Sat 07 May 2022</time>
+            <time itemprop="dateCreated" datetime="2022-05-11T00:00:00+02:00">Wed 11 May 2022</time>
             <h4>Category</h4>
             <a class="category-link" href="https://nappex.github.io/myblog/categories#privacy-networks-ref">Privacy, Networks</a>
             <h4>Tags</h4>
