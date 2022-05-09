@@ -1,78 +1,72 @@
 ---
 Title: Transcript of FOSDEM talk NSA operation orchestra
-Date: 2022-05-07
+Date: 2022-05-11
 Category: Privacy, Networks
 Tags: networks, privacy, talk
-Slug: NSA-orchestra-transcript-en
+Slug: NSA-orchestra-transcript-cz
 Authors: David
-Summary: English transcript of FOSDEM talk about NSA habits
+Summary: Czech transcript of FOSDEM talk about NSA habits
 Status: published
 ---
 
 [TOC]
 
-# Introduction
-This is text representation of FOSDEM 2014 talk about NSA, privacy and security.
+# Úvod
+Tento text slouží jako český překlad přednášky NSA operation orchestra
+z konference FOSDEM, která proběhla v roce 2014.
 
-This transcript was came out to facilitate understanding
-the video of the talk to people who dont speak english very well.
+Originální přepis přednášky v anglickém jazyce nalezenete na těchto
+stránkách [zde](https://nappex.github.io/myblog/NSA-orchestra-transcript-en).
 
-This transcript was created also because of incorrect automatic english
-subtitles available in youtube video.
-Sometimes it is really difficult to understand to speaker.
-Especially non native speaker audience will have a problem to understand this interesting talk.
-But reading the transcript should be help to understand difficult parts.
-There is also [Czech](https://nappex.github.io/myblog/NSA-orchestra-transcript-cz) translation of transcript.
+## Základní informace k přednášce
 
-## Transcript subject
+NSA annual state report by Poul-Henning Kamp (FreeBSD vývojář) - FOSDEM 2014
 
-NSA annual state report by Poul-Henning Kamp (FreeBSD developer) - FOSDEM 2014
-
-video links:
+odkazy na video:
 
 * [youtube](https://www.youtube.com/watch?v=fwcl17Q0bpk)
 * [vimeo](https://vimeo.com/86567061)
 * [FOSDEM](https://ftp.fau.de/fosdem/2014/Janson/Sunday/NSA_operation_ORCHESTRA_Annual_Status_Report.webm)
 
-presentation links:
+odkaz na prezentaci:
 
 * [Poul-Henning Kamp personal page](http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf)
 
 
-# Interview with Poul-Henning Kamp before talk:
+# Rozhovor s Poul-Henning Kamp před přednáškou:
 
-Interview with Poul-Henning Kamp
+Rozhovor s Poul-Henning Kamp
 NSA operation ORCHESTRA: Annual Status Report
-Poul-Henning Kamp will give a talk about
-NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014.
+Poul-Henning Kamp bude mít přednášku s názvem
+*NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014*
 
-1. Q: Could you briefly introduce yourself?
+1. Q: Mohl byste se stručně představit?
 
-    I’m a six foot ape-descendant who makes a living doing weird stuff with computers.
-    I’ve been in computing for 30 years and open source for 29.
-    I used to be one of the central developers in FreeBSD,
-    these days I am the man behind the Varnish HTTP accelerator.
+    Jsem šest stop vysoký lidoop, který si vydělává děláním divných věcí
+    na počítačích.
+    Jsem v počítačové branži 30 let a v open source 29.
+    Býval jsem jeden z hlavních vývojařů ve FreeBSD, nyní jsem ten
+    člověk, který stojí za projektem Varnish HTTP accelerator.
 
-2. Q: What will your talk be about, exactly?
+2. Q: O čem přesně bude vaše přednáška?
 
-    My talk is about the NSA - FOSS relationship.
+    Má přednáška je o vztahu NSA - FOSS.
 
-    I think we need to reevaluate it.
+    Myslím si, že jej potřebujeme přehodnotit.
 
-3. Q: What brought you to this topic, why do you care about it?
-    Why is it so important for you to talk about it?
+3. Q: Co vás k tomuto tématu přivedlo, proč se vlastně o něj zajímáte?
+    Proč je pro vás tak důležité o tomto tématu přednášet?
 
-    The inspiration is the disclosures by Edward Snowden,
-    but while they have mainly been aimed at the general
-    population and politicians,
-    there is a different message for the IT world and in
-    particular for the FOSS community, but most people seem to miss it.
+    Inspirací pro mě je odhalení, které udělal Edward Snowden,
+    ale mezitímco se hlavně zaměřili na širokou veřejnost a politiky,
+    objevuje se zde zcela odlišné sdělení pro IT svět a obzvláště pro
+    FOSS komunitu, ale většině lidí to uniká.
 
-4. Q: Could you shed some light on the main message you want
-    to convey in your talk? If there’s one thing that people
-    should remember after your talk, what should it be?
+4. Q: Mohl byste objasnit hlavní sdělení, které chcete přednáškou předat?
+    Kdyby si lidé měli odnést jednu věc z vaší přednášky,
+    co by to mělo být?
 
-    “Who do you trust, and why...”
+    “Komu věříte a proč...”
 
 5. Q: What do you hope to accomplish by giving this talk? What do you expect?
 
