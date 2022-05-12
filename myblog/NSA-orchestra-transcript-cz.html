@@ -17,16 +17,16 @@
 
 <meta name="keywords" content="networks, privacy, talk, Privacy, Networks, " />
 
-<meta property="og:title" content="Transcript of FOSDEM talk NSA operation orchestra "/>
+<meta property="og:title" content="Transcript of NSA operation orchestra in czech "/>
 <meta property="og:url" content="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" />
-<meta property="og:description" content="Czech transcript of FOSDEM talk about NSA habits" />
+<meta property="og:description" content="Czech translation of transcript to talk about NSA habits" />
 <meta property="og:site_name" content="The Snail&#39;s journey" />
 <meta property="og:article:author" content="David" />
 <meta property="og:article:published_time" content="2022-05-11T00:00:00+02:00" />
-<meta name="twitter:title" content="Transcript of FOSDEM talk NSA operation orchestra ">
-<meta name="twitter:description" content="Czech transcript of FOSDEM talk about NSA habits">
+<meta name="twitter:title" content="Transcript of NSA operation orchestra in czech ">
+<meta name="twitter:description" content="Czech translation of transcript to talk about NSA habits">
 
-        <title>Transcript of FOSDEM talk NSA operation orchestra  · The Snail&#39;s journey
+        <title>Transcript of NSA operation orchestra in czech  · The Snail&#39;s journey
 </title>
         <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -79,7 +79,7 @@
     <header class="page-header span10 offset2">
         <h1>
             <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz">
-                Transcript of <span class="caps">FOSDEM</span> talk <span class="caps">NSA</span> operation&nbsp;orchestra
+                Transcript of <span class="caps">NSA</span> operation orchestra in&nbsp;czech
             </a>
         </h1>
     </header>
@@ -95,8 +95,15 @@
 </ul>
 </li>
 <li><a href="#rozhovor-s-poul-henning-kamp-pred-prednaskou">Rozhovor s Poul-Henning Kamp před&nbsp;přednáškou:</a></li>
-<li><a href="#transcript-of-talk-nsa-operation-orchestra-annual-status-report">Transcript of talk <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report</a><ul>
-<li><a href="#presentation">Presentation</a></li>
+<li><a href="#cesky-prepis-prednasky-nsa-operation-orchestra-annual-status-report">Český přepis přednášky <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report</a><ul>
+<li><a href="#prednaska">Přednáška</a><ul>
+<li><a href="#uvod-o-co-se-jedna">Úvod - O co se&nbsp;jedná?</a></li>
+<li><a href="#operation-orchestra">Operation <span class="caps">ORCHESTRA</span></a></li>
+<li><a href="#orchestra-operation-na-prvni-pohled"><span class="caps">ORCHESTRA</span> operation na první&nbsp;pohled</a></li>
+<li><a href="#historie">Historie</a></li>
+<li><a href="#puvod-orchestru">Původ&nbsp;Orchestru</a></li>
+</ul>
+</li>
 <li><a href="#qa-section">Q&amp;A <span class="caps">SECTION</span></a></li>
 </ul>
 </li>
@@ -119,6 +126,14 @@ stránkách <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-en
 <ul>
 <li><a href="http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf">Poul-Henning Kamp personal&nbsp;page</a></li>
 </ul>
+<p>Přednáška se skládá z těchto částí, proto ji autor nazývá jako&nbsp;orchestr:</p>
+<p><strong>Playlist spoiler</strong>:
+* Electric Light <span class="caps">ORCHESTRA</span>: Confusion
+* <span class="caps">ABBA</span>: Money, Money, Money
+* Backman Turner <span class="caps">OVERDRIVE</span>: Taking Care Of Business
+* <span class="caps">QUEEN</span>: Bicycle Race
+* Beastie <span class="caps">BOYS</span>: Sabotage
+* <span class="caps">PASADENA</span> Roof Orchestra: Pennies From&nbsp;Heaven</p>
 <h1 id="rozhovor-s-poul-henning-kamp-pred-prednaskou">Rozhovor s Poul-Henning Kamp před přednáškou:<a class="headerlink" href="#rozhovor-s-poul-henning-kamp-pred-prednaskou" title="Permanent link">&para;</a></h1>
 <p>Rozhovor s Poul-Henning Kamp
 <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report
@@ -153,46 +168,93 @@ objevuje se zde zcela odlišné sdělení pro <span class="caps">IT</span> svět
 <p>“Komu věříte a&nbsp;proč&hellip;”</p>
 </li>
 <li>
-<p>Q: What do you hope to accomplish by giving this talk? What do you&nbsp;expect?</p>
-<p>I hope that people will laugh and&nbsp;think.</p>
+<p>Q: V co doufáte, že dosáhnete svou přednáškou? Co&nbsp;očekáváte?</p>
+<p>Doufám, že se lidé budou smát a&nbsp;přemýšlet.</p>
 </li>
 <li>
-<p>Q: What’s the role of <span class="caps">FOSS</span> in this age of surveillance
-    by the <span class="caps">NSA</span> and other shady agencies? Can we fight
-    the current privacy crisis with <span class="caps">FOSS</span>?</p>
-<p>Those are very good questions, and I hope my talk will inspire people
-to think about and investigate evidence to find the&nbsp;answers.</p>
+<p>Q: Jaká je role <span class="caps">FOSS</span> v této době sledování <span class="caps">NSA</span> a dalších pochybných agentur?
+     Jsme schopni bojovat se souřasnou krizí soukromí s pomocí <span class="caps">FOSS</span>?</p>
+<p>Tohle jsou velmi dobré otázky, doufám, že má přednáška inspiruje lidi, aby
+přemýšleli a zkoumali důkazy k nalezení&nbsp;odpovědí.</p>
 </li>
 <li>
-<p>Q: Have you enjoyed previous <span class="caps">FOSDEM</span>&nbsp;editions?</p>
-<p>No, I have never been to <span class="caps">FOSDEM</span>&nbsp;before.</p>
+<p>Q: Užil jste si předchozí <span class="caps">FOSDEM</span>&nbsp;konferenci?</p>
+<p>Ne, nikdy jsem ještě na <span class="caps">FOSDEM</span> konferenci&nbsp;nebyl.</p>
 </li>
 </ol>
-<h1 id="transcript-of-talk-nsa-operation-orchestra-annual-status-report">Transcript of talk <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report<a class="headerlink" href="#transcript-of-talk-nsa-operation-orchestra-annual-status-report" title="Permanent link">&para;</a></h1>
-<p><strong>Moderator:</strong></p>
-<p>Thank you for joining us we going to have a Poul-Henning Kamp also maybe better known as phk
-on annual status report on <span class="caps">NSA</span> operation orchestra, welcome thank&nbsp;you.</p>
-<h2 id="presentation">Presentation<a class="headerlink" href="#presentation" title="Permanent link">&para;</a></h2>
+<h1 id="cesky-prepis-prednasky-nsa-operation-orchestra-annual-status-report">Český přepis přednášky <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report<a class="headerlink" href="#cesky-prepis-prednasky-nsa-operation-orchestra-annual-status-report" title="Permanent link">&para;</a></h1>
+<p><strong>Moderátor:</strong></p>
+<p>Děkuji vám, že jste se k nám připojili. Nyní budeme mít Poul-Henning Kamp
+také možná lépe známého pod přezdívkou phk a jeho přednášku na téma
+annual status report on <span class="caps">NSA</span> operation orchestra.&nbsp;Vítejte.</p>
+<h2 id="prednaska">Přednáška<a class="headerlink" href="#prednaska" title="Permanent link">&para;</a></h2>
 <p><strong>Poul-Henning&nbsp;Kamp:</strong></p>
-<p>So couple a years ago there was a news item that made me sit up in the chair and think. It&rsquo;s probably not the one you think about now, the director of <span class="caps">CIA</span> had his love affair exposed by the <span class="caps">FBI</span>, because they trade this telecommunication being a security researcher which is not normally something I called myself is a matter of imagination in a situation like that.
-You need to sit back and try to think like the minds who did&nbsp;that.</p>
-<p>Later on we got Edward Snowden&rsquo;s disclosures and I sat down and I thought what would I do if I have at budget a 1 billion dollars and a mandate in order to collect as much communication as&nbsp;possible.</p>
-<p>Then a week ago I got an email from Phillip (some guy from <span class="caps">FOSDEM</span>) going like:
-&ldquo;I need a keynote speaker what are you doing next weekend&rdquo;.
-And since I owe Phillip a lot of favors I said I can do that and then I sat down and made a set of slides.
-The basic premise here is that you should imagine a junior <span class="caps">NSA</span> staffer arriving in Brussels to give a update to <span class="caps">NATO</span> on one of the <span class="caps">NSA</span> programs and then because he is American he ends up here&nbsp;instead.</p>
-<p>If I had a lot of time I would have done the part you know the black hair the sunglasses and all that but you&rsquo;ll just have to imagine&nbsp;that.</p>
-<p>So this is Operation Orchestra and this is ofcourse top secret and none of this will exit this room I am&nbsp;sure.</p>
-<p>So the orchestra operation has as a primary objective to reduce the cost of gathering information. <span class="caps">NSA</span> has in the law, that controls their funding, it says collect as much information as possible and as a responsible government agency we&rsquo;re trying to do that as cost-effectively as&nbsp;possible</p>
-<p>So Operation Orchestra is about reducing <span class="caps">NSA</span> cost of collecting information and all of it has to be aboveboard there&rsquo;s no black ops (black operations - see wiki)&nbsp;allowed.</p>
-<p>Black ops are where you break the laws and we have no special authorizations we have no 007 with the license to &ldquo;wires&rdquo; (3:01) have or anything of the&nbsp;sort.</p>
-<p>And the means the way we do this is we try to eliminate prevent of weakening encryption we try to enable access to information and we try to frustrate players that are trying to make it harder for&nbsp;us.</p>
-<p>And the history about this is actually a very old program. It started out very soon after the escape of the&nbsp;Inter-Net.</p>
-<p>The internet was meant for the military is not meant for grandmother and terrorists and so&nbsp;on.</p>
-<p>And the big problem with Internet is unlike the telecommunication network as we knew it you can plug anything into the internet you don&rsquo;t have to get approval&nbsp;first.</p>
-<p>People can build their own computers and hook them up to network you couldn&rsquo;t do that with the old telecommunications network you could went to the <span class="caps">FCC</span> and you got a little sticker and all this&nbsp;stuff.</p>
-<p>So suddenly we&rsquo;re in this unregulated network and that&rsquo;s far too many players in the network they used to be will just talk to <span class="caps">AT</span>&amp;T and we could wiretap anybody. And they would heavily do that now we have you know millions of Internet networks, and many of them abroad, and we cannot negotiate with all them we have to find scalable methods to deal with this and our attempt to try to manipulate the outside protocols in instead of the tcp/ip protocols unfortunately failed that would have continued the connection-oriented models of the telephone network but that didn&rsquo;t work that was really too&nbsp;bad.</p>
-<p>The original is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there&rsquo;s still some places where things really&nbsp;happen.</p>
+<h3 id="uvod-o-co-se-jedna">Úvod - O co se jedná?<a class="headerlink" href="#uvod-o-co-se-jedna" title="Permanent link">&para;</a></h3>
+<p>Děkuji.</p>
+<p>Před pár lety se objevila nová věc, která mě přinutila si sednout na židli
+a přemýšlet. Nejspíše to není ta věc nad kterou teď přemýšlíte, že <span class="caps">FBI</span> odhalila
+milostnou aféru ředitele <span class="caps">CIA</span>, tím že vyměnila tuto telekomunikaci.
+Býti bezpečnostním výzkumníkem, což není něco, čím bych se normálně nazýval.
+Znamená umět pracovat s představivostí. V situacích jako je tato si musíte sednout
+a pokusit se přemýšlet stejně jako mysl těch, kteří to&nbsp;provedli.</p>
+<p>Později jsme získali odhalení od Edwarda Snowdena a já si sednul a
+přemýšlel co bych dělal kdybych měl rozpočet jeden bilion dolarů, pověření
+a příkaz nasbírat tolik komunikace, kolik je jen&nbsp;možné.</p>
+<h3 id="operation-orchestra">Operation <span class="caps">ORCHESTRA</span><a class="headerlink" href="#operation-orchestra" title="Permanent link">&para;</a></h3>
+<p>Pak před týdnem jsem dostal email of Filipa, nějaký chlápek z FOSDEMu,
+v tomto&nbsp;znění:</p>
+<p><span class="dquo">&ldquo;</span>Potřebuji nějakého přednášejícího, co děláš příští&nbsp;týden?&rdquo;</p>
+<p>Protože dlužím Filipovi hodně laskavostí, řekl&nbsp;jsem:</p>
+<p><span class="dquo">&ldquo;</span>můžu udělat&nbsp;přednášku&rdquo;</p>
+<p>a tak jsem si sedl a vytvořil dnešní&nbsp;prezentaci.</p>
+<p>Základní předpoklad k mé přednášce je, že byste si měli představit juniorního
+pracovníka <span class="caps">NSA</span> přijíždějícího do Bruselu, aby poskytl <span class="caps">NATO</span> aktuální informace
+o jednom z programů <span class="caps">NSA</span> a namísto toho tam skončí, protože je&nbsp;Američan.</p>
+<p>Kdybych měl plno času, udělal bych tu část s černými vlasy, slunečními brýlemi
+a všeho toho, ale budete si to muset pouze&nbsp;představit.</p>
+<p>Tohle je Operace &ldquo;Orchestr&rdquo; (pozn. fiktivní tajná operace <span class="caps">NSA</span> vymyšlená autorem
+přednášky). Jsem si jist, že žádné informace z této operace, která je samozřejmě
+v nejvyšším stupni utajení, neopustí tuto&nbsp;místnost.</p>
+<h3 id="orchestra-operation-na-prvni-pohled"><span class="caps">ORCHESTRA</span> operation na první pohled<a class="headerlink" href="#orchestra-operation-na-prvni-pohled" title="Permanent link">&para;</a></h3>
+<p>Základním úkolem Operace &ldquo;orchestra&rdquo; je redukovat náklady při sběru informací.
+Organizace <span class="caps">NSA</span> má ve svých regulích, které řídí jejich financování, sbírej
+co nejvíce infromací je možné, ale jako zodpovědná vládní organize se je
+snažíme sbírat s co největší&nbsp;hospodárností.</p>
+<p>Operace &ldquo;orchestra&rdquo; je tedy o redukování <span class="caps">NSA</span> nákladů při sběru informací.
+Všechno musí být přes vedení. Nejsou dovoleny žádné tajné operace typu
+&ldquo;black-ops&rdquo;. Black ops jsou operace, kde se porušují zákony.
+Nemáme žádnou speciální autorizaci, nemáme žádného 007 s povolením
+odposlouchávat nebo něco&nbsp;podobného.</p>
+<p>A možnost nebo způsob, jak to udělat je, že se pokusíme zlikvidovat činnost,
+která zabraňuje oslabování šifrování. Snažíme se naopak umožnit přístup
+k informacím a zároveň frustrovat hráče, kteří se nám pokoušejí to ztížit
+(např. kvalitním&nbsp;šifrováním).</p>
+<h3 id="historie">Historie<a class="headerlink" href="#historie" title="Permanent link">&para;</a></h3>
+<p>Něco k historii&hellip;
+Ve skutečnosti se jedná o velmi starý program.
+Začal velmi brzy po úniku&nbsp;Inter-Netu.</p>
+<p>Internet byl vymyšlen jako projekt pro armádu, úmyslem nebylo, aby jej
+začala používat babička, teroristi apod. Velkým problémem internetu
+narozdíl od telekomunikační sítě tak jak ji známe je, že do něj můžete zapojit
+cokoliv aniž byste k tomu nejdříve dostali nějaké povolení.
+Lidé si mohou stavět své vlastní počítače a zapojit si je do sítě.
+To jste nemohli udělat se starou telekomunikační sítí.
+To jste šli do <span class="caps">FCC</span> (Federal Communications Commission) a dostali jste
+malou nálepku a všechny další&nbsp;náležitosti.</p>
+<p>Najednou jsme v této neregulované síti. A v této síti je podstatně více
+účastníků. Kdysi jsme si povídali jenom s <span class="caps">AT</span>&amp;T,
+která tak mohla odposlouchávat kohokoliv. A také to ve velkém dělali.
+Nyní ale máme milióny internetových sítí a mnoho z nich je v zahraničí.
+Nemůžeme se vypořádat se všemi z nich. Musíme nalézt škálovatelní metody,
+které budou schopny se s tím vypořádat.
+A náš pokus zkoušet manipulovat vnější protokoly na místo protokolů tcp/ip,
+bohužel selhal. To by pokračovalo v modelech spojované komunikace telefonní
+sítě, ale to nefungovalo. Bylo to opravdu velmi&nbsp;špatné.</p>
+<h3 id="puvod-orchestru">Původ Orchestru<a class="headerlink" href="#puvod-orchestru" title="Permanent link">&para;</a></h3>
+<p>The original of this is the deep thought working group
+which came up with these ideas of trying to gain control
+of the key leverage points on the internet.
+there&rsquo;s still some places where things really&nbsp;happen.</p>
 <p>Influence the process to our advantage and to identify leverage persons where low-cost can get a high&nbsp;impact.</p>
 <p>So one of the new things in operation in the orchestra version is what we call abba&nbsp;operations.</p>
 <p>And this is a very old problem - some smart inventor will invent something that makes our life more&nbsp;difficult.</p>
@@ -647,9 +709,9 @@ So know, I mean yes write better&nbsp;code!</p>
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&url=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz&hashtags=networks,privacy,talk" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+      <a href="https://twitter.com/intent/tweet?text=Transcript%20of%20NSA%20operation%20orchestra%20in%C2%A0czech&url=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz&hashtags=networks,privacy,talk" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
  ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Transcript%20of%20FOSDEM%20talk%20NSA%20operation%C2%A0orchestra&amp;body=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+ ❄       <a href="mailto:?subject=Transcript%20of%20NSA%20operation%20orchestra%20in%C2%A0czech&amp;body=https%3A//nappex.github.io/myblog/NSA-orchestra-transcript-cz" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             

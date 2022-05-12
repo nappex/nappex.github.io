@@ -96,7 +96,14 @@
 </li>
 <li><a href="#interview-with-poul-henning-kamp-before-talk">Interview with Poul-Henning Kamp before&nbsp;talk:</a></li>
 <li><a href="#transcript-of-talk-nsa-operation-orchestra-annual-status-report">Transcript of talk <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report</a><ul>
-<li><a href="#presentation">Presentation</a></li>
+<li><a href="#presentation">Presentation</a><ul>
+<li><a href="#introduction-what-it-is">Introduction - What it&nbsp;is?</a></li>
+<li><a href="#operation-orchestra">Operation <span class="caps">ORCHESTRA</span></a></li>
+<li><a href="#orchestra-operation-at-a-glance"><span class="caps">ORCHESTRA</span> operation at a&nbsp;glance</a></li>
+<li><a href="#history">History</a></li>
+<li><a href="#orchestra-origin">Orchestra&nbsp;Origin</a></li>
+</ul>
+</li>
 <li><a href="#qa-section">Q&amp;A <span class="caps">SECTION</span></a></li>
 </ul>
 </li>
@@ -124,6 +131,14 @@ There is also <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-
 <ul>
 <li><a href="http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf">Poul-Henning Kamp personal&nbsp;page</a></li>
 </ul>
+<p>Presentation consist of this main part, thats why is named as&nbsp;orchestra.</p>
+<p><strong>Playlist spoiler</strong>:
+* Electric Light <span class="caps">ORCHESTRA</span>: Confusion
+* <span class="caps">ABBA</span>: Money, Money, Money
+* Backman Turner <span class="caps">OVERDRIVE</span>: Taking Care Of Business
+* <span class="caps">QUEEN</span>: Bicycle Race
+* Beastie <span class="caps">BOYS</span>: Sabotage
+* <span class="caps">PASADENA</span> Roof Orchestra: Pennies From&nbsp;Heaven</p>
 <h1 id="interview-with-poul-henning-kamp-before-talk">Interview with Poul-Henning Kamp before talk:<a class="headerlink" href="#interview-with-poul-henning-kamp-before-talk" title="Permanent link">&para;</a></h1>
 <p>Interview with Poul-Henning Kamp
 <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report
@@ -176,28 +191,74 @@ to think about and investigate evidence to find the&nbsp;answers.</p>
 <h1 id="transcript-of-talk-nsa-operation-orchestra-annual-status-report">Transcript of talk <span class="caps">NSA</span> operation <span class="caps">ORCHESTRA</span>: Annual Status Report<a class="headerlink" href="#transcript-of-talk-nsa-operation-orchestra-annual-status-report" title="Permanent link">&para;</a></h1>
 <p><strong>Moderator:</strong></p>
 <p>Thank you for joining us we going to have a Poul-Henning Kamp also maybe better known as phk
-on annual status report on <span class="caps">NSA</span> operation orchestra, welcome thank&nbsp;you.</p>
+on annual status report on <span class="caps">NSA</span> operation orchestra,&nbsp;welcome.</p>
 <h2 id="presentation">Presentation<a class="headerlink" href="#presentation" title="Permanent link">&para;</a></h2>
 <p><strong>Poul-Henning&nbsp;Kamp:</strong></p>
-<p>So couple a years ago there was a news item that made me sit up in the chair and think. It&rsquo;s probably not the one you think about now, the director of <span class="caps">CIA</span> had his love affair exposed by the <span class="caps">FBI</span>, because they trade this telecommunication being a security researcher which is not normally something I called myself is a matter of imagination in a situation like that.
-You need to sit back and try to think like the minds who did&nbsp;that.</p>
-<p>Later on we got Edward Snowden&rsquo;s disclosures and I sat down and I thought what would I do if I have at budget a 1 billion dollars and a mandate in order to collect as much communication as&nbsp;possible.</p>
-<p>Then a week ago I got an email from Phillip (some guy from <span class="caps">FOSDEM</span>) going like:
-&ldquo;I need a keynote speaker what are you doing next weekend&rdquo;.
-And since I owe Phillip a lot of favors I said I can do that and then I sat down and made a set of slides.
-The basic premise here is that you should imagine a junior <span class="caps">NSA</span> staffer arriving in Brussels to give a update to <span class="caps">NATO</span> on one of the <span class="caps">NSA</span> programs and then because he is American he ends up here&nbsp;instead.</p>
-<p>If I had a lot of time I would have done the part you know the black hair the sunglasses and all that but you&rsquo;ll just have to imagine&nbsp;that.</p>
-<p>So this is Operation Orchestra and this is ofcourse top secret and none of this will exit this room I am&nbsp;sure.</p>
-<p>So the orchestra operation has as a primary objective to reduce the cost of gathering information. <span class="caps">NSA</span> has in the law, that controls their funding, it says collect as much information as possible and as a responsible government agency we&rsquo;re trying to do that as cost-effectively as&nbsp;possible</p>
-<p>So Operation Orchestra is about reducing <span class="caps">NSA</span> cost of collecting information and all of it has to be aboveboard there&rsquo;s no black ops (black operations - see wiki)&nbsp;allowed.</p>
-<p>Black ops are where you break the laws and we have no special authorizations we have no 007 with the license to &ldquo;wires&rdquo; (3:01) have or anything of the&nbsp;sort.</p>
-<p>And the means the way we do this is we try to eliminate prevent of weakening encryption we try to enable access to information and we try to frustrate players that are trying to make it harder for&nbsp;us.</p>
-<p>And the history about this is actually a very old program. It started out very soon after the escape of the&nbsp;Inter-Net.</p>
-<p>The internet was meant for the military is not meant for grandmother and terrorists and so&nbsp;on.</p>
-<p>And the big problem with Internet is unlike the telecommunication network as we knew it you can plug anything into the internet you don&rsquo;t have to get approval&nbsp;first.</p>
-<p>People can build their own computers and hook them up to network you couldn&rsquo;t do that with the old telecommunications network you could went to the <span class="caps">FCC</span> and you got a little sticker and all this&nbsp;stuff.</p>
-<p>So suddenly we&rsquo;re in this unregulated network and that&rsquo;s far too many players in the network they used to be will just talk to <span class="caps">AT</span>&amp;T and we could wiretap anybody. And they would heavily do that now we have you know millions of Internet networks, and many of them abroad, and we cannot negotiate with all them we have to find scalable methods to deal with this and our attempt to try to manipulate the outside protocols in instead of the tcp/ip protocols unfortunately failed that would have continued the connection-oriented models of the telephone network but that didn&rsquo;t work that was really too&nbsp;bad.</p>
-<p>The original is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there&rsquo;s still some places where things really&nbsp;happen.</p>
+<h3 id="introduction-what-it-is">Introduction - What it is?<a class="headerlink" href="#introduction-what-it-is" title="Permanent link">&para;</a></h3>
+<p>Thank&nbsp;you.</p>
+<p>So couple a years ago there was a news item that made me sit up in the chair and think.
+It&rsquo;s probably not the one you think about now,
+the director of <span class="caps">CIA</span> had his love affair exposed by the <span class="caps">FBI</span>,
+because they trade this telecommunication.
+Being a security researcher which is not normally something I called myself.
+It is a matter of imagination.
+In a situation like that. You need to sit back and try to think like
+the minds who did&nbsp;that.</p>
+<p>Later on we&rsquo;ve got Edward Snowden&rsquo;s disclosures and I sat down and
+I thought what would I do if I have budget a 1 billion dollars
+and a mandate and order to collect as much communication as&nbsp;possible.</p>
+<h3 id="operation-orchestra">Operation <span class="caps">ORCHESTRA</span><a class="headerlink" href="#operation-orchestra" title="Permanent link">&para;</a></h3>
+<p>Then a week ago I got an email from Phillip (some guy from <span class="caps">FOSDEM</span>) going&nbsp;like:</p>
+<p><span class="dquo">&ldquo;</span>I need a keynote speaker what are you doing next&nbsp;weekend&rdquo;.</p>
+<p>And since I owe Phillip a lot of favors I&nbsp;said:</p>
+<p><span class="dquo">&ldquo;</span>I can do&nbsp;that&rdquo;</p>
+<p>and then I sat down and made a set of slides.
+The basic premise here is that you should imagine
+a junior <span class="caps">NSA</span> staffer arriving in Brussels to give a update to <span class="caps">NATO</span>
+on one of the <span class="caps">NSA</span> programs and then
+because he is American he ends up here&nbsp;instead.</p>
+<p>If I had a lot of time I would have done the part you knowthe black hair,
+the sunglasses and all that, but you&rsquo;ll just have to imagine&nbsp;that.</p>
+<p>So this is Operation Orchestra and this is of course top secret
+and none of this will exit this room I am&nbsp;sure.</p>
+<h3 id="orchestra-operation-at-a-glance"><span class="caps">ORCHESTRA</span> operation at a glance<a class="headerlink" href="#orchestra-operation-at-a-glance" title="Permanent link">&para;</a></h3>
+<p>So the orchestra operation has as a primary objective to reduce
+the cost of gathering information.
+<span class="caps">NSA</span> has in the law, that controls their funding,
+it says collect as much information as possible and as a responsible
+government agency we&rsquo;re trying to do that as cost-effectively as&nbsp;possible.</p>
+<p>So Operation Orchestra is about reducing <span class="caps">NSA</span> cost of collecting information
+and all of it has to be above board.
+There&rsquo;s no black ops (black operations - see wiki) allowed.
+Black ops are where you break the laws. And we have no special authorizations
+we have no 007 with the license to wiretap or anything of that&nbsp;sort.</p>
+<p>And the means the way we do this is we try to eliminate prevent
+of weakening encryption we try to enable access to information
+and we try to frustrate players that are trying to make it harder for&nbsp;us.</p>
+<h3 id="history">History<a class="headerlink" href="#history" title="Permanent link">&para;</a></h3>
+<p>And the history about&#8230;.,
+This is actually a very old program.
+It started out very soon after the escape of the&nbsp;Inter-Net.</p>
+<p>The internet was meant for the military
+is not meant for grandmother and terrorists and so on. And the big problem
+with Internet is unlike the telecommunication network as we knew it
+you can plug anything into the internet you don&rsquo;t have to get approval first.
+People can build their own computers and hook them up to network.
+You couldn&rsquo;t do that with the old telecommunications network.
+You went to the <span class="caps">FCC</span> and you got a little sticker and all this&nbsp;stuff.</p>
+<p>So suddenly we&rsquo;re in this unregulated network.
+and there&rsquo;s far too many players in the network.
+It used to be we just talk to <span class="caps">AT</span>&amp;T who could wiretap anybody.
+And they would heavily do that.
+Now we have you know millions of Internet networks, and many of them abroad.
+We cannot negotiate with all them. We have to find scalable methods
+to deal with this.
+And our attempt to try to manipulate the outside protocols
+in instead of the tcp/ip protocols unfortunately failed.
+that would have continued the connection-oriented models of the
+telephone network but that didn&rsquo;t work. That was really too&nbsp;bad.</p>
+<h3 id="orchestra-origin">Orchestra Origin<a class="headerlink" href="#orchestra-origin" title="Permanent link">&para;</a></h3>
+<p>The original of this is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there&rsquo;s still some places where things really&nbsp;happen.</p>
 <p>Influence the process to our advantage and to identify leverage persons where low-cost can get a high&nbsp;impact.</p>
 <p>So one of the new things in operation in the orchestra version is what we call abba&nbsp;operations.</p>
 <p>And this is a very old problem - some smart inventor will invent something that makes our life more&nbsp;difficult.</p>
@@ -673,7 +734,7 @@ So know, I mean yes write better&nbsp;code!</p>
 <li><a href="https://nappex.github.io/myblog/ip-address-info-macos" title="How get info about my IP address on macOS">How get info about my IP address on macOS</a></li>
 <li><a href="https://nappex.github.io/myblog/basics-terminology-networks" title="Introduction to terminology in networks">Introduction to terminology in networks</a></li>
 <li><a href="https://nappex.github.io/myblog/basics-networks-devices" title="Introduction to network devices">Introduction to network devices</a></li>
-<li><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a></li>
+<li><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Transcript of NSA operation orchestra in czech">Transcript of NSA operation orchestra in czech</a></li>
 </ul>
 <hr />
 </section>
@@ -681,7 +742,7 @@ So know, I mean yes write better&nbsp;code!</p>
             <nav>
             <ul class="articles-timeline">
                 <li class="previous-article">« <a href="https://nappex.github.io/myblog/zsh-bash-diffs" title="Previous: Differences between zsh and bash">Differences between zsh and bash</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Next: Transcript of FOSDEM talk NSA operation orchestra">Transcript of FOSDEM talk NSA operation orchestra</a> »</li>
+                <li class="next-article"><a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Next: Transcript of NSA operation orchestra in czech">Transcript of NSA operation orchestra in czech</a> »</li>
             </ul>
             </nav>
             </aside>
