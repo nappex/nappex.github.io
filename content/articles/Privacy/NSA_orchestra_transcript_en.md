@@ -38,6 +38,16 @@ presentation links:
 
 * [Poul-Henning Kamp personal page](http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf)
 
+Presentation consist of this main part, thats why is named as orchestra.
+
+**Playlist spoiler**:
+* Electric Light ORCHESTRA: Confusion
+* ABBA: Money, Money, Money
+* Backman Turner OVERDRIVE: Taking Care Of Business
+* QUEEN: Bicycle Race
+* Beastie BOYS: Sabotage
+* PASADENA Roof Orchestra: Pennies From Heaven
+
 
 # Interview with Poul-Henning Kamp before talk:
 
@@ -94,45 +104,96 @@ NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014.
 **Moderator:**
 
 Thank you for joining us we going to have a Poul-Henning Kamp also maybe better known as phk
-on annual status report on NSA operation orchestra, welcome thank you.
+on annual status report on NSA operation orchestra, welcome.
 
 
 ## Presentation
 **Poul-Henning Kamp:**
 
-So couple a years ago there was a news item that made me sit up in the chair and think. It's probably not the one you think about now, the director of CIA had his love affair exposed by the FBI, because they trade this telecommunication being a security researcher which is not normally something I called myself is a matter of imagination in a situation like that.
-You need to sit back and try to think like the minds who did that.
+### Introduction - What it is?
+Thank you.
 
-Later on we got Edward Snowden's disclosures and I sat down and I thought what would I do if I have at budget a 1 billion dollars and a mandate in order to collect as much communication as possible.
+So couple a years ago there was a news item that made me sit up in the chair and think.
+It's probably not the one you think about now,
+the director of CIA had his love affair exposed by the FBI,
+because they trade this telecommunication.
+Being a security researcher which is not normally something I called myself.
+It is a matter of imagination.
+In a situation like that. You need to sit back and try to think like
+the minds who did that.
+
+Later on we've got Edward Snowden's disclosures and I sat down and
+I thought what would I do if I have budget a 1 billion dollars
+and a mandate and order to collect as much communication as possible.
+
+### Operation ORCHESTRA
 
 Then a week ago I got an email from Phillip (some guy from FOSDEM) going like:
+
 "I need a keynote speaker what are you doing next weekend".
-And since I owe Phillip a lot of favors I said I can do that and then I sat down and made a set of slides.
-The basic premise here is that you should imagine a junior NSA staffer arriving in Brussels to give a update to NATO on one of the NSA programs and then because he is American he ends up here instead.
 
-If I had a lot of time I would have done the part you know the black hair the sunglasses and all that but you'll just have to imagine that.
+And since I owe Phillip a lot of favors I said:
 
-So this is Operation Orchestra and this is ofcourse top secret and none of this will exit this room I am sure.
+"I can do that"
 
-So the orchestra operation has as a primary objective to reduce the cost of gathering information. NSA has in the law, that controls their funding, it says collect as much information as possible and as a responsible government agency we're trying to do that as cost-effectively as possible
+and then I sat down and made a set of slides.
+The basic premise here is that you should imagine
+a junior NSA staffer arriving in Brussels to give a update to NATO
+on one of the NSA programs and then
+because he is American he ends up here instead.
 
-So Operation Orchestra is about reducing NSA cost of collecting information and all of it has to be aboveboard there's no black ops (black operations - see wiki) allowed.
+If I had a lot of time I would have done the part you knowthe black hair,
+the sunglasses and all that, but you'll just have to imagine that.
 
-Black ops are where you break the laws and we have no special authorizations we have no 007 with the license to "wires" (3:01) have or anything of the sort.
+So this is Operation Orchestra and this is of course top secret
+and none of this will exit this room I am sure.
 
-And the means the way we do this is we try to eliminate prevent of weakening encryption we try to enable access to information and we try to frustrate players that are trying to make it harder for us.
+### ORCHESTRA operation at a glance
 
-And the history about this is actually a very old program. It started out very soon after the escape of the Inter-Net.
+So the orchestra operation has as a primary objective to reduce
+the cost of gathering information.
+NSA has in the law, that controls their funding,
+it says collect as much information as possible and as a responsible
+government agency we're trying to do that as cost-effectively as possible.
 
-The internet was meant for the military is not meant for grandmother and terrorists and so on.
+So Operation Orchestra is about reducing NSA cost of collecting information
+and all of it has to be above board.
+There's no black ops (black operations - see wiki) allowed.
+Black ops are where you break the laws. And we have no special authorizations
+we have no 007 with the license to wiretap or anything of that sort.
 
-And the big problem with Internet is unlike the telecommunication network as we knew it you can plug anything into the internet you don't have to get approval first.
+And the means the way we do this is we try to eliminate prevent
+of weakening encryption we try to enable access to information
+and we try to frustrate players that are trying to make it harder for us.
 
-People can build their own computers and hook them up to network you couldn't do that with the old telecommunications network you could went to the FCC and you got a little sticker and all this stuff.
+### History
+And the history about....,
+This is actually a very old program.
+It started out very soon after the escape of the Inter-Net.
 
-So suddenly we're in this unregulated network and that's far too many players in the network they used to be will just talk to AT&T and we could wiretap anybody. And they would heavily do that now we have you know millions of Internet networks, and many of them abroad, and we cannot negotiate with all them we have to find scalable methods to deal with this and our attempt to try to manipulate the outside protocols in instead of the tcp/ip protocols unfortunately failed that would have continued the connection-oriented models of the telephone network but that didn't work that was really too bad.
+The internet was meant for the military
+is not meant for grandmother and terrorists and so on. And the big problem
+with Internet is unlike the telecommunication network as we knew it
+you can plug anything into the internet you don't have to get approval first.
+People can build their own computers and hook them up to network.
+You couldn't do that with the old telecommunications network.
+You went to the FCC and you got a little sticker and all this stuff.
 
-The original is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there's still some places where things really happen.
+So suddenly we're in this unregulated network.
+and there's far too many players in the network.
+It used to be we just talk to AT&T who could wiretap anybody.
+And they would heavily do that.
+Now we have you know millions of Internet networks, and many of them abroad.
+We cannot negotiate with all them. We have to find scalable methods
+to deal with this.
+And our attempt to try to manipulate the outside protocols
+in instead of the tcp/ip protocols unfortunately failed.
+that would have continued the connection-oriented models of the
+telephone network but that didn't work. That was really too bad.
+
+### Orchestra Origin
+
+The original of this is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there's still some places where things really happen.
 
 Influence the process to our advantage and to identify leverage persons where low-cost can get a high impact.
 

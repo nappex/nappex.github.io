@@ -1,11 +1,11 @@
 ---
-Title: Transcript of FOSDEM talk NSA operation orchestra
+Title: Transcript of NSA operation orchestra in czech
 Date: 2022-05-11
 Category: Privacy, Networks
 Tags: networks, privacy, talk
 Slug: NSA-orchestra-transcript-cz
 Authors: David
-Summary: Czech transcript of FOSDEM talk about NSA habits
+Summary: Czech translation of transcript to talk about NSA habits
 Status: published
 ---
 
@@ -31,6 +31,17 @@ odkazy na video:
 odkaz na prezentaci:
 
 * [Poul-Henning Kamp personal page](http://phk.freebsd.dk/pubs/FOSDEM_2014.pdf)
+
+
+Přednáška se skládá z těchto částí, proto ji autor nazývá jako orchestr:
+
+**Playlist spoiler**:
+* Electric Light ORCHESTRA: Confusion
+* ABBA: Money, Money, Money
+* Backman Turner OVERDRIVE: Taking Care Of Business
+* QUEEN: Bicycle Race
+* Beastie BOYS: Sabotage
+* PASADENA Roof Orchestra: Pennies From Heaven
 
 
 # Rozhovor s Poul-Henning Kamp před přednáškou:
@@ -68,65 +79,119 @@ Poul-Henning Kamp bude mít přednášku s názvem
 
     “Komu věříte a proč...”
 
-5. Q: What do you hope to accomplish by giving this talk? What do you expect?
+5. Q: V co doufáte, že dosáhnete svou přednáškou? Co očekáváte?
 
-    I hope that people will laugh and think.
+    Doufám, že se lidé budou smát a přemýšlet.
 
-6. Q: What’s the role of FOSS in this age of surveillance
-    by the NSA and other shady agencies? Can we fight
-    the current privacy crisis with FOSS?
+6. Q: Jaká je role FOSS v této době sledování NSA a dalších pochybných agentur?
+     Jsme schopni bojovat se souřasnou krizí soukromí s pomocí FOSS?
 
-    Those are very good questions, and I hope my talk will inspire people
-    to think about and investigate evidence to find the answers.
+    Tohle jsou velmi dobré otázky, doufám, že má přednáška inspiruje lidi, aby
+    přemýšleli a zkoumali důkazy k nalezení odpovědí.
 
-7. Q: Have you enjoyed previous FOSDEM editions?
+7. Q: Užil jste si předchozí FOSDEM konferenci?
 
-    No, I have never been to FOSDEM before.
-
-
-# Transcript of talk NSA operation ORCHESTRA: Annual Status Report
-**Moderator:**
-
-Thank you for joining us we going to have a Poul-Henning Kamp also maybe better known as phk
-on annual status report on NSA operation orchestra, welcome thank you.
+    Ne, nikdy jsem ještě na FOSDEM konferenci nebyl.
 
 
-## Presentation
+# Český přepis přednášky NSA operation ORCHESTRA: Annual Status Report
+**Moderátor:**
+
+Děkuji vám, že jste se k nám připojili. Nyní budeme mít Poul-Henning Kamp
+také možná lépe známého pod přezdívkou phk a jeho přednášku na téma
+annual status report on NSA operation orchestra.
+Vítejte.
+
+
+## Přednáška
 **Poul-Henning Kamp:**
 
-So couple a years ago there was a news item that made me sit up in the chair and think. It's probably not the one you think about now, the director of CIA had his love affair exposed by the FBI, because they trade this telecommunication being a security researcher which is not normally something I called myself is a matter of imagination in a situation like that.
-You need to sit back and try to think like the minds who did that.
+### Úvod - O co se jedná?
+Děkuji.
 
-Later on we got Edward Snowden's disclosures and I sat down and I thought what would I do if I have at budget a 1 billion dollars and a mandate in order to collect as much communication as possible.
+Před pár lety se objevila nová věc, která mě přinutila si sednout na židli
+a přemýšlet. Nejspíše to není ta věc nad kterou teď přemýšlíte, že FBI odhalila
+milostnou aféru ředitele CIA, tím že vyměnila tuto telekomunikaci.
+Býti bezpečnostním výzkumníkem, což není něco, čím bych se normálně nazýval.
+Znamená umět pracovat s představivostí. V situacích jako je tato si musíte sednout
+a pokusit se přemýšlet stejně jako mysl těch, kteří to provedli.
 
-Then a week ago I got an email from Phillip (some guy from FOSDEM) going like:
-"I need a keynote speaker what are you doing next weekend".
-And since I owe Phillip a lot of favors I said I can do that and then I sat down and made a set of slides.
-The basic premise here is that you should imagine a junior NSA staffer arriving in Brussels to give a update to NATO on one of the NSA programs and then because he is American he ends up here instead.
+Později jsme získali odhalení od Edwarda Snowdena a já si sednul a
+přemýšlel co bych dělal kdybych měl rozpočet jeden bilion dolarů, pověření
+a příkaz nasbírat tolik komunikace, kolik je jen možné.
 
-If I had a lot of time I would have done the part you know the black hair the sunglasses and all that but you'll just have to imagine that.
+### Operation ORCHESTRA
 
-So this is Operation Orchestra and this is ofcourse top secret and none of this will exit this room I am sure.
+Pak před týdnem jsem dostal email of Filipa, nějaký chlápek z FOSDEMu,
+v tomto znění:
 
-So the orchestra operation has as a primary objective to reduce the cost of gathering information. NSA has in the law, that controls their funding, it says collect as much information as possible and as a responsible government agency we're trying to do that as cost-effectively as possible
+"Potřebuji nějakého přednášejícího, co děláš příští týden?"
 
-So Operation Orchestra is about reducing NSA cost of collecting information and all of it has to be aboveboard there's no black ops (black operations - see wiki) allowed.
+Protože dlužím Filipovi hodně laskavostí, řekl jsem:
 
-Black ops are where you break the laws and we have no special authorizations we have no 007 with the license to "wires" (3:01) have or anything of the sort.
+"můžu udělat přednášku"
 
-And the means the way we do this is we try to eliminate prevent of weakening encryption we try to enable access to information and we try to frustrate players that are trying to make it harder for us.
+a tak jsem si sedl a vytvořil dnešní prezentaci.
 
-And the history about this is actually a very old program. It started out very soon after the escape of the Inter-Net.
+Základní předpoklad k mé přednášce je, že byste si měli představit juniorního
+pracovníka NSA přijíždějícího do Bruselu, aby poskytl NATO aktuální informace
+o jednom z programů NSA a namísto toho tam skončí, protože je Američan.
 
-The internet was meant for the military is not meant for grandmother and terrorists and so on.
+Kdybych měl plno času, udělal bych tu část s černými vlasy, slunečními brýlemi
+a všeho toho, ale budete si to muset pouze představit.
 
-And the big problem with Internet is unlike the telecommunication network as we knew it you can plug anything into the internet you don't have to get approval first.
+Tohle je Operace "Orchestr" (pozn. fiktivní tajná operace NSA vymyšlená autorem
+přednášky). Jsem si jist, že žádné informace z této operace, která je samozřejmě
+v nejvyšším stupni utajení, neopustí tuto místnost.
 
-People can build their own computers and hook them up to network you couldn't do that with the old telecommunications network you could went to the FCC and you got a little sticker and all this stuff.
+### ORCHESTRA operation na první pohled
 
-So suddenly we're in this unregulated network and that's far too many players in the network they used to be will just talk to AT&T and we could wiretap anybody. And they would heavily do that now we have you know millions of Internet networks, and many of them abroad, and we cannot negotiate with all them we have to find scalable methods to deal with this and our attempt to try to manipulate the outside protocols in instead of the tcp/ip protocols unfortunately failed that would have continued the connection-oriented models of the telephone network but that didn't work that was really too bad.
+Základním úkolem Operace "orchestra" je redukovat náklady při sběru informací.
+Organizace NSA má ve svých regulích, které řídí jejich financování, sbírej
+co nejvíce infromací je možné, ale jako zodpovědná vládní organize se je
+snažíme sbírat s co největší hospodárností.
 
-The original is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there's still some places where things really happen.
+Operace "orchestra" je tedy o redukování NSA nákladů při sběru informací.
+Všechno musí být přes vedení. Nejsou dovoleny žádné tajné operace typu
+"black-ops". Black ops jsou operace, kde se porušují zákony.
+Nemáme žádnou speciální autorizaci, nemáme žádného 007 s povolením
+odposlouchávat nebo něco podobného.
+
+A možnost nebo způsob, jak to udělat je, že se pokusíme zlikvidovat činnost,
+která zabraňuje oslabování šifrování. Snažíme se naopak umožnit přístup
+k informacím a zároveň frustrovat hráče, kteří se nám pokoušejí to ztížit
+(např. kvalitním šifrováním).
+
+### Historie
+Něco k historii...
+Ve skutečnosti se jedná o velmi starý program.
+Začal velmi brzy po úniku Inter-Netu.
+
+Internet byl vymyšlen jako projekt pro armádu, úmyslem nebylo, aby jej
+začala používat babička, teroristi apod. Velkým problémem internetu
+narozdíl od telekomunikační sítě tak jak ji známe je, že do něj můžete zapojit
+cokoliv aniž byste k tomu nejdříve dostali nějaké povolení.
+Lidé si mohou stavět své vlastní počítače a zapojit si je do sítě.
+To jste nemohli udělat se starou telekomunikační sítí.
+To jste šli do FCC (Federal Communications Commission) a dostali jste
+malou nálepku a všechny další náležitosti.
+
+Najednou jsme v této neregulované síti. A v této síti je podstatně více
+účastníků. Kdysi jsme si povídali jenom s AT&T,
+která tak mohla odposlouchávat kohokoliv. A také to ve velkém dělali.
+Nyní ale máme milióny internetových sítí a mnoho z nich je v zahraničí.
+Nemůžeme se vypořádat se všemi z nich. Musíme nalézt škálovatelní metody,
+které budou schopny se s tím vypořádat.
+A náš pokus zkoušet manipulovat vnější protokoly na místo protokolů tcp/ip,
+bohužel selhal. To by pokračovalo v modelech spojované komunikace telefonní
+sítě, ale to nefungovalo. Bylo to opravdu velmi špatné.
+
+### Původ Orchestru
+
+The original of this is the deep thought working group
+which came up with these ideas of trying to gain control
+of the key leverage points on the internet.
+there's still some places where things really happen.
 
 Influence the process to our advantage and to identify leverage persons where low-cost can get a high impact.
 
