@@ -193,7 +193,10 @@ telephone network but that didn't work. That was really too bad.
 
 ### Orchestra Origin
 
-The original of this is the deep thought working group which came up with these ideas of trying to gain control of the key leverage points on the internet there's still some places where things really happen.
+The original of this is the deep thought working group
+which came up with these ideas of trying to gain control
+of the key leverage points on the internet.
+there's still some places where things really happen.
 
 Influence the process to our advantage and to identify leverage persons where low-cost can get a high impact.
 
