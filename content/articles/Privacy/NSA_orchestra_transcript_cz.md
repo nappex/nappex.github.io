@@ -235,11 +235,15 @@ Také do toho musíte zapojit mnoho lidí. Jedná se tedy o druh velmi dráhého
 procesu.
 
 #### Nová škola
-So we've found a new way to do this. We're using the broad capitalism of the market we're simply throwing money at the problem.
-So we spot some startup that's going to give us problems.
-We read HackerNews and all that stuff of course.
+Nalezli jsme nový způsob, jak tohle dělat.
+Využíváme surový trh kapitalismu.
+Jendoduše házíme peníze na problém.
 
-So there's a venture capitalist who contacts them it's like - "Oh I saw you on HackerNews can I drop by?"
+Nalezneme nějaký start-up, který nám bude dávat problémy.
+Samozřejmě čteme HackerNews a podobné noviny.
+
+So there's a venture capitalist who contacts them it's like:
+"Oh I saw you on HackerNews can I drop by?"
 
 So this dude drops by and you know chats them up and invites them out for a fancy dinner and you know drops 10k dollars that you get some better chairs or something you know keep me posted right.
 

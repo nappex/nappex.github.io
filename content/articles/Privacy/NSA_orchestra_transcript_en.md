@@ -227,11 +227,15 @@ but there's a lot of paperwork involved in this and it leaves a lot of traces.
 And involves many people. So it's kind of an expensive process.
 
 #### New school
-So we've found a new way to do this. We're using the broad capitalism of the market we're simply throwing money at the problem.
+So we've found a new way to do this.
+We're using the raw capitalism of the market.
+We're simply throwing money at the problem.
+
 So we spot some startup that's going to give us problems.
 We read HackerNews and all that stuff of course.
 
-So there's a venture capitalist who contacts them it's like - "Oh I saw you on HackerNews can I drop by?"
+So there's a venture capitalist who contacts them it's like:
+"Oh I saw you on HackerNews can I drop by?"
 
 So this dude drops by and you know chats them up and invites them out for a fancy dinner and you know drops 10k dollars that you get some better chairs or something you know keep me posted right.
 
