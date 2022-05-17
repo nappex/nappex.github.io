@@ -38,17 +38,20 @@ Přednáška se skládá z těchto částí, proto ji autor nazývá jako orches
 **Playlist spoiler**:
 
 * Electric Light ORCHESTRA: Confusion
+
 * ABBA: Money, Money, Money
+
 * Backman Turner OVERDRIVE: Taking Care Of Business
+
 * QUEEN: Bicycle Race
+
 * Beastie BOYS: Sabotage
+
 * PASADENA Roof Orchestra: Pennies From Heaven
 
 
 # Rozhovor s Poul-Henning Kamp před přednáškou:
 
-Rozhovor s Poul-Henning Kamp
-NSA operation ORCHESTRA: Annual Status Report
 Poul-Henning Kamp bude mít přednášku s názvem
 *NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014*
 
@@ -62,6 +65,8 @@ Poul-Henning Kamp bude mít přednášku s názvem
 
 2. Q: O čem přesně bude vaše přednáška?
 
+    A:
+
     Má přednáška je o vztahu NSA - FOSS.
 
     Myslím si, že jej potřebujeme přehodnotit.
@@ -69,28 +74,38 @@ Poul-Henning Kamp bude mít přednášku s názvem
 3. Q: Co vás k tomuto tématu přivedlo, proč se vlastně o něj zajímáte?
     Proč je pro vás tak důležité o tomto tématu přednášet?
 
-    Inspirací pro mě je odhalení, které udělal Edward Snowden,
-    ale mezitímco se hlavně zaměřili na širokou veřejnost a politiky,
-    objevuje se zde zcela odlišné sdělení pro IT svět a obzvláště pro
+    A:
+
+    Inspirací pro mě je odhalení, které udělal Edward Snowden.
+    Mezitímco se hlavně zaměřili na širokou veřejnost a politiky,
+    se zde objevuje zcela odlišné sdělení pro IT svět a obzvláště pro
     FOSS komunitu, ale většině lidí to uniká.
 
 4. Q: Mohl byste objasnit hlavní sdělení, které chcete přednáškou předat?
     Kdyby si lidé měli odnést jednu věc z vaší přednášky,
     co by to mělo být?
 
+    A:
+
     “Komu věříte a proč...”
 
 5. Q: V co doufáte, že dosáhnete svou přednáškou? Co očekáváte?
+
+    A:
 
     Doufám, že se lidé budou smát a přemýšlet.
 
 6. Q: Jaká je role FOSS v této době sledování NSA a dalších pochybných agentur?
      Jsme schopni bojovat se souřasnou krizí soukromí s pomocí FOSS?
 
+    A:
+
     Tohle jsou velmi dobré otázky, doufám, že má přednáška inspiruje lidi, aby
     přemýšleli a zkoumali důkazy k nalezení odpovědí.
 
 7. Q: Užil jste si předchozí FOSDEM konferenci?
+
+    A:
 
     Ne, nikdy jsem ještě na FOSDEM konferenci nebyl.
 
@@ -98,8 +113,8 @@ Poul-Henning Kamp bude mít přednášku s názvem
 # Český přepis přednášky NSA operation ORCHESTRA: Annual Status Report
 **Moderátor:**
 
-Děkuji vám, že jste se k nám připojili. Nyní budeme mít Poul-Henning Kamp
-také možná lépe známého pod přezdívkou phk a jeho přednášku na téma
+Děkuji vám, že jste se k nám připojili. Nyní bude Poul-Henning Kamp,
+také možná lépe známého pod přezdívkou phk, a jeho přednášku na téma
 annual status report on NSA operation orchestra.
 Vítejte.
 
@@ -113,8 +128,8 @@ Děkuji.
 Před pár lety se objevila nová věc, která mě přinutila si sednout na židli
 a přemýšlet. Nejspíše to není ta věc nad kterou teď přemýšlíte, že FBI odhalila
 milostnou aféru ředitele CIA, tím že vyměnila tuto telekomunikaci.
-Býti bezpečnostním výzkumníkem, což není něco, čím bych se normálně nazýval.
-Znamená umět pracovat s představivostí. V situacích jako je tato si musíte sednout
+Býti bezpečnostním výzkumníkem, což není něco, čím bych se normálně nazýval,
+znamená umět pracovat s představivostí. V situacích jako je tato si musíte sednout
 a pokusit se přemýšlet stejně jako mysl těch, kteří to provedli.
 
 Později jsme získali odhalení od Edwarda Snowdena a já si sednul a
@@ -153,7 +168,8 @@ co nejvíce infromací je možné, ale jako zodpovědná vládní organize se je
 snažíme sbírat s co největší hospodárností.
 
 Operace "orchestra" je tedy o redukování NSA nákladů při sběru informací.
-Všechno musí být přes vedení. Nejsou dovoleny žádné tajné operace typu
+Veškerá činnost musí být přes vedení operace.
+Nejsou dovoleny žádné tajné operace typu
 "black-ops". Black ops jsou operace, kde se porušují zákony.
 Nemáme žádnou speciální autorizaci, nemáme žádného 007 s povolením
 odposlouchávat nebo něco podobného.

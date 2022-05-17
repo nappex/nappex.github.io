@@ -52,8 +52,7 @@ Presentation consist of this main part, thats why is named as orchestra.
 
 # Interview with Poul-Henning Kamp before talk:
 
-Interview with Poul-Henning Kamp
-NSA operation ORCHESTRA: Annual Status Report
+Interview with Poul-Henning Kamp.
 Poul-Henning Kamp will give a talk about
 NSA operation ORCHESTRA: Annual Status Report at FOSDEM 2014.
 
