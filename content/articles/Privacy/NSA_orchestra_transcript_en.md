@@ -41,6 +41,7 @@ presentation links:
 Presentation consist of this main part, thats why is named as orchestra.
 
 **Playlist spoiler**:
+
 * Electric Light ORCHESTRA: Confusion
 * ABBA: Money, Money, Money
 * Backman Turner OVERDRIVE: Taking Care Of Business

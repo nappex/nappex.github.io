@@ -36,6 +36,7 @@ odkaz na prezentaci:
 Přednáška se skládá z těchto částí, proto ji autor nazývá jako orchestr:
 
 **Playlist spoiler**:
+
 * Electric Light ORCHESTRA: Confusion
 * ABBA: Money, Money, Money
 * Backman Turner OVERDRIVE: Taking Care Of Business
