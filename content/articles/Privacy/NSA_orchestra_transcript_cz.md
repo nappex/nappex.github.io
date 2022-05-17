@@ -121,10 +121,9 @@ Vítejte.
 
 ## Přednáška
 **Poul-Henning Kamp:**
-
-### Úvod - O co se jedná?
 Děkuji.
 
+### Úvod - O co se jedná?
 Před pár lety se objevila nová věc, která mě přinutila si sednout na židli
 a přemýšlet. Nejspíše to není ta věc nad kterou teď přemýšlíte, že FBI odhalila
 milostnou aféru ředitele CIA, tím že vyměnila tuto telekomunikaci.
@@ -239,17 +238,24 @@ Nalezli jsme nový způsob, jak tohle dělat.
 Využíváme surový trh kapitalismu.
 Jendoduše házíme peníze na problém.
 
-Nalezneme nějaký start-up, který nám bude dávat problémy.
+Nalezneme nějaký start-up, který nám bude způsobovat problémy.
 Samozřejmě čteme HackerNews a podobné noviny.
 
-So there's a venture capitalist who contacts them it's like:
-"Oh I saw you on HackerNews can I drop by?"
+Zde je rizikový kapitalista, který start-up kontaktuje se slovy:
+"Oh, viděl jsem vás v HackerNews můžu za vámi někdy zaskočit?"
 
-So this dude drops by and you know chats them up and invites them out for a fancy dinner and you know drops 10k dollars that you get some better chairs or something you know keep me posted right.
+Tenhle chlápek se zastaví, ukecává je a zve je ven na luxusní večeře, kde
+upustí 10k dolarů, aby dostali lepší místa nebo něco podobného.
+Vše probíhá v duchu - o všem mě informujte, jak vám můžeme pomoci apod.
 
-Now that he knows what they were up to, he comes home and we start looking for a good patent.
+Nyní když už ví, co chystali, přijde domů a začneme hledat dobrý patent.
 
-If we're lucky this patent is already with one of the friends of NSA and would draw the line to IBM and for their patent lawyers and you should look at these guys because that's awfully close to your patent and like let's not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
+Když máme štěstí, hledaný patent už je u jednoho z přátel od NSA a
+natáhl by linku k IBM a k jejich patentovým právníkům.
+Vy byste se měli na tyto chlapíky podívat, protože jsou strašlivě blízko
+vašemu patentu.
+
+and like less not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
 Very often they'll even call the venture capitalist bagging/begging "Oh we sorry" so we get feedback we know they're stopped it's wonderful and it's like 30k dollars.
 
 If the patent is not in what we call good hands. we'll obviously try to find a better patent or we'll try to get it transferred there's some very cooperative patent companies out there, who will go out and buy a patent. So that they can use it on our behalf.

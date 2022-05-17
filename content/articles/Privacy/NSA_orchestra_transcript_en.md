@@ -114,10 +114,9 @@ on annual status report on NSA operation orchestra, welcome.
 
 ## Presentation
 **Poul-Henning Kamp:**
-
-### Introduction - What it is?
 Thank you.
 
+### Introduction - What it is?
 So couple a years ago there was a news item that made me sit up in the chair and think.
 It's probably not the one you think about now,
 the director of CIA had his love affair exposed by the FBI,
@@ -237,11 +236,18 @@ We read HackerNews and all that stuff of course.
 So there's a venture capitalist who contacts them it's like:
 "Oh I saw you on HackerNews can I drop by?"
 
-So this dude drops by and you know chats them up and invites them out for a fancy dinner and you know drops 10k dollars that you get some better chairs or something you know keep me posted right.
+So this dude drops by and you know chats them up and
+invites them out for a fancy dinner and you know drops 10k dollars,
+get some better chairs or something you know keep me posted right.
 
-Now that he knows what they were up to, he comes home and we start looking for a good patent.
+Now that he knows what they were up to,
+he comes home and we start looking for a good patent.
 
-If we're lucky this patent is already with one of the friends of NSA and would draw the line to IBM and for their patent lawyers and you should look at these guys because that's awfully close to your patent and like let's not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
+If we're lucky this patent is already with one of the friends of NSA
+and would draw the line to IBM and for their patent lawyers.
+And you should look at these guys because that's awfully close to your patent.
+
+and like let's not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
 Very often they'll even call the venture capitalist bagging/begging "Oh we sorry" so we get feedback we know they're stopped it's wonderful and it's like 30k dollars.
 
 If the patent is not in what we call good hands. we'll obviously try to find a better patent or we'll try to get it transferred there's some very cooperative patent companies out there, who will go out and buy a patent. So that they can use it on our behalf.
