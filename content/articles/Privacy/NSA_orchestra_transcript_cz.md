@@ -47,7 +47,7 @@ Přednáška se skládá z těchto částí, proto ji autor nazývá jako orches
 
 * Beastie BOYS: Sabotage
 
-* PASADENA Roof Orchestra: Pennies From Heaven
+* PASADENA Roof Orchestra: Pennies From Heaven
 
 
 # Rozhovor s Poul-Henning Kamp před přednáškou:

@@ -43,11 +43,16 @@ Presentation consist of this main part, thats why is named as orchestra.
 **Playlist spoiler**:
 
 * Electric Light ORCHESTRA: Confusion
+
 * ABBA: Money, Money, Money
+
 * Backman Turner OVERDRIVE: Taking Care Of Business
+
 * QUEEN: Bicycle Race
+
 * Beastie BOYS: Sabotage
-* PASADENA Roof Orchestra: Pennies From Heaven
+
+* PASADENA Roof Orchestra: Pennies From Heaven
 
 
 # Interview with Poul-Henning Kamp before talk:
