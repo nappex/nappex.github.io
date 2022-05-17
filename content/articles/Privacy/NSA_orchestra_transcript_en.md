@@ -198,17 +198,30 @@ which came up with these ideas of trying to gain control
 of the key leverage points on the internet.
 there's still some places where things really happen.
 
-Influence the process to our advantage and to identify leverage persons where low-cost can get a high impact.
+Influence the process to our advantage and to identify leverage persons,
+where low-cost can get a high impact.
 
-So one of the new things in operation in the orchestra version is what we call abba operations.
+### ABBA operation
+So one of the new things in operation in the orchestra version
+is what we call ABBA operations.
 
-And this is a very old problem - some smart inventor will invent something that makes our life more difficult.
+And this is a very old problem.
+Some smart inventor will invent something, that makes our life more difficult.
 
-And we don't want that so what do we do.
-So the way we used to do this is we would try to bribe him try to hire him or something we would classify his patent.
+And we don't want that.
+So what do we do?
+
+#### Old school
+So the way we used to do this is we would try to bribe him,
+try to hire him or something.
+We would classify his patent.
 So he would get a patent but he couldn't show it to anybody.
-In some cases we can swear people to silence you know national security we are ?????(5:28)
-The president will give you a hand shaking and all this stuff but there's a lot of paperwork involved in this and it leaves a lot of traces and involves many people so it's kind of an expensive process.
+In some cases we can swear people to silence you know national security,
+yade yade (etc.), the president will give you a hand shaking and all this stuff,
+but there's a lot of paperwork involved in this and it leaves a lot of traces.
+And involves many people. So it's kind of an expensive process.
+
+#### New school
 So we've found a new way to do this. We're using the broad capitalism of the market we're simply throwing money at the problem.
 So we spot some startup that's going to give us problems.
 We read HackerNews and all that stuff of course.

@@ -188,22 +188,36 @@ sítě, ale to nefungovalo. Bylo to opravdu velmi špatné.
 
 ### Původ Orchestru
 
-The original of this is the deep thought working group
-which came up with these ideas of trying to gain control
-of the key leverage points on the internet.
-there's still some places where things really happen.
+Zdrojem je pracovní skupina deep thought (hluboké myšlenky?),
+která přišla s těmito nápady ohledně snahy získat kontrolu
+nad klíčovými pákovými body (key leverage points) na internetu.
+Stále zde existují místa, kde se věci skutečně dějí.
 
-Influence the process to our advantage and to identify leverage persons where low-cost can get a high impact.
+Ovlivňovat průběh k naší výhodě and identifikovat klíčové osoby,
+kde levně můžeme získat velký účinek.
 
-So one of the new things in operation in the orchestra version is what we call abba operations.
+### ABBA operation
+Jedna z nových věcí v operaci orchestr je něco, čemu říkáme ABBA operace.
 
-And this is a very old problem - some smart inventor will invent something that makes our life more difficult.
+A tohle je velice starý problém. Nějaký chytrý vynálezce vynalezne něco,
+čím nám více zkomplikuje naše životy.
 
-And we don't want that so what do we do.
-So the way we used to do this is we would try to bribe him try to hire him or something we would classify his patent.
-So he would get a patent but he couldn't show it to anybody.
-In some cases we can swear people to silence you know national security we are ?????(5:28)
-The president will give you a hand shaking and all this stuff but there's a lot of paperwork involved in this and it leaves a lot of traces and involves many people so it's kind of an expensive process.
+My tohle nechceme.
+Takže co budeme dělat?
+
+#### Stará škola
+Způsob, kterým bychom tohle udělali by byl, že bychom se jej snažili uplatit,
+udělat s ním pracovní poměr nebo něco podobného.
+Zařadili bychom jeho patent mezi utajované.
+Takže by měl sice patent, ale nemohl by ho nikomu ukázat.
+V některých případech můžeme lidi zavázat mlčenlivostí, s ohledem
+na národní bezpečnost a tak dále. Prezident si s váma podá ruku a všechny
+tyhle věci.
+Ale do toho je zahrnuto hodě papírování a zanechává to za vámi plno stop.
+Také do toho musíte zapojit mnoho lidí. Jedná se tedy o druh velmi dráhého
+procesu.
+
+#### Nová škola
 So we've found a new way to do this. We're using the broad capitalism of the market we're simply throwing money at the problem.
 So we spot some startup that's going to give us problems.
 We read HackerNews and all that stuff of course.
