@@ -294,10 +294,16 @@ This is a way we can move money into people that we want to do things.
 ### OVERDRIVE activities
 So in the other end of the scale speaking of money we have what we call the overdrive activities.
 This is about influencing bussines decisions.
-We used NSA's contracting we have rather big purchases of IT services.
-And we can pretty much decide who we give the order to ourselves there's no fair purchasing when it's national security.
+
+We used NSA's contracting we rather big purchases of IT services.
+And we can pretty much decide,
+who we give the order to ourselves.
+There's no fair purchasing when it's national security.
 And the good thing about contract law is you can do anything.
-It cannot be directly illegal you cannot have a contract to kill somebody but you can do anything that's possible within the law with a contract.
+It cannot be directly illegal,
+you cannot have a contract to kill somebody,
+but you can do anything that's possible within the law with a contract.
+
 And it's very good mechanism to solve big problems the bad news is it usually very big players so there's lawyers and it's kind of expensive and stuff like that.
 And that can be some objective screw but it's a good way to solve problems and this is actually how we solve the Skype problem.
 Skype was peer-to-peer encrypted video and audio.

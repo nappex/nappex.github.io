@@ -303,12 +303,18 @@ Tohle je způsob, jak můžeme přesunout peníze do lidí, po kterých chceme,
 aby něco dělali.
 
 ### OVERDRIVE aktivity
-So in the other end of the scale speaking of money we have what we call the overdrive activities.
-This is about influencing bussines decisions.
-We used NSA's contracting we have rather big purchases of IT services.
-And we can pretty much decide who we give the order to ourselves there's no fair purchasing when it's national security.
-And the good thing about contract law is you can do anything.
-It cannot be directly illegal you cannot have a contract to kill somebody but you can do anything that's possible within the law with a contract.
+Na druhém konci žebříčku, mluvíme-li ohledně peněz, máme něco, čemu říkáme
+overdrive aktivity (aktivity rychloběhu).
+Jde o ovlivňování obchodních rozhodnutí.
+
+Využijeme NSA kontrakty na poměrně velké nákupy IT služeb.
+Můžeme si sami do značné míry rozhodnout, komu zakázku dáme.
+Nejedná se o férové nakupování, když se jedná o národní bezpečnost.
+Dobrá věc na smluvním právu je, že sním můžete dělat cokoliv.
+Nemůže být přímo nezákonný,
+nemůžete mít smlouvu na něčí zabití, ale můžete smluvně udělat cokoliv
+co je v mezích zákona.
+
 And it's very good mechanism to solve big problems the bad news is it usually very big players so there's lawyers and it's kind of expensive and stuff like that.
 And that can be some objective screw but it's a good way to solve problems and this is actually how we solve the Skype problem.
 Skype was peer-to-peer encrypted video and audio.
