@@ -255,11 +255,26 @@ natáhl by linku k IBM a k jejich patentovým právníkům.
 Vy byste se měli na tyto chlapíky podívat, protože jsou strašlivě blízko
 vašemu patentu.
 
-and like less not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
-Very often they'll even call the venture capitalist bagging/begging "Oh we sorry" so we get feedback we know they're stopped it's wonderful and it's like 30k dollars.
+Ne méně jako IBM, vyšleme pár patentových právníků s mnoha patenty
+a start-up bude mrtev.
+Velmi často dokonce zavolají zpět rizikovému podnikateli se slovy:
+"Oh, omlouváme se..."
+Takže dostaneme zpětnou vazbu a víme, že to ukončili.
+To je úžásné, to je jako 30k dolarů.
 
-If the patent is not in what we call good hands. we'll obviously try to find a better patent or we'll try to get it transferred there's some very cooperative patent companies out there, who will go out and buy a patent. So that they can use it on our behalf.
-It's a very convenient process we've used some of the same to solve another old problem we have this problem with people who are working for us in different situations and we need to reward them.
+Jestliže patent není v něčem, co nazýváme správné ruce.
+Budeme se zjevně snažit nalézt lepší patent nebo jej zkusíme převést.
+If the patent is not in, what we call good hands.
+Zde existují nějaké patentové společnosti, které spolupracují
+a patent odkoupí. Pak jej mohou používat pod naším jménem.
+
+### Operace PASADENA
+Jedná se o velmi výhodný proces
+It's a very convenient process.
+we've used some of the same to solve another old problem.
+We have this problem with people who are working for us
+in different situations and we need to reward them.
+
 And this used to be some kind of bogus operation, you know they would suddenly win the lottery.
 Some distant relative would have left them a fortune.
 We're kind of sorry about the Nigerian scam but that's kind of how it started.

@@ -247,10 +247,20 @@ If we're lucky this patent is already with one of the friends of NSA
 and would draw the line to IBM and for their patent lawyers.
 And you should look at these guys because that's awfully close to your patent.
 
-and like let's not IBM we'll send out a couple of patent lawyers with lots of patents and that startup will be dead.
-Very often they'll even call the venture capitalist bagging/begging "Oh we sorry" so we get feedback we know they're stopped it's wonderful and it's like 30k dollars.
+And like less not IBM we'll send out a couple of patent lawyers
+with lots of patents and that startup will be dead.
+Very often they'll even call to the venture capitalist back:
+"Oh we sorry..."
+So we get feedback we know they're stopped it's wonderful
+and it's like 30k dollars.
 
-If the patent is not in what we call good hands. we'll obviously try to find a better patent or we'll try to get it transferred there's some very cooperative patent companies out there, who will go out and buy a patent. So that they can use it on our behalf.
+If the patent is not in, what we call good hands.
+We'll obviously try to find a better patent or we'll try
+to get it transferred.
+There's some very cooperative patent companies out there,
+who will go out and buy a patent. So that they can use it on our behalf.
+
+### PASADENA operation
 It's a very convenient process we've used some of the same to solve another old problem we have this problem with people who are working for us in different situations and we need to reward them.
 And this used to be some kind of bogus operation, you know they would suddenly win the lottery.
 Some distant relative would have left them a fortune.
