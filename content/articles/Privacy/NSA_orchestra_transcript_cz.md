@@ -289,14 +289,14 @@ To by dopadlo s podivením: "hmm?!"
 
 Ne. Dnes je to daleko jednodušší.
 "Šéfe, končím tady."
-Poté si udělá start-up, najde rizikové podnikatele, který vyklopí pár miliónů
+Poté si udělá start-up, najde rizikového podnikatele, který vyklopí pár miliónů
 do start-upu.
-A potom sedí a prochází internet pá roků nebo cokoliv jiného co chce dělat.
-A je to.
+A potom sedí a prochází internet pár roků nebo cokoliv jiného co chce dělat.
+A je to!
 Kancelářská práce je zcela běžná, existuje na to i daňový formulář.
 To je vlastně jedna z daní, díky kterým jsem nakonec vytvořil společnost,
 která fungovala.
-And that's actually one of these do tax I ended up making a company that worked.
+
 To je přesně ono, Rubín.
 Tohle je způsob, jak dostat peníze k našim cílům.
 Tohle je způsob, jak můžeme přesunout peníze do lidí, po kterých chceme,
