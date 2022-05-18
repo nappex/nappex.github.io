@@ -269,21 +269,40 @@ Zde existují nějaké patentové společnosti, které spolupracují
 a patent odkoupí. Pak jej mohou používat pod naším jménem.
 
 ### Operace PASADENA
-Jedná se o velmi výhodný proces
-It's a very convenient process.
-we've used some of the same to solve another old problem.
-We have this problem with people who are working for us
-in different situations and we need to reward them.
+Jedná se o velmi výhodný proces.
+Využili jsme nějaké podobnosti k vyřešení dalšího starého problému.
+My máme totiž problém s lidmi, kteří pro nás pracují v odlišných situacích
+a my je za jejich práci potřebujeme odměnit.
 
-And this used to be some kind of bogus operation, you know they would suddenly win the lottery.
-Some distant relative would have left them a fortune.
-We're kind of sorry about the Nigerian scam but that's kind of how it started.
-People get amazing job offers. Sometimes new identities sort of stuff like that.
-And you have to bend a lot of rules to do that.
-And it's hard to hide the trails and Google has made this incredibly difficult it's like oh so you suddenly have this distant relative left why can't we find any traces of this person on Google at all. It is like mmhmm??, right.
-No it's much easier today, "hey, I quit!", then he makes a startup finds a venture capitalist who dumped a couple of millions on it and then he sits browsing the internet for a couple of years or whatever I want to do and that's it.
-Paperwork is standard there's a text form for this, right?
-And that's actually one of these do tax I ended up making a company that worked that's the point, Ruby. So this is a way to move money into our objectives this is a way we can move money into people that we want to do things.
+A tohle býval druh nějaké podvodné operace,
+víte, jakože najednou by vyhráli v loterii.
+Nějaký vzdálený příbuzný by jim zanechal majetek.
+Nemůžeme se omluvit za "Nigerian scam", ale to je typ toho jak to začalo.
+Lidé dostávají užásné pracovní nabídky. Někdy i nové identity
+a tenhle typ možností.
+Vy musíte ohnout mnoho pravidel, aby jste byli schopni tohle vše udělat.
+Je velmi těžké tyto stopy skrýt a Google to učinil neuvěřitelně obtížné.
+To je něco jako:
+"Oh, vy jste náhle ztratili vzdáleného příbuzného, jaktože nemůžeme k této
+osobě najít vůběc žádné stopy na googlu.
+To by dopadlo s podivením: "hmm?!"
+
+Ne. Dnes je to daleko jednodušší.
+"Šéfe, končím tady."
+Poté si udělá start-up, najde rizikové podnikatele, který vyklopí pár miliónů
+do start-upu.
+A potom sedí a prochází internet pá roků nebo cokoliv jiného co chce dělat.
+A je to.
+Kancelářská práce je zcela běžná, existuje na to i daňový formulář.
+To je vlastně jedna z daní, díky kterým jsem nakonec vytvořil společnost,
+která fungovala.
+And that's actually one of these do tax I ended up making a company that worked.
+To je přesně ono, Rubín.
+Tohle je způsob, jak dostat peníze k našim cílům.
+Tohle je způsob, jak můžeme přesunout peníze do lidí, po kterých chceme,
+aby něco dělali.
+
+### OVERDRIVE aktivity
 So in the other end of the scale speaking of money we have what we call the overdrive activities.
 This is about influencing bussines decisions.
 We used NSA's contracting we have rather big purchases of IT services.

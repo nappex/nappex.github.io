@@ -261,16 +261,37 @@ There's some very cooperative patent companies out there,
 who will go out and buy a patent. So that they can use it on our behalf.
 
 ### PASADENA operation
-It's a very convenient process we've used some of the same to solve another old problem we have this problem with people who are working for us in different situations and we need to reward them.
-And this used to be some kind of bogus operation, you know they would suddenly win the lottery.
+It's a very convenient process.
+we've used some of the same to solve another old problem.
+We have this problem with people who are working for us
+in different situations and we need to reward them.
+
+And this used to be some kind of bogus operation,
+you know they would suddenly win the lottery.
 Some distant relative would have left them a fortune.
-We're kind of sorry about the Nigerian scam but that's kind of how it started.
+We can not sorry about the Nigerian scam but that's kind of how it started.
 People get amazing job offers. Sometimes new identities sort of stuff like that.
 And you have to bend a lot of rules to do that.
-And it's hard to hide the trails and Google has made this incredibly difficult it's like oh so you suddenly have this distant relative left why can't we find any traces of this person on Google at all. It is like mmhmm??, right.
-No it's much easier today, "hey, I quit!", then he makes a startup finds a venture capitalist who dumped a couple of millions on it and then he sits browsing the internet for a couple of years or whatever I want to do and that's it.
-Paperwork is standard there's a text form for this, right?
-And that's actually one of these do tax I ended up making a company that worked that's the point, Ruby. So this is a way to move money into our objectives this is a way we can move money into people that we want to do things.
+And it's hard to hide the trails and Google has made this incredibly difficult.
+It's like:
+"Oh, so you suddenly have this distant relative left...
+why can't we find any traces of this person on Google at all?"
+It's like: "hmm?!" right.
+
+No. It's much easier today.
+"Hey, I quit!".
+Then he makes a startup, finds a venture capitalist who dumped
+a couple of millions on it.
+And then he sits browsing the internet for
+a couple of years or whatever he want to do and that's it.
+Paperwork is standard there's a tax-form for this, right?
+
+And that's actually one of these do tax I ended up making a company that worked.
+That's the point, Ruby.
+So this is a way to move money into our objectives.
+This is a way we can move money into people that we want to do things.
+
+### OVERDRIVE activities
 So in the other end of the scale speaking of money we have what we call the overdrive activities.
 This is about influencing bussines decisions.
 We used NSA's contracting we have rather big purchases of IT services.
