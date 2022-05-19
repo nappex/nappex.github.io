@@ -417,29 +417,61 @@ podrobných témat, tam kam chceme.
 Obecně se velmi často nerušujeme budovaný konsenzus,
 která jde proti našim účelům.
 
-#### QUEEN: úspěšné příklady SSC (Self signed certificates)
-So self signed certificates in browsers is a very good example.
-So a self signed certificate is a certificate I make that says this is me. So it doesn't really authenticate me an innocence of the world, but if I have that on my web server you can take your browser and we can establish a secret channel.
-That's not very good for us because we will have to spend very expensive resources decrypting that if we ever need to but it's practically free for people to do this.
-The only reason why people are not doing this is because we really don't want them to. It would be obvious to be a default on Apache just always do a self signed certificate if that's not a real certificate.
+#### QUEEN: úspěšné příklady SSC (Self Signed Certificates)
+Certifikáty podepsané sám sebou, které jsou v prohlížečích
+to je velmi dobrý příklad.
+Certifikát podepsaný sám sebou je certifikát, který zaručuje, že se jedná o mě.
+Ve skutečnosti mě nepotrzuje jako nevinnost světa,
+ale pokud mám takový certifikát na svém webovém serveru, můžete pomocí
+svého prohlížeče vytvořit tajný kanál s mým serverem.
 
-So we have spent a lot of time on this room.
-And some of the talking points you've no doubt hurt these is like "Oh but secrecy without authentication is pointless you might be talking to the NSA and you wouldn't know it" right.
+Tohle pro nás není příliš dobré, protože budeme muset utratit velmi
+nákladné zdroje na odšifrování kdykoliv to bude potřeba.
+Ale lidi tohle mohou dělat prakticky zadarmo.
+Jediná důvod proč to lidi nedělají je, že to po nich opravdu nechceme.
+Bylo by nápadné kdyby to bylo jak výchozí nastavení na Apache, vždy
+jen udělej Certifikát podepsaný sám sebou, pokud se nejedná o pravý certifikát.
 
-We like that one we're proud of that one.
-It gives a false sense of security, right.
-The point is these kind of things if you tailor them carefully they speak to people's political leanings.
-If people are slightly paranoid to begin with, which is what a lot of security people are.
-This is like "Yeah no that wouldn't do it, if I don't have a 2048-bit ironclad guaranteed that I know who's the other end, then it's no good.
-So today if you try to go into a web server that has itself signed certificate you get these hideous warning like "Oh you shouldn't do that, this is dangerous are you really sure you know what you're doing do you have a PhD in this.
-And the more buttons you press the more warnings should get right.
-By now grandmother and terrorists are totally turned off, right.
-And that's one thing in this, some of our predecessors we really loved them getting certificates to be x.509 that was so brilliant.
-Have you ever tried looking at all this stuff that's in certificate, nobody understands a word of it.
-So it's like "No, I don't understand this, get me out of here"
+Už jsme strávili hodně času v této místnosti.
+A na některých přednáškových místech, které bez pochyby neubližují,
+to může vypadat takto:
+"Oh, ale utajení bez ověření je zbytečné, mohli byste mluvit s NSA
+a ani byste o tom nevěděli!"
 
-This is a very good example of how the Queen program works simply getting people to not do things by miss directing their attention on it.
-So among the other thing we've done in the Queen is that there's no multihoming without having your own AS number. That means we can always find where all your traffic goes because it always goes through your ISP.
+Tenhle máme opravdu rádi, jsem na tento opravdu pyšní.
+"To dává falešný pocit bezpečí!"
+
+To hlavní ohledně těchto věcí je, že pokud je opatrně upravíte,
+promlouvají pak k lidksé politické náklonosti.
+Pokud jsou lidé lehce paranoidní, aby s tím začali,
+což mnoho lidí, ktěří dělají v IT bezpečnosti jsou.
+Pak to je to něco jako:
+"Jasně, ne to bych nedělal, pokud nemám 2048-bit obrněnou garanci toho,
+že vím kdo je na druhém konci, potom to není dobré."
+
+Pokud se pokoušíte v dnešní době dostat na webový server, který má sám sobě
+podepsaný certifikát, dostanete tyhle škaredé upozornění, kde je:
+"Oh, ty bys neměl tohle dělat, tohle je nebezpečné. Jsi si opravdu jistý,
+že víš co děláš a že máš na tohle PhD titul?"
+A čím více tlačítek zmáčknete, tím více varování byste měli dostat.
+Od této chvíle se babičky a teroristé internetu úplně vyhýbají.
+A vtomhle je jedna věc, někteří z našich předchůců, které opravdu
+milujeme za to, že obstarali certifikáty x.509, to bylo opravdu úžasné.
+Pokoušeli jste se někdy podívat na všechny ty věci, které jsou
+v certifikátu, nikdo z toho nerozumí ani slovu.
+Většinou to vypadá nějak takto:
+"Ne, nerozumím tomu, jdu odtud pryč."
+
+Tohle je velmi dobrý příklad toho, jak program QUEEN funguje.
+Jednoduše přimějte lidi aby nedělali věci, když na ně nezaměří svou pozornost.
+Oblkopen dalšími věcmi, které jsme udělali v QUEEN je, že zde není
+žádný multihomig
+(*poznámka překladatele*: síť, která je přípojena k více ISP najednou,
+když jeden ISP vypadne přepne se na jiného) bez možnosti vlasnit své vlastní
+AS čísla. (AS - autonomní systém. Vlastní autonomní systém mají typicky ISP,
+datacentra nebo jiné společnosti s rozsáhlou počítačovou sítí)
+Což znamená, že my můžeme vždy najít, kudy jde veškerý váš provoz, protože vždy
+teče přes vašeho ISP (internetového poskytovatele)
 We don't need to track you around seven different sides and stuff like that.
 There's also no flow routing in IP version 6.
 When IP version 6 were proposed there was a very intelligent proposal that said we should/shouldnt slam these speak addresses into all the packets, we'll just do it in the first packet.
