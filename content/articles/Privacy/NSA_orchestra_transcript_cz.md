@@ -323,7 +323,7 @@ Můžou být nějaké cíle k zaměření, ale jedná se o dobrý způsob, jak
 s aplikací Skype.
 
 #### OVERDRIVE: příklad programu Skype
-Skype byl program na způsob peer-to-peer, kde bylo šifrované video a zvuk.
+Skype byl program na způsob peer-to-peer, kde byl šifrován video i zvuk.
 Nepoužívali standardní protokoly. Byli mimo FCC. My nemůžeme říct
 jen tak "tohle je nelegální!" a zakazát je.
 Nejedná se o open-source. Ani to nekoupili přes naše usílí o jejich nápravu.
@@ -339,8 +339,6 @@ Skype koupili.
 Bohužel to zpackali.
 Koupili pouze přístup do Skype.
 Nezískali zdrojové kódy, ani kontrolu nad sítí.
-They bought only the access to Skype.
-They didn't get the source code they didn't get control with the network.
 Něco jako "Achjoo".
 
 Není zřejmé proč jejich právníci nebyli instruování, nicméně jsme nezískali
