@@ -304,47 +304,102 @@ It cannot be directly illegal,
 you cannot have a contract to kill somebody,
 but you can do anything that's possible within the law with a contract.
 
-And it's very good mechanism to solve big problems the bad news is it usually very big players so there's lawyers and it's kind of expensive and stuff like that.
-And that can be some objective screw but it's a good way to solve problems and this is actually how we solve the Skype problem.
+And it's very good mechanism to solve big problems.
+The bad news is usually very big players so there's lawyers
+and it's kind of expensive and stuff like that.
+And that can be some objective screw,
+but it's a good way to solve problems
+and this is actually how we solved the Skype problem.
+
+#### OVERDRIVE: Skype example
 Skype was peer-to-peer encrypted video and audio.
-They didn't use standard protocols. They are out of the FTC we cannot just say "this is illegal" and get them banned.
-It's not open source and they did not buy it on our attempt to write them.
-It's very popular with independent actors, human rights groups in Belarus for instance.
-It's also very popular with a political movements adverse to the US course in Middle East.
+They didn't use standard protocols. They are out of the FTC.
+We cannot just say "this is illegal" and get them banned.
+It's not open source and they did not buy it on our attempt to right them.
+It's very popular with independent actors,
+human rights groups in Belorusssia for instance.
+
+It's also very popular with a political movements
+adverse to the US course in Middle East.
 And of course terrorists use its we're absolutely sure.
+
 So first we partnered with eBay which is a very special friend of NSA.
 For some minor considerations and foreign intelligence they bought Skype for us.
 Unfortunately they bungled it, they bought only the access to Skype.
 They didn't get the source code they didn't get control with the network.
-So that's sort of like "phrkkkk".
+So that's sort of like "prkk".
+
 It's unclear why their lawyers were not briefed, but we didn't get what we want.
 So we had to try again but we can't do that while eBay is sitting there.
-So we get eBay to sell it again at a loss and now they're not quite as good a friend of NSA. We're working in that relationship so we've got Microsoft to buy it instead and this time they got all of it.
-Microsoft has now changed the architecture of Skype to be centralized, now Skype goes through Microsoft servers very convenient, where it will be decrypted if need be.
-That was a pretty expensive operation but it was necessary we couldn't have people communicating outside our jurisdiction.
-So it's a very big hammer it requires signatures very high above my pay level, but it's a very good way to do things.
-And one of the interesting things here is some of these big players no matter what they do it's brilliant.
-We don't understand this but it's brilliant, it doesn't make sense but it's brilliant, because he's a genius we know that.
-So you can do pretty strange things this way, totally in the open, nobody blinks an eye, we like that.
-Then we have the Queen activities and this is we're working this a lot.
-So open source and the internet as such is a consensus-based activity which means anybody can participate.
-Nobody has special authority.
-There may be some people, who are you know the first among equals adeadeade kind of thing,but it's not like there's somebody who has a the letter of the law on his back/bag. I say because lawn of a black.
-It's very much rough consensus and working code except it's these days it's more very long elaborate standard not very much working code and there's a heavy international participation which means that you cannot appeal to people's patriotism you can say for the good of the country you have to, it doesn't really work.
-That's a very significant talent mass which is a problem because they will spot things.
-In theory all of this belong under the Secretary State because these are foreign relations in many cases, but Foggy bottom is not really that tech-savy once it comes to it.
-Diplomats have absolutely no traction then setting like the IETF, if you come in with a tie they kind of looks - strange on you.
-And our goals not all already ...... it's they may be misaligned to the Secretary State's goals.
-And there are other players involved in this also which we are not necessarily agreeing with in all kind of things.
-So it's kind of a tricky space.
-So what we do is we leverage our existing resources. We have web resources embedded with friends of NASA.
-We have free agents, people who will do things for a consideration.
-And we have what we call witless volunteers people who can be manipulated to do our bidding without ours ever paying them anything for it, but it's very good there's no traceability.
-So what we do is we deploy very carefully designed talking points.
-Meanness/mean this  if we can we have a department who have that put a sign on their door saying "PSYOPS for nerds".
-And the idea is to steer discussions in these forums to or from particulars topics where we want them.
-And in general very often to disrupt consensus building that goes against our purposes.
+So we get eBay to sell it again at a loss
+and now they're not quite as good a friend of NSA.
+We're working in that relationship.
+So we've got Microsoft to buy it instead and this time they got all of it.
+Microsoft has now changed the architecture of Skype to be centralized.
+Now Skype goes through Microsoft servers very convenient,
+where it will be decrypted if need be.
+That was a pretty expensive operation, but it was necessary.
+We couldn't have people communicating outside our jurisdiction.
 
+#### OVERDRIVE: Summary
+So it's a very big hammer.
+It requires signatures very high above my pay level,
+but it's a very good way to do things.
+And one of the interesting things here is some of these big players
+no matter what they do it's brilliant.
+We don't understand this but it's brilliant.
+It doesn't make sense but it's brilliant, because he's a genius we know that.
+So you can do pretty strange things this way, totally in the open,
+nobody blinks an eye, we like that.
+
+### QUEEN activities
+Then we have the Queen activities and this is we're working this a lot.
+So open source and the internet as such is a consensus-based activity,
+which means anybody can participate.
+Nobody has special authority.
+There may be some people, who are you know the first among equals
+yade yade kind of thing, but it's not like there's somebody,
+who has a the letter of the law on his back and can say:
+"I say because law number bla."
+
+It's very much rough consensus and working code
+except it's these days it's more very long elaborate standard
+not very much working code.
+And there's a heavy international participation which means
+that you cannot appeal to people's patriotism you can't say:
+"for the good of the country you have to..." It doesn't really work.
+That's a very significant talent mass which is a problem,
+because they will spot things.
+
+In theory all of this belong under the Secretary State,
+because these are foreign relations in many cases,
+but Foggy bottom is not really that tech-savy once it comes to it.
+Diplomats have absolutely no traction then setting like the IETF.
+If you come in with a tie they can looks strange on you.
+And our goals not already ...... it's,
+they may be misaligned to the Secretary State's goals.
+And there are other players (DoC, NIST, DoD, FBI, CIA)
+involved in this also which we are not necessarily
+agreeing with in all kind of things.
+So it's kind of a tricky space.
+
+So what we do is we leverage our existing resources.
+We have web resources embedded with friends of NSA.
+We have free agents, people who will do things for a consideration.
+And we have what we call witless volunteers people,
+who can be manipulated to do our bidding without
+ever paying them anything for it.
+It's very good there's no traceability.
+So what we do is we deploy very carefully designed talking points.
+Meanness if we can.
+We have a department, who have that put a sign
+on their door saying "PSYOPS for nerds".
+And the idea is to steer discussions in these forums
+to or from particulars topics where we want them.
+And in general very often to disrupt consensus building
+that goes against our purposes.
+
+#### QUEEN: success example SSC
 So self signed certificates in browsers is a very good example.
 So a self signed certificate is a certificate I make that says this is me. So it doesn't really authenticate me an innocence of the world, but if I have that on my web server you can take your browser and we can establish a secret channel.
 That's not very good for us because we will have to spend very expensive resources decrypting that if we ever need to but it's practically free for people to do this.

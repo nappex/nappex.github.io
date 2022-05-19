@@ -315,47 +315,109 @@ Nemůže být přímo nezákonný,
 nemůžete mít smlouvu na něčí zabití, ale můžete smluvně udělat cokoliv
 co je v mezích zákona.
 
-And it's very good mechanism to solve big problems the bad news is it usually very big players so there's lawyers and it's kind of expensive and stuff like that.
-And that can be some objective screw but it's a good way to solve problems and this is actually how we solve the Skype problem.
-Skype was peer-to-peer encrypted video and audio.
-They didn't use standard protocols. They are out of the FTC we cannot just say "this is illegal" and get them banned.
-It's not open source and they did not buy it on our attempt to write them.
-It's very popular with independent actors, human rights groups in Belarus for instance.
-It's also very popular with a political movements adverse to the US course in Middle East.
-And of course terrorists use its we're absolutely sure.
-So first we partnered with eBay which is a very special friend of NSA.
-For some minor considerations and foreign intelligence they bought Skype for us.
-Unfortunately they bungled it, they bought only the access to Skype.
-They didn't get the source code they didn't get control with the network.
-So that's sort of like "phrkkkk".
-It's unclear why their lawyers were not briefed, but we didn't get what we want.
-So we had to try again but we can't do that while eBay is sitting there.
-So we get eBay to sell it again at a loss and now they're not quite as good a friend of NSA. We're working in that relationship so we've got Microsoft to buy it instead and this time they got all of it.
-Microsoft has now changed the architecture of Skype to be centralized, now Skype goes through Microsoft servers very convenient, where it will be decrypted if need be.
-That was a pretty expensive operation but it was necessary we couldn't have people communicating outside our jurisdiction.
-So it's a very big hammer it requires signatures very high above my pay level, but it's a very good way to do things.
-And one of the interesting things here is some of these big players no matter what they do it's brilliant.
-We don't understand this but it's brilliant, it doesn't make sense but it's brilliant, because he's a genius we know that.
-So you can do pretty strange things this way, totally in the open, nobody blinks an eye, we like that.
-Then we have the Queen activities and this is we're working this a lot.
-So open source and the internet as such is a consensus-based activity which means anybody can participate.
-Nobody has special authority.
-There may be some people, who are you know the first among equals adeadeade kind of thing,but it's not like there's somebody who has a the letter of the law on his back/bag. I say because lawn of a black.
-It's very much rough consensus and working code except it's these days it's more very long elaborate standard not very much working code and there's a heavy international participation which means that you cannot appeal to people's patriotism you can say for the good of the country you have to, it doesn't really work.
-That's a very significant talent mass which is a problem because they will spot things.
-In theory all of this belong under the Secretary State because these are foreign relations in many cases, but Foggy bottom is not really that tech-savy once it comes to it.
-Diplomats have absolutely no traction then setting like the IETF, if you come in with a tie they kind of looks - strange on you.
-And our goals not all already ...... it's they may be misaligned to the Secretary State's goals.
-And there are other players involved in this also which we are not necessarily agreeing with in all kind of things.
-So it's kind of a tricky space.
-So what we do is we leverage our existing resources. We have web resources embedded with friends of NASA.
-We have free agents, people who will do things for a consideration.
-And we have what we call witless volunteers people who can be manipulated to do our bidding without ours ever paying them anything for it, but it's very good there's no traceability.
-So what we do is we deploy very carefully designed talking points.
-Meanness/mean this  if we can we have a department who have that put a sign on their door saying "PSYOPS for nerds".
-And the idea is to steer discussions in these forums to or from particulars topics where we want them.
-And in general very often to disrupt consensus building that goes against our purposes.
+Jedná se o velmi dobrý mechanismus, jak řešit velké problémy.
+Špatnou zprávou jsou obvykle velcí hráči, kde jsou právníci, to je pak
+trochu drahé.
+Můžou být nějaké cíle k zaměření, ale jedná se o dobrý způsob, jak
+řešit problémy a jedná se vlastně o způsob, jak jsme vyřešili problém
+s aplikací Skype.
 
+#### OVERDRIVE: příklad programu Skype
+Skype byl program na způsob peer-to-peer, kde bylo šifrované video a zvuk.
+Nepoužívali standardní protokoly. Byli mimo FCC. My nemůžeme říct
+jen tak "tohle je nelegální!" a zakazát je.
+Nejedná se o open-source. Ani to nekoupili přes naše usílí o jejich nápravu.
+Je populární u nezávislých herců a skupin na lidská práva
+například v Bělorusku.
+Také je velmi oblíben politickými hnutí, která jsou v nepřízni
+politického směru USA na blízkém východě (střední východ).
+Samozřejmostí je používání teroristy, tím jsem si naprosto jisti.
+
+Nejprve jsme se spolupracovali s eBay, která je velmi významný přítel NSA.
+Po menším přemýšlení a schválení zpravodajskou službou pro nás nakonec
+Skype koupili.
+Bohužel to zpackali.
+Koupili pouze přístup do Skype.
+Nezískali zdrojové kódy, ani kontrolu nad sítí.
+They bought only the access to Skype.
+They didn't get the source code they didn't get control with the network.
+Něco jako "Achjoo".
+
+Není zřejmé proč jejich právníci nebyli instruování, nicméně jsme nezískali
+co jsme chtěli.
+Takže jsme to museli zkusit znova, ale nemůžeme to udělat,
+když tady sedí eBay.
+eBay musí Skype znovu prodat ve ztrátě a už není tak docela dobrý přítel NSA.
+My neustále pracujeme na těchto vzájemných vztazích.
+My dostali Microsoft, který nám to místo toho nakoupí.
+A nyní dostali vše, co potřebujeme.
+Nyní Microsoft změnil architekturu Skypu na centralizovanou.
+Celá komunikace je nyní vedena přes Microsoft servery, velmi výhodné,
+bude zde dešifrována když to bude potřeba.
+Byla to velmi nákladná operace, ale bylo to nezbytné udělat.
+Nemohli jsme mít komunikující lidi mimo naše soudní pravomoce.
+
+#### OVERDRIVE: Summary
+Je to opravdu velké kladivo.
+Vyžaduje to podpisy, které jsou velmi vysoko nad mou mzdou,
+ale jedná se o velmi dobrý způsob, jak dělat věci.
+A jedna ze zajímavých věcí, které se zde vyskytují jsou velcí hráči.
+Bez ohledu na to co udělají, je to vynikající.
+"Sice tomu nerozumíme, ale je to vynikající."
+"Nedává to smysl, ale je to vynikající, protože on je génius, víme to."
+Můžete dělat skutečně divné věci tímto způsobem, zcela otevřeně
+a nikdo ani nemrkne okem. Máme to rádi.
+
+### QUEEN activities
+Pak zde máme Queen aktivity a na tomhle pracujeme hodně.
+Open-source a internet jako takový je aktivita založena na konsenzu,
+což znamená, že se nich může podílet kdokoliv.
+Nikdo nemá speciální pravomoce.
+Mohou se zde vyskytovat někteří lid, kteří jsou první mezi rovnými a podobné
+typy výmyslů, ale není to jako, že je zde někdo,
+kdo má ve své zadní kapse právní listinu a může říct:
+Já to říkám protože tento zákon číslo bla.
+
+Jedná se o velmi hrubý konsenzus a fungující kód,
+s výjimkou současných dnů, kdy je to spíše
+o velmi dlouhých, komplikovaných standardů, než o více fungujícím kódu.
+Objevuje se zde ve velkém také mezinárodní součinnost, což znamená,
+že se nemůžete odvolávat na lidové vlastenectví, nemůžete říct:
+"pro dobro národa, musíš tohle...". Tohle moc nefunguje.
+Také se jedná o velmi významnou masu talentů, která je ale problém,
+protože odhaluje naše věci (nekalosti).
+
+Teoreticky tohle vše spadá pod státní tajemství,
+protože v mnoha případech se jedná o zahraniční vztahy,
+ale
+because these are foreign relations in many cases,
+ale "Foggy Bottom" (přízemní mlha, inverze, jméno městské části Washington DC)
+není natolik technicky zdatný když na to přijde.
+Diplomaté jsou naprosto nevystopovatelní díky nastavení jako IETF.
+Když vstoupíte s kravatou mohou se na vás dívat divně.
+A našimi cíli nejsou .....,
+oni smí být v rozporu s cíli státních tajemství.
+Do toho všeho jsou zde zahrnutí další hráči (jako DoC, NIST, DoD, FBI, CIA),
+s kterými nemusíme nutně ve všem souhlasit.
+Jedná se trochu o komplikovaný prostor.
+
+Takže to co děláme je, že máme páky na naše existující zdroje.
+Máme webové zdroje vryté s přáteli NSA.
+Máme svobodné agenty. Lidé, kteří něco provedou až po zdravé úvaze.
+A taky máme, co my nazýváme bezelstné dobrovolníky,
+kteří mohou být manipulováni tak, aby splnili naše nabídky
+bez toho aniž bychom jim za to něco zaplatili.
+To je velmi dobré, protože zde neexistuje žádná vystopovatelnost.
+Takže co mi děláme je, že my rozmístíme velmi pečlivě navrhnuté
+přednáškové místa. Nečestně pokud můžeme.
+Máme oddělení, které má na svých dveřích nápis,
+na kterém stojí "PSYOPS pro nerdy"
+Myšlenkou je směrovat diskuzi na těchto fórech k nebo od
+podrobných témat, tam kam chceme.
+Obecně se velmi často nerušujeme budovaný konsenzus,
+která jde proti našim účelům.
+
+#### QUEEN: úspěšné příklady SSC (Self signed certificates)
 So self signed certificates in browsers is a very good example.
 So a self signed certificate is a certificate I make that says this is me. So it doesn't really authenticate me an innocence of the world, but if I have that on my web server you can take your browser and we can establish a secret channel.
 That's not very good for us because we will have to spend very expensive resources decrypting that if we ever need to but it's practically free for people to do this.
