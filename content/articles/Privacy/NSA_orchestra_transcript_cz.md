@@ -496,30 +496,47 @@ poslat zašifrovaný email.
 Tam kde je na obou koncích šifrování nutné použít stejný program
 jsou všichni potopeni, protože v opačném případě to nebude fungovat
 a výsledek tak nebude nikdy použitelný.
-######
-And we've managed to delay voice over IP until Skype happened.
-The voice over IP is a big problem,
-because you cannot automatically search through voice data.
-It's a lot easier when people send emails
-you can just look for patterns and stuff like that.
 
-So these are some of very big successes in the Queen program.
+A také se nám dařilo zpozdit službu Voice over IP (VoIP), dokud se nestala
+příhoda se Skypem.
+Voice over IP je velký problém,
+protože nemůžete automaticky hledat skrze hlasová data.
+Je daleko snažší, když si lidé navzájem posílají emaily,
+hledáte prostě jen určité patterny apod.
+
+Takže tohle jsou naše velmi velké úspěchy v QUEEN programu.
 
 #### QUEEN poslední práce
-Recently we're working on the HTTP 2.0 standard.
-They want there's a very big contingent they wants everything to be TLS, which would be inconvenient.
-We're trying to misdirect that we're trying to screw up that process.
-I mean look at the good side it would bring them into TLS we have all the routed CAS doing a job for us.
-So we have all the keys if it comes to that we'd get man in the middle and all that stuff.
-We prefer to stay on encrypted if we can. As a fallback we're trying to push them to some of the broken by design protocols.
-Unfortunately one of them seem to have been exposed now but we're working on getting new ones launched.
-That's not our department we just try to push people into that sort of thing.
-The methods we use is basic fear uncertainty and doubt if you're uncertainty and doubt playing the GPL versus BSD card still works, it's wonderful.
-It's like do they never get tired of that?
-Yeah that's some wonderful crypto code but I know we can't use it for licence reasons.
+Nyní pracujeme na standardu HTTP 2.0.
+Chtějí, aby tam bylo velké zastoupení a všechno bylo TLS,
+které by mohlo být nepohodlné.
+Pokoušíme se nasměrovat špatným směrem a tím se pokusit celý proces zhatit.
+Mám tím na mysli, koukněte se na dobrou stránku věci, pokud bychom je přivedli
+do TLS, dostali bychom všechny root certifikačních autorit,
+které by dělali práci za nás.
+Takže máme všechny klíče pokud přijde na to, že uděláme
+man in the middle či jiné podobné věci.
+Pokud to je možné raději, zůstaneme zašifrovaní.
+A jako fallback se je snažíme natlačit do nějakých špatně navržených protokolů.
+Bohužel jeden z nich zdá se býti už odhalen, ale pracujeme na vydání nového.
+To už není práce našeho oddělení
+my se pouze snažíme natlačit lidi do druhu věci.
 
-Bikeshed discussions, it's so wonderful.
-Sometimes just one single email from an anonymous person can derail an open-source project for months.
+#### QUEEN metody
+Metody, které používáme jsou obyčejný strach, nejistota a pochybnosti.
+Musíte být nejistí a pochybovační.
+Hraní si s tématem GPL versus BSD karta stále funguje, je to úžasné.
+To je už jako: "Oni se tímto tématem snad nikdy neunaví?"
+Ano, to je opravdu užasný kryptografický kód,
+"já vím, ale nemůžeme jej použít z licenčních důvodů."
+
+Diskuse typu bikeshed jsou úžasné. (*Poznámka*: bikeshed znamená nikdy
+nekončící diskuse, termín bikeshed
+vymyslel sám phk jako reakci na diskusi okolo funkce "sleep"
+[zde](http://phk.freebsd.dk/sagas/bikeshed/#the-bikshed-email) je
+k tomu celý článek),
+Někdy stačí pouze jeden jediný email od neznámé osoby, který je
+schopen na měsíce vykolejit práci na open-source projektu.
 
 And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying "oh I found this wonderful way to do" and they spent like a month tearing it apart, instead of doing real work.
 

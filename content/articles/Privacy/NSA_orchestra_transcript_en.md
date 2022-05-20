@@ -479,19 +479,32 @@ So these are some of very big successes in the Queen program.
 
 #### QUEEN recent work
 Recently we're working on the HTTP 2.0 standard.
-They want there's a very big contingent they wants everything to be TLS, which would be inconvenient.
+They want there's a very big contingent they wants everything to be TLS,
+which would be inconvenient.
 We're trying to misdirect that we're trying to screw up that process.
-I mean look at the good side it would bring them into TLS we have all the routed CAS doing a job for us.
-So we have all the keys if it comes to that we'd get man in the middle and all that stuff.
-We prefer to stay on encrypted if we can. As a fallback we're trying to push them to some of the broken by design protocols.
-Unfortunately one of them seem to have been exposed now but we're working on getting new ones launched.
+I mean look at the good side if would bring them into TLS,
+we have all the rooted CA's (certificate authorities) doing a job for us.
+So we have all the keys if it comes to
+that we give man in the middle and all that stuff.
+We prefer to stay on encrypted if we can.
+As a fallback we're trying to push them to some of the broken by design protocols.
+Unfortunately one of them seem to have been exposed now,
+but we're working on getting new ones launched.
 That's not our department we just try to push people into that sort of thing.
-The methods we use is basic fear uncertainty and doubt if you're uncertainty and doubt playing the GPL versus BSD card still works, it's wonderful.
-It's like do they never get tired of that?
-Yeah that's some wonderful crypto code but I know we can't use it for licence reasons.
 
-Bikeshed discussions, it's so wonderful.
-Sometimes just one single email from an anonymous person can derail an open-source project for months.
+#### QUEEN methods
+The methods we use is basic fear, uncertain and doubt,
+if you're uncertainty and doubt.
+Playing with the GPL versus BSD card still works, it's wonderful.
+It's like: "Do they never get tired of that?"
+Yeah that's some wonderful crypto code,
+but I know we can't use it for licence reasons.
+
+Bikeshed discussions (means endless discussion, the terms was invented by phk
+[check his article](http://phk.freebsd.dk/sagas/bikeshed/#the-bikshed-email)),
+it's so wonderful.
+Sometimes just one single email from an anonymous person
+can derail an open-source project for months.
 
 And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying "oh I found this wonderful way to do" and they spent like a month tearing it apart, instead of doing real work.
 
