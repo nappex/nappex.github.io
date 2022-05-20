@@ -442,23 +442,42 @@ So it's like: "No, I don't understand this, get me out of here"
 
 This is a very good example of how the Queen program works.
 Simply getting people to not do things by miss directing their attention on it.
+
+#### QUEEN achievements
 So among the other thing we've done in the Queen is
 that there's no multihome routing (multihoming) without having your own AS number.
 That means we can always find where all your traffic goes
 because it always goes through your ISP.
 We don't need to track you around seven different sides and stuff like that.
+
 There's also no flow routing in IP version 6.
-When IP version 6 were proposed there was a very intelligent proposal that said we should/shouldnt slam these speak addresses into all the packets, we'll just do it in the first packet.
-And then we'll get a small flow number that says all the packets in this flow go that direction but that would be very inconvenient for us because we would have to track all these flow numbers all the time.
-When you have the IP numbers in package you can just grab all the packets and you have all the information you need for all time in those packets. You don't need to have all the flow States and know what the flows means in all the end that was a very big success not that IP version 6 was it's not really a big problem for us yet, collection wise, but we prepared shoot IP version 6 off.
-We've also made it so that there's practically no way compatibly to send encrypted email everybody does down where you have to have the same program in both ends because otherwise it doesn't work and the result is nobody ever uses it.
+When IP version 6 were proposed there was a very intelligent proposal,
+that said we shouldnt slam these speak addresses into all the packets,
+we'll just do it in the first packet.
+And then we'll get a small float number,
+that says all the packets in this flow go that direction,
+but that would be very inconvenient for us,
+because we would have to track all these flow numbers all the time.
+When you have the IP numbers in package you can just grab all the packets
+and you have all the information you need for all time in those packets.
+You don't need to have all the flow states
+and know what the flows means in all the end
+that was a very big success not that IP version 6 was it's not really a big problem for us yet.
+Collection wise, but we prepared shoot IP version 6 off.
+We've also made it so that there's practically no way compatibly to send
+encrypted email.
+Everybody does down where you have to have the same program in both ends,
+because otherwise it doesn't work and the result is nobody ever uses it.
 
 And we've managed to delay voice over IP until Skype happened.
-
-The voice over IP is a big problem, because you cannot automatically search through voice data.
-It's a lot easier when people send emails you can just look for patterns and stuff again.
+The voice over IP is a big problem,
+because you cannot automatically search through voice data.
+It's a lot easier when people send emails
+you can just look for patterns and stuff like that.
 
 So these are some of very big successes in the Queen program.
+
+#### QUEEN recent work
 Recently we're working on the HTTP 2.0 standard.
 They want there's a very big contingent they wants everything to be TLS, which would be inconvenient.
 We're trying to misdirect that we're trying to screw up that process.

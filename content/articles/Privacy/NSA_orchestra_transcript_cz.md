@@ -462,6 +462,8 @@ Většinou to vypadá nějak takto:
 
 Tohle je velmi dobrý příklad toho, jak program QUEEN funguje.
 Jednoduše přimějte lidi aby nedělali věci, když na ně nezaměří svou pozornost.
+
+#### QUEEN úspěchy
 Oblkopen dalšími věcmi, které jsme udělali v QUEEN je, že zde není
 žádný multihomig
 (*poznámka překladatele*: síť, která je přípojena k více ISP najednou,
@@ -469,20 +471,41 @@ když jeden ISP vypadne přepne se na jiného) bez možnosti vlasnit své vlastn
 AS čísla. (AS - autonomní systém. Vlastní autonomní systém mají typicky ISP,
 datacentra nebo jiné společnosti s rozsáhlou počítačovou sítí)
 Což znamená, že my můžeme vždy najít, kudy jde veškerý váš provoz, protože vždy
-teče přes vašeho ISP (internetového poskytovatele)
-We don't need to track you around seven different sides and stuff like that.
-There's also no flow routing in IP version 6.
-When IP version 6 were proposed there was a very intelligent proposal that said we should/shouldnt slam these speak addresses into all the packets, we'll just do it in the first packet.
-And then we'll get a small flow number that says all the packets in this flow go that direction but that would be very inconvenient for us because we would have to track all these flow numbers all the time.
-When you have the IP numbers in package you can just grab all the packets and you have all the information you need for all time in those packets. You don't need to have all the flow States and know what the flows means in all the end that was a very big success not that IP version 6 was it's not really a big problem for us yet, collection wise, but we prepared shoot IP version 6 off.
-We've also made it so that there's practically no way compatibly to send encrypted email everybody does down where you have to have the same program in both ends because otherwise it doesn't work and the result is nobody ever uses it.
+teče přes vašeho ISP (internetového poskytovatele).
+Nepotřebujeme vás sledovat kolem sedmi odlišných stran apod.
 
+Také zde neexistuje, žádné flow routing v IP verzi 6
+Když bylo IPv6 předloženo byl v něm velmi chytrý návrh, který říkal,
+že bychom neměli zabouchnout komunikující adresy ve všech paketech,
+že to budeme dělat pouze v prvním paketu.
+Poté dostaneme malé plovoucí (desetinné) číslo,
+které řekne, že všechny tyhle pakety plují tímto směrem
+And then we'll get a small flow number,
+that says all the packets in this flow go that direction,
+ale to by ovšem pro nás bylo velmi nepraktické,
+protože bychom museli sledovat všechny tyhle plovoucí čísla najednou.
+Když máte IP adresu v jednom balíčku, můžete prostě jen sebrat všechny
+ty pakety a máte všechny informace, které potřebuje od všech paketů
+za celou dobu.
+Nepotřebujete mít všechny plovoucí stavy a na konci znát co každý tok znamená.
+To byl veliký úspěch - ne že by IPv6 byla, ale že pro nás už
+nepředstavuje velký problém.
+Moudré schromážďování, ale připraveni IPv6 vystřelit.
+Také jsme zde vytvořili prostředí, kde prakticky není možné kompatibilně
+poslat zašifrovaný email.
+Tam kde je na obou koncích šifrování nutné použít stejný program
+jsou všichni potopeni, protože v opačném případě to nebude fungovat
+a výsledek tak nebude nikdy použitelný.
+######
 And we've managed to delay voice over IP until Skype happened.
-
-The voice over IP is a big problem, because you cannot automatically search through voice data.
-It's a lot easier when people send emails you can just look for patterns and stuff again.
+The voice over IP is a big problem,
+because you cannot automatically search through voice data.
+It's a lot easier when people send emails
+you can just look for patterns and stuff like that.
 
 So these are some of very big successes in the Queen program.
+
+#### QUEEN poslední práce
 Recently we're working on the HTTP 2.0 standard.
 They want there's a very big contingent they wants everything to be TLS, which would be inconvenient.
 We're trying to misdirect that we're trying to screw up that process.
