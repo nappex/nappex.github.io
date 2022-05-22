@@ -116,8 +116,9 @@
 <li><a href="#queen-activities"><span class="caps">QUEEN</span> activities</a><ul>
 <li><a href="#queen-uspesne-priklady-ssc-self-signed-certificates"><span class="caps">QUEEN</span>: úspěšné příklady <span class="caps">SSC</span> (Self Signed&nbsp;Certificates)</a></li>
 <li><a href="#queen-uspechy"><span class="caps">QUEEN</span>&nbsp;úspěchy</a></li>
-<li><a href="#queen-posledni-prace"><span class="caps">QUEEN</span> poslední&nbsp;práce</a></li>
+<li><a href="#queen-nedavna-prace"><span class="caps">QUEEN</span> nedávná&nbsp;práce</a></li>
 <li><a href="#queen-metody"><span class="caps">QUEEN</span>&nbsp;metody</a></li>
+<li><a href="#queen-nedavna-prace_1"><span class="caps">QUEEN</span> nedávná&nbsp;práce</a></li>
 </ul>
 </li>
 </ul>
@@ -548,7 +549,7 @@ protože nemůžete automaticky hledat skrze hlasová data.
 Je daleko snažší, když si lidé navzájem posílají emaily,
 hledáte prostě jen určité patterny&nbsp;apod.</p>
 <p>Takže tohle jsou naše velmi velké úspěchy v <span class="caps">QUEEN</span>&nbsp;programu.</p>
-<h4 id="queen-posledni-prace"><span class="caps">QUEEN</span> poslední práce<a class="headerlink" href="#queen-posledni-prace" title="Permanent link">&para;</a></h4>
+<h4 id="queen-nedavna-prace"><span class="caps">QUEEN</span> nedávná práce<a class="headerlink" href="#queen-nedavna-prace" title="Permanent link">&para;</a></h4>
 <p>Nyní pracujeme na standardu <span class="caps">HTTP</span> 2.0.
 Chtějí, aby tam bylo velké zastoupení a všechno bylo <span class="caps">TLS</span>,
 které by mohlo být nepohodlné.
@@ -572,22 +573,39 @@ Ano, to je opravdu užasný kryptografický kód,
 &ldquo;já vím, ale nemůžeme jej použít z licenčních&nbsp;důvodů.&rdquo;</p>
 <p>Diskuse typu bikeshed jsou úžasné. (<em>Poznámka</em>: bikeshed znamená nikdy
 nekončící diskuse, termín bikeshed
-vymyslel sám phk jako reakci na diskusi okolo funkce &ldquo;sleep&rdquo;
+vymyslel sám phk jako reakci na diskusi okolo funkce &ldquo;sleep&rdquo;,
 <a href="http://phk.freebsd.dk/sagas/bikeshed/#the-bikshed-email">zde</a> je
 k tomu celý článek),
 Někdy stačí pouze jeden jediný email od neznámé osoby, který je
-schopen na měsíce vykolejit práci na open-source&nbsp;projektu.</p>
-<p>And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying &ldquo;oh I found this wonderful way to do&rdquo; and they spent like a month tearing it apart, instead of doing real&nbsp;work.</p>
-<p>So that works for the world.
+schopen na měsíce vykolejit práci celého open-source&nbsp;projektu.</p>
+<p>A můžeme nasát ohromné množství šířky vlnového pásma kryptografů
+s falešnými návrhy na kryptografii.
+Pošlete návrh, který říká:
+&ldquo;Oh, vymyslel jsem tento úžasný způsob,
+jak to udělat&rdquo;
+Ostatní stráví měsíc přehrabováním se v tomto návrhu,
+namísto dělání skutečné (prospěšné)&nbsp;práce.</p>
+<h4 id="queen-nedavna-prace_1"><span class="caps">QUEEN</span> nedávná práce<a class="headerlink" href="#queen-nedavna-prace_1" title="Permanent link">&para;</a></h4>
+<p>Takže takhle to nějak ve světě funguje.
+Jedna z oblastí na kterou se v současné chvíli změřujeme je tlak na
+změnu používaní certifikátu modelu <span class="caps">PKI</span> na model <span class="caps">DANE</span>, který schvaluje
+vaše certifikáty skrze <span class="caps">DNS</span>.
 One of the current focus areas is that there&rsquo;s a push to go from the certificate <span class="caps">PKI</span> model to <span class="caps">DANE</span> which is getting your certificates approved through <span class="caps">DNS</span>.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the <span class="caps">CA</span> <span class="caps">PKI</span> system.
-I mean, if you look in your browser there&rsquo;s like 200 approved <span class="caps">CAS</span> and half of them are owned by secret services throughout the world.
-It&rsquo;s sort of pointless at this point, right.
-So people want to move that into what&rsquo;s called the <span class="caps">DANE</span> protocol.
-And the idea here is you validate the certificate using the <span class="caps">DNSSEC</span>.
-So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.
-So you can trust that now, you only trust this one single key, right.
-So the advantage of <span class="caps">PKI</span>/<span class="caps">CA</span> is of course we have access today, but the <span class="caps">DANE</span> project would really like that, because now we only trust one single certificate, right. &ldquo;Nudge, nudge, wink wink he said knowingly&nbsp;&#8230;.&rdquo;.</p>
+A tohle je cena zaplacena za to, že si lidé uvědomili skutečnost, že
+všichni mají kompromitovaný <span class="caps">CA</span>/<span class="caps">PKI</span> systém.
+Co mám na mysli, je že, pokud se podívate do svého prohlížeče naleznete
+tam asi 200 schválených <span class="caps">CA</span>&rsquo;s (certifikačních autorit) a polovina z nich
+je vlastněna neznámými službami napříč celým světem.
+V tuto chvíli je to už trochu&nbsp;zbytečné.</p>
+<p>Lidé se tak chtěli přesunout do něčeho co nazýváme <span class="caps">DANE</span> protokol.
+Myšlenkou zde je validace certifikátu za použití <span class="caps">DNSSEC</span>.
+Takže máte tento podpis v root zóně a ten podepisuje další klíč, a ten
+podepisuje další, a ten podepisuje další, který říká, že můj
+server používá tento certifikát.
+Nyní tomu můžete věřit, věříte pouze jednomu klíči, že?
+Takže výhodou modelu <span class="caps">PKI</span>/<span class="caps">CA</span> je, že máme dneska přístup, ale <span class="caps">DANE</span> projekt
+by tohle velmi rád, protože nyní věříme pouze jednomu jedinému certifikátu.
+&ldquo;Šťouch, šťouch, mrk, mrk, řekl on záměrně &#8230;.&nbsp;&ldquo;</p>
 <p>And the best part about this is - &ldquo;I don&rsquo;t understand how these supposedly professional people can overlooked, but <span class="caps">DNS</span> is <span class="caps">UDP</span>.
 It&rsquo;s much easier to do a packet-race with <span class="caps">UDP</span> than with <span class="caps">TCP</span>.
 They send a <span class="caps">DNS</span> request you aren&rsquo;t to come first,&nbsp;done.</p>

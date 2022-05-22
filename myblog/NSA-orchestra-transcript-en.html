@@ -118,6 +118,7 @@
 <li><a href="#queen-achievements"><span class="caps">QUEEN</span>&nbsp;achievements</a></li>
 <li><a href="#queen-recent-work"><span class="caps">QUEEN</span> recent&nbsp;work</a></li>
 <li><a href="#queen-methods"><span class="caps">QUEEN</span>&nbsp;methods</a></li>
+<li><a href="#queen-recent-work_1"><span class="caps">QUEEN</span> recent&nbsp;work</a></li>
 </ul>
 </li>
 </ul>
@@ -556,13 +557,18 @@ but I know we can&rsquo;t use it for licence&nbsp;reasons.</p>
 it&rsquo;s so wonderful.
 Sometimes just one single email from an anonymous person
 can derail an open-source project for&nbsp;months.</p>
-<p>And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying &ldquo;oh I found this wonderful way to do&rdquo; and they spent like a month tearing it apart, instead of doing real&nbsp;work.</p>
+<p>And we can soak up immense amount of cryptographers bandwidth
+with bogus proposals for cryptography.
+You sent this proposal saying
+&ldquo;oh I found this wonderful way to do&rdquo;
+and they spent like a month tearing it apart, instead of doing real&nbsp;work.</p>
+<h4 id="queen-recent-work_1"><span class="caps">QUEEN</span> recent work<a class="headerlink" href="#queen-recent-work_1" title="Permanent link">&para;</a></h4>
 <p>So that works for the world.
 One of the current focus areas is that there&rsquo;s a push to go from the certificate <span class="caps">PKI</span> model to <span class="caps">DANE</span> which is getting your certificates approved through <span class="caps">DNS</span>.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the <span class="caps">CA</span> <span class="caps">PKI</span> system.
-I mean, if you look in your browser there&rsquo;s like 200 approved <span class="caps">CAS</span> and half of them are owned by secret services throughout the world.
-It&rsquo;s sort of pointless at this point, right.
-So people want to move that into what&rsquo;s called the <span class="caps">DANE</span> protocol.
+And this is a cost brought on by the fact that people realizing that everybody has compromised the <span class="caps">CA</span>/<span class="caps">PKI</span> system.
+I mean, if you look in your browser there&rsquo;s like 200 approved <span class="caps">CA</span>&rsquo;s and half of them are owned by secret services throughout the world.
+It&rsquo;s sort of pointless at this point,&nbsp;right.</p>
+<p>So people want to move that into what&rsquo;s called the <span class="caps">DANE</span> protocol.
 And the idea here is you validate the certificate using the <span class="caps">DNSSEC</span>.
 So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.
 So you can trust that now, you only trust this one single key, right.
