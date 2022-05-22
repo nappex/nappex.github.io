@@ -506,13 +506,19 @@ it's so wonderful.
 Sometimes just one single email from an anonymous person
 can derail an open-source project for months.
 
-And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying "oh I found this wonderful way to do" and they spent like a month tearing it apart, instead of doing real work.
+And we can soak up immense amount of cryptographers bandwidth
+with bogus proposals for cryptography.
+You sent this proposal saying
+"oh I found this wonderful way to do"
+and they spent like a month tearing it apart, instead of doing real work.
 
+#### QUEEN recent work
 So that works for the world.
 One of the current focus areas is that there's a push to go from the certificate PKI model to DANE which is getting your certificates approved through DNS.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the CA PKI system.
-I mean, if you look in your browser there's like 200 approved CAS and half of them are owned by secret services throughout the world.
+And this is a cost brought on by the fact that people realizing that everybody has compromised the CA/PKI system.
+I mean, if you look in your browser there's like 200 approved CA's and half of them are owned by secret services throughout the world.
 It's sort of pointless at this point, right.
+
 So people want to move that into what's called the DANE protocol.
 And the idea here is you validate the certificate using the DNSSEC.
 So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.

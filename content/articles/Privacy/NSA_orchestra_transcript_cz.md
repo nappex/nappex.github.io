@@ -506,7 +506,7 @@ hledáte prostě jen určité patterny apod.
 
 Takže tohle jsou naše velmi velké úspěchy v QUEEN programu.
 
-#### QUEEN poslední práce
+#### QUEEN nedávná práce
 Nyní pracujeme na standardu HTTP 2.0.
 Chtějí, aby tam bylo velké zastoupení a všechno bylo TLS,
 které by mohlo být nepohodlné.
@@ -532,24 +532,42 @@ Ano, to je opravdu užasný kryptografický kód,
 
 Diskuse typu bikeshed jsou úžasné. (*Poznámka*: bikeshed znamená nikdy
 nekončící diskuse, termín bikeshed
-vymyslel sám phk jako reakci na diskusi okolo funkce "sleep"
+vymyslel sám phk jako reakci na diskusi okolo funkce "sleep",
 [zde](http://phk.freebsd.dk/sagas/bikeshed/#the-bikshed-email) je
 k tomu celý článek),
 Někdy stačí pouze jeden jediný email od neznámé osoby, který je
-schopen na měsíce vykolejit práci na open-source projektu.
+schopen na měsíce vykolejit práci celého open-source projektu.
 
-And we can soak up immense amount of cryptographers bandwidth with bogus proposals for cryptography. You sent this proposal saying "oh I found this wonderful way to do" and they spent like a month tearing it apart, instead of doing real work.
+A můžeme nasát ohromné množství šířky vlnového pásma kryptografů
+s falešnými návrhy na kryptografii.
+Pošlete návrh, který říká:
+"Oh, vymyslel jsem tento úžasný způsob,
+jak to udělat"
+Ostatní stráví měsíc přehrabováním se v tomto návrhu,
+namísto dělání skutečné (prospěšné) práce.
 
-So that works for the world.
+#### QUEEN nedávná práce
+Takže takhle to nějak ve světě funguje.
+Jedna z oblastí na kterou se v současné chvíli změřujeme je tlak na
+změnu používaní certifikátu modelu PKI na model DANE, který schvaluje
+vaše certifikáty skrze DNS.
 One of the current focus areas is that there's a push to go from the certificate PKI model to DANE which is getting your certificates approved through DNS.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the CA PKI system.
-I mean, if you look in your browser there's like 200 approved CAS and half of them are owned by secret services throughout the world.
-It's sort of pointless at this point, right.
-So people want to move that into what's called the DANE protocol.
-And the idea here is you validate the certificate using the DNSSEC.
-So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.
-So you can trust that now, you only trust this one single key, right.
-So the advantage of PKI/CA is of course we have access today, but the DANE project would really like that, because now we only trust one single certificate, right. "Nudge, nudge, wink wink he said knowingly ....".
+A tohle je cena zaplacena za to, že si lidé uvědomili skutečnost, že
+všichni mají kompromitovaný CA/PKI systém.
+Co mám na mysli, je že, pokud se podívate do svého prohlížeče naleznete
+tam asi 200 schválených CA's (certifikačních autorit) a polovina z nich
+je vlastněna neznámými službami napříč celým světem.
+V tuto chvíli je to už trochu zbytečné.
+
+Lidé se tak chtěli přesunout do něčeho co nazýváme DANE protokol.
+Myšlenkou zde je validace certifikátu za použití DNSSEC.
+Takže máte tento podpis v root zóně a ten podepisuje další klíč, a ten
+podepisuje další, a ten podepisuje další, který říká, že můj
+server používá tento certifikát.
+Nyní tomu můžete věřit, věříte pouze jednomu klíči, že?
+Takže výhodou modelu PKI/CA je, že máme dneska přístup, ale DANE projekt
+by tohle velmi rád, protože nyní věříme pouze jednomu jedinému certifikátu.
+"Šťouch, šťouch, mrk, mrk, řekl on záměrně .... "
 
 And the best part about this is - "I don't understand how these supposedly professional people can overlooked, but DNS is UDP.
 It's much easier to do a packet-race with UDP than with TCP.
