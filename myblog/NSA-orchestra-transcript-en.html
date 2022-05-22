@@ -121,6 +121,7 @@
 <li><a href="#queen-recent-work_1"><span class="caps">QUEEN</span> recent&nbsp;work</a></li>
 </ul>
 </li>
+<li><a href="#boys-a-special-gift"><span class="caps">BOYS</span> - A special&nbsp;gift</a></li>
 </ul>
 </li>
 <li><a href="#qa-section">Q&amp;A <span class="caps">SECTION</span></a></li>
@@ -564,30 +565,51 @@ You sent this proposal saying
 and they spent like a month tearing it apart, instead of doing real&nbsp;work.</p>
 <h4 id="queen-recent-work_1"><span class="caps">QUEEN</span> recent work<a class="headerlink" href="#queen-recent-work_1" title="Permanent link">&para;</a></h4>
 <p>So that works for the world.
-One of the current focus areas is that there&rsquo;s a push to go from the certificate <span class="caps">PKI</span> model to <span class="caps">DANE</span> which is getting your certificates approved through <span class="caps">DNS</span>.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the <span class="caps">CA</span>/<span class="caps">PKI</span> system.
-I mean, if you look in your browser there&rsquo;s like 200 approved <span class="caps">CA</span>&rsquo;s and half of them are owned by secret services throughout the world.
+One of the current focus areas is that there&rsquo;s a push
+to go from the certificate <span class="caps">PKI</span> model to <span class="caps">DANE</span>
+which is getting your certificates approved through <span class="caps">DNS</span>.
+And this is a cost brought on by the fact that people
+realizing that everybody has compromised the <span class="caps">CA</span>/<span class="caps">PKI</span> system.
+I mean, if you look in your browser there&rsquo;s like 200 approved <span class="caps">CA</span>&rsquo;s
+and half of them are owned by secret services throughout the world.
 It&rsquo;s sort of pointless at this point,&nbsp;right.</p>
 <p>So people want to move that into what&rsquo;s called the <span class="caps">DANE</span> protocol.
 And the idea here is you validate the certificate using the <span class="caps">DNSSEC</span>.
-So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.
+So you have this signature on the root zone and that signs the next one
+and signs next one of the signs next one that says my server has this certificate.
 So you can trust that now, you only trust this one single key, right.
-So the advantage of <span class="caps">PKI</span>/<span class="caps">CA</span> is of course we have access today, but the <span class="caps">DANE</span> project would really like that, because now we only trust one single certificate, right. &ldquo;Nudge, nudge, wink wink he said knowingly&nbsp;&#8230;.&rdquo;.</p>
-<p>And the best part about this is - &ldquo;I don&rsquo;t understand how these supposedly professional people can overlooked, but <span class="caps">DNS</span> is <span class="caps">UDP</span>.
-It&rsquo;s much easier to do a packet-race with <span class="caps">UDP</span> than with <span class="caps">TCP</span>.
+So the advantage of <span class="caps">PKI</span>/<span class="caps">CA</span> is of course we have access today,
+but the <span class="caps">DANE</span> project would really like that,
+because now we only trust one single certificate, right.
+&ldquo;Nudge, nudge, wink wink he said knowingly&nbsp;&#8230;.&rdquo;.</p>
+<p>And even the best part about this is I don&rsquo;t understand how these supposedly
+professional people can&nbsp;overlooked.</p>
+<p><span class="caps">DNS</span> is <span class="caps">UDP</span>.</p>
+<p>It&rsquo;s much easier to do a packet-race with <span class="caps">UDP</span> than with <span class="caps">TCP</span>.
 They send a <span class="caps">DNS</span> request you aren&rsquo;t to come first,&nbsp;done.</p>
-<p><span class="caps">BOYS</span> - program
-This is another interesting program we&rsquo;re working on.
+<h3 id="boys-a-special-gift"><span class="caps">BOYS</span> - A special gift<a class="headerlink" href="#boys-a-special-gift" title="Permanent link">&para;</a></h3>
+<p>This is another interesting program we&rsquo;re working on.
 It&rsquo;s actually inspired by a field accident.
-We had to evacuate a high risk and high-quality resource and we had no facilities nearby his location that could be used.
-So we set him up as a independent contractor.
-Story was you know tired of the Boss and bad company politics bla bla bla &#8230;. I&rsquo;m stuck for himself and so on.
+We had to evacuate a high risk and high-quality resource
+and we had no facilities nearby his location that could be used.
+So we set him up as a independent&nbsp;contractor.</p>
+<p>Story was you know tired of the Boss and yade bad company politics yade yade&hellip;
+I&rsquo;m stuck for himself and so on.
 And I was lucky to find some customers and so on.
-And while sitting there he spent some time on some open source projects had to do something. He spotted some opportunities for groundwork.
-So most open source projects are based on trust.
-There&rsquo;s no formal vetting there&rsquo;s no checking people&rsquo;s resumes there&rsquo;s no checking, if they&rsquo;re really who they say they are.It&rsquo;s like &ldquo;Oh I&rsquo;m this dude who sits in Ulaanbaatar and here&rsquo;s some patches&rdquo;.
-If you send good patches for some years people will start to trust you and not check your patches and that will give you a &ldquo;commit bit&rdquo;, so you can add them yourself because that&rsquo;s really much easier.
-It&rsquo;s a fantastic environment that people can come in and announcly nobody knows that you&rsquo;re a dog or <span class="caps">NSA</span> agent.
+And while sitting there he spent some time on some open source projects&hellip;
+he had to do something.
+He spotted some opportunities for groundwork.
+So most open-source projects are based on&nbsp;trust.</p>
+<p>There&rsquo;s no formal&nbsp;vetting,</p>
+<p>there&rsquo;s no checking people&rsquo;s&nbsp;resumes,</p>
+<p>there&rsquo;s no checking, if they&rsquo;re really who they say they&nbsp;are.</p>
+<p>It&rsquo;s&nbsp;like:</p>
+<p><span class="dquo">&ldquo;</span>Oh I&rsquo;m this dude who sits in Ulaanbaatar and here&rsquo;s some&nbsp;patches&rdquo;.</p>
+<p>And if you send good patches for some years people will start to trust you
+and not check your patches and that will give you a &ldquo;commit bit&rdquo;,
+so you can add them yourself, because that&rsquo;s really much easier.
+It&rsquo;s a fantastic environment that people can come in
+and announcly nobody knows that you&rsquo;re a dog or <span class="caps">NSA</span> agent.
 So not only can you collect information about the project&rsquo;s interiors by that way.
 Once the trust is in place, you can start to influence their&nbsp;code.</p>
 <p>So perception is an easy thing to get right here it&rsquo;s like:
