@@ -514,33 +514,63 @@ and they spent like a month tearing it apart, instead of doing real work.
 
 #### QUEEN recent work
 So that works for the world.
-One of the current focus areas is that there's a push to go from the certificate PKI model to DANE which is getting your certificates approved through DNS.
-And this is a cost brought on by the fact that people realizing that everybody has compromised the CA/PKI system.
-I mean, if you look in your browser there's like 200 approved CA's and half of them are owned by secret services throughout the world.
+One of the current focus areas is that there's a push
+to go from the certificate PKI model to DANE
+which is getting your certificates approved through DNS.
+And this is a cost brought on by the fact that people
+realizing that everybody has compromised the CA/PKI system.
+I mean, if you look in your browser there's like 200 approved CA's
+and half of them are owned by secret services throughout the world.
 It's sort of pointless at this point, right.
 
 So people want to move that into what's called the DANE protocol.
 And the idea here is you validate the certificate using the DNSSEC.
-So you have this signature on the root zone and that signs the next one and signs next one of the signs next one that says my server has this certificate.
+So you have this signature on the root zone and that signs the next one
+and signs next one of the signs next one that says my server has this certificate.
 So you can trust that now, you only trust this one single key, right.
-So the advantage of PKI/CA is of course we have access today, but the DANE project would really like that, because now we only trust one single certificate, right. "Nudge, nudge, wink wink he said knowingly ....".
+So the advantage of PKI/CA is of course we have access today,
+but the DANE project would really like that,
+because now we only trust one single certificate, right.
+"Nudge, nudge, wink wink he said knowingly ....".
 
-And the best part about this is - "I don't understand how these supposedly professional people can overlooked, but DNS is UDP.
+And even the best part about this is I don't understand how these supposedly
+professional people can overlooked.
+
+DNS is UDP.
+
 It's much easier to do a packet-race with UDP than with TCP.
 They send a DNS request you aren't to come first, done.
 
-BOYS - program
+### BOYS - A special gift
 This is another interesting program we're working on.
 It's actually inspired by a field accident.
-We had to evacuate a high risk and high-quality resource and we had no facilities nearby his location that could be used.
+We had to evacuate a high risk and high-quality resource
+and we had no facilities nearby his location that could be used.
 So we set him up as a independent contractor.
-Story was you know tired of the Boss and bad company politics bla bla bla .... I'm stuck for himself and so on.
+
+Story was you know tired of the Boss and yade bad company politics yade yade...
+I'm stuck for himself and so on.
 And I was lucky to find some customers and so on.
-And while sitting there he spent some time on some open source projects had to do something. He spotted some opportunities for groundwork.
-So most open source projects are based on trust.
-There's no formal vetting there's no checking people's resumes there's no checking, if they're really who they say they are.It's like "Oh I'm this dude who sits in Ulaanbaatar and here's some patches".
-If you send good patches for some years people will start to trust you and not check your patches and that will give you a "commit bit", so you can add them yourself because that's really much easier.
-It's a fantastic environment that people can come in and announcly nobody knows that you're a dog or NSA agent.
+And while sitting there he spent some time on some open source projects...
+he had to do something.
+He spotted some opportunities for groundwork.
+So most open-source projects are based on trust.
+
+There's no formal vetting,
+
+there's no checking people's resumes,
+
+there's no checking, if they're really who they say they are.
+
+It's like:
+
+"Oh I'm this dude who sits in Ulaanbaatar and here's some patches".
+
+And if you send good patches for some years people will start to trust you
+and not check your patches and that will give you a "commit bit",
+so you can add them yourself, because that's really much easier.
+It's a fantastic environment that people can come in
+and announcly nobody knows that you're a dog or NSA agent.
 So not only can you collect information about the project's interiors by that way.
 Once the trust is in place, you can start to influence their code.
 

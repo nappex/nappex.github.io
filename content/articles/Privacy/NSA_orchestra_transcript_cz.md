@@ -569,22 +569,45 @@ Takže výhodou modelu PKI/CA je, že máme dneska přístup, ale DANE projekt
 by tohle velmi rád, protože nyní věříme pouze jednomu jedinému certifikátu.
 "Šťouch, šťouch, mrk, mrk, řekl on záměrně .... "
 
-And the best part about this is - "I don't understand how these supposedly professional people can overlooked, but DNS is UDP.
-It's much easier to do a packet-race with UDP than with TCP.
-They send a DNS request you aren't to come first, done.
+A dokonce nejelpší část toho všeho je, že nerozumím tomu jak tito
+údajně profesionálové mohou přehlédnout toto:
 
-BOYS - program
-This is another interesting program we're working on.
-It's actually inspired by a field accident.
-We had to evacuate a high risk and high-quality resource and we had no facilities nearby his location that could be used.
-So we set him up as a independent contractor.
-Story was you know tired of the Boss and bad company politics bla bla bla .... I'm stuck for himself and so on.
-And I was lucky to find some customers and so on.
-And while sitting there he spent some time on some open source projects had to do something. He spotted some opportunities for groundwork.
-So most open source projects are based on trust.
-There's no formal vetting there's no checking people's resumes there's no checking, if they're really who they say they are.It's like "Oh I'm this dude who sits in Ulaanbaatar and here's some patches".
-If you send good patches for some years people will start to trust you and not check your patches and that will give you a "commit bit", so you can add them yourself because that's really much easier.
-It's a fantastic environment that people can come in and announcly nobody knows that you're a dog or NSA agent.
+DNS je jen UDP.
+
+Je daleko snažší udělat útok typu "packet-race" s UDP než s protokolem TCP.
+Prostě pošlou DNS požadavek a vy nebudete první, hotovo.
+
+### BOYS - speciální dar
+To je další velmi zajímavý program na kterém teď děláme.
+Doopravdy je to vlastně inspirováno "field accident".
+Kdy jsme museli vystěhovat vysoce rizikový a vysoce kvalitní zdroj
+a neměli k tomu žádné vhodné vybavení poblíž jeho polohy.
+Vytvořili jsem z něj tedy nezávislého dodavatele.
+
+Příběh byl něco jako unavený šéfem a nějaká špatná politika společnosti,
+a tak dále ... Jsem zaseknutý nemám se, kde posouvat...
+Měl jsem štěstí, že jsem našel nějaké zákazníky a tak dále.
+Zatímco si jen tak sedí, tak strávil nějaký čas na nějakých open source
+projektech... Musel něco dělat.
+Všimnul si nějakých příložetostí k přípravným pracem.
+
+Většina open-source projektů je založena na důvěře.
+
+Není v nich oficiální kontrola,
+
+není v nich  kontrola kontrola životpisů,
+
+ani kontrola, zda jste opravdu ten, za koho se vydáváte.
+
+V praxi to často vypadá následovně:
+"Oh, jsem týpek z Ulaanbaataru a zde máma pro vás nějaké patche."
+
+Pokud posíláte dobré patche po několik let, lidé vám začnou důvěřovat,
+a přestanou kontrolovat vaše patche a nakonec vám mohou dát i "commit bit",
+takže můžete zahrnout vaše změny kódu sami, protože je to mnohem snažší.
+
+It's a fantastic environment that people can come in
+and announcly nobody knows that you're a dog or NSA agent.
 So not only can you collect information about the project's interiors by that way.
 Once the trust is in place, you can start to influence their code.
 
