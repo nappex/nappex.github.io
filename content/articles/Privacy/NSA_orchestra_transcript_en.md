@@ -575,73 +575,125 @@ So not only can you collect information about the project's interiors by that wa
 Once the trust is in place, you can start to influence their code.
 
 So perception is an easy thing to get right here it's like:
-"Yeah, you know I'm sysad of this nonprofit thing and as long as the email works and the printers print.
-It's all humming I mean I'm sitting here seven hours a day doing no a shit.
-And okay cool here's a dude last time and he's delivering a good code we cool with that.
-And one of the things we found out here is would actually can do in reality this is one of our people, right.
-And he's sitting somewhere in a shop front that looks like it's this nonprofit thing for you know stopping, I don't know, oak trees falling over or whatever it is.
-Actually that's our neighbors who has this kind of shop-front.And then need somebody to get the computers to work in this little stealth setup they have.
-And we need to have an Ethernet and a desk for our man so it's very convenient that. And the bosses can actually claim:
+"Yeah, you know I'm sysad of this nonprofit thing and as long
+as email works and the printers print."
+It's all humming I mean I'm sitting here seven hours a day doing not a shit.
+And "okay, cool."
+Here's a dude and his time and he's delivering a good code we cool with that.
+And one of the things we found out here is would actually can do.
+In reality this is one of our people, right.
+And he's sitting somewhere in a shop front that looks like
+it's this nonprofit thing for you know stopping,
+I don't know, oak trees falling over or whatever it is.
+Actually that's our neighbors who has this kind of shop-front.
+And then need somebody to get the computers to work in this little
+stealth setup they have.
+And we need to have an Internet and a desk for our man,
+so it's very convenient that. And the bosses can actually claim:
 "Oh we're doing cooperative work and we're saving money" and stuff like that.
 It's really really really well.
+
 And of course, you cannot go in and add obvious vulnerabilities to source code.
-People would spot that, it has to be more subtle than that.
-Programming mistakes, you know the careless, semicolon etc. sir one based error is, all these classics.
+People would spot that. It has to be more subtle than that.
+
+Programming mistakes.
+you know the careless, semicolon yade, yade serial one based error is,
+all these classics.
 It's kind of dangerous to do it yourself.
-It's best to say "Oh I got this patch and I look at it and it looks okay and you stick that in."
-People will start to notice if your own code quality sucks, but if you accept patches which are not you know quite up to standard.
-Everybody can have a bad day. So, in general obfuscating the code making it harder to understand critical bits of the code makes it easier to make it, almost do what it was supposed to do.
-Misleading documentation is always a wonderful thing particular for crypto sensitive stuff.
+It's best to say:
+"Oh I got this patch and I look at it and it looks okay and you stick that in."
+
+People will start to notice if your own code quality sucks,
+but if you accept patches which are not you know quite up to standard.
+Everybody can have a bad day.
+
+So, in general obfuscating the code making it harder to understand
+critical bits of the code makes it easier to make it,
+almost do what it was supposed to do.
+
+Misleading documentation is always a wonderful thing particular
+for crypto sensitive stuff.
+
 And deceptive defaults so that things don't do what people think.
+
 It doesn't have to be the core code.
 It doesn't have to be the operating system kernel.
 In FreeBSD there's 20,000 packages of software.
-They are built using, you know.
-There're some patches needed for FreeBSD and so on bla bla, okay it builds and you have a package.
+There are built using, you know.
+There're some patches needed for FreeBSD yade, yade,
+okay builds and you have a package.
 Nobody ever looks at those patches.
-Who ever ported this piece of software does these patches, it takes the packaging and that's it, it's never reviewed.
-It maybe, if it's set "setuid" program somebody may look at it, but in general nobody has ever looked at all the patches in the previously ports collection.
+Who ever ported this piece of software does these patches,
+it takes the packaging and that's it, it's never reviewed.
+It maybe, if it's set "setuid" program somebody may look at it,
+but in general nobody has ever looked at all the patches
+in the FreeBSD ports collection.
+
 They should.
-So this is our poster board.
+
+So this is our poster boy.
 The Debian random number generator.
 This is really beautifully executed.
 There's dude who sends in the Patch set you know.
-This gets Valgrind to complain and I can't see does anything sensible you should just remove it.
-And they did. So for two years, all the debians had lousy random numbers, which made you know brute-forcing SSL keys and stuff like that, done.
+This gets Valgrind to complain
+and I can't see does anything sensible you should just remove it.
+And they did.
+So for two years, all the debians had lousy random numbers,
+which made you know brute-forcing SSL keys and stuff like that, done.
+
 Here end up a pretty good bonus.
 OpenSSL is the crown jewel.
 OpenSSL is a standard library if you want crypto.
-Getting SSL to work against all browsers and all that stuff without using openSSL is very very tricky.
-Reading the OpenSSL manuals or source code is not tricky as close to impossible.
+Getting SSL to work against all browsers
+and all that stuff without using OpenSSL is very very tricky.
+Reading the OpenSSL manuals or source code is not tricky
+that's close to impossible.
 And that's three hundred thousand lines of code.
 So good luck with that.
 The documentation is deficient and misleading.
 And the defaults are deceptive, they don't do what do you think they do.
 This saves so much money in collection you have no idea.
-So the overall status of operation orchestra is, it's a resounding success we spend less than a third of the percent of the NSA budget.
+
+### Operation ORCHESTRA current status
+So the overall status of operation orchestra is,
+it's a resounding success we spend less than a third of the percent of the NSA budget.
 And it probably cost the collection cost by something like 50%.
 It's kept most of the Internet in plaintext.
 And has never been exposed.
 That was snowden has no papers on Orchestra at all.
-You're not going to read about this in the Guardian because it's all buried in boring departments.
+You're not going to read about this in the Guardian,
+because it's all buried in boring departments.
+
 Operation overdrive that's in purchasing.
+
 BOYS that's facility management.
-ABBA and Pasadena that's Personel, he didn't have access to any of that.
+
+ABBA and Pasadena that's Personnel, he didn't have access to any of that.
 
 Thank you!
 
 
-So the standard reaction in the open source environment to it would Snowden's disclosures have been "We need to strengthen the protocols. We need to have SSL everywhere."
+### Epilog
+So the standard reaction in the open source environment to
+it would Snowden's disclosures, have been:
+
+"We need to strengthen the protocols. We need to have SSL everywhere."
+
 And I think that misses the point by a large margin.
-The things that have been published of the Snowden documents by now is the thing the general public can understand reading their newspaper.
+The things that have been published of the Snowden documents by now is
+the thing the general public can understand reading their newspaper.
 The stuff we would be interested in have not been published and maybe never will.
-And adding more attempting to add more encryption is most likely just going to have more broken encryption on the internet.
-This is not a technical problem, this is a political problem. It must ??? be solved by political means.
-That means find politicians in your country who can understand this and make sure they understand it.
+And adding more attempting to add more encryption is most likely
+just going to have more broken encryption on the internet.
+This is not a technical problem, this is a political problem.
+It must be solved by political means.
+That means find politicians in your country,
+who can understand this and make sure they understand it.
 If you cannot find politicians get you some politicians who can understand it.
-Political will is a renewable resource use your pencil when you vote or run yourself.
+Political will is a renewable resource use your pencil,
+when you vote or run yourself.
 This is your children and grandchildren's future society you're looking at.
-And we're the guys who sort of missed the boat.
+And we're the guys who sort of miss the boat.
 
 
 ## Q&A SECTION

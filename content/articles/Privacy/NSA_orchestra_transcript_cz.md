@@ -604,82 +604,140 @@ V praxi to často vypadá následovně:
 
 Pokud posíláte dobré patche po několik let, lidé vám začnou důvěřovat,
 a přestanou kontrolovat vaše patche a nakonec vám mohou dát i "commit bit",
-takže můžete zahrnout vaše změny kódu sami, protože je to mnohem snažší.
+takže můžete přidat vaše změny kódu rovnou sami, protože je to mnohem snažší.
+Jedná se o úžasné prostředí, kde lidé mohou přijít a nikdo o vás
+neví jestli jste ve skutečnosti pes nebo NSA agent.
+Tímto způsobem můžete nejen sbírat informace o projektu přímo ze vnitř,
+ale jakmile si vybudujete důvěru můžete začít přímo ovlivňovat jejich kód.
 
-It's a fantastic environment that people can come in
-and announcly nobody knows that you're a dog or NSA agent.
-So not only can you collect information about the project's interiors by that way.
-Once the trust is in place, you can start to influence their code.
+Získat právě zde pochopení je pro nás velmi snadné, představte si to jako:
+"Oh ano, víš já jsem sys-admin této neziskové věci tak dlouho, dokud
+emaily fungují a tiskárny tisknou."
+Tohle celé je takové šumění, mám tím na mysli, že si tu tak sedím sedm hodin
+denně a nedělám ani hovno.
+"Ok, cool"
+Je tady nějaký chlapík, je to jeho čas.. dodává dobrý kód,
+my jsme s tím v pohodě.
+Jedna z věcí, které tímto zjistíme je,
+že by to tak ve skutečnosti mohlo fungovat.
+Ve skutečnosti je tohle jeden z našich lidí.
+On sedí někde v přední části nějakého obchodu, aby pro nás zastavil,
+co já vím, opadávání dubového listí přes cokoliv vás může napadnout
+a celé to je jako ta nezisková věc před chvílí.
+Vlastně to je áš soused, který sedí v té přední části toho obchodu.
+A potom vždy je potřeba někdo, kdo zajistí aby jim počítače, které mají
+fungovaly v této malé tajné pasti.
+A potřebujeme mít internet a stůl pro našeho člověka.
+Takže to je velmi pohodlné.
+Šéfové mohou vlastně prohlašovat něco jako:
 
-So perception is an easy thing to get right here it's like:
-"Yeah, you know I'm sysad of this nonprofit thing and as long as the email works and the printers print.
-It's all humming I mean I'm sitting here seven hours a day doing no a shit.
-And okay cool here's a dude last time and he's delivering a good code we cool with that.
-And one of the things we found out here is would actually can do in reality this is one of our people, right.
-And he's sitting somewhere in a shop front that looks like it's this nonprofit thing for you know stopping, I don't know, oak trees falling over or whatever it is.
-Actually that's our neighbors who has this kind of shop-front.And then need somebody to get the computers to work in this little stealth setup they have.
-And we need to have an Ethernet and a desk for our man so it's very convenient that. And the bosses can actually claim:
-"Oh we're doing cooperative work and we're saving money" and stuff like that.
-It's really really really well.
-And of course, you cannot go in and add obvious vulnerabilities to source code.
-People would spot that, it has to be more subtle than that.
-Programming mistakes, you know the careless, semicolon etc. sir one based error is, all these classics.
-It's kind of dangerous to do it yourself.
-It's best to say "Oh I got this patch and I look at it and it looks okay and you stick that in."
-People will start to notice if your own code quality sucks, but if you accept patches which are not you know quite up to standard.
-Everybody can have a bad day. So, in general obfuscating the code making it harder to understand critical bits of the code makes it easier to make it, almost do what it was supposed to do.
-Misleading documentation is always a wonderful thing particular for crypto sensitive stuff.
-And deceptive defaults so that things don't do what people think.
-It doesn't have to be the core code.
-It doesn't have to be the operating system kernel.
-In FreeBSD there's 20,000 packages of software.
-They are built using, you know.
-There're some patches needed for FreeBSD and so on bla bla, okay it builds and you have a package.
-Nobody ever looks at those patches.
-Who ever ported this piece of software does these patches, it takes the packaging and that's it, it's never reviewed.
-It maybe, if it's set "setuid" program somebody may look at it, but in general nobody has ever looked at all the patches in the previously ports collection.
-They should.
-So this is our poster board.
-The Debian random number generator.
-This is really beautifully executed.
-There's dude who sends in the Patch set you know.
-This gets Valgrind to complain and I can't see does anything sensible you should just remove it.
-And they did. So for two years, all the debians had lousy random numbers, which made you know brute-forcing SSL keys and stuff like that, done.
-Here end up a pretty good bonus.
-OpenSSL is the crown jewel.
-OpenSSL is a standard library if you want crypto.
-Getting SSL to work against all browsers and all that stuff without using openSSL is very very tricky.
-Reading the OpenSSL manuals or source code is not tricky as close to impossible.
-And that's three hundred thousand lines of code.
-So good luck with that.
-The documentation is deficient and misleading.
-And the defaults are deceptive, they don't do what do you think they do.
-This saves so much money in collection you have no idea.
-So the overall status of operation orchestra is, it's a resounding success we spend less than a third of the percent of the NSA budget.
-And it probably cost the collection cost by something like 50%.
+"Oh, děláme kooperativní práci a šetříme tím peníze" apod.
+
+Je to opravdu velmi dobré.
+
+Samozřejmě nemůžete přijít a začít přidávat zřejmé zranitelnosti do kódu.
+
+Lidé by si tohohle všimli. Musí to být více záludné.
+
+Programovací chyby.
+Znáte je jako nepozornost, středníky a tak dále,
+you know the careless, semicolon yade, yade serial one based error,
+všechny tyhle klasiky.
+Nemůžete je dělat přímo vy, to by bylo nebezpečné.
+Nejlepší je říct:
+
+"Oh, dostal jsem tuto opravu na kód a mrknul jsem na to a vypadá to OK."
+
+A potom to začleníte do kódu.
+
+Lidé si všimnou, když váš kód stojí za nic, ale jestliže přijmete opravu
+od někoho jiného, která nění jak se říká úplně podle standardu.
+Všichni můžou mít špatný den.
+
+Obecně je těžší pochopit kód, jehož kritické části jsou úmyslně zamlžovány.
+Usnadňuje to následně vytvořit skoro cokoliv co bylo vašim záměrem.
+
+Další mimořádně úžasnou praxí pro kryptograficky citlivé věci je vždy vytvoření
+klamavá či mylné dokumentace. Dále zavádějící výchozí hodnoty,
+které zapřičiní, že se nedějí věci, které lidé očekávají.
+
+Nemusí se nutně jednat o core code, nemusí to být kernel operačního systému.
+Ve FreeBSD je 20 000 balíčků softwaru.
+Jsou zde používáné buildy.
+Vyskytují se zde nějaké patche, které jsou ptořebné pro FreeBSD a tak dále,
+ok vybuildi to a máte použitelný balíček.
+Nikdo se nikdy na ty patche ani nepodívá.
+Kdokoliv kdy portoval tenhle kus softwaru dělající tyhle patche, ví
+že to akorát zabalí a je to hotovo. Nikdo to nikdy nezkontroloval.
+Možná, když se nastavuje něco jako "setuid" program, tak někdo
+na to mrkne, ale obecně se nikdo nikdy na tyhle patche
+ve FreeBSD kolekci nepodíval.
+
+A měli by je kontrolovat!
+
+Tohle je náš plakátový chlapec.
+Generator náhodných čísel v Debianu.
+Tohle je opravdu nádherně provedeno.
+Je tady chlápek co pošle sadu patchů, však víte.
+Program Valgrind sice dostává stížnosti,
+ale já nevidím nic rozumného co by jsi měl jen tak smazat.
+A takhle to udělali
+Takže po dobu dvou let, všechny debiany měly mizerný generátor
+náhodných čísel, který umožnoval brute-force SSL klíčů a takovéto věci.
+Hotovo.
+
+Tady skončíme velmi dobrým bonusem.
+OpenSSL je korunovační klenot.
+OpenSSL je standardní knihovnou, pokud chcete pracovat s kryptografii.
+Přimět SSL aby pracovalo proti všem prohlížečům a všem těmto věcem,
+bez použití OpenSSL je velmi složité.
+Přečtení manuálů a zdrojové kódu OpenSSL není složité,
+to se velmi blíží něčemu, co můžeme nazvat jako téměř nemožné.
+Má to něco okolo 300 000 řádků kódu.
+Takže vám přeji mnoho štěstí s přečtením.
+Dokumentace je nedostatečná až zavádějící.
+Výchozí stavy jsou ošidné či zavádějící, nedělají co si myslítě, že dělají.
+Nemáte představu kolik tohle ušetřilo peněz ve sběru dat.
+
+### Operation ORCHESTRA současný stav
+Takže celkový stav operace orchestra je obrovský úspěch,
+utratili jsme méně než třetinu procenta rozpočtu NSA.
+To pravděpodobně stálo náklady na sběr okolo 50%.
+Tohle drží většinu internetu ve formě plain textu.
 It's kept most of the Internet in plaintext.
-And has never been exposed.
-That was snowden has no papers on Orchestra at all.
-You're not going to read about this in the Guardian because it's all buried in boring departments.
-Operation overdrive that's in purchasing.
-BOYS that's facility management.
-ABBA and Pasadena that's Personel, he didn't have access to any of that.
+A nikdy nebyl odkryt.
+Byl to Snowden, který nemá vůbec žádné papíry k Orchestře.
+Tohle si nepřečtete v Guardianu, protože je to vše
+pohřbeno v nudných odděleních.
 
-Thank you!
+Operace OVERDRIVE je o nákupech.
 
+BOYS je správa příslušenství či vybavení.
 
-So the standard reaction in the open source environment to it would Snowden's disclosures have been "We need to strengthen the protocols. We need to have SSL everywhere."
-And I think that misses the point by a large margin.
-The things that have been published of the Snowden documents by now is the thing the general public can understand reading their newspaper.
-The stuff we would be interested in have not been published and maybe never will.
-And adding more attempting to add more encryption is most likely just going to have more broken encryption on the internet.
-This is not a technical problem, this is a political problem. It must ??? be solved by political means.
-That means find politicians in your country who can understand this and make sure they understand it.
-If you cannot find politicians get you some politicians who can understand it.
-Political will is a renewable resource use your pencil when you vote or run yourself.
-This is your children and grandchildren's future society you're looking at.
-And we're the guys who sort of missed the boat.
+ABBA a Pasadena je personální, něměl přístup k ničemu z toho.
 
+Děkuji!
+
+### Závěrečná řeč
+Běžnou reakcí open-source prostředí na Snowdenovo odhalení, je:
+
+"Potřebujeme zesílit protokoly. Zajistit, že SSL bude všude."
+
+A můj názor je, že tohle míjí hlavní smysl toho všeho.
+Věci, které byli doposud publikovány ve Snowdenových dokumentech,
+jsou věci, které může pochopit široká veřejnost přečtením si jich v novinách.
+Věci, které by nás zajímaly ještě nebyli publikovány a nejspíše ani nikdy nebudou.
+Přidávání dalších pokusů ke většímu zvýšení šifrování s největší pravděpodobností
+povede k tomu, že budeme mít více pokaženého šifrování na internetu.
+Nejedná se o technický problém, jedná se o politický problém.
+To musí bát vyřešeno politickou vůlí.
+Mám na mysli najděte politiky ve své zemi, kteří mohou pochopit tento
+problém a ujistěte se, že tomu opravdu rozumí.
+Pokud njste schopni takové politiky najít, tak sežeňte politiky, kteří tomu rozumí.
+Politická vůle je obnovitelný zdroj, použijte svou tužku, když budete volit
+nebo budete voleni.
+Jedná se o budoucnost společnosti našich dětí a našich pradětí na kterou se díváme.
+A my jsme ti chlápci, kterým tak trochu ujiždí loď.
 
 ## Q&A SECTION
 
