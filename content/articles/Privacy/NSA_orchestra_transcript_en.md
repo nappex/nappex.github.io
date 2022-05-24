@@ -959,6 +959,7 @@ Could ask anybody that's leaving to trying to keep a quiet, Q&A is going on.
     Fair enough.
 
     **Answer continue...**
+
     And the reason why I don't know is I don't see a technical solution
     with 1 billion dollars of budget to collect information
     we are not going to be able to stand up to that with
