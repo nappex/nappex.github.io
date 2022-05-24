@@ -702,7 +702,7 @@ There's a time for questions, if anybody want.
 We are going to take questions and afterwards FOSDEM staff will perform the closing talk.
 So please don't go away.
 
-Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
+Could ask anybody that's leaving to trying to keep a quiet, Q&A is going on.
 
 1. **Question**: So one of the biggest security leaks for the OpenSSL for instance
     is actually their documentation and all the stuff,
@@ -744,13 +744,13 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     Show me.
 
 
-4. **Question**: Yes, thank you very much for the presentation very interesting,
-    very inspiring for the NSA wannabes.
+4. **Question**: Yes, thank you very much for the presentation.
+    Very interesting, very inspiring for the NSA wannabes.
     You mentioned that some of the Snowden documents may never be leaked
     those are your exact words.
-    Why do you think that why do you think that the largest leak
+    Why do you think that? Why do you think that the largest leak
     in basically human history at this point, could go quietly under
-    wraps and people will forget about it? why?
+    wraps and people will forget about it? Why?
 
     **Answer:**
 
@@ -766,24 +766,24 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
     *Third* - because I think USA is getting ready to make a deal with
     Snowden to stop the flow. This has been Chinese water torture
-    for them every time.
-    They've said something in public one week, two weeks later
+    for them.
+    Every time they've said something in public one week, two weeks later
     Snowden document come out showing they're lying.
-    And I think they're kind of tired of that now so I would be
-    surprised if there is not already known negotiations going on
-    for terms that will allow Snowden to return to the USA
-    in return for the flow of documents to stop.
-    And what the terms will be we'll probably never know.
+    And I think they're kind of tired of that now.
+    So I would be surprised if there is not already known
+    negotiations going on for terms that will allow Snowden
+    to return to the USA in return for the flow of documents to stop.
+    And what the terms will be we'll probably never known.
 
     I presume at some point the documents will just stop and we'll never
     hear from Snowden again.
     So I don't think they'll have time to leak all of it,
     however much it is not that NSA might know.
-    I mean that's the aspect of this that.
+    I mean that's the aspect of this that,
     I think is most interesting is that NSA has absolutely
     no idea what's going on.
     They know that 4,000 of their employees and contractors have used
-    that data to check up on their love interests but they know
+    that data to check up on their love interests, but they know
     this because people have volunteered the information
     they don't know it because they have like locked files or anything
     showing it.
@@ -796,7 +796,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     I would like to ask, answer you, what is the level on the European
     level, not just politics in the the countries, but on the European level.
     We saw that was it CIA or NSA hacking into until Americans mobile phone.
-    So I don't know where ?veto? stand there?
+    So I don't know where veto stand there?
 
     **Answer:**
 
@@ -814,19 +814,19 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     trust the mobile phone, I deceived themselves.
     All mobile phones are controlled by everybody else,
     but the guy who has it in his pocket.
-    Same thing goes for iPads, computers pretty much anything
+    Same thing goes for iPads, computers, pretty much anything
     I don't think we have many devices where we can say this one
     is by guaranteed not rooted at this point in time.
     That's one place where the European Union could step in.
     They could actually go in and mandate computing platforms
-    that can be verified as free from all kind of trap.
+    that can be verified as free from all kind of crap.
     And Angela Merkel is actually a scientist.
     She may get the idea behind this.
     I could hope that she would do something like that and push it
     through the European Union.
     Unfortunately she's kept busy with the economy in southern EU.
-    I don't know if she has a time but a good place to go in
-    would be to say the person who pays for the device controls it,
+    I don't know if she has a time, but a good place to go in
+    would be to say the person, who pays for the device controls it,
     only that person.
     And Tell-Telcos and people like that to get the fuck out of
     people's mobile phones.
@@ -849,7 +849,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
     **Answer:**
 
-    I can only agree that this is very much a matter of what
+    I can only agree with that. This is very much a matter of what
     kind of society we leave to our kids.
     Some of the opportunities for goofing around that we had
     our kids will never have without having it pasted all over
@@ -860,7 +860,8 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     you who have kids will see what I mean when I say this
     is about what your grandchildren will live in.
 
-7. **Question**: Hi, very good presentation ?nerves? and impressed.
+
+7. **Question**: Hi, very good presentation nerves and impressed.
     So you mentioned the strategy that it's quite easy to disturb
     important open source projects by just creating some discord
     over issues that have been problematic issues for a very
@@ -872,7 +873,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     **Answer:**
 
     Do you think is it really a controversial opinion to think
-    that OpenSSL is a pile of crap.
+    that OpenSSL is a pile of crap?
 
     **Q7 continue...**
 
@@ -881,7 +882,8 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     It's a controversial issue you just can accepted that.
     And your comment. how's that making anything more secure
     I think this is the same kind of strategy that,
-    you're suggesting the NSA and other evil forces do with other open-source project.
+    you're suggesting the NSA and other evil forces
+    do with other open-source project.
 
     **Answer continue ...:**
 
@@ -889,7 +891,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
 
     **Q7 continue ...:**
 
-    exactly
+    Exactly!
 
     **A continue ...:**
 
@@ -901,18 +903,20 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     OpenSSL is sort of the non solution to that in that
     we have this library that has any encryption algorithm
     anybody has ever thought up and the defaults will let you use them.
-    All the downgrade attacks is no SSL is ?pill areas?.
+    All the downgrade attacks is no SSL is pill areas.
     So if we want to use technical means to reduce the ability
-    of governmental players to spy on people.
-    We'll have to start acting like grown-up software developers.
-    Who do things a sensible way, rather than saying
+    of governmental players to spy on people, we'll have to
+    start acting like grown-up software developers, who do things
+    by a sensible way, rather than saying:
+
     "Oh I have this fancy new algorithm I'll stick
     it into a OpenSSL with the rest of them so now we have 50".
+
     And that would probably require some kind of architectural
     oversight which means we'd probably have to find you
     know maximum of eight persons globally we could agree on probably trust.
     We can start out with Bruce Schneier and seven others.
-    But I don't think that the cat herding is up to that
+    But I don't think that the cut hurting is up to that
     level of ability, yet.
     So I don't simply don't believe we will have technical
     solutions to this problem.
@@ -929,10 +933,10 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     So yes I think OpenSSL is a big problem because people
     think it gives security and it doesn't.
 
-8. **Question**: Yes and I agree with you that this is more over a political
+8. **Question**: Yes. I agree with you that this is more over a political
     issue but I wonder what should I or we ask or try to explain
-    to a politician if I can get hold of one.
-    What is what is a concrete thing I can suggest or,  yeah.
+    to a politician if I can get hold the one.
+    What is what is a concrete thing I can suggest or,  yeah...
 
     **Answer:**
 
@@ -949,10 +953,16 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     **Answer:**
 
     I don't know.
+
+    **Questioner:**
+
     Fair enough.
-    And the reason why I don't know is I don't see a technical solution.
-    With 1 billion dollars of budget to collect information
-    we are not going to be able to stand up to that with any kind of technical solution.
+
+    **Answer continue...**
+    And the reason why I don't know is I don't see a technical solution
+    with 1 billion dollars of budget to collect information
+    we are not going to be able to stand up to that with
+    any kind of technical solution.
     I only see political solutions.
     But I mean obviously we can write better code we can stop copying
     and pasting code we don't understand and use
@@ -960,7 +970,7 @@ Could ask anybody that's leaving to try and keep it quiet boss Q&A is going on.
     And that will help.
     But it's not gonna solve the problem.
     It's just gonna close some of the security holes.
-    Which is a good idea but that's not a real problem right now.
+    Which is a good idea, but that's not a real problem right now.
     So know, I mean yes write better code!
 
 
