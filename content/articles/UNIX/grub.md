@@ -1,7 +1,7 @@
 ---
 Title: Jak vyřešit problémy pomocí zavaděče GRUB
 Date: 2022-02-24
-Category: Linux
+Category: Linux, unix
 Tags: linux, advanced
 Slug: grub-fix
 Authors: David

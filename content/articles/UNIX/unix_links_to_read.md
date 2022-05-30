@@ -1,9 +1,9 @@
 ---
 Title: Zajímavé čtení o UNIX
 Date: 2022-05-30
-Category: BSD, FreeBSD
-Tags: FreeBSD, beginner, unix
-Slug: FreeBSD-links-to-read
+Category: BSD, unix
+Tags: unix, BSD, linux
+Slug: unix-links-to-read
 Authors: David S
 Summary: Seznam odkazů na zajimávě čtení o UNIX systémech
 Status: published

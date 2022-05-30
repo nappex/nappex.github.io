@@ -1,8 +1,8 @@
 ---
 Title: Use your command line more effectively
 Date: 2022-03-10
-Category: Linux, Shell, Command_line
-Tags: linux, beginner
+Category: Linux, Shell, unix
+Tags: linux, beginner, unix
 Slug: command-line-moves
 Authors: David S
 Summary: How to control your command line with shortcuts

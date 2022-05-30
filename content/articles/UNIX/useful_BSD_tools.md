@@ -1,7 +1,7 @@
 ---
 Title: Užitečné nástroje pro správu FreeBSD
 Date: 2022-05-30
-Category: BSD, FreeBSD, Command_line
+Category: BSD, unix
 Tags: FreeBSD, beginner, unix
 Slug: useful-BSD-tools
 Authors: David S
