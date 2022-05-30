@@ -15,15 +15,21 @@ Status: published
 
 * [Official Handbook](https://docs.freebsd.org/en/books/handbook/)
 
+
 * [Why migrate servers from linux to FreeBSD](https://it-notes.dragas.net/2022/01/24/why-were-migrating-many-of-our-servers-from-linux-to-freebsd/)
+
 
 * [How to migrate from linux to FreeBSD](https://it-notes.dragas.net/2022/02/05/how-we-are-migrating-many-of-our-servers-from-linux-to-freebsd-part-1-system-and-jails-setup/)
 
+
 * [Úvaha nad FreeBSD](https://www.heronovo.cz/freebsd-vlastne-jen-jina-distribuce/)
+
 
 * [Proc FreeBSD](https://vsaha.cz/blog/technicke/freebsd-proc)
 
+
 * [Příručka k FreeBSD](https://vsaha.cz/blog/technicke/freebsd-martasova-prirucka)
+
 
 * [BSD podcatsts](https://www.bsdnow.tv/episodes)
 
