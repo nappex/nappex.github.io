@@ -10,23 +10,23 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-        <meta name="author" content="David" />
+        <meta name="author" content="David S" />
 
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="linux, beginner, Linux, " />
+<meta name="keywords" content="FreeBSD, beginner, unix, BSD, FreeBSD, " />
 
-<meta property="og:title" content="Automate your workflow with shell script "/>
-<meta property="og:url" content="https://nappex.github.io/myblog/workflow-automation" />
-<meta property="og:description" content="How you can automate you often task by write your commands to shell script" />
+<meta property="og:title" content="Zajímavé čtení o UNIX "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/FreeBSD-links-to-read" />
+<meta property="og:description" content="Seznam odkazů na zajimávě čtení o UNIX systémech" />
 <meta property="og:site_name" content="The Snail&#39;s journey" />
-<meta property="og:article:author" content="David" />
-<meta property="og:article:published_time" content="2021-11-22T00:00:00+01:00" />
-<meta name="twitter:title" content="Automate your workflow with shell script ">
-<meta name="twitter:description" content="How you can automate you often task by write your commands to shell script">
+<meta property="og:article:author" content="David S" />
+<meta property="og:article:published_time" content="2022-05-30T00:00:00+02:00" />
+<meta name="twitter:title" content="Zajímavé čtení o UNIX ">
+<meta name="twitter:description" content="Seznam odkazů na zajimávě čtení o UNIX systémech">
 
-        <title>Automate your workflow with shell script  · The Snail&#39;s journey
+        <title>Zajímavé čtení o UNIX  · The Snail&#39;s journey
 </title>
         <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -78,8 +78,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://nappex.github.io/myblog/workflow-automation">
-                Automate your workflow with shell&nbsp;script
+            <a href="https://nappex.github.io/myblog/FreeBSD-links-to-read">
+                Zajímavé čtení o <span class="caps">UNIX</span>
             </a>
         </h1>
     </header>
@@ -90,129 +90,57 @@
             
             <div class="toc">
 <ul>
-<li><a href="#executable-files">Executable&nbsp;files</a></li>
-<li><a href="#shebangs">Shebangs</a></li>
-<li><a href="#arguments-from-cli">Arguments from <span class="caps">CLI</span></a></li>
-<li><a href="#make-your-script-for-automation">Make your script for&nbsp;automation</a></li>
+<li><a href="#bsd-family"><span class="caps">BSD</span>&nbsp;Family</a></li>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#filesystem">FileSystem</a></li>
+<li><a href="#init-systems">Init&nbsp;systems</a></li>
 </ul>
 </div>
-<h1 id="executable-files">Executable files<a class="headerlink" href="#executable-files" title="Permanent link">&para;</a></h1>
-<p>To make your script executable is necessary to set shebangs and add permissions to&nbsp;file.</p>
-<p>Files can be used for three main&nbsp;mode:</p>
+<h1 id="bsd-family"><span class="caps">BSD</span> Family<a class="headerlink" href="#bsd-family" title="Permanent link">&para;</a></h1>
 <ul>
-<li><code>r</code> - read&nbsp;mode</li>
-<li><code>w</code> - write&nbsp;mode</li>
-<li><code>x</code> - executable&nbsp;mode</li>
-</ul>
-<p>If we want to run our script by clicking on it or by command <code>./script_name</code> we need
-to set up executable mode to this file. Otherwise we are not able to run this&nbsp;script.</p>
-<p>Check what modes are set up on your files run command <code>ls</code> with option <code>-l</code>. It
-shows you file in your folder includes information about modes something like
-<code>drwxr-xr-x</code>.</p>
-<div class="highlight"><pre><span></span><code>ls -l
-</code></pre></div>
-
-<p>the schmema <code>drwxr-xr-x</code> means from left to&nbsp;right:</p>
-<ul>
-<li>first char which is equal to <code>d</code> means this file is <code>directory</code>, when you just
-slash <code>-</code> on this position then means the file is normal&nbsp;file.</li>
-<li>next three chars <code>rwx</code> means setup permissions for <code>user</code> or <code>u</code>. Permissions
-are always setup in same order it means firs is always <code>r</code>, second is <code>w</code> and last one is <code>x</code>.
-When permission is not setup there is slash <code>-</code> instead of one of permission <code>rwx</code>.</li>
-<li>next three char <code>r-x</code> is absolutely same as for <code>user</code> above but this set of chars
-is meant to <code>group</code> or <code>g</code> adn we can see that for <code>group</code> kind of users theres is no any
-write permissions&nbsp;allowed.</li>
 <li>
-<p>last three chars are permissions for <code>other</code> or <code>o</code></p>
+<p><a href="https://docs.freebsd.org/en/books/handbook/">Official&nbsp;Handbook</a></p>
 </li>
 <li>
-<p><code>user</code> or <code>u</code> what can do the&nbsp;user</p>
+<p><a href="https://it-notes.dragas.net/2022/01/24/why-were-migrating-many-of-our-servers-from-linux-to-freebsd/">Why migrate servers from linux to&nbsp;FreeBSD</a></p>
 </li>
-<li><code>group</code> or <code>g</code> what can do the users of same&nbsp;group</li>
-<li><code>other</code> or <code>o</code> what can do the anybody&nbsp;else</li>
+<li>
+<p><a href="https://it-notes.dragas.net/2022/02/05/how-we-are-migrating-many-of-our-servers-from-linux-to-freebsd-part-1-system-and-jails-setup/">How to migrate from linux to&nbsp;FreeBSD</a></p>
+</li>
 </ul>
-<p>If we want to change permission we have to use command <code>chmod</code>.</p>
-<p>Example we want to add <code>read</code> and <code>executable</code> permission to file with name <code>hello.sh</code> and just
-for <code>user</code></p>
-<div class="highlight"><pre><span></span><code>chmod u+rx hello.sh
-</code></pre></div>
-
-<p>We can also delete permissions if we want for example for <code>other</code>. We remove
-<code>read</code> and <code>write</code> permission.</p>
-<div class="highlight"><pre><span></span><code>chmod o-rw hello.sh
-</code></pre></div>
-
-<p>As you can mention when we want to add permission we use mark <code>+</code>, otherwise
-when we want to remove we use mark <code>-</code>.</p>
-<p>schema&nbsp;is:</p>
-<p><code>chmod who(u, g, o) add/remove(+, -) permissions(r, w, x) filename</code></p>
-<h1 id="shebangs">Shebangs<a class="headerlink" href="#shebangs" title="Permanent link">&para;</a></h1>
-<p>Shebang is used when we want to make some script executable.
-Shebang has to be write at the beginning of the&nbsp;file.</p>
-<p>Shebangs are described nicely on wiki <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)">wiki shebangs</a>.</p>
-<p>Generally shebang schema looks&nbsp;like:</p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!interpreter [optional-arg]</span>
-</code></pre></div>
-
-<p>you have to specified path to intepreter which will run the script. So you dont have to
-write to <span class="caps">CLI</span> because you will tell to cli at the beginnig of the&nbsp;file.</p>
-<p>Sometimes shell will evaluate automatically for example for bash, zsh, etc.&nbsp;scripts.</p>
-<p>At the end of day you wont be write <code>python3 filename.py</code> but only <code>./filename</code>
-for shebang <code>#!/usr/bin/env python3</code></p>
-<h1 id="arguments-from-cli">Arguments from <span class="caps">CLI</span><a class="headerlink" href="#arguments-from-cli" title="Permanent link">&para;</a></h1>
-<p>If you want to take some arguments from <span class="caps">CLI</span>, these arguments are saved in
-variables $0, $1,&nbsp;$2</p>
+<p>* <a href="https://www.heronovo.cz/freebsd-vlastne-jen-jina-distribuce/">Úvaha nad&nbsp;FreeBSD</a></p>
 <ul>
-<li>$0 -&nbsp;scriptname</li>
-<li>$1 - first&nbsp;argument</li>
-<li>$2 - second&nbsp;argument</li>
-<li>$n -&nbsp;n-argument</li>
+<li>
+<p><a href="https://vsaha.cz/blog/technicke/freebsd-proc">Proc&nbsp;FreeBSD</a></p>
+</li>
+<li>
+<p><a href="https://vsaha.cz/blog/technicke/freebsd-martasova-prirucka">Příručka k&nbsp;FreeBSD</a></p>
+</li>
+<li>
+<p><a href="https://www.bsdnow.tv/episodes"><span class="caps">BSD</span>&nbsp;podcatsts</a></p>
+</li>
 </ul>
-<p>you can specify that first argument is required&nbsp;as:</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="o">[</span> ! <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span>
-<span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Missing first argument\n&quot;</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Usage: ./script.sh &#39;first argument&#39;\n&quot;</span>
-    <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;Your argument is: </span><span class="nv">$1</span><span class="s2">&quot;</span>
-</code></pre></div>
-
-<h1 id="make-your-script-for-automation">Make your script for automation<a class="headerlink" href="#make-your-script-for-automation" title="Permanent link">&para;</a></h1>
-<p>If you use very often some same commands in <span class="caps">CLI</span> you can write these commands
-to file as shell script for example some&nbsp;script.sh.</p>
-<p>So you will save time to write all commands repetitive again and again. and you just
-run script shell for one&nbsp;time.</p>
-<p>To correctly run your script you have to set up <code>shebang</code> and give <code>execute</code> permissions
-to that&nbsp;file.</p>
-<p>the script should be somethin like&nbsp;this</p>
-<p><code>script.sh</code></p>
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
-
-<span class="k">if</span> <span class="o">[</span> ! <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span>
-<span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Missing commit message\n&quot;</span>
-    <span class="nb">echo</span> <span class="s2">&quot;Usage: ./generate_content.sh &#39;commit message to github&#39;\n&quot;</span>
-    <span class="nb">exit</span> <span class="m">1</span>
-<span class="k">fi</span>
-
-sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade
-git add .
-git commit <span class="nv">$1</span>
-git push origin master
-
-<span class="nb">echo</span> <span class="s2">&quot;scrript completed&quot;</span>
-</code></pre></div>
+<h1 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://www.heronovo.cz/proc-pouzivam-linux/">Proc používat&nbsp;Linux</a></li>
+</ul>
+<h1 id="filesystem">FileSystem<a class="headerlink" href="#filesystem" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://www.heronovo.cz/proc-btrfs-proc-ne-zfs/"><span class="caps">BFRTS</span> vs <span class="caps">ZFS</span></a></li>
+</ul>
+<h1 id="init-systems">Init systems<a class="headerlink" href="#init-systems" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="https://www.howtogeek.com/675569/why-linuxs-systemd-is-still-divisive-after-all-these-years/">Systemd is still&nbsp;divisive</a></li>
+</ul>
 
 
              
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=Automate%20your%20workflow%20with%20shell%C2%A0script&url=https%3A//nappex.github.io/myblog/workflow-automation&hashtags=linux,beginner" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/workflow-automation" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=Automate%20your%20workflow%20with%20shell%C2%A0script&amp;body=https%3A//nappex.github.io/myblog/workflow-automation" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Zaj%C3%ADmav%C3%A9%20%C4%8Dten%C3%AD%20o%20UNIX&url=https%3A//nappex.github.io/myblog/FreeBSD-links-to-read&hashtags=freebsd,beginner,unix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/FreeBSD-links-to-read" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Zaj%C3%ADmav%C3%A9%20%C4%8Dten%C3%AD%20o%20UNIX&amp;body=https%3A//nappex.github.io/myblog/FreeBSD-links-to-read" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -227,10 +155,10 @@ git push origin master
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/grub-fix" title="Jak vyřešit problémy pomocí zavaděče GRUB">Jak vyřešit problémy pomocí zavaděče GRUB</a></li>
+<li><a href="https://nappex.github.io/myblog/basics-networks-devices" title="Introduction to network devices">Introduction to network devices</a></li>
+<li><a href="https://nappex.github.io/myblog/workflow-automation" title="Automate your workflow with shell script">Automate your workflow with shell script</a></li>
 <li><a href="https://nappex.github.io/myblog/command-line-moves" title="Use your command line more effectively">Use your command line more effectively</a></li>
 <li><a href="https://nappex.github.io/myblog/zsh-bash-diffs" title="Differences between zsh and bash">Differences between zsh and bash</a></li>
-<li><a href="https://nappex.github.io/myblog/FreeBSD-links-to-read" title="Zajímavé čtení o UNIX">Zajímavé čtení o UNIX</a></li>
 <li><a href="https://nappex.github.io/myblog/useful-commands" title="Užitečné nástroje pro správu FreeBSD">Užitečné nástroje pro správu FreeBSD</a></li>
 </ul>
 <hr />
@@ -238,24 +166,26 @@ git push origin master
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/handle_recursion" title="Previous: Handle recursion">Handle recursion</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/grub-fix" title="Next: Jak vyřešit problémy pomocí zavaděče GRUB">Jak vyřešit problémy pomocí zavaděče GRUB</a> »</li>
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/useful-commands" title="Previous: Užitečné nástroje pro správu FreeBSD">Užitečné nástroje pro správu FreeBSD</a></li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2021-11-22T00:00:00+01:00">Mon 22 November 2021</time>
+            <time itemprop="dateCreated" datetime="2022-05-30T00:00:00+02:00">Mon 30 May 2022</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://nappex.github.io/myblog/categories#linux-ref">Linux</a>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#bsd-freebsd-ref">BSD, FreeBSD</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
                 <li><a href="https://nappex.github.io/myblog/tags#beginner-ref">beginner
                     <span class="superscript">9</span>
 </a></li>
-                <li><a href="https://nappex.github.io/myblog/tags#linux-ref">linux
-                    <span class="superscript">4</span>
+                <li><a href="https://nappex.github.io/myblog/tags#freebsd-ref">FreeBSD
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#unix-ref">unix
+                    <span class="superscript">1</span>
 </a></li>
             </ul>
 <h4>Contact</h4>
