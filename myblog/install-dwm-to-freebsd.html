@@ -94,6 +94,7 @@
 <li><a href="#priprava">Příprava</a><ul>
 <li><a href="#instalace-git">Instalace&nbsp;git</a></li>
 <li><a href="#instalace-xorg">Instalace&nbsp;xorg</a></li>
+<li><a href="#instalace-zavislosti-pro-dwm">Instalace závislostí pro&nbsp;dwm</a></li>
 </ul>
 </li>
 <li><a href="#instalace-suckless-tools-dwm-dmenu-st">Instalace suckless tools - dwm, dmenu, st</a><ul>
@@ -121,7 +122,7 @@ stáhnout zdrojové kódu projektu dwm pomocí příkazu <code>git clone</code>.
 Zdrojové kódy lze stáhnout i jako <code>.tar</code> soubory, ovšem při různých změnách
 konfiguračních souborů se tyto změny lépe spravují pomocí <code>git</code> hned od začátku.
 To je čistě můj laický názor, který se může v budoucnu&nbsp;změnit.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install git</span>
+<div class="highlight"><pre><span></span><code>$ sudo pkg install git
 </code></pre></div>
 
 <h2 id="instalace-xorg">Instalace xorg<a class="headerlink" href="#instalace-xorg" title="Permanent link">&para;</a></h2>
@@ -142,7 +143,7 @@ Bohužel v tuto chvíli nejsem schopen s jistotou
 <code>xorg</code> v tomto návodu je, že budete
 mít nějaké balíčky navíc, což není hrůza, ale do budoucna
 je dobré mít věci pod kontrolou a chci tuto část přepracovat, aby byla&nbsp;přesná.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install xorg</span>
+<div class="highlight"><pre><span></span><code>$ sudo pkg install xorg
 </code></pre></div>
 
 <p>Instalace <code>xorg</code> je součástí oficiální
@@ -151,46 +152,53 @@ kde naleznete další uvedené&nbsp;kroky.</p>
 <p>Pokud <code>xorg</code> instalujete na počítač, kde historicky už <code>xorg</code> instalován
 byl, je lepší resetovat konfigurační soubory
 v domovském adresáři daného&nbsp;uživatele.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># mv /etc/X11/xorg.conf ~/xorg.conf.etc</span>
-<span class="c1"># mv /usr/local/etc/X11/xorg.conf ~/xorg.conf.localetc</span>
+<div class="highlight"><pre><span></span><code>$ mv /etc/X11/xorg.conf ~/xorg.conf.etc
+$ mv /usr/local/etc/X11/xorg.conf ~/xorg.conf.localetc
 </code></pre></div>
 
 <p>Dále je dobré přidat uživatale do skupiny <code>wheel</code> nebo <code>video</code>
 kvůli 3D&nbsp;akceleraci.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># pw groupmod video -m jru || pw groupmod wheel -m jru</span>
+<div class="highlight"><pre><span></span><code>$ pw groupmod video -m jru <span class="o">||</span> pw groupmod wheel -m jru
 </code></pre></div>
 
 <p>V tuto chvíli si můžete zapnout defaultní window manager <code>TWM</code>,
 který byl nainstalován také, pomocí&nbsp;příkazu:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># startx</span>
+<div class="highlight"><pre><span></span><code>$ startx
 </code></pre></div>
 
 <p>Pokud chcete <code>TWM</code> window manager vypnout napište do terminálu <code>exit</code></p>
 <p>### Nastavení&nbsp;xorg</p>
 <p>Tato kapitola se&nbsp;dodělává.</p>
+<h2 id="instalace-zavislosti-pro-dwm">Instalace závislostí pro dwm<a class="headerlink" href="#instalace-zavislosti-pro-dwm" title="Permanent link">&para;</a></h2>
+<p>NEODZKOUŠENO</p>
+<div class="highlight"><pre><span></span><code>$ pkg install git xorg-server xorg-fonts-truetype gcr devel/glib20 <span class="se">\</span>
+xorg-fonts-type1 p5-X11-Xlib p5-PkgConfig xauth xrandr xinit libXft xrdb webkit2-gtk3 <span class="se">\</span>
+feh xf86-input-mouse xf86-input-keyboard linux-c7-libpng
+</code></pre></div>
+
 <h1 id="instalace-suckless-tools-dwm-dmenu-st">Instalace suckless tools - dwm, dmenu, st<a class="headerlink" href="#instalace-suckless-tools-dwm-dmenu-st" title="Permanent link">&para;</a></h1>
 <p>Podobný článek jako je tento je například <a href="https://horodistea.wordpress.com/2020/02/06/compiling-suckless-tools-on-freebsd/">zde</a></p>
 <p>Nejdříve si uděláme složku, kde jednotlivé budeme mít uloženy zdrojáky
 jednotlivých&nbsp;nástrojů.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~</span>
-<span class="c1"># mkdir .suckless_dwm</span>
-<span class="c1"># cd .suckless_dwm</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~
+$ mkdir .suckless_dwm
+$ <span class="nb">cd</span> .suckless_dwm
 </code></pre></div>
 
 <p>Následně stáhneme všechny zdrojové kódy pomocí <code>git clone</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># git clone https://git.suckless.org/dwm</span>
-<span class="c1"># git clone https://git.suckless.org/dmenu</span>
-<span class="c1"># git clone https://git.suckless.org/st</span>
+<div class="highlight"><pre><span></span><code>$ git clone https://git.suckless.org/dwm
+$ git clone https://git.suckless.org/dmenu
+$ git clone https://git.suckless.org/st
 </code></pre></div>
 
 <h2 id="instalace-dwm">Instalace dwm<a class="headerlink" href="#instalace-dwm" title="Permanent link">&para;</a></h2>
 <p>K instalaci jsem použil <a href="https://forums.freebsd.org/threads/solved-setting-up-dwm-in-freebsd.81729/">vlákno</a> z FreeBSD&nbsp;fóra.</p>
 <p>Přesuneme se do složky se zdrojovým kódem <code>dwm</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dwm</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/dwm
 </code></pre></div>
 
 <p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/dwm/config.mk</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/dwm/config.mk`</span>
+<div class="highlight"><pre><span></span><code>$ vim <span class="sb">`</span>~/.suckless_dwm/dwm/config.mk<span class="sb">`</span>
 </code></pre></div>
 
 <p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
@@ -200,9 +208,9 @@ jednotlivých&nbsp;nástrojů.</p>
 </code></pre></div>
 
 <p>Nakonec provedeme samotnou&nbsp;instalaci</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dwm</span>
-<span class="c1"># make</span>
-<span class="c1"># sudo make clean install</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/dwm
+$ make
+$ sudo make clean install
 </code></pre></div>
 
 <p>Zde bych rád vysvětlit posloupnost jednotlivých příkazů, které nemusí
@@ -216,11 +224,11 @@ Ale pro jistotu je vždy lepší udělat tento&nbsp;mezikrok.</p>
 <p><code>make clean install</code> - už přímo instaluje požadované věci do systému. <code>clean</code>
 většinou odstraní soubory o kterých se ví, že nahradí při instalaci&nbsp;novými.</p>
 <p>Posledním bodem je vytvoření souboru <code>.xinitrc</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># echo &quot;exec dwm&quot; &gt;&gt; ~/.xinitrc</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;exec dwm&quot;</span> &gt;&gt; ~/.xinitrc
 </code></pre></div>
 
 <p>nebo celou&nbsp;cestu</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># echo &quot;exec /usr/local/bin/dwm&quot; &gt;&gt; ~/.xinitrc</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">echo</span> <span class="s2">&quot;exec /usr/local/bin/dwm&quot;</span> &gt;&gt; ~/.xinitrc
 </code></pre></div>
 
 <p>Teď když zadáme příkaz <code>startx</code>, tak se nám už místo defaultního <code>TWM</code>
@@ -228,11 +236,11 @@ spustí <code>dwm</code>.</p>
 <h2 id="instalace-dmenu">Instalace dmenu<a class="headerlink" href="#instalace-dmenu" title="Permanent link">&para;</a></h2>
 <p>Instalace je skoro totožná jako v případě <code>dwm</code>.</p>
 <p>Přesuneme se do složky se zdrojovým kódem <code>dmenu</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/dmenu
 </code></pre></div>
 
 <p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/dmenu/config.mk</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/dmenu/config.mk`</span>
+<div class="highlight"><pre><span></span><code>$ vim <span class="sb">`</span>~/.suckless_dwm/dmenu/config.mk<span class="sb">`</span>
 </code></pre></div>
 
 <p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
@@ -242,19 +250,19 @@ spustí <code>dwm</code>.</p>
 </code></pre></div>
 
 <p>Nakonec provedeme samotnou&nbsp;instalaci</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
-<span class="c1"># make</span>
-<span class="c1"># sudo make clean install</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/dmenu
+$ make
+$ sudo make clean install
 </code></pre></div>
 
 <h2 id="instalace-st">Instalace st<a class="headerlink" href="#instalace-st" title="Permanent link">&para;</a></h2>
 <p>Instalace je skoro totožná jako v případě <code>dwm</code> a <code>dmenu</code>.</p>
 <p>Přesuneme se do složky se zdrojovým kódem <code>st</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/st</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/st
 </code></pre></div>
 
 <p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/st/config.mk</code></p>
-<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/st/config.mk`</span>
+<div class="highlight"><pre><span></span><code>$ vim <span class="sb">`</span>~/.suckless_dwm/st/config.mk<span class="sb">`</span>
 </code></pre></div>
 
 <p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
@@ -271,9 +279,9 @@ a jeho hodnotu změň&nbsp;na:</p>
 </code></pre></div>
 
 <p>Nakonec provedeme samotnou&nbsp;instalaci</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
-<span class="c1"># make</span>
-<span class="c1"># sudo make clean install</span>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~/.suckless_dwm/dmenu
+$ make
+$ sudo make clean install
 </code></pre></div>
 
 <p>Zde byste měli dostat chybu něco&nbsp;jako:</p>
@@ -285,7 +293,7 @@ Error: exec<span class="o">(</span>tic<span class="o">)</span> file not found
 <p>Tímto problémem se zabývá toto <a href="https://forums.freebsd.org/threads/st-terminal-convert-terminfo-to-termcap.75326/">vlákno</a>, které jsem v zásadě použil
 i pro vyřešení tohoto&nbsp;problému.</p>
 <p>Musíme nainstalovat <code>ncurses</code>, čímž získáme <code>tic</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install ncurses</span>
+<div class="highlight"><pre><span></span><code>$ sudo pkg install ncurses
 </code></pre></div>
 
 <p>Instalace by měla automaticky nalézt i závislost <code>term-db</code></p>
