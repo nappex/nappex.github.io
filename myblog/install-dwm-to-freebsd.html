@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="advanced, freebsd, unix, dwm, unix, freebsd, " />
+
+<meta property="og:title" content="Instalace suckless dwm na FreeBSD "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/install-dwm-to-freebsd" />
+<meta property="og:description" content="Jak nainstalovat window manager dwm suckless na FreeBSD" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2022-07-01T00:00:00+02:00" />
+<meta name="twitter:title" content="Instalace suckless dwm na FreeBSD ">
+<meta name="twitter:description" content="Jak nainstalovat window manager dwm suckless na FreeBSD">
+
+        <title>Instalace suckless dwm na FreeBSD  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/install-dwm-to-freebsd">
+                Instalace suckless dwm na&nbsp;FreeBSD
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#uvod">Úvod</a></li>
+<li><a href="#priprava">Příprava</a><ul>
+<li><a href="#instalace-git">Instalace&nbsp;git</a></li>
+<li><a href="#instalace-xorg">Instalace&nbsp;xorg</a></li>
+</ul>
+</li>
+<li><a href="#instalace-suckless-tools-dwm-dmenu-st">Instalace suckless tools - dwm, dmenu, st</a><ul>
+<li><a href="#instalace-dwm">Instalace&nbsp;dwm</a></li>
+<li><a href="#instalace-dmenu">Instalace&nbsp;dmenu</a></li>
+<li><a href="#instalace-st">Instalace&nbsp;st</a></li>
+</ul>
+</li>
+<li><a href="#jak-pouzivat-dwm">Jak používat&nbsp;dwm</a></li>
+</ul>
+</div>
+<h1 id="uvod">Úvod<a class="headerlink" href="#uvod" title="Permanent link">&para;</a></h1>
+<p>Tento článek je stále pod vývojem. Ne všechny body jsou mi zcela jasné.
+Nicméně, už nyní zde najdete postup, který je možno úspěšně použít a bude
+vše&nbsp;fungovat.</p>
+<p>Později bych rád doplnil i instalaci přes porty, ale nemám je ještě dostatečně
+zvládnuty a pro začátek si vystačíme s instalalcí předkompilovaných balíčků.
+Pokročilejší zvládnou instalaci pomocí portů i bez tohoto&nbsp;návodu.</p>
+<p>Anglická verze <a href="">zde</a> nebo na konci článku.
+English version <a href="">here</a> or at bottom of this&nbsp;article.</p>
+<h1 id="priprava">Příprava<a class="headerlink" href="#priprava" title="Permanent link">&para;</a></h1>
+<h2 id="instalace-git">Instalace git<a class="headerlink" href="#instalace-git" title="Permanent link">&para;</a></h2>
+<p>Program <code>git</code> budeme potřebovat abychom byli schopni
+stáhnout zdrojové kódu projektu dwm pomocí příkazu <code>git clone</code>.
+Zdrojové kódy lze stáhnout i jako <code>.tar</code> soubory, ovšem při různých změnách
+konfiguračních souborů se tyto změny lépe spravují pomocí <code>git</code> hned od začátku.
+To je čistě můj laický názor, který se může v budoucnu&nbsp;změnit.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install git</span>
+</code></pre></div>
+
+<h2 id="instalace-xorg">Instalace xorg<a class="headerlink" href="#instalace-xorg" title="Permanent link">&para;</a></h2>
+<p>Program <code>xorg</code> je open source X Window System, který poskytuje
+grafické prostředí pro uživatele. Funguje na komunikaci
+mezi XServer a XClient, kde XClient posílá požadavky typu, potřebuji
+vykreslit takové okno apod. <code>Xorg</code> neurčuje, jak co má vypadat, umístění
+jednotlivých prvků jako tlačítka nebo způsob pohybu jendotlivých oken.
+Tohle celé nechává na window managerech, jako je např. dwm
+nebo na robustnějších desktop prostředích jako je <span class="caps">GNOME</span> nebo <span class="caps">KDE</span>.
+Desktop prostředí už obsahuje i celé sady aplikací,
+které jsou vytvořené přímo na dané prostředí.
+U malých sítí nebo jednotlivých počítačích je většinou Xserver a XClient
+na jednom&nbsp;počítači.</p>
+<p>Níže uvedený příkaz nainstaluje i věci, které nejsou pro <code>dwm</code> nutné.
+Bohužel v tuto chvíli nejsem schopen s jistotou
+říct, které balíčky jsou nutné a které nikoliv. Daní za instalaci celého
+<code>xorg</code> v tomto návodu je, že budete
+mít nějaké balíčky navíc, což není hrůza, ale do budoucna
+je dobré mít věci pod kontrolou a chci tuto část přepracovat, aby byla&nbsp;přesná.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install xorg</span>
+</code></pre></div>
+
+<p>Instalace <code>xorg</code> je součástí oficiální
+<a href="https://docs.freebsd.org/en/books/handbook/x11/">Handbook pro FreeBSD</a>,
+kde naleznete další uvedené&nbsp;kroky.</p>
+<p>Pokud <code>xorg</code> instalujete na počítač, kde historicky už <code>xorg</code> instalován
+byl, je lepší resetovat konfigurační soubory
+v domovském adresáři daného&nbsp;uživatele.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># mv /etc/X11/xorg.conf ~/xorg.conf.etc</span>
+<span class="c1"># mv /usr/local/etc/X11/xorg.conf ~/xorg.conf.localetc</span>
+</code></pre></div>
+
+<p>Dále je dobré přidat uživatale do skupiny <code>wheel</code> nebo <code>video</code>
+kvůli 3D&nbsp;akceleraci.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># pw groupmod video -m jru || pw groupmod wheel -m jru</span>
+</code></pre></div>
+
+<p>V tuto chvíli si můžete zapnout defaultní window manager <code>TWM</code>,
+který byl nainstalován také, pomocí&nbsp;příkazu:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># startx</span>
+</code></pre></div>
+
+<p>Pokud chcete <code>TWM</code> window manager vypnout napište do terminálu <code>exit</code></p>
+<p>### Nastavení&nbsp;xorg</p>
+<p>Tato kapitola se&nbsp;dodělává.</p>
+<h1 id="instalace-suckless-tools-dwm-dmenu-st">Instalace suckless tools - dwm, dmenu, st<a class="headerlink" href="#instalace-suckless-tools-dwm-dmenu-st" title="Permanent link">&para;</a></h1>
+<p>Podobný článek jako je tento je například <a href="https://horodistea.wordpress.com/2020/02/06/compiling-suckless-tools-on-freebsd/">zde</a></p>
+<p>Nejdříve si uděláme složku, kde jednotlivé budeme mít uloženy zdrojáky
+jednotlivých&nbsp;nástrojů.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~</span>
+<span class="c1"># mkdir .suckless_dwm</span>
+<span class="c1"># cd .suckless_dwm</span>
+</code></pre></div>
+
+<p>Následně stáhneme všechny zdrojové kódy pomocí <code>git clone</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># git clone https://git.suckless.org/dwm</span>
+<span class="c1"># git clone https://git.suckless.org/dmenu</span>
+<span class="c1"># git clone https://git.suckless.org/st</span>
+</code></pre></div>
+
+<h2 id="instalace-dwm">Instalace dwm<a class="headerlink" href="#instalace-dwm" title="Permanent link">&para;</a></h2>
+<p>K instalaci jsem použil <a href="https://forums.freebsd.org/threads/solved-setting-up-dwm-in-freebsd.81729/">vlákno</a> z FreeBSD&nbsp;fóra.</p>
+<p>Přesuneme se do složky se zdrojovým kódem <code>dwm</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dwm</span>
+</code></pre></div>
+
+<p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/dwm/config.mk</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/dwm/config.mk`</span>
+</code></pre></div>
+
+<p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
+<div class="highlight"><pre><span></span><code><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">include</span><span class="w">             </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="w"></span>
+<span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">lib</span><span class="w">                 </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">lib</span><span class="w"></span>
+<span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w"></span>
+</code></pre></div>
+
+<p>Nakonec provedeme samotnou&nbsp;instalaci</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dwm</span>
+<span class="c1"># make</span>
+<span class="c1"># sudo make clean install</span>
+</code></pre></div>
+
+<p>Zde bych rád vysvětlit posloupnost jednotlivých příkazů, které nemusí
+být začátečníkovi, který nemá zkušenost s kompilací hned zřejmé.
+Vycházím z tohoto <a href="https://stackoverflow.com/questions/10961439/why-always-configure-make-make-install-as-3-separate-steps">vlákna na stackoverflow</a>.</p>
+<p>První <code>make</code> je ve skutečnosti zkratka pro <code>make all</code> a udělá build systému,
+který se může skládat z několika různých kroků, které si autor nastaví.
+Většinou tento příkaz není potřeba dělat, protože projekty jsou většinou
+vytvořeny tak, že fungují správně i když zadáte samotný příkaz <code>make install</code>.
+Ale pro jistotu je vždy lepší udělat tento&nbsp;mezikrok.</p>
+<p><code>make clean install</code> - už přímo instaluje požadované věci do systému. <code>clean</code>
+většinou odstraní soubory o kterých se ví, že nahradí při instalaci&nbsp;novými.</p>
+<p>Posledním bodem je vytvoření souboru <code>.xinitrc</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># echo &quot;exec dwm&quot; &gt;&gt; ~/.xinitrc</span>
+</code></pre></div>
+
+<p>nebo celou&nbsp;cestu</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># echo &quot;exec /usr/local/bin/dwm&quot; &gt;&gt; ~/.xinitrc</span>
+</code></pre></div>
+
+<p>Teď když zadáme příkaz <code>startx</code>, tak se nám už místo defaultního <code>TWM</code>
+spustí <code>dwm</code>.</p>
+<h2 id="instalace-dmenu">Instalace dmenu<a class="headerlink" href="#instalace-dmenu" title="Permanent link">&para;</a></h2>
+<p>Instalace je skoro totožná jako v případě <code>dwm</code>.</p>
+<p>Přesuneme se do složky se zdrojovým kódem <code>dmenu</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
+</code></pre></div>
+
+<p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/dmenu/config.mk</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/dmenu/config.mk`</span>
+</code></pre></div>
+
+<p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
+<div class="highlight"><pre><span></span><code><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">include</span><span class="w">             </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="w"></span>
+<span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">lib</span><span class="w">                 </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">lib</span><span class="w"></span>
+<span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w"></span>
+</code></pre></div>
+
+<p>Nakonec provedeme samotnou&nbsp;instalaci</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
+<span class="c1"># make</span>
+<span class="c1"># sudo make clean install</span>
+</code></pre></div>
+
+<h2 id="instalace-st">Instalace st<a class="headerlink" href="#instalace-st" title="Permanent link">&para;</a></h2>
+<p>Instalace je skoro totožná jako v případě <code>dwm</code> a <code>dmenu</code>.</p>
+<p>Přesuneme se do složky se zdrojovým kódem <code>st</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/st</span>
+</code></pre></div>
+
+<p>Poté musíme upravit konfigurační soubour <code>~/.suckless_dwm/st/config.mk</code></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># vim `~/.suckless_dwm/st/config.mk`</span>
+</code></pre></div>
+
+<p>V souboru <code>config.mk</code> je nutno provést tyto&nbsp;změny:</p>
+<div class="highlight"><pre><span></span><code><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">include</span><span class="w">             </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11INC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="w"></span>
+<span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">X11R6</span><span class="o">/</span><span class="n">lib</span><span class="w">                 </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">X11LIB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">lib</span><span class="w"></span>
+
+<span class="n">tímto</span><span class="w"> </span><span class="err">ř</span><span class="n">adkem</span><span class="w"> </span><span class="n">si</span><span class="w"> </span><span class="n">nejsem</span><span class="w"> </span><span class="n">jistý</span><span class="w"></span>
+<span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w">    </span><span class="o">-&gt;</span><span class="w">  </span><span class="n">FREETYPEINC</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="kr">local</span><span class="o">/</span><span class="n">include</span><span class="o">/</span><span class="n">freetype2</span><span class="w"></span>
+</code></pre></div>
+
+<p>Namísto <code>FREETYPEINC</code> zkus najít <code>PKG_CONFIG</code>
+a jeho hodnotu změň&nbsp;na:</p>
+<div class="highlight"><pre><span></span><code>PKG_CONFIG=/usr/local/bin/pkg-config
+</code></pre></div>
+
+<p>Nakonec provedeme samotnou&nbsp;instalaci</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># cd ~/.suckless_dwm/dmenu</span>
+<span class="c1"># make</span>
+<span class="c1"># sudo make clean install</span>
+</code></pre></div>
+
+<p>Zde byste měli dostat chybu něco&nbsp;jako:</p>
+<div class="highlight"><pre><span></span><code>tic -sx st.info
+
+Error: exec<span class="o">(</span>tic<span class="o">)</span> file not found
+</code></pre></div>
+
+<p>Tímto problémem se zabývá toto <a href="https://forums.freebsd.org/threads/st-terminal-convert-terminfo-to-termcap.75326/">vlákno</a>, které jsem v zásadě použil
+i pro vyřešení tohoto&nbsp;problému.</p>
+<p>Musíme nainstalovat <code>ncurses</code>, čímž získáme <code>tic</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># sudo pkg install ncurses</span>
+</code></pre></div>
+
+<p>Instalace by měla automaticky nalézt i závislost <code>term-db</code></p>
+<p>Po těchto krocích už instalace projde bez errorů. Nicméně je nutné ji
+ještě prozkoumat a&nbsp;zanalyzovat.</p>
+<h1 id="jak-pouzivat-dwm">Jak používat dwm<a class="headerlink" href="#jak-pouzivat-dwm" title="Permanent link">&para;</a></h1>
+<ul>
+<li>https://dwm.suckless.org/tutorial/</li>
+<li>https://srobb.net/dwm.html</li>
+</ul>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Instalace%20suckless%20dwm%20na%C2%A0FreeBSD&url=https%3A//nappex.github.io/myblog/install-dwm-to-freebsd&hashtags=advanced,freebsd,unix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/install-dwm-to-freebsd" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Instalace%20suckless%20dwm%20na%C2%A0FreeBSD&amp;body=https%3A//nappex.github.io/myblog/install-dwm-to-freebsd" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/git-special-syntax" title="Git - advanced syntax">Git - advanced syntax</a></li>
+<li><a href="https://nappex.github.io/myblog/grub-fix" title="Jak vyřešit problémy pomocí zavaděče GRUB">Jak vyřešit problémy pomocí zavaděče GRUB</a></li>
+<li><a href="https://nappex.github.io/myblog/useful-BSD-tools" title="Užitečné nástroje pro správu FreeBSD">Užitečné nástroje pro správu FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/freebsd-drivers" title="Seznam ovladačů pro FreeBSD">Seznam ovladačů pro FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/licenses-explanation" title="Základní přehled licencí">Základní přehled licencí</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/licenses-explanation" title="Previous: Základní přehled licencí">Základní přehled licencí</a></li>
+                <li class="next-article"><a href="https://nappex.github.io/myblog/freebsd-drivers" title="Next: Seznam ovladačů pro FreeBSD">Seznam ovladačů pro FreeBSD</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2022-07-01T00:00:00+02:00">Fri 01 July 2022</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#dwm-unix-freebsd-ref">dwm, unix, freebsd</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#advanced-ref">advanced
+                    <span class="superscript">5</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#freebsd-ref">freebsd
+                    <span class="superscript">4</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#unix-ref">unix
+                    <span class="superscript">6</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
