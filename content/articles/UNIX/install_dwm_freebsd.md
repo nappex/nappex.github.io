@@ -35,7 +35,7 @@ konfiguračních souborů se tyto změny lépe spravují pomocí `git` hned od z
 To je čistě můj laický názor, který se může v budoucnu změnit.
 
 ```sh
-# sudo pkg install git
+$ sudo pkg install git
 ```
 
 ## Instalace xorg
@@ -60,7 +60,7 @@ mít nějaké balíčky navíc, což není hrůza, ale do budoucna
 je dobré mít věci pod kontrolou a chci tuto část přepracovat, aby byla přesná.
 
 ```sh
-# sudo pkg install xorg
+$ sudo pkg install xorg
 ```
 
 Instalace `xorg` je součástí oficiální
@@ -72,22 +72,22 @@ byl, je lepší resetovat konfigurační soubory
 v domovském adresáři daného uživatele.
 
 ```sh
-# mv /etc/X11/xorg.conf ~/xorg.conf.etc
-# mv /usr/local/etc/X11/xorg.conf ~/xorg.conf.localetc
+$ mv /etc/X11/xorg.conf ~/xorg.conf.etc
+$ mv /usr/local/etc/X11/xorg.conf ~/xorg.conf.localetc
 ```
 
 Dále je dobré přidat uživatale do skupiny `wheel` nebo `video`
 kvůli 3D akceleraci.
 
 ```sh
-# pw groupmod video -m jru || pw groupmod wheel -m jru
+$ pw groupmod video -m jru || pw groupmod wheel -m jru
 ```
 
 V tuto chvíli si můžete zapnout defaultní window manager `TWM`,
 který byl nainstalován také, pomocí příkazu:
 
 ```sh
-# startx
+$ startx
 ```
  Pokud chcete `TWM` window manager vypnout napište do terminálu `exit`
 
@@ -95,6 +95,16 @@ který byl nainstalován také, pomocí příkazu:
  ### Nastavení xorg
 
 Tato kapitola se dodělává.
+
+## Instalace závislostí pro dwm
+
+NEODZKOUŠENO
+
+```sh
+$ pkg install git xorg-server xorg-fonts-truetype gcr devel/glib20 \
+xorg-fonts-type1 p5-X11-Xlib p5-PkgConfig xauth xrandr xinit libXft xrdb webkit2-gtk3 \
+feh xf86-input-mouse xf86-input-keyboard linux-c7-libpng
+```
 
 # Instalace suckless tools - dwm, dmenu, st
 
@@ -104,17 +114,17 @@ Nejdříve si uděláme složku, kde jednotlivé budeme mít uloženy zdrojáky
 jednotlivých nástrojů.
 
 ```sh
-# cd ~
-# mkdir .suckless_dwm
-# cd .suckless_dwm
+$ cd ~
+$ mkdir .suckless_dwm
+$ cd .suckless_dwm
 ```
 
 Následně stáhneme všechny zdrojové kódy pomocí `git clone`
 
 ```sh
-# git clone https://git.suckless.org/dwm
-# git clone https://git.suckless.org/dmenu
-# git clone https://git.suckless.org/st
+$ git clone https://git.suckless.org/dwm
+$ git clone https://git.suckless.org/dmenu
+$ git clone https://git.suckless.org/st
 ```
 
 ## Instalace dwm
@@ -124,13 +134,13 @@ K instalaci jsem použil [vlákno](https://forums.freebsd.org/threads/solved-set
 Přesuneme se do složky se zdrojovým kódem `dwm`
 
 ```sh
-# cd ~/.suckless_dwm/dwm
+$ cd ~/.suckless_dwm/dwm
 ```
 
 Poté musíme upravit konfigurační soubour `~/.suckless_dwm/dwm/config.mk`
 
 ```sh
-# vim `~/.suckless_dwm/dwm/config.mk`
+$ vim `~/.suckless_dwm/dwm/config.mk`
 ```
 
 V souboru `config.mk` je nutno provést tyto změny:
@@ -144,9 +154,9 @@ FREETYPEINC = /usr/include/freetype2    ->  FREETYPEINC = /usr/local/include/fre
 Nakonec provedeme samotnou instalaci
 
 ```sh
-# cd ~/.suckless_dwm/dwm
-# make
-# sudo make clean install
+$ cd ~/.suckless_dwm/dwm
+$ make
+$ sudo make clean install
 ```
 
 Zde bych rád vysvětlit posloupnost jednotlivých příkazů, které nemusí
@@ -166,13 +176,13 @@ většinou odstraní soubory o kterých se ví, že nahradí při instalaci nov�
 Posledním bodem je vytvoření souboru `.xinitrc`
 
 ```sh
-# echo "exec dwm" >> ~/.xinitrc
+$ echo "exec dwm" >> ~/.xinitrc
 ```
 
 nebo celou cestu
 
 ```sh
-# echo "exec /usr/local/bin/dwm" >> ~/.xinitrc
+$ echo "exec /usr/local/bin/dwm" >> ~/.xinitrc
 ```
 
 Teď když zadáme příkaz `startx`, tak se nám už místo defaultního `TWM`
@@ -185,13 +195,13 @@ Instalace je skoro totožná jako v případě `dwm`.
 Přesuneme se do složky se zdrojovým kódem `dmenu`
 
 ```sh
-# cd ~/.suckless_dwm/dmenu
+$ cd ~/.suckless_dwm/dmenu
 ```
 
 Poté musíme upravit konfigurační soubour `~/.suckless_dwm/dmenu/config.mk`
 
 ```sh
-# vim `~/.suckless_dwm/dmenu/config.mk`
+$ vim `~/.suckless_dwm/dmenu/config.mk`
 ```
 
 V souboru `config.mk` je nutno provést tyto změny:
@@ -205,9 +215,9 @@ FREETYPEINC = /usr/include/freetype2    ->  FREETYPEINC = /usr/local/include/fre
 Nakonec provedeme samotnou instalaci
 
 ```sh
-# cd ~/.suckless_dwm/dmenu
-# make
-# sudo make clean install
+$ cd ~/.suckless_dwm/dmenu
+$ make
+$ sudo make clean install
 ```
 
 ## Instalace st
@@ -217,13 +227,13 @@ Instalace je skoro totožná jako v případě `dwm` a `dmenu`.
 Přesuneme se do složky se zdrojovým kódem `st`
 
 ```sh
-# cd ~/.suckless_dwm/st
+$ cd ~/.suckless_dwm/st
 ```
 
 Poté musíme upravit konfigurační soubour `~/.suckless_dwm/st/config.mk`
 
 ```sh
-# vim `~/.suckless_dwm/st/config.mk`
+$ vim `~/.suckless_dwm/st/config.mk`
 ```
 
 V souboru `config.mk` je nutno provést tyto změny:
@@ -246,9 +256,9 @@ PKG_CONFIG=/usr/local/bin/pkg-config
 Nakonec provedeme samotnou instalaci
 
 ```sh
-# cd ~/.suckless_dwm/dmenu
-# make
-# sudo make clean install
+$ cd ~/.suckless_dwm/dmenu
+$ make
+$ sudo make clean install
 ```
 
 Zde byste měli dostat chybu něco jako:
@@ -265,7 +275,7 @@ i pro vyřešení tohoto problému.
 Musíme nainstalovat `ncurses`, čímž získáme `tic`.
 
 ```sh
-# sudo pkg install ncurses
+$ sudo pkg install ncurses
 ```
 
 Instalace by měla automaticky nalézt i závislost `term-db`
