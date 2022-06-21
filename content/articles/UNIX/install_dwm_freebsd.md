@@ -1,6 +1,6 @@
 ---
 Title: Instalace suckless dwm na FreeBSD
-Date: 2022-07-01
+Date: 2022-06-01
 Category: dwm, unix, freebsd
 Tags: advanced, freebsd, unix
 Slug: install-dwm-to-freebsd

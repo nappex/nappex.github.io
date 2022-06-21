@@ -1,6 +1,6 @@
 ---
 Title: Základní přehled licencí
-Date: 2022-07-01
+Date: 2022-06-01
 Category: license, unix, foss
 Tags: advanced, freebsd, unix
 Slug: licenses-explanation

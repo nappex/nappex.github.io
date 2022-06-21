@@ -1,6 +1,6 @@
 ---
 Title: Stránky ke čtení
-Date: 2022-07-02
+Date: 2022-06-02
 Category: blogs, books
 Tags: blogs, books
 Slug: reading-I-like
