@@ -25,6 +25,8 @@ Status: published
 
 * [Luke Smith Webpage](https://lukesmith.xyz/)
 
+* [Osobní blog - Jozef Mlích](https://blog.mlich.cz/)
+
 * [Perez de Castro blog - author of signify](https://perezdecastro.org/)
 
 * [Cat-v](https://doc.cat-v.org/)
