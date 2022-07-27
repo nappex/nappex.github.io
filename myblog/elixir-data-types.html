@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="elixir, basics, beginners, Elixir, Basics, " />
+
+<meta property="og:title" content="Datové typy v programovacím jazyce Elixir "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/elixir-data-types" />
+<meta property="og:description" content="Elixir data types" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2022-07-10T00:00:00+02:00" />
+<meta name="twitter:title" content="Datové typy v programovacím jazyce Elixir ">
+<meta name="twitter:description" content="Elixir data types">
+
+        <title>Datové typy v programovacím jazyce Elixir  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/elixir-data-types">
+                Datové typy v programovacím jazyce&nbsp;Elixir
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#integery">Integery</a></li>
+<li><a href="#floaty">Floaty</a></li>
+<li><a href="#atomy">Atomy</a><ul>
+<li><a href="#aliasy">Aliasy</a></li>
+</ul>
+</li>
+<li><a href="#booleans">Booleans</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#binaries">Binaries</a></li>
+<li><a href="#bitstrings">Bitstrings</a></li>
+<li><a href="#charlists">Charlists</a></li>
+<li><a href="#ranges">Ranges</a></li>
+<li><a href="#collection-types">Collection types</a><ul>
+<li><a href="#tuples">Tuples</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#keyword-lists">Keyword&nbsp;lists</a></li>
+<li><a href="#maps">Maps</a></li>
+<li><a href="#sets">Sets</a></li>
+<li><a href="#binariesbitstrings">Binaries/Bitstrings</a></li>
+<li><a href="#structs">Structs</a></li>
+</ul>
+</li>
+<li><a href="#sigils">Sigils</a><ul>
+<li><a href="#regex">regex</a></li>
+</ul>
+</li>
+<li><a href="#specialni-datove-typy">Speciální datové typy</a><ul>
+<li><a href="#port">Port</a></li>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#pid">pid</a></li>
+</ul>
+</li>
+<li><a href="#zdroje">Zdroje</a></li>
+</ul>
+</div>
+<h1 id="integery">Integery<a class="headerlink" href="#integery" title="Permanent link">&para;</a></h1>
+<p>Jedná se o klasická celá čísla (&hellip;, -2, -1, 0, 1, 2, &hellip;). Elixir programátora neomezuje jak velké či malé celé číslo musí být. V Elixiru lze pracovat i s opravdu velkými čísly, pokud k tomu je dostatek paměti <span class="caps">RAM</span>. Opravdu obrovská čísla mají vliv na čas výpočtu, ale pro lidské vnímání je tohle zpomalení naprosto&nbsp;zanedbatelné.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1234567891213138138138138138138138138</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">123214214214921472183210381203210302183</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2137219321893821932819382198321939218312397219372179397213792173921</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1232197321382109380213802183021830218302183021830218321083</span><span class="w"></span>
+
+<span class="mi">400594646853992190082002975842596344158763794851066296804174448360912820881791327328524271478958550937298500527252420039610916215518991162308707268780961153676937620548947878554152771938882068481522</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pro lepší čitelnost čísel můžeme číslice oddělit podrtžítkem do skupin dle naší libosti, jak to umožňuje například i jazyk Python. Na čas kompilace to nemá žádný vliv. Elixir tyto podtržítka zcela&nbsp;ignoruje.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">34_677_455_123</span><span class="w"></span>
+<span class="mi">34677455123</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">34_4_1</span><span class="w"></span>
+<span class="mi">3441</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pro práci s celými čísly jazyk Elixir poskytuje celou řadu užitečných funkcí nebo Guards. Některé funkce jako <code>div</code> nebo <code>abs</code> nalezneme jako součást jádra jazyka Elixir <a href="https://hexdocs.pm/elixir/1.13.4/Kernel.html">Kernel</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">div</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="mi">3</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rem</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="mi">1</span><span class="w"></span>
+</code></pre></div>
+
+<p>Další užitečné funkce jako například <code>digits</code> a <code>pow</code>, nebo tzv. Guards jako <code>is_even</code> nalezneme v modulu <a href="https://hexdocs.pm/elixir/1.13.4/Integer.html">Integer</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">Integer</span><span class="o">.</span><span class="n">digits</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">Integer</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="mi">9</span><span class="w"></span>
+</code></pre></div>
+
+<p>Datový typ <em>Integer</em> můžeme mezi sebou sčítat, odečítat, násobit či dělit. V případě dělení je výsledek automaticky převeden na datový typ <em>Float</em>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="mi">7</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="o">-</span><span class="mi">2</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="mi">12</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="mf">4.0</span><span class="w"></span>
+</code></pre></div>
+
+<p>Integers lze také pomocí předpony v zápisu zapsat v různých číselných soustavách binární (dvojková), oktální (osmičková), hexadecimální&nbsp;(šestnáctková).</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mb">0b0111</span><span class="w"></span>
+<span class="mi">7</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mo">0o345</span><span class="w"></span>
+<span class="mi">229</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mh">0xFF</span><span class="w"></span>
+<span class="mi">255</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="floaty">Floaty<a class="headerlink" href="#floaty" title="Permanent link">&para;</a></h1>
+<p>Jedná se o čísla s plovoucí čárkou, zjednodušeně desetinná čísla.
+Jedná se o čísla, která mají alespoň jedno desetinné místo - desetinná čísla. I když se tyto čísla někdy nazývají s také jako čísla s plouvoucí čárkou, v jazyce Elixir je zapisujeme pomocí&nbsp;tečky.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">float_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">8.34</span><span class="w"></span>
+<span class="mf">8.34</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">float_number</span><span class="w"></span>
+<span class="nc">Term</span><span class="w"></span>
+<span class="w">  </span><span class="mf">8.34</span><span class="w"></span>
+<span class="nc">Data</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+<span class="w">  </span><span class="nc">Float</span><span class="w"></span>
+<span class="nc">Reference</span><span class="w"> </span><span class="n">modules</span><span class="w"></span>
+<span class="w">  </span><span class="nc">Float</span><span class="w"></span>
+<span class="nc">Implemented</span><span class="w"> </span><span class="n">protocols</span><span class="w"></span>
+<span class="w">  </span><span class="nc">IEx.Info</span><span class="p">,</span><span class="w"> </span><span class="nc">Inspect</span><span class="p">,</span><span class="w"> </span><span class="nc">List.Chars</span><span class="p">,</span><span class="w"> </span><span class="nc">String.Chars</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">IEx.Info</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="mf">8.34</span><span class="p">)</span><span class="w"></span>
+<span class="p">[{</span><span class="s2">&quot;Data type&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Float&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;Reference modules&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Float&quot;</span><span class="p">}]</span><span class="w"></span>
+</code></pre></div>
+
+<p>Jazyk Elixir používá formát 64-bit s dvojitou přesností.
+They use the 64-bit double precision floating-point&nbsp;format.</p>
+<p>Práce s čísly typu Float je velmi podobná jako s&nbsp;Integers.</p>
+<p>Například podtržítka fungují&nbsp;stejně.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">23_34.43_222</span><span class="w"></span>
+<span class="mf">2334.43222</span><span class="w"></span>
+</code></pre></div>
+
+<p>Užitečné funkce pro práci s Floats nalezneme opět v Kernelu a v modulu <a href="https://hexdocs.pm/elixir/1.13.4/Float.html">Float</a></p>
+<p>Elixir má podporu vědeckého zápisu čísel typu float pomocí exponentu <code>e</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">12345.999e-2</span><span class="w"></span>
+<span class="mf">123.45999</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pozor si musíme dát na jemnou nepřesnost při výpočtech desetinné části. Z tohoto důvodu se nedoporučuje tento typ používat na výpočty financí. S tímto problémem se ovšem potýká více programovacích jazyků. Pro přesné výpočty se používají speciální datové type jako například v C# čísla s pevnou desetinnou tečkou (fixed-point&nbsp;number).</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3.34</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">3.35</span><span class="w"></span>
+<span class="o">-</span><span class="mf">0.010000000000000231</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="atomy">Atomy<a class="headerlink" href="#atomy" title="Permanent link">&para;</a></h1>
+<p>Atom je konstanta, jehož jméno je zároveň jeho hodnotou. Jedná se o stejnou filosofii s jakou Symboly fungují v jazyce&nbsp;Ruby.</p>
+<p>Upřímně, dlouho mi trvalo než jsem atomy dostal trochu více pod kůži. Moc jsem nechápal jejich přidanou hodnotu a proč nestačí mít pouze datový typ string. Všude přítomné vysvětlení, že se jedná o konstantu, jejíž jméno je zároveň její hodnotou, mi úplně nepomohlo. Naštěstí jsem nalezl docela užítečný článek[1], který se o této problematice rozepisuje trochu více. Je dobré si uvědomit, že atomy jsou konstanty s unikátní hodnotou. Často se tak setkáte s atomy <code>:ok</code> nebo <code>:error</code>, které vyjadřují stav nějaké operace. Tento případ přímo vybízí k použití něčeho jako jsou&nbsp;atomy.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:pes</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:kocka</span><span class="w"></span>
+<span class="no">false</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:pes</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:pes</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+</code></pre></div>
+
+<p>Díky své unikátnosti se atomy hodí také jako klíče to struktur typu klíč - hodnota. Atomy se v jazyce Elixir ukládájí do jakési tabulky atomů, kde jsou uloženy po celou dobu. Jakmile jednou vytvoříte atom, tak už jej nevymažete.  Jejich vnitřní hodnotu nelze změnit.[4] Není tedy dobrý nápad vytvářet velký počet atomů. Navíc, maximální počet atomů je v Erlang virtual machine omezen na 1,048,576.[1] Když uložíte do více proměnných stejný atom, tak tento atom existuje ve skutečnosti pouze jednou a je všemi proměnnými sdílen.
+Atomy jsou unikátní napříč celým runtime prostředím, což je velmi užitečná vlastnost pro komunikaci napříč procesy. Atomy jsou vlastně takové globální proměnné. Naproti tomu většina dat v Elixiru včetně stringů zůstavají alokována v daném procesu. Další výhodou oproti stringům je fakt, že práce s atomy je daleko efektivnější. Atomy jsou vnitřně ukládány jako integers, takže například porovnávání atomů je daleko rychlejší než mezi stringy.[1][4] Z výše uvedených důvodů se nedoporučuje zacházet s atomy s jako dynamickými daty, napříkladukládat vstupy uživatelů v datovém typu atom. Posledním faktem je, že Erlang <span class="caps">VM</span> má postavený celý koncept paralelizace na&nbsp;atomech.[1]</p>
+<p>Zápis atomu začíná dvojtečkou <code>:</code>, za kterou musí následovat&nbsp;text.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:foo</span><span class="w"></span>
+<span class="ss">:foo</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">i</span><span class="p">(</span><span class="ss">:foo</span><span class="p">)</span><span class="w"></span>
+<span class="nc">Term</span><span class="w"></span>
+<span class="w">  </span><span class="ss">:foo</span><span class="w"></span>
+<span class="nc">Data</span><span class="w"> </span><span class="n">type</span><span class="w"></span>
+<span class="w">  </span><span class="nc">Atom</span><span class="w"></span>
+<span class="nc">Reference</span><span class="w"> </span><span class="n">modules</span><span class="w"></span>
+<span class="w">  </span><span class="nc">Atom</span><span class="w"></span>
+<span class="nc">Implemented</span><span class="w"> </span><span class="n">protocols</span><span class="w"></span>
+<span class="w">  </span><span class="nc">IEx.Info</span><span class="p">,</span><span class="w"> </span><span class="nc">Inspect</span><span class="p">,</span><span class="w"> </span><span class="nc">List.Chars</span><span class="p">,</span><span class="w"> </span><span class="nc">String.Chars</span><span class="w"></span>
+</code></pre></div>
+
+<p>Všechny atomy musí začínat po dvojtečce písmenem, v opačném případě dostaneme <code>SyntaxError</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="mi">4</span><span class="n">ee</span><span class="w"></span>
+<span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="nc">SyntaxError</span><span class="p">)</span><span class="w"> </span><span class="n">iex</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="n">unexpected</span><span class="w"> </span><span class="ss">token</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;:&quot;</span><span class="w"> </span><span class="p">(</span><span class="n">column</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="nc">U</span><span class="o">+</span><span class="mi">003</span><span class="nc">A</span><span class="p">)</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="p">:</span><span class="na">@as</span><span class="w"></span>
+<span class="o">**</span><span class="w"> </span><span class="p">(</span><span class="nc">SyntaxError</span><span class="p">)</span><span class="w"> </span><span class="n">iex</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="n">syntax</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="ss">before</span><span class="p">:</span><span class="w"> </span><span class="n">as</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:e43</span><span class="w"></span>
+<span class="ss">:e43</span><span class="w"></span>
+</code></pre></div>
+
+<p>Více slovní atomy oddělujeme&nbsp;podtržítkem.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:atom_z_vice_slov</span><span class="w"></span>
+<span class="ss">:atom_z_vice_slov</span><span class="w"></span>
+</code></pre></div>
+
+<p>Pokud bychom potřebovali z nějakého důvodu použít mezery mezi slovy, musíme celý název atomu obalit do&nbsp;uvozovek.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:&quot;atom z vice slov&quot;</span><span class="w"></span>
+<span class="ss">:&quot;atom z vice slov&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<p>Ke kontrole, zda je daný objekt atom či nikoliv můžeme použít vestavěnou funkci <code>is_atom</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="ss">:foo</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="w"> </span><span class="ss">:foo</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="w"></span>
+<span class="no">false</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="w"> </span><span class="mi">444</span><span class="w"></span>
+<span class="no">false</span><span class="w"></span>
+</code></pre></div>
+
+<p>Existuje i několik výjimek u kterých se nemusí psát počáteční dvojtečka. Jedná se o <code>true</code>, <code>false</code>, <code>nil</code>, aliasy a názvy modulů a to i když ještě vůbec nejsou&nbsp;deklarované.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="nc">Ahoj</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="no">true</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="no">nil</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="nc">MojeAplikace.MujModul</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+</code></pre></div>
+
+<p>Atomy se používají také jako odkazy do Erlangových knihoven resp.&nbsp;modulů.[3]</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="ss">:crypto</span><span class="o">.</span><span class="n">strong_rand_bytes</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="p">&lt;&lt;</span><span class="mi">23</span><span class="p">,</span><span class="w"> </span><span class="mi">104</span><span class="p">,</span><span class="w"> </span><span class="mi">108</span><span class="p">&gt;&gt;</span><span class="w"></span>
+</code></pre></div>
+
+<h2 id="aliasy">Aliasy<a class="headerlink" href="#aliasy" title="Permanent link">&para;</a></h2>
+<p>Aliasy jsou atomy, ale začínají místo dvojtečky <code>:</code> velkým&nbsp;písmenem.</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="o">&gt;</span><span class="w"> </span><span class="n">is_atom</span><span class="p">(</span><span class="nc">Ahoj</span><span class="p">)</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="booleans">Booleans<a class="headerlink" href="#booleans" title="Permanent link">&para;</a></h1>
+<p>Programovací jazyk Elixir podporuje dvě boolean hodnoty a to <code>true</code> a <code>false</code>. Ve skutečnosti jsou tyto booleanovské hodnoty připojeny k atomům <code>:true</code> a <code>:false</code> a hodnoty <code>true</code> a <code>false</code> jsou čistě jen pseudonymy pro atomy.
+Všechny boolean hodnoty jsou atomy a ne všechny atomy jsou&nbsp;booleany.[1]</p>
+<div class="highlight"><pre><span></span><code><span class="n">iex</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="no">true</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">:true</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+<span class="n">iex</span><span class="p">(</span><span class="mi">28</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="no">true</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="ss">:true</span><span class="w"></span>
+<span class="no">true</span><span class="w"></span>
+</code></pre></div>
+
+<h1 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h1>
+<h1 id="binaries">Binaries<a class="headerlink" href="#binaries" title="Permanent link">&para;</a></h1>
+<h1 id="bitstrings">Bitstrings<a class="headerlink" href="#bitstrings" title="Permanent link">&para;</a></h1>
+<h1 id="charlists">Charlists<a class="headerlink" href="#charlists" title="Permanent link">&para;</a></h1>
+<h1 id="ranges">Ranges<a class="headerlink" href="#ranges" title="Permanent link">&para;</a></h1>
+<h1 id="collection-types">Collection types<a class="headerlink" href="#collection-types" title="Permanent link">&para;</a></h1>
+<h2 id="tuples">Tuples<a class="headerlink" href="#tuples" title="Permanent link">&para;</a></h2>
+<h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h2>
+<h2 id="keyword-lists">Keyword lists<a class="headerlink" href="#keyword-lists" title="Permanent link">&para;</a></h2>
+<h2 id="maps">Maps<a class="headerlink" href="#maps" title="Permanent link">&para;</a></h2>
+<h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">&para;</a></h2>
+<h2 id="binariesbitstrings">Binaries/Bitstrings<a class="headerlink" href="#binariesbitstrings" title="Permanent link">&para;</a></h2>
+<h2 id="structs">Structs<a class="headerlink" href="#structs" title="Permanent link">&para;</a></h2>
+<h1 id="sigils">Sigils<a class="headerlink" href="#sigils" title="Permanent link">&para;</a></h1>
+<h2 id="regex">regex<a class="headerlink" href="#regex" title="Permanent link">&para;</a></h2>
+<h1 id="specialni-datove-typy">Speciální datové typy<a class="headerlink" href="#specialni-datove-typy" title="Permanent link">&para;</a></h1>
+<h2 id="port">Port<a class="headerlink" href="#port" title="Permanent link">&para;</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h2 id="pid">pid<a class="headerlink" href="#pid" title="Permanent link">&para;</a></h2>
+<h1 id="zdroje">Zdroje<a class="headerlink" href="#zdroje" title="Permanent link">&para;</a></h1>
+<p>[1] <a href="https://inquisitivedeveloper.com/lwm-elixir-6/">inquisitivedeveloper</a>
+[2] <a href="https://elixir-lang.org/getting-started/basic-types.html">elixir-lang.org</a>
+[3] <a href="https://elixirschool.com/en/lessons/basics/basics">elixirschool.com</a>
+[4] <a href="https://exercism.org/tracks/elixir/concepts/">exercism</a>
+[5] <a href="https://www.tutorialspoint.com/elixir/elixir_data_types.htm">tutorialspoint</a></p>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Datov%C3%A9%20typy%20v%20programovac%C3%ADm%20jazyce%C2%A0Elixir&url=https%3A//nappex.github.io/myblog/elixir-data-types&hashtags=elixir,basics,beginners" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/elixir-data-types" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Datov%C3%A9%20typy%20v%20programovac%C3%ADm%20jazyce%C2%A0Elixir&amp;body=https%3A//nappex.github.io/myblog/elixir-data-types" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/exercises" title="Cvičení k programování">Cvičení k programování</a></li>
+<li><a href="https://nappex.github.io/myblog/python-scraping-introduction" title="Introduction to web scraping with python">Introduction to web scraping with python</a></li>
+<li><a href="https://nappex.github.io/myblog/blog-publish-me" title="How I’ve published my pelican blog">How I’ve published my pelican blog</a></li>
+<li><a href="https://nappex.github.io/myblog/python-scheme" title="Python project structure">Python project structure</a></li>
+<li><a href="https://nappex.github.io/myblog/handle_recursion" title="Handle recursion">Handle recursion</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/alternative-mobile-phones" title="Previous: Alternative mobiles OS and hardware to main stream">Alternative mobiles OS and hardware to main stream</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2022-07-10T00:00:00+02:00">Sun 10 July 2022</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#elixir-basics-ref">Elixir, Basics</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#basics-ref">basics
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#beginners-ref">beginners
+                    <span class="superscript">10</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#elixir-ref">elixir
+                    <span class="superscript">1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
