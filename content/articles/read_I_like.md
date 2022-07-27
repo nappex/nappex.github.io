@@ -30,3 +30,9 @@ Status: published
 * [Perez de Castro blog - author of signify](https://perezdecastro.org/)
 
 * [Cat-v](https://doc.cat-v.org/)
+
+* [unixsheikh](https://unixsheikh.com/)
+
+* [tilde.town user - ~kzimmermann](https://tilde.town/~kzimmermann/articles/alpine_linux_desktop.html)
+
+* [tilde.town](https://tilde.town/)
