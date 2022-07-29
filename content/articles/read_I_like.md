@@ -36,3 +36,11 @@ Status: published
 * [tilde.town user - ~kzimmermann](https://tilde.town/~kzimmermann/articles/alpine_linux_desktop.html)
 
 * [tilde.town](https://tilde.town/)
+
+# BSD and Linux
+
+* [ifconfig bugs linux](https://web.archive.org/web/20200813101037/https://blog.farhan.codes/2018/06/25/linux-maintains-bugs-the-real-reason-ifconfig-on-linux-is-deprecated/)
+
+* [Why migrate from linux to BSD](https://www.unixsheikh.com/articles/why-you-should-migrate-everything-from-linux-to-bsd.html)
+
+* [systemd review](https://unixsheikh.com/articles/the-real-motivation-behind-systemd.html)
