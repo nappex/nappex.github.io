@@ -37,6 +37,8 @@ Status: published
 
 * [tilde.town](https://tilde.town/)
 
+* [https://foo.zone/](https://foo.zone/)
+
 # BSD and Linux
 
 * [ifconfig bugs linux](https://web.archive.org/web/20200813101037/https://blog.farhan.codes/2018/06/25/linux-maintains-bugs-the-real-reason-ifconfig-on-linux-is-deprecated/)
