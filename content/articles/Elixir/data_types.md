@@ -1,6 +1,6 @@
 ---
 Title: Datové typy v programovacím jazyce Elixir
-Date: 2022-07-10
+Date: 2022-07-20
 Category: Elixir, Basics
 Tags: elixir, basics, beginners
 Slug: elixir-data-types
