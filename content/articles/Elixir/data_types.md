@@ -159,10 +159,12 @@ Všechny atomy musí začínat po dvojtečce písmenem, v opačném případě d
 ```elixir
 iex> :4ee
 ** (SyntaxError) iex:25:1: unexpected token: ":" (column 1, code point U+003A)
-iex> :@as
-** (SyntaxError) iex:55:3: syntax error before: as
+iex> :@ab
+** (SyntaxError) iex:55:3: syntax error before: ab
 iex> :e43
 :e43
+iex> :foo@bar
+:foo@bar
 ```
 
 Více slovní atomy oddělujeme podtržítkem.
