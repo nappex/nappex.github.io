@@ -253,7 +253,7 @@ iex> Atom.to_string(MujAlias)
 :nejaky_dlouhy_atom
 ```
 
-Atom lze použít i bez toho, aniž bychom jej dopředu nastavili. Výchozí hodnota takového Aliasu je nastavena jako atom :"Elixir.DalsiAlias".
+Alias lze použít i bez toho, aniž bychom jej dopředu nastavili. Výchozí hodnota takového Aliasu je nastavena jako atom :"Elixir.DalsiAlias". Voláme-li námi definovaný modul hledá se pod cestou Elixir.NasModul. Vytvoříme-li soubor zviratka.ex a nadefinujeme si s v něm moduly `Pes` a `Kočka`, po kompilaci budeme mít k dispozici `Elixir.Pes.beam` a `Elixir.Kočka.beam`.
 
 ```elixir
 iex> DalsiAlias
@@ -265,6 +265,23 @@ false
 iex> DalsiAlias == :"Elixir.DalsiAlias"
 true
 ```
+
+Definice aliasu lze zapsat takě bez nově definovaného jména (odkazu).
+
+```elixir
+alias MyApp.Account.User
+# je totéž jako bychom napsali
+alias MyApp.Account.User, as: User
+```
+
+Aliasy se používají především v případech, kde potřebujeme vytvořit odkaz například na modul pod kratším či vhodnějším jménem. V příkladu níže si pomocí aliasu můžeme nastavit zkrácené jméno (odkaz) `I` pro modul Integer, nově tak můžeme modul Integer volat pouze pomocí odkazu `I`.
+
+```elixir
+alias Integer, as: I
+I.pow(2, 3)
+```
+
+Dobrým zvykem je definovat aliasy na začátku modulu.
 
 # Booleans
 
