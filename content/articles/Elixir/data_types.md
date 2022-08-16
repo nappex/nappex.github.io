@@ -198,20 +198,35 @@ iex> is_atom 444
 false
 ```
 
-Existuje i několik výjimek u kterých se nemusí psát počáteční dvojtečka. Jedná se o `true`, `false`, `nil`, aliasy a názvy modulů a to i když ještě vůbec nejsou deklarované.
+Existuje i několik výjimek u kterých se nemusí psát počáteční dvojtečka. Jedná se o `true`, `false` a `nil`. V těchto případech vůbec nezáleží jestli před ně dvojtečku napíšeme či nikoliv a pořád se jedná o jeden stejný objekt.
+
+```elixir
+iex> is_atom(true)
+true
+iex> is_atom(:true)
+true
+iex> true == :true
+true
+iex> is_atom(nil)
+true
+ies> nil == :nil
+true
+```
+
+Další objekty u kterých bychom nejspíš nečekali, že budou atomy jsou aliasy a názvy modulů včetně modulů, které nejsou deklarované. U těchto atomů se totiž dvojtečky vůbec nepíšou. Neplatí pro ně jako v předchozím příkladu, že v případě objektu s dvojtečkou a bez se jedná o totéž.
 
 ```elixir
 iex> is_atom(Ahoj)
 true
-iex> is_atom(true)
+iex> is_atom(:Ahoj)
 true
-iex> is_atom(nil)
-true
+iex(8)> Ahoj == :Ahoj
+false
 iex> is_atom(MojeAplikace.MujModul)
 true
 ```
 
-Atomy se používají také jako odkazy do Erlangových knihoven resp. modulů.[3]
+Atomy se používají také v názvu Erlangových modulů při odkazování na konkrétní funkci.[3] Erlangové moduly na rozdíl od elixírových začínají malým písmenem, nejedná se u nich tedy o `Aliasy`. Volání erlanogových modulů je v Elixíru vyřešeno pomocí `Atomů`. Více to bude možná jasnější z kapitoly [Aliasy](##aliasy).
 
 ```elixir
 iex> :crypto.strong_rand_bytes 3
@@ -227,9 +242,34 @@ iex> is_atom(Ahoj)
 true
 ```
 
+Aliasy se v Elixíru nastavují následujícím způsobem.
+
+```elixir
+iex> alias :nejaky_dlouhy_atom, as: MujAlias
+:nejaky_dlouhy_atom
+iex> MujAlias
+:nejaky_dlouhy_atom
+iex> Atom.to_string(MujAlias)
+:nejaky_dlouhy_atom
+```
+
+Atom lze použít i bez toho, aniž bychom jej dopředu nastavili. Výchozí hodnota takového Aliasu je nastavena jako atom :"Elixir.DalsiAlias".
+
+```elixir
+iex> DalsiAlias
+DalsiAlias
+iex> Atom.to_string(DalsiAlias)
+"Elixir.DalsiAlias"
+iex> DalsiAlias == "Elixir.DalsiAlias"
+false
+iex> DalsiAlias == :"Elixir.DalsiAlias"
+true
+```
+
 # Booleans
 
-Programovací jazyk Elixir podporuje dvě boolean hodnoty a to `true` a `false`. Ve skutečnosti jsou tyto booleanovské hodnoty připojeny k atomům `:true` a `:false` a hodnoty `true` a `false` jsou čistě jen pseudonymy pro atomy.
+Programovací jazyk Elixir podporuje dvě boolean hodnoty a to `true` a `false`. Velmi zajímavé je, že ve skutečnosti jsou tyto booleanovské hodnoty pouze odkazy k atomům `:true` a `:false`. Hodnoty `true` a `false` jsou tedy čistě jen pseudonymy pro atomy.
+
 Všechny boolean hodnoty jsou atomy a ne všechny atomy jsou booleany.[1]
 
 ```elixir
