@@ -60,7 +60,12 @@ iex> 12 / 3
 4.0
 ```
 
-Integers lze také pomocí předpony v zápisu zapsat v různých číselných soustavách binární (dvojková), oktální (osmičková), hexadecimální (šestnáctková).
+Integers lze také pomocí předpony v zápisu zapsat v různých číselných soustavách:
+
+* binární (dvojková),
+* oktální (osmičková),
+* hexadecimální (šestnáctková).
+
 ```elixir
 iex> 0b0111
 7
