@@ -174,11 +174,15 @@ iex> :atom_z_vice_slov
 :atom_z_vice_slov
 ```
 
-Pokud bychom potřebovali z nějakého důvodu použít mezery mezi slovy, musíme celý název atomu obalit do uvozovek.
+Pokud potřebujeme použít zakázané znaky na začátku atomu (čísla, @, !, ? ...) nebo použít mezer mezi slovy, musíme celý název atomu obalit do uvozovek.
 
 ```elixir
 iex> :"atom z vice slov"
 :"atom z vice slov"
+iex> :"12"
+:"12"
+iex> :"@ab"
+:"@ab"
 ```
 
 Ke kontrole, zda je daný objekt atom či nikoliv můžeme použít vestavěnou funkci `is_atom`.
