@@ -83,6 +83,8 @@ Unfortunately this problem is not just technical but especially political.
 
 * [Pinephone](https://www.pine64.org/pinephone/)
 
+* [Volla](https://volla.online/en/index.html), [Volla model 22 - Kickstarter](https://www.kickstarter.com/projects/volla/volla-phone-22-the-beauty-of-freedom)
+
 * [pro1x](https://www.fxtec.com/pro1x)
 
 * [Fairphone](https://www.fairphone.com/en/)
