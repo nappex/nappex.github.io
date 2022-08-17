@@ -68,7 +68,9 @@ Unfortunately this problem is not just technical but especially political.
 
 * [SailfishOS](https://sailfishos.org/)
 
-* [NemoMobile](https://nemomobile.net/) - czech contributor
+* [NemoMobile](https://nemomobile.net/) - czech contributor, is based on the Android Open Source Project (AOSP)
+
+* [VollaOS](https://volla.online/en/index.html) - uses Nemo Mobile above
 
 * [NixOS](https://mobile.nixos.org/)
 
