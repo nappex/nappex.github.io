@@ -68,7 +68,9 @@ Unfortunately this problem is not just technical but especially political.
 
 * [SailfishOS](https://sailfishos.org/)
 
-* [NemoMobile](https://nemomobile.net/) - czech contributor
+* [NemoMobile](https://nemomobile.net/) - czech contributor, is based on the Android Open Source Project (AOSP)
+
+* [VollaOS](https://volla.online/en/index.html) - uses Nemo Mobile above
 
 * [NixOS](https://mobile.nixos.org/)
 
@@ -82,6 +84,8 @@ Unfortunately this problem is not just technical but especially political.
 * [Librem - Purism](https://puri.sm/)
 
 * [Pinephone](https://www.pine64.org/pinephone/)
+
+* [Volla](https://volla.online/en/index.html), [Volla model 22 - Kickstarter](https://www.kickstarter.com/projects/volla/volla-phone-22-the-beauty-of-freedom)
 
 * [pro1x](https://www.fxtec.com/pro1x)
 
