@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="hardware, beginner, OpenBSD, Hardware, OpenBSD, " />
+
+<meta property="og:title" content="Prepare BIOS of Acer V5 431 to UNIX "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/OCC-Acer-V5-431-BIOS" />
+<meta property="og:description" content="Enter to BIOS of Acer V5 431 with windows 10" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2023-01-27T00:00:00+01:00" />
+<meta name="twitter:title" content="Prepare BIOS of Acer V5 431 to UNIX ">
+<meta name="twitter:description" content="Enter to BIOS of Acer V5 431 with windows 10">
+
+        <title>Prepare BIOS of Acer V5 431 to UNIX  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/OCC-Acer-V5-431-BIOS">
+                Prepare <span class="caps">BIOS</span> of Acer V5 431 to <span class="caps">UNIX</span>
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#problem-to-boot-bsd-or-linux-with-acer-v5-431">Problem to boot <span class="caps">BSD</span> or Linux with Acer V5&nbsp;431</a></li>
+<li><a href="#i-can-not-enter-to-bios-on-acer-v5-431">I can not enter to <span class="caps">BIOS</span> on Acer V5 431</a><ul>
+<li><a href="#repair-invoking-boot-settings-and-boot-menu-at-start-up">Repair invoking boot settings and boot menu at start-up</a><ul>
+<li><a href="#update-bios-firmware">Update <span class="caps">BIOS</span>&nbsp;firmware</a></li>
+</ul>
+</li>
+<li><a href="#save-data-from-installed-windows-10">Save data from installed Windows 10</a><ul>
+<li><a href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5&nbsp;431)</a></li>
+<li><a href="#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data">Mount Harddisk with windows in Linux or <span class="caps">BSD</span> and copy the&nbsp;data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#next-step">Next&nbsp;step</a></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>One day when I&rsquo;ve been scrolling my mastodon wall to find some interesting people
+or articles about <em><span class="caps">BSD</span>, I&rsquo;ve found account <a href="@prahou@bsd.network">@prahou</a> and his <a href="https://triapul.cz/">blog</a>.
+There was a very nice article <a href="https://triapul.cz/automa/vyvjnb/">Old Computer Rescue - E4300</a>, that
+article inspired me to dust off 10 years old </em>Acer Aspire V5 431*. I&rsquo;ve wanted to buy some old hardware
+as <span class="caps">DELL</span> or Lenovo to install FreeBSD or OpenBSD, but I could not decide to right one. When I&rsquo; ve read
+the article and discovered <a href="https://occ.deadnet.se/"><span class="caps">OCC</span></a>, I supposed it would be realy a pity to not
+try old computer which lay down at home. Buying another old laptop would be pointless in my case.
+Acer is no silver bullet for sure, I definitely prefer <span class="caps">DELL</span>, Lenovo or <span class="caps">HP</span>, but Acer should be
+ suitable for my purposes at least for a&nbsp;while.</p>
+<p>Firstly I&rsquo;ve analyzed the laptop. I found out the laptop is running and there is installed very laggy windows&nbsp;10.</p>
+<h1 id="problem-to-boot-bsd-or-linux-with-acer-v5-431">Problem to boot <span class="caps">BSD</span> or Linux with Acer V5 431<a class="headerlink" href="#problem-to-boot-bsd-or-linux-with-acer-v5-431" title="Permanent link">&para;</a></h1>
+<p>I&rsquo;ve inserted <span class="caps">USB</span> with OpenBSD to find out if I am able to install it. So I&rsquo;ve turned on the
+laptop and pressing the button <em>F12</em> as much as possible to invoke boot menu, but nothing happened.
+Just Windows booted without any signs of boot menu or <span class="caps">USB</span>&nbsp;boot.</p>
+<h1 id="i-can-not-enter-to-bios-on-acer-v5-431">I can not enter to <span class="caps">BIOS</span> on Acer V5 431<a class="headerlink" href="#i-can-not-enter-to-bios-on-acer-v5-431" title="Permanent link">&para;</a></h1>
+<p><span class="caps">OK</span>, if I can&rsquo;t invoke a boot menu to choose option booting from <span class="caps">USB</span> I have to check <span class="caps">BIOS</span> settings.
+So I&rsquo;ve turned on the laptop again and pressing the button <em>F2</em> as much as possible to invoke <span class="caps">BIOS</span> settings
+but nothing happened again, just windows&nbsp;boot&hellip;</p>
+<p>Let&rsquo;s google it. I found out that there is a option to get to <span class="caps">BIOS</span> through the Windows&nbsp;settings.</p>
+<p>When I logged to windows I had to go to&nbsp;settings:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Windows</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kr">Recovery</span><span class="w"> </span><span class="err">–</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">start</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Restart</span><span class="w"> </span><span class="n">now</span><span class="p">...</span><span class="w"></span>
+</code></pre></div>
+
+<p>After restart, in the blue screen pick&nbsp;up:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Troubleshoot</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">UEFI</span><span class="w"> </span><span class="n">Firmware</span><span class="w"> </span><span class="n">Settings</span><span class="w"></span>
+</code></pre></div>
+
+<p>Finally I am in <span class="caps">BIOS</span>, <span class="caps">AAALELUA</span>. I found option to enable boot menu with <em>F12</em>, <span class="caps">OK</span> let switch to enable!
+Changes saved and exit the bios. Turn off, turn on &hellip; pressing <em>F12</em>&#8230;.blablabla&hellip; nothing&nbsp;happend.</p>
+<p>I replicated the whole process to get into <span class="caps">BIOS</span>. I analyzed <span class="caps">BIOS</span> options again to find out
+which option could help me to activate function of button F2 and F12 during start-up time of laptop.
+There was not any other option, unfortunately. My first idea was that Acer and Windows are entangled
+together to lock user in windows space and don&rsquo;t let anybody boot any other <span class="caps">OS</span>.</p>
+<p>I don&rsquo;t know why but I supposed that if I change <span class="caps">UEFI</span> <span class="caps">BIOS</span> mode to Legacy <span class="caps">BIOS</span>, everything will repair itself.
+I could not be far from the truth. After that change I could not boot windows any more and I could not enter to
+<span class="caps">BIOS</span> any more. Laptop sent me a message, you don&rsquo;t catch me bastard! There will be only Windows man, deal with it.
+On the other hand I was able to boot <span class="caps">BSD</span> or Linux with Legacy&nbsp;mode.</p>
+<p>Thanks to my inconvenience I made laptop where I can install or boot the <span class="caps">BSD</span> or the Linux,
+but I can not get data from windows and I can not get to <span class="caps">BIOS</span> or boot menu. Even though
+ I was able to boot <span class="caps">USB</span>, it was only because there wasn&rsquo;t other <span class="caps">OS</span> on <span class="caps">HDD</span> with first priority of boot.
+So even if I installed a new <span class="caps">OS</span> I would not be able to boot another <span class="caps">USB</span> anymore after installation, because of absence boot menu. I would have to remove <span class="caps">OS</span> to boot <span class="caps">USB</span>. The reason of <span class="caps">USB</span> boot is there is no other <span class="caps">OS</span> to boot in boot order.
+<span class="caps">BIOS</span> did not find windows to boot because efi boot is not able to boot in legacy&nbsp;mode.</p>
+<p>At this moment I realized I have to find solution to repair invoking boot menu and boot settings
+ regardless if I can boot Linux or <span class="caps">BSD</span> in Legacy <span class="caps">BIOS</span>.</p>
+<p>There are several ways what someone wants to do at this&nbsp;point:</p>
+<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="mi">1</span><span class="ss">)</span> <span class="nv">Repair</span> <span class="nv">invoking</span> <span class="nv">boot</span> <span class="nv">settings</span> <span class="nv">and</span> <span class="nv">boot</span> <span class="nv">menu</span> <span class="nv">at</span> <span class="nv">start</span><span class="o">-</span><span class="nv">up</span><span class="o">*</span>
+
+    <span class="nv">a</span><span class="ss">)</span> <span class="nv">Update</span> <span class="nv">BIOS</span> <span class="nv">firmware</span>
+
+    <span class="nv">or</span>
+
+    <span class="nv">b</span><span class="ss">)</span> <span class="nv">Reset</span> <span class="nv">BIOS</span> <span class="o">-</span> <span class="nv">I</span> <span class="nv">am</span> <span class="nv">not</span> <span class="nv">sure</span> <span class="k">if</span> <span class="nv">this</span> <span class="nv">option</span> <span class="nv">can</span> <span class="nv">repair</span> <span class="nv">it</span>...
+
+<span class="o">*</span><span class="mi">2</span><span class="ss">)</span> <span class="nv">Save</span> <span class="nv">data</span> <span class="nv">from</span> <span class="nv">installed</span> <span class="nv">Windows</span> <span class="mi">10</span>
+
+    <span class="nv">a</span><span class="ss">)</span> <span class="nv">Switch</span> <span class="nv">BIOS</span> <span class="nv">from</span> <span class="nv">Legacy</span> <span class="nv">mode</span> <span class="nv">back</span> <span class="nv">to</span> <span class="nv">UEFI</span> <span class="ss">(</span><span class="nv">Acer</span> <span class="nv">Aspire</span> <span class="nv">V5</span> <span class="mi">431</span><span class="ss">)</span>
+
+    <span class="nv">or</span>
+
+    <span class="nv">b</span><span class="ss">)</span> <span class="nv">Mount</span> <span class="nv">Harddisk</span> <span class="nv">with</span> <span class="nv">windows</span> <span class="nv">in</span> <span class="nv">Linux</span> <span class="nv">or</span> <span class="nv">BSD</span> <span class="nv">and</span> <span class="nv">copy</span> <span class="nv">the</span> <span class="nv">data</span>
+
+    <span class="nv">or</span>
+
+    <span class="nv">c</span><span class="ss">)</span> <span class="k">Connect</span> <span class="nv">HDD</span> <span class="nv">with</span> <span class="nv">windows</span> <span class="nv">to</span> <span class="nv">another</span> <span class="nv">PC</span> <span class="nv">with</span> <span class="nv">any</span> <span class="nv">OS</span>
+</code></pre></div>
+
+<h2 id="repair-invoking-boot-settings-and-boot-menu-at-start-up">Repair invoking boot settings and boot menu at start-up<a class="headerlink" href="#repair-invoking-boot-settings-and-boot-menu-at-start-up" title="Permanent link">&para;</a></h2>
+<h3 id="update-bios-firmware">Update <span class="caps">BIOS</span> firmware<a class="headerlink" href="#update-bios-firmware" title="Permanent link">&para;</a></h3>
+<p>I was not sure if updating will repair pressing F2 or F12 at start-up, but I guessed it&nbsp;could.</p>
+<p>The update of <span class="caps">BIOS</span> can caused brick of your computer, if you decide for update, then
+backup your data&nbsp;definitely.</p>
+<p>Especially Acer is known with bad reputation about quality of their updates or drivers.
+Experienced friend of mine was updating <span class="caps">BIOS</span> of Acer in past and he made a&nbsp;brick.</p>
+<p>When I <a href="#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data">backuped data</a> on laptop
+I downloaded latest official <span class="caps">BIOS</span>/Firmware ver. 2.18 from
+Acer <a href="https://www.acer.com/gb-en/support">support site</a>. Problem was how to install downloaded
+firmware when I can not boot a&nbsp;windows.</p>
+<p>There are several ways how could be&nbsp;done.</p>
+<p><em>1. Install from regular installation of windows after I</em>
+<a href="#switch-BIOS-from-Legacy-mode-back-to-UEFI-(Acer-Aspire-V5-431)">switch legacy to <span class="caps">UEFI</span> succesfully</a>
+This way was for me succesfull. When I updated the <span class="caps">BIOS</span> to the latest available version, the
+ buttons <em>F2</em> and <em>F12</em> started work by expected&nbsp;way.</p>
+<p><em>2. Windows recovery <span class="caps">USB</span></em>
+I was trying to install with command line which is accesible from windows recovery <span class="caps">USB</span>.
+Recovery <span class="caps">USB</span> was able to boot even if legacy mode was set.
+When you are in command line you have to find where your <span class="caps">USB</span> is connected. I mean if
+it is connected on D:, F: or other letter&hellip;
+You can try command <code>wmic logicaldisk get name</code> to list all connected disk.
+When you find the right letter of disk (your <span class="caps">USB</span>) just run file (.exe or .bat) to update
+ by write full path of file.
+Unfortunately, I&rsquo;ve got always errors even if I&rsquo;ve tried different versions of available <span class="caps">BIOS</span>&nbsp;firmwares.</p>
+<p><em>3. Boot installation files od update during startup</em>
+Unfortunately, same problem as command line desribed above.
+There is only different, that if you&rsquo;d like to make recovery <span class="caps">USB</span> of Win10 you need pc with Win10 and so on.
+It can be a challenge and time consuming to find <span class="caps">PC</span> with Win8 for example.
+But you can download any windows version as installation media from microsoft web site.
+There are Win 7, 8, 10&nbsp;&hellip;</p>
+<p>I tried recovery <span class="caps">USB</span> created from Win10 and installation <span class="caps">USB</span> was created from Win8 iso file.
+Neither version above helped to update <span class="caps">BIOS</span> from command&nbsp;line.</p>
+<p>I&rsquo;ve read advice on the internet that updating <span class="caps">BIOS</span> will reset its configuration to default
+ for sure and after that Legacy mode will switch back to <span class="caps">UEFI</span>, but I was not able to update
+ <span class="caps">BIOS</span> other way then from regular installation, so I had to switch back to <span class="caps">UEFI</span> by another&nbsp;way.</p>
+<h2 id="save-data-from-installed-windows-10">Save data from installed Windows 10<a class="headerlink" href="#save-data-from-installed-windows-10" title="Permanent link">&para;</a></h2>
+<h3 id="switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5 431)<a class="headerlink" href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431" title="Permanent link">&para;</a></h3>
+<p><em>1. Use recovery windows <span class="caps">USB</span> or windows installation <span class="caps">USB</span></em>
+Unfortunately, neither of these helped me, because I did not find in advanced setting the
+option <span class="caps">UEFI</span> Firmware Settings for going to <span class="caps">BIOS</span> as from regular installation of&nbsp;Windows.</p>
+<p><em>2. Reset <span class="caps">BIOS</span> (clear <span class="caps">CMOS</span>)</em>
+This task can make a brick from your laptop before you will do that I strongly advice you
+to <a href="(#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data)">backup your data</a>.</p>
+<p>I was searching how to reset <span class="caps">BIOS</span> by remove an internal battery of <span class="caps">BIOS</span>. Instead of removing
+battery I found an <a href="https://www.ifixit.com/Answers/View/227350/No+Access+to+ACER+ASPIRE+V5+471+Bios+(Operating+System+Not+found)">advice</a> to short two copper pins with shape of triangle under note G2101
+located on MotherBoard, see pictures&nbsp;below.</p>
+<p>First remove this cover on the back of the&nbsp;laptop.</p>
+<p><img alt="Plastic cover" src="https://nappex.github.io/myblog/images/remove_cover.jpg"></p>
+<p>If you have a <span class="caps">RAM</span> above the pins you have to remove the <span class="caps">RAM</span>.</p>
+<p>Then just short two pin below the G2101 for 20 - 30 second with for example steel tweezer.
+Finally disconnect cable leading under the case of laptop of left&nbsp;side.</p>
+<p><img alt="Cooper pins G2101" src="https://nappex.github.io/myblog/images/motherboard.jpg"></p>
+<p>Disconnected cable under the plastic case of&nbsp;laptop.</p>
+<p><img alt="Disconnected cable" src="https://nappex.github.io/myblog/images/remove_cable.jpg"></p>
+<p>Firstly I was little scaried about to short some contacts on motherboard and
+it sounds crazy and really dangerous to me. But this approach really work for me
+and it restart the <span class="caps">BIOS</span> back to default configuration. After this reset I was able to
+ boot installed windows 10&nbsp;again.</p>
+<h3 id="mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data">Mount Harddisk with windows in Linux or <span class="caps">BSD</span> and copy the data<a class="headerlink" href="#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data" title="Permanent link">&para;</a></h3>
+<p>Before I started do quite dangerous task as short circuit on motherboard or install <span class="caps">BIOS</span> firmware
+I copied all important data from disk without a need to take out the whole hard disk from&nbsp;laptop.</p>
+<p>I boot Artix with <span class="caps">GUI</span> and mount hard disk with&nbsp;windows.</p>
+<div class="highlight"><pre><span></span><code>$ mkdir /run/media/windows_data
+$ mount -t ntfs /dev/sda4 /run/media/windows_data
+</code></pre></div>
+
+<p>Instead of <code>/dev/sda4</code> put your device.
+Your data will find under <code>/run/media/windows_data</code>.</p>
+<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
+<p>After all if you have a problem that buttons F2 and F12 are not working at the start-up
+of laptop just update your <span class="caps">BIOS</span>.</p>
+<p>If you switch <span class="caps">BIOS</span> to Legacy by accident and you need to switch back to <span class="caps">UEFI</span> to boot windows
+just short two cooper pins for 20 - 30 second to reset your <span class="caps">BIOS</span>.</p>
+<h1 id="next-step">Next step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h1>
+<p>Next step will be installation of&nbsp;OpenBSD.</p>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Prepare%20BIOS%20of%20Acer%20V5%20431%20to%20UNIX&url=https%3A//nappex.github.io/myblog/OCC-Acer-V5-431-BIOS&hashtags=hardware,beginner,openbsd" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/OCC-Acer-V5-431-BIOS" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Prepare%20BIOS%20of%20Acer%20V5%20431%20to%20UNIX&amp;body=https%3A//nappex.github.io/myblog/OCC-Acer-V5-431-BIOS" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/choose-right-monitor" title="Jak vybrat monitor ?">Jak vybrat monitor ?</a></li>
+<li><a href="https://nappex.github.io/myblog/workflow-automation" title="Automate your workflow with shell script">Automate your workflow with shell script</a></li>
+<li><a href="https://nappex.github.io/myblog/command-line-moves" title="Use your command line more effectively">Use your command line more effectively</a></li>
+<li><a href="https://nappex.github.io/myblog/zsh-bash-diffs" title="Differences between zsh and bash">Differences between zsh and bash</a></li>
+<li><a href="https://nappex.github.io/myblog/useful-BSD-tools" title="Užitečné nástroje pro správu FreeBSD">Užitečné nástroje pro správu FreeBSD</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/elixir-data-types" title="Previous: Datové typy v programovacím jazyce Elixir">Datové typy v programovacím jazyce Elixir</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2023-01-27T00:00:00+01:00">Fri 27 January 2023</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#hardware-openbsd-ref">Hardware, OpenBSD</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#beginner-ref">beginner
+                    <span class="superscript">9</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#hardware-ref">hardware
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#openbsd-ref">OpenBSD
+                    <span class="superscript">1</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
