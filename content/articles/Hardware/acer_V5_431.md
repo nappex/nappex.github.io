@@ -115,7 +115,7 @@ firmware when I can not boot a windows.
 There are several ways how could be done.
 
 *1. Install from regular installation of windows after I*
-[switch legacy to UEFI succesfully](#switch-BIOS-from-Legacy-mode-back-to-UEFI-(Acer-Aspire-V5-431))
+[switch legacy to UEFI succesfully](#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431)
 This way was for me succesfull. When I updated the BIOS to the latest available version, the
  buttons *F2* and *F12* started work by expected way.
 
@@ -153,7 +153,7 @@ option UEFI Firmware Settings for going to BIOS as from regular installation of 
 
 *2. Reset BIOS (clear CMOS)*
 This task can make a brick from your laptop before you will do that I strongly advice you
-to [backup your data]((#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data)).
+to [backup your data](#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data).
 
 I was searching how to reset BIOS by remove an internal battery of BIOS. Instead of removing
 battery I found an [advice](https://www.ifixit.com/Answers/View/227350/No+Access+to+ACER+ASPIRE+V5+471+Bios+(Operating+System+Not+found)) to short two copper pins with shape of triangle under note G2101
@@ -162,18 +162,18 @@ located on MotherBoard, see pictures below.
 
 First remove this cover on the back of the laptop.
 
-![Plastic cover]({static}/images/remove_cover.jpg)
+![Plastic cover]({static}/images/remove_cover.JPG)
 
 If you have a RAM above the pins you have to remove the RAM.
 
 Then just short two pin below the G2101 for 20 - 30 second with for example steel tweezer.
 Finally disconnect cable leading under the case of laptop of left side.
 
-![Cooper pins G2101]({static}/images/motherboard.jpg)
+![Cooper pins G2101]({static}/images/motherboard.JPG)
 
 Disconnected cable under the plastic case of laptop.
 
-![Disconnected cable]({static}/images/remove_cable.jpg)
+![Disconnected cable]({static}/images/remove_cable.JPG)
 
 Firstly I was little scaried about to short some contacts on motherboard and
 it sounds crazy and really dangerous to me. But this approach really work for me
