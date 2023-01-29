@@ -41,15 +41,11 @@ Let's google it. I found out that there is a option to get to BIOS through the W
 
 When I logged to windows I had to go to settings:
 
-```
-Windows settings -> Recovery –> Advanced start-up -> Restart now...
-```
+> Windows settings -> Recovery –> Advanced start-up -> Restart now...
 
 After restart, in the blue screen pick up:
 
-```
-Troubleshoot -> Advanced options -> UEFI Firmware Settings
-```
+> Troubleshoot -> Advanced options -> UEFI Firmware Settings
 
 Finally I am in BIOS, AAALELUA. I found option to enable boot menu with *F12*, OK let switch to enable!
 Changes saved and exit the bios. Turn off, turn on ... pressing *F12*....blablabla... nothing happend.
@@ -75,25 +71,25 @@ At this moment I realized I have to find solution to repair invoking boot menu a
 
 There are several ways what someone wants to do at this point:
 
-    *1) Repair invoking boot settings and boot menu at start-up*
+1.v *Repair invoking boot settings and boot menu at start-up*
 
-        a) Update BIOS firmware
+> a. Update BIOS firmware
 
-        or
+or
 
-        b) Reset BIOS - I am not sure if this option can repair it...
+> b. Reset BIOS - I am not sure if this option can repair it...
 
-    *2) Save data from installed Windows 10
+2. *Save data from installed Windows 10*
 
-        a) Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
+> a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
 
-        or
+or
 
-        b) Mount Harddisk with windows in Linux or BSD and copy the data
+> b. Mount Harddisk with windows in Linux or BSD and copy the data
 
-        or
+or
 
-        c) Connect HDD with windows to another PC with any OS
+> c. Connect HDD with windows to another PC with any OS
 
 ## Repair invoking boot settings and boot menu at start-up
 
@@ -114,12 +110,12 @@ firmware when I can not boot a windows.
 
 There are several ways how could be done.
 
-*1. Install from regular installation of windows after I*
+1. *Install from regular installation of windows after I*
 [switch legacy to UEFI succesfully](#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431)
 This way was for me succesfull. When I updated the BIOS to the latest available version, the
  buttons *F2* and *F12* started work by expected way.
 
-*2. Windows recovery USB*
+2. *Windows recovery USB*
 I was trying to install with command line which is accesible from windows recovery USB.
 Recovery USB was able to boot even if legacy mode was set.
 When you are in command line you have to find where your USB is connected. I mean if
@@ -129,7 +125,7 @@ When you find the right letter of disk (your USB) just run file (.exe or .bat) t
  by write full path of file.
 Unfortunately, I've got always errors even if I've tried different versions of available BIOS firmwares.
 
-*3. Boot installation files od update during startup*
+3. *Boot installation files od update during startup*
 Unfortunately, same problem as command line desribed above.
 There is only different, that if you'd like to make recovery USB of Win10 you need pc with Win10 and so on.
 It can be a challenge and time consuming to find PC with Win8 for example.
@@ -147,11 +143,11 @@ I've read advice on the internet that updating BIOS will reset its configuration
 
 ### Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
 
-*1. Use recovery windows USB or windows installation USB*
+1. *Use recovery windows USB or windows installation USB*
 Unfortunately, neither of these helped me, because I did not find in advanced setting the
 option UEFI Firmware Settings for going to BIOS as from regular installation of Windows.
 
-*2. Reset BIOS (clear CMOS)*
+2. *Reset BIOS (clear CMOS)*
 This task can make a brick from your laptop before you will do that I strongly advice you
 to [backup your data](#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data).
 
@@ -162,18 +158,18 @@ located on MotherBoard, see pictures below.
 
 First remove this cover on the back of the laptop.
 
-![Plastic cover]({static}/images/remove_cover.JPG)
+![Plastic cover]({static}/images/remove_cover.jpg)
 
 If you have a RAM above the pins you have to remove the RAM.
 
 Then just short two pin below the G2101 for 20 - 30 second with for example steel tweezer.
 Finally disconnect cable leading under the case of laptop of left side.
 
-![Cooper pins G2101]({static}/images/motherboard.JPG)
+![Cooper pins G2101]({static}/images/motherboard.jpg)
 
 Disconnected cable under the plastic case of laptop.
 
-![Disconnected cable]({static}/images/remove_cable.JPG)
+![Disconnected cable]({static}/images/remove_cable.jpg)
 
 Firstly I was little scaried about to short some contacts on motherboard and
 it sounds crazy and really dangerous to me. But this approach really work for me
