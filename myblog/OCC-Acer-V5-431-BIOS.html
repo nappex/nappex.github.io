@@ -129,13 +129,13 @@ So I&rsquo;ve turned on the laptop again and pressing the button <em>F2</em> as 
 but nothing happened again, just windows&nbsp;boot&hellip;</p>
 <p>Let&rsquo;s google it. I found out that there is a option to get to <span class="caps">BIOS</span> through the Windows&nbsp;settings.</p>
 <p>When I logged to windows I had to go to&nbsp;settings:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Windows</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kr">Recovery</span><span class="w"> </span><span class="err">–</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">start</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Restart</span><span class="w"> </span><span class="n">now</span><span class="p">...</span><span class="w"></span>
-</code></pre></div>
-
+<blockquote>
+<p>Windows settings -&gt; Recovery –&gt; Advanced start-up -&gt; Restart&nbsp;now&hellip;</p>
+</blockquote>
 <p>After restart, in the blue screen pick&nbsp;up:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Troubleshoot</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">UEFI</span><span class="w"> </span><span class="n">Firmware</span><span class="w"> </span><span class="n">Settings</span><span class="w"></span>
-</code></pre></div>
-
+<blockquote>
+<p>Troubleshoot -&gt; Advanced options -&gt; <span class="caps">UEFI</span> Firmware&nbsp;Settings</p>
+</blockquote>
 <p>Finally I am in <span class="caps">BIOS</span>, <span class="caps">AAALELUA</span>. I found option to enable boot menu with <em>F12</em>, <span class="caps">OK</span> let switch to enable!
 Changes saved and exit the bios. Turn off, turn on &hellip; pressing <em>F12</em>&#8230;.blablabla&hellip; nothing&nbsp;happend.</p>
 <p>I replicated the whole process to get into <span class="caps">BIOS</span>. I analyzed <span class="caps">BIOS</span> options again to find out
@@ -154,27 +154,28 @@ So even if I installed a new <span class="caps">OS</span> I would not be able to
 <p>At this moment I realized I have to find solution to repair invoking boot menu and boot settings
  regardless if I can boot Linux or <span class="caps">BSD</span> in Legacy <span class="caps">BIOS</span>.</p>
 <p>There are several ways what someone wants to do at this&nbsp;point:</p>
-<div class="highlight"><pre><span></span><code><span class="o">*</span><span class="mi">1</span><span class="ss">)</span> <span class="nv">Repair</span> <span class="nv">invoking</span> <span class="nv">boot</span> <span class="nv">settings</span> <span class="nv">and</span> <span class="nv">boot</span> <span class="nv">menu</span> <span class="nv">at</span> <span class="nv">start</span><span class="o">-</span><span class="nv">up</span><span class="o">*</span>
-
-    <span class="nv">a</span><span class="ss">)</span> <span class="nv">Update</span> <span class="nv">BIOS</span> <span class="nv">firmware</span>
-
-    <span class="nv">or</span>
-
-    <span class="nv">b</span><span class="ss">)</span> <span class="nv">Reset</span> <span class="nv">BIOS</span> <span class="o">-</span> <span class="nv">I</span> <span class="nv">am</span> <span class="nv">not</span> <span class="nv">sure</span> <span class="k">if</span> <span class="nv">this</span> <span class="nv">option</span> <span class="nv">can</span> <span class="nv">repair</span> <span class="nv">it</span>...
-
-<span class="o">*</span><span class="mi">2</span><span class="ss">)</span> <span class="nv">Save</span> <span class="nv">data</span> <span class="nv">from</span> <span class="nv">installed</span> <span class="nv">Windows</span> <span class="mi">10</span>
-
-    <span class="nv">a</span><span class="ss">)</span> <span class="nv">Switch</span> <span class="nv">BIOS</span> <span class="nv">from</span> <span class="nv">Legacy</span> <span class="nv">mode</span> <span class="nv">back</span> <span class="nv">to</span> <span class="nv">UEFI</span> <span class="ss">(</span><span class="nv">Acer</span> <span class="nv">Aspire</span> <span class="nv">V5</span> <span class="mi">431</span><span class="ss">)</span>
-
-    <span class="nv">or</span>
-
-    <span class="nv">b</span><span class="ss">)</span> <span class="nv">Mount</span> <span class="nv">Harddisk</span> <span class="nv">with</span> <span class="nv">windows</span> <span class="nv">in</span> <span class="nv">Linux</span> <span class="nv">or</span> <span class="nv">BSD</span> <span class="nv">and</span> <span class="nv">copy</span> <span class="nv">the</span> <span class="nv">data</span>
-
-    <span class="nv">or</span>
-
-    <span class="nv">c</span><span class="ss">)</span> <span class="k">Connect</span> <span class="nv">HDD</span> <span class="nv">with</span> <span class="nv">windows</span> <span class="nv">to</span> <span class="nv">another</span> <span class="nv">PC</span> <span class="nv">with</span> <span class="nv">any</span> <span class="nv">OS</span>
-</code></pre></div>
-
+<p>1.v <em>Repair invoking boot settings and boot menu at&nbsp;start-up</em></p>
+<blockquote>
+<p>a. Update <span class="caps">BIOS</span>&nbsp;firmware</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>b. Reset <span class="caps">BIOS</span> - I am not sure if this option can repair&nbsp;it&hellip;</p>
+</blockquote>
+<ol>
+<li><em>Save data from installed Windows&nbsp;10</em></li>
+</ol>
+<blockquote>
+<p>a. Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5&nbsp;431)</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>b. Mount Harddisk with windows in Linux or <span class="caps">BSD</span> and copy the&nbsp;data</p>
+</blockquote>
+<p>or</p>
+<blockquote>
+<p>c. Connect <span class="caps">HDD</span> with windows to another <span class="caps">PC</span> with any <span class="caps">OS</span></p>
+</blockquote>
 <h2 id="repair-invoking-boot-settings-and-boot-menu-at-start-up">Repair invoking boot settings and boot menu at start-up<a class="headerlink" href="#repair-invoking-boot-settings-and-boot-menu-at-start-up" title="Permanent link">&para;</a></h2>
 <h3 id="update-bios-firmware">Update <span class="caps">BIOS</span> firmware<a class="headerlink" href="#update-bios-firmware" title="Permanent link">&para;</a></h3>
 <p>I was not sure if updating will repair pressing F2 or F12 at start-up, but I guessed it&nbsp;could.</p>
@@ -187,11 +188,15 @@ I downloaded latest official <span class="caps">BIOS</span>/Firmware ver. 2.18 f
 Acer <a href="https://www.acer.com/gb-en/support">support site</a>. Problem was how to install downloaded
 firmware when I can not boot a&nbsp;windows.</p>
 <p>There are several ways how could be&nbsp;done.</p>
-<p><em>1. Install from regular installation of windows after I</em>
+<ol>
+<li>
+<p><em>Install from regular installation of windows after I</em>
 <a href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">switch legacy to <span class="caps">UEFI</span> succesfully</a>
 This way was for me succesfull. When I updated the <span class="caps">BIOS</span> to the latest available version, the
  buttons <em>F2</em> and <em>F12</em> started work by expected&nbsp;way.</p>
-<p><em>2. Windows recovery <span class="caps">USB</span></em>
+</li>
+<li>
+<p><em>Windows recovery <span class="caps">USB</span></em>
 I was trying to install with command line which is accesible from windows recovery <span class="caps">USB</span>.
 Recovery <span class="caps">USB</span> was able to boot even if legacy mode was set.
 When you are in command line you have to find where your <span class="caps">USB</span> is connected. I mean if
@@ -200,12 +205,16 @@ You can try command <code>wmic logicaldisk get name</code> to list all connected
 When you find the right letter of disk (your <span class="caps">USB</span>) just run file (.exe or .bat) to update
  by write full path of file.
 Unfortunately, I&rsquo;ve got always errors even if I&rsquo;ve tried different versions of available <span class="caps">BIOS</span>&nbsp;firmwares.</p>
-<p><em>3. Boot installation files od update during startup</em>
+</li>
+<li>
+<p><em>Boot installation files od update during startup</em>
 Unfortunately, same problem as command line desribed above.
 There is only different, that if you&rsquo;d like to make recovery <span class="caps">USB</span> of Win10 you need pc with Win10 and so on.
 It can be a challenge and time consuming to find <span class="caps">PC</span> with Win8 for example.
 But you can download any windows version as installation media from microsoft web site.
 There are Win 7, 8, 10&nbsp;&hellip;</p>
+</li>
+</ol>
 <p>I tried recovery <span class="caps">USB</span> created from Win10 and installation <span class="caps">USB</span> was created from Win8 iso file.
 Neither version above helped to update <span class="caps">BIOS</span> from command&nbsp;line.</p>
 <p>I&rsquo;ve read advice on the internet that updating <span class="caps">BIOS</span> will reset its configuration to default
@@ -213,23 +222,29 @@ Neither version above helped to update <span class="caps">BIOS</span> from comma
  <span class="caps">BIOS</span> other way then from regular installation, so I had to switch back to <span class="caps">UEFI</span> by another&nbsp;way.</p>
 <h2 id="save-data-from-installed-windows-10">Save data from installed Windows 10<a class="headerlink" href="#save-data-from-installed-windows-10" title="Permanent link">&para;</a></h2>
 <h3 id="switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5 431)<a class="headerlink" href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431" title="Permanent link">&para;</a></h3>
-<p><em>1. Use recovery windows <span class="caps">USB</span> or windows installation <span class="caps">USB</span></em>
+<ol>
+<li>
+<p><em>Use recovery windows <span class="caps">USB</span> or windows installation <span class="caps">USB</span></em>
 Unfortunately, neither of these helped me, because I did not find in advanced setting the
 option <span class="caps">UEFI</span> Firmware Settings for going to <span class="caps">BIOS</span> as from regular installation of&nbsp;Windows.</p>
-<p><em>2. Reset <span class="caps">BIOS</span> (clear <span class="caps">CMOS</span>)</em>
+</li>
+<li>
+<p><em>Reset <span class="caps">BIOS</span> (clear <span class="caps">CMOS</span>)</em>
 This task can make a brick from your laptop before you will do that I strongly advice you
 to <a href="#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data">backup your data</a>.</p>
+</li>
+</ol>
 <p>I was searching how to reset <span class="caps">BIOS</span> by remove an internal battery of <span class="caps">BIOS</span>. Instead of removing
 battery I found an <a href="https://www.ifixit.com/Answers/View/227350/No+Access+to+ACER+ASPIRE+V5+471+Bios+(Operating+System+Not+found)">advice</a> to short two copper pins with shape of triangle under note G2101
 located on MotherBoard, see pictures&nbsp;below.</p>
 <p>First remove this cover on the back of the&nbsp;laptop.</p>
-<p><img alt="Plastic cover" src="https://nappex.github.io/myblog/images/remove_cover.JPG"></p>
+<p><img alt="Plastic cover" src="https://nappex.github.io/myblog/images/remove_cover.jpg"></p>
 <p>If you have a <span class="caps">RAM</span> above the pins you have to remove the <span class="caps">RAM</span>.</p>
 <p>Then just short two pin below the G2101 for 20 - 30 second with for example steel tweezer.
 Finally disconnect cable leading under the case of laptop of left&nbsp;side.</p>
-<p><img alt="Cooper pins G2101" src="https://nappex.github.io/myblog/images/motherboard.JPG"></p>
+<p><img alt="Cooper pins G2101" src="https://nappex.github.io/myblog/images/motherboard.jpg"></p>
 <p>Disconnected cable under the plastic case of&nbsp;laptop.</p>
-<p><img alt="Disconnected cable" src="https://nappex.github.io/myblog/images/remove_cable.JPG"></p>
+<p><img alt="Disconnected cable" src="https://nappex.github.io/myblog/images/remove_cable.jpg"></p>
 <p>Firstly I was little scaried about to short some contacts on motherboard and
 it sounds crazy and really dangerous to me. But this approach really work for me
 and it restart the <span class="caps">BIOS</span> back to default configuration. After this reset I was able to
