@@ -14,7 +14,7 @@ Status: published
 # Introduction
 
 One day when I've been scrolling my mastodon wall to find some interesting people
-or articles about BSD, I've found account [@prahou](@prahou@bsd.network) and his [blog](https://triapul.cz/).
+or articles about BSD, I've found account [@prahou](https://bsd.network/@prahou) and his [blog](https://triapul.cz/).
 There was a very nice article [Old Computer Rescue - E4300](https://triapul.cz/automa/vyvjnb/), that
 article inspired me to dust off 10 years old **Acer Aspire V5 431**. I've wanted to buy some old hardware
 as DELL or Lenovo to install FreeBSD or OpenBSD, but I could not decide to right one. When I' ve read
@@ -41,11 +41,11 @@ Let's google it. I found out that there is a option to get to BIOS through the W
 
 When I logged to windows I had to go to settings:
 
-    `Windows settings -> Recovery –> Advanced start-up -> Restart now...`
+`Windows settings -> Recovery –> Advanced start-up -> Restart now...`
 
 After restart, in the blue screen pick up:
 
-    `Troubleshoot -> Advanced options -> UEFI Firmware Settings`
+`Troubleshoot -> Advanced options -> UEFI Firmware Settings`
 
 Finally I am in BIOS, AAALELUA. I found option to enable boot menu with **F12**, OK let switch to enable!
 Changes saved and exit the bios. Turn off, turn on ... pressing **F12**....blablabla... nothing happend.
@@ -73,23 +73,23 @@ There are several ways what someone wants to do at this point:
 
 1. **Repair invoking boot settings and boot menu at start-up**
 
-    `a. Update BIOS firmware`
+`a. Update BIOS firmware`
 
 _or_
 
-    `b. Reset BIOS - I am not sure if this option can repair it...`
+`b. Reset BIOS - I am not sure if this option can repair it...`
 
 2. **Save data from installed Windows 10**
 
-    `a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)`
+`a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)`
 
 _or_
 
-    `b. Mount Harddisk with windows in Linux or BSD and copy the data`
+`b. Mount Harddisk with windows in Linux or BSD and copy the data`
 
 _or_
 
-    `c. Connect HDD with windows to another PC with any OS`
+`c. Connect HDD with windows to another PC with any OS`
 
 ## Repair invoking boot settings and boot menu at start-up
 
