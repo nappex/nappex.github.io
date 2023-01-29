@@ -1,11 +1,11 @@
 ---
-Title: Prepare BIOS of Acer V5 431 to UNIX
-Date: 2023-01-27
+Title: Acer V5 431 problems with BIOS(Legacy, UEFI), preparation to UNIX
+Date: 2023-01-28
 Category: Hardware, OpenBSD
 Tags: hardware, beginner, OpenBSD
-Slug: OCC-Acer-V5-431-BIOS
+Slug: Acer-V5-431-BIOS-OCC
 Authors: David
-Summary: Enter to BIOS of Acer V5 431 with windows 10
+Summary: Enter to BIOS or boot menu at start-up of Acer V5 431 with windows 10
 Status: published
 ---
 
