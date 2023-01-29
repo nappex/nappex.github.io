@@ -110,7 +110,7 @@
 </div>
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>One day when I&rsquo;ve been scrolling my mastodon wall to find some interesting people
-or articles about <span class="caps">BSD</span>, I&rsquo;ve found account <a href="@prahou@bsd.network">@prahou</a> and his <a href="https://triapul.cz/">blog</a>.
+or articles about <span class="caps">BSD</span>, I&rsquo;ve found account <a href="https://bsd.network/@prahou">@prahou</a> and his <a href="https://triapul.cz/">blog</a>.
 There was a very nice article <a href="https://triapul.cz/automa/vyvjnb/">Old Computer Rescue - E4300</a>, that
 article inspired me to dust off 10 years old <strong>Acer Aspire V5 431</strong>. I&rsquo;ve wanted to buy some old hardware
 as <span class="caps">DELL</span> or Lenovo to install FreeBSD or OpenBSD, but I could not decide to right one. When I&rsquo; ve read
@@ -129,13 +129,9 @@ So I&rsquo;ve turned on the laptop again and pressing the button <strong>F2</str
 but nothing happened again, just windows&nbsp;boot&hellip;</p>
 <p>Let&rsquo;s google it. I found out that there is a option to get to <span class="caps">BIOS</span> through the Windows&nbsp;settings.</p>
 <p>When I logged to windows I had to go to&nbsp;settings:</p>
-<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="n">Windows</span><span class="w"> </span><span class="n">settings</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kr">Recovery</span><span class="w"> </span><span class="err">–</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">start</span><span class="o">-</span><span class="n">up</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Restart</span><span class="w"> </span><span class="n">now</span><span class="p">...</span><span class="err">`</span><span class="w"></span>
-</code></pre></div>
-
+<p><code>Windows settings -&gt; Recovery –&gt; Advanced start-up -&gt; Restart now...</code></p>
 <p>After restart, in the blue screen pick&nbsp;up:</p>
-<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="n">Troubleshoot</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">Advanced</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">UEFI</span><span class="w"> </span><span class="n">Firmware</span><span class="w"> </span><span class="n">Settings</span><span class="err">`</span><span class="w"></span>
-</code></pre></div>
-
+<p><code>Troubleshoot -&gt; Advanced options -&gt; UEFI Firmware Settings</code></p>
 <p>Finally I am in <span class="caps">BIOS</span>, <span class="caps">AAALELUA</span>. I found option to enable boot menu with <strong>F12</strong>, <span class="caps">OK</span> let switch to enable!
 Changes saved and exit the bios. Turn off, turn on &hellip; pressing <strong>F12</strong>&#8230;.blablabla&hellip; nothing&nbsp;happend.</p>
 <p>I replicated the whole process to get into <span class="caps">BIOS</span>. I analyzed <span class="caps">BIOS</span> options again to find out
@@ -155,29 +151,19 @@ So even if I installed a new <span class="caps">OS</span> I would not be able to
  regardless if I can boot Linux or <span class="caps">BSD</span> in Legacy <span class="caps">BIOS</span>.</p>
 <p>There are several ways what someone wants to do at this&nbsp;point:</p>
 <ol>
-<li>
-<p><strong>Repair invoking boot settings and boot menu at&nbsp;start-up</strong></p>
+<li><strong>Repair invoking boot settings and boot menu at&nbsp;start-up</strong></li>
+</ol>
 <p><code>a. Update BIOS firmware</code></p>
-</li>
-</ol>
 <p><em>or</em></p>
-<div class="highlight"><pre><span></span><code>`<span class="nv">b</span>. <span class="nv">Reset</span> <span class="nv">BIOS</span> <span class="o">-</span> <span class="nv">I</span> <span class="nv">am</span> <span class="nv">not</span> <span class="nv">sure</span> <span class="k">if</span> <span class="nv">this</span> <span class="nv">option</span> <span class="nv">can</span> <span class="nv">repair</span> <span class="nv">it</span>...`
-</code></pre></div>
-
+<p><code>b. Reset BIOS - I am not sure if this option can repair it...</code></p>
 <ol>
-<li>
-<p><strong>Save data from installed Windows&nbsp;10</strong></p>
-<p><code>a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)</code></p>
-</li>
+<li><strong>Save data from installed Windows&nbsp;10</strong></li>
 </ol>
+<p><code>a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)</code></p>
 <p><em>or</em></p>
-<div class="highlight"><pre><span></span><code>`b. Mount Harddisk with windows in Linux or BSD and copy the data`
-</code></pre></div>
-
+<p><code>b. Mount Harddisk with windows in Linux or BSD and copy the data</code></p>
 <p><em>or</em></p>
-<div class="highlight"><pre><span></span><code>`<span class="nv">c</span>. <span class="k">Connect</span> <span class="nv">HDD</span> <span class="nv">with</span> <span class="nv">windows</span> <span class="nv">to</span> <span class="nv">another</span> <span class="nv">PC</span> <span class="nv">with</span> <span class="nv">any</span> <span class="nv">OS</span>`
-</code></pre></div>
-
+<p><code>c. Connect HDD with windows to another PC with any OS</code></p>
 <h2 id="repair-invoking-boot-settings-and-boot-menu-at-start-up">Repair invoking boot settings and boot menu at start-up<a class="headerlink" href="#repair-invoking-boot-settings-and-boot-menu-at-start-up" title="Permanent link">&para;</a></h2>
 <h3 id="update-bios-firmware">Update <span class="caps">BIOS</span> firmware<a class="headerlink" href="#update-bios-firmware" title="Permanent link">&para;</a></h3>
 <p>I was not sure if updating will repair pressing F2 or F12 at start-up, but I guessed it&nbsp;could.</p>
