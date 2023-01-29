@@ -14,9 +14,9 @@ Status: published
 # Introduction
 
 One day when I've been scrolling my mastodon wall to find some interesting people
-or articles about *BSD, I've found account [@prahou](@prahou@bsd.network) and his [blog](https://triapul.cz/).
+or articles about BSD, I've found account [@prahou](@prahou@bsd.network) and his [blog](https://triapul.cz/).
 There was a very nice article [Old Computer Rescue - E4300](https://triapul.cz/automa/vyvjnb/), that
-article inspired me to dust off 10 years old *Acer Aspire V5 431*. I've wanted to buy some old hardware
+article inspired me to dust off 10 years old **Acer Aspire V5 431**. I've wanted to buy some old hardware
 as DELL or Lenovo to install FreeBSD or OpenBSD, but I could not decide to right one. When I' ve read
 the article and discovered [OCC](https://occ.deadnet.se/), I supposed it would be realy a pity to not
 try old computer which lay down at home. Buying another old laptop would be pointless in my case.
@@ -28,27 +28,27 @@ Firstly I've analyzed the laptop. I found out the laptop is running and there is
 # Problem to boot BSD or Linux with Acer V5 431
 
 I've inserted USB with OpenBSD to find out if I am able to install it. So I've turned on the
-laptop and pressing the button *F12* as much as possible to invoke boot menu, but nothing happened.
+laptop and pressing the button **F12** as much as possible to invoke boot menu, but nothing happened.
 Just Windows booted without any signs of boot menu or USB boot.
 
 # I can not enter to BIOS on Acer V5 431
 
 OK, if I can't invoke a boot menu to choose option booting from USB I have to check BIOS settings.
-So I've turned on the laptop again and pressing the button *F2* as much as possible to invoke BIOS settings
+So I've turned on the laptop again and pressing the button **F2** as much as possible to invoke BIOS settings
 but nothing happened again, just windows boot...
 
 Let's google it. I found out that there is a option to get to BIOS through the Windows settings.
 
 When I logged to windows I had to go to settings:
 
-> Windows settings -> Recovery –> Advanced start-up -> Restart now...
+**Windows settings -> Recovery –> Advanced start-up -> Restart now...**
 
 After restart, in the blue screen pick up:
 
-> Troubleshoot -> Advanced options -> UEFI Firmware Settings
+**Troubleshoot -> Advanced options -> UEFI Firmware Settings**
 
-Finally I am in BIOS, AAALELUA. I found option to enable boot menu with *F12*, OK let switch to enable!
-Changes saved and exit the bios. Turn off, turn on ... pressing *F12*....blablabla... nothing happend.
+Finally I am in BIOS, AAALELUA. I found option to enable boot menu with **F12**, OK let switch to enable!
+Changes saved and exit the bios. Turn off, turn on ... pressing **F12**....blablabla... nothing happend.
 
 I replicated the whole process to get into BIOS. I analyzed BIOS options again to find out
 which option could help me to activate function of button F2 and F12 during start-up time of laptop.
@@ -71,25 +71,25 @@ At this moment I realized I have to find solution to repair invoking boot menu a
 
 There are several ways what someone wants to do at this point:
 
-1.v *Repair invoking boot settings and boot menu at start-up*
+1. **Repair invoking boot settings and boot menu at start-up**
 
-> a. Update BIOS firmware
+a. Update BIOS firmware
 
-or
+_or_
 
-> b. Reset BIOS - I am not sure if this option can repair it...
+b. Reset BIOS - I am not sure if this option can repair it...
 
-2. *Save data from installed Windows 10*
+2. **Save data from installed Windows 10**
 
-> a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
+a. Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
 
-or
+_or_
 
-> b. Mount Harddisk with windows in Linux or BSD and copy the data
+b. Mount Harddisk with windows in Linux or BSD and copy the data
 
-or
+_or_
 
-> c. Connect HDD with windows to another PC with any OS
+c. Connect HDD with windows to another PC with any OS
 
 ## Repair invoking boot settings and boot menu at start-up
 
@@ -110,12 +110,12 @@ firmware when I can not boot a windows.
 
 There are several ways how could be done.
 
-1. *Install from regular installation of windows after I*
+1. **Install from regular installation of windows after I**
 [switch legacy to UEFI succesfully](#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431)
 This way was for me succesfull. When I updated the BIOS to the latest available version, the
- buttons *F2* and *F12* started work by expected way.
+ buttons **F2** and **F12** started work by expected way.
 
-2. *Windows recovery USB*
+2. **Windows recovery USB**
 I was trying to install with command line which is accesible from windows recovery USB.
 Recovery USB was able to boot even if legacy mode was set.
 When you are in command line you have to find where your USB is connected. I mean if
@@ -125,7 +125,7 @@ When you find the right letter of disk (your USB) just run file (.exe or .bat) t
  by write full path of file.
 Unfortunately, I've got always errors even if I've tried different versions of available BIOS firmwares.
 
-3. *Boot installation files od update during startup*
+3. **Boot installation files od update during startup**
 Unfortunately, same problem as command line desribed above.
 There is only different, that if you'd like to make recovery USB of Win10 you need pc with Win10 and so on.
 It can be a challenge and time consuming to find PC with Win8 for example.
@@ -143,11 +143,11 @@ I've read advice on the internet that updating BIOS will reset its configuration
 
 ### Switch BIOS from Legacy mode back to UEFI (Acer Aspire V5 431)
 
-1. *Use recovery windows USB or windows installation USB*
+1. **Use recovery windows USB or windows installation USB**
 Unfortunately, neither of these helped me, because I did not find in advanced setting the
 option UEFI Firmware Settings for going to BIOS as from regular installation of Windows.
 
-2. *Reset BIOS (clear CMOS)*
+2. **Reset BIOS (clear CMOS)**
 This task can make a brick from your laptop before you will do that I strongly advice you
 to [backup your data](#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data).
 
