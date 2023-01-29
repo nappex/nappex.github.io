@@ -110,9 +110,9 @@
 </div>
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
 <p>One day when I&rsquo;ve been scrolling my mastodon wall to find some interesting people
-or articles about <em><span class="caps">BSD</span>, I&rsquo;ve found account <a href="@prahou@bsd.network">@prahou</a> and his <a href="https://triapul.cz/">blog</a>.
+or articles about <span class="caps">BSD</span>, I&rsquo;ve found account <a href="@prahou@bsd.network">@prahou</a> and his <a href="https://triapul.cz/">blog</a>.
 There was a very nice article <a href="https://triapul.cz/automa/vyvjnb/">Old Computer Rescue - E4300</a>, that
-article inspired me to dust off 10 years old </em>Acer Aspire V5 431*. I&rsquo;ve wanted to buy some old hardware
+article inspired me to dust off 10 years old <strong>Acer Aspire V5 431</strong>. I&rsquo;ve wanted to buy some old hardware
 as <span class="caps">DELL</span> or Lenovo to install FreeBSD or OpenBSD, but I could not decide to right one. When I&rsquo; ve read
 the article and discovered <a href="https://occ.deadnet.se/"><span class="caps">OCC</span></a>, I supposed it would be realy a pity to not
 try old computer which lay down at home. Buying another old laptop would be pointless in my case.
@@ -121,23 +121,19 @@ Acer is no silver bullet for sure, I definitely prefer <span class="caps">DELL</
 <p>Firstly I&rsquo;ve analyzed the laptop. I found out the laptop is running and there is installed very laggy windows&nbsp;10.</p>
 <h1 id="problem-to-boot-bsd-or-linux-with-acer-v5-431">Problem to boot <span class="caps">BSD</span> or Linux with Acer V5 431<a class="headerlink" href="#problem-to-boot-bsd-or-linux-with-acer-v5-431" title="Permanent link">&para;</a></h1>
 <p>I&rsquo;ve inserted <span class="caps">USB</span> with OpenBSD to find out if I am able to install it. So I&rsquo;ve turned on the
-laptop and pressing the button <em>F12</em> as much as possible to invoke boot menu, but nothing happened.
+laptop and pressing the button <strong>F12</strong> as much as possible to invoke boot menu, but nothing happened.
 Just Windows booted without any signs of boot menu or <span class="caps">USB</span>&nbsp;boot.</p>
 <h1 id="i-can-not-enter-to-bios-on-acer-v5-431">I can not enter to <span class="caps">BIOS</span> on Acer V5 431<a class="headerlink" href="#i-can-not-enter-to-bios-on-acer-v5-431" title="Permanent link">&para;</a></h1>
 <p><span class="caps">OK</span>, if I can&rsquo;t invoke a boot menu to choose option booting from <span class="caps">USB</span> I have to check <span class="caps">BIOS</span> settings.
-So I&rsquo;ve turned on the laptop again and pressing the button <em>F2</em> as much as possible to invoke <span class="caps">BIOS</span> settings
+So I&rsquo;ve turned on the laptop again and pressing the button <strong>F2</strong> as much as possible to invoke <span class="caps">BIOS</span> settings
 but nothing happened again, just windows&nbsp;boot&hellip;</p>
 <p>Let&rsquo;s google it. I found out that there is a option to get to <span class="caps">BIOS</span> through the Windows&nbsp;settings.</p>
 <p>When I logged to windows I had to go to&nbsp;settings:</p>
-<blockquote>
-<p>Windows settings -&gt; Recovery –&gt; Advanced start-up -&gt; Restart&nbsp;now&hellip;</p>
-</blockquote>
+<p><strong>Windows settings -&gt; Recovery –&gt; Advanced start-up -&gt; Restart&nbsp;now&hellip;</strong></p>
 <p>After restart, in the blue screen pick&nbsp;up:</p>
-<blockquote>
-<p>Troubleshoot -&gt; Advanced options -&gt; <span class="caps">UEFI</span> Firmware&nbsp;Settings</p>
-</blockquote>
-<p>Finally I am in <span class="caps">BIOS</span>, <span class="caps">AAALELUA</span>. I found option to enable boot menu with <em>F12</em>, <span class="caps">OK</span> let switch to enable!
-Changes saved and exit the bios. Turn off, turn on &hellip; pressing <em>F12</em>&#8230;.blablabla&hellip; nothing&nbsp;happend.</p>
+<p><strong>Troubleshoot -&gt; Advanced options -&gt; <span class="caps">UEFI</span> Firmware&nbsp;Settings</strong></p>
+<p>Finally I am in <span class="caps">BIOS</span>, <span class="caps">AAALELUA</span>. I found option to enable boot menu with <strong>F12</strong>, <span class="caps">OK</span> let switch to enable!
+Changes saved and exit the bios. Turn off, turn on &hellip; pressing <strong>F12</strong>&#8230;.blablabla&hellip; nothing&nbsp;happend.</p>
 <p>I replicated the whole process to get into <span class="caps">BIOS</span>. I analyzed <span class="caps">BIOS</span> options again to find out
 which option could help me to activate function of button F2 and F12 during start-up time of laptop.
 There was not any other option, unfortunately. My first idea was that Acer and Windows are entangled
@@ -154,28 +150,20 @@ So even if I installed a new <span class="caps">OS</span> I would not be able to
 <p>At this moment I realized I have to find solution to repair invoking boot menu and boot settings
  regardless if I can boot Linux or <span class="caps">BSD</span> in Legacy <span class="caps">BIOS</span>.</p>
 <p>There are several ways what someone wants to do at this&nbsp;point:</p>
-<p>1.v <em>Repair invoking boot settings and boot menu at&nbsp;start-up</em></p>
-<blockquote>
-<p>a. Update <span class="caps">BIOS</span>&nbsp;firmware</p>
-</blockquote>
-<p>or</p>
-<blockquote>
-<p>b. Reset <span class="caps">BIOS</span> - I am not sure if this option can repair&nbsp;it&hellip;</p>
-</blockquote>
 <ol>
-<li><em>Save data from installed Windows&nbsp;10</em></li>
+<li><strong>Repair invoking boot settings and boot menu at&nbsp;start-up</strong></li>
 </ol>
-<blockquote>
+<p>a. Update <span class="caps">BIOS</span>&nbsp;firmware</p>
+<p><em>or</em></p>
+<p>b. Reset <span class="caps">BIOS</span> - I am not sure if this option can repair&nbsp;it&hellip;</p>
+<ol>
+<li><strong>Save data from installed Windows&nbsp;10</strong></li>
+</ol>
 <p>a. Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5&nbsp;431)</p>
-</blockquote>
-<p>or</p>
-<blockquote>
+<p><em>or</em></p>
 <p>b. Mount Harddisk with windows in Linux or <span class="caps">BSD</span> and copy the&nbsp;data</p>
-</blockquote>
-<p>or</p>
-<blockquote>
+<p><em>or</em></p>
 <p>c. Connect <span class="caps">HDD</span> with windows to another <span class="caps">PC</span> with any <span class="caps">OS</span></p>
-</blockquote>
 <h2 id="repair-invoking-boot-settings-and-boot-menu-at-start-up">Repair invoking boot settings and boot menu at start-up<a class="headerlink" href="#repair-invoking-boot-settings-and-boot-menu-at-start-up" title="Permanent link">&para;</a></h2>
 <h3 id="update-bios-firmware">Update <span class="caps">BIOS</span> firmware<a class="headerlink" href="#update-bios-firmware" title="Permanent link">&para;</a></h3>
 <p>I was not sure if updating will repair pressing F2 or F12 at start-up, but I guessed it&nbsp;could.</p>
@@ -190,13 +178,13 @@ firmware when I can not boot a&nbsp;windows.</p>
 <p>There are several ways how could be&nbsp;done.</p>
 <ol>
 <li>
-<p><em>Install from regular installation of windows after I</em>
+<p><strong>Install from regular installation of windows after I</strong>
 <a href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">switch legacy to <span class="caps">UEFI</span> succesfully</a>
 This way was for me succesfull. When I updated the <span class="caps">BIOS</span> to the latest available version, the
- buttons <em>F2</em> and <em>F12</em> started work by expected&nbsp;way.</p>
+ buttons <strong>F2</strong> and <strong>F12</strong> started work by expected&nbsp;way.</p>
 </li>
 <li>
-<p><em>Windows recovery <span class="caps">USB</span></em>
+<p><strong>Windows recovery <span class="caps">USB</span></strong>
 I was trying to install with command line which is accesible from windows recovery <span class="caps">USB</span>.
 Recovery <span class="caps">USB</span> was able to boot even if legacy mode was set.
 When you are in command line you have to find where your <span class="caps">USB</span> is connected. I mean if
@@ -207,7 +195,7 @@ When you find the right letter of disk (your <span class="caps">USB</span>) just
 Unfortunately, I&rsquo;ve got always errors even if I&rsquo;ve tried different versions of available <span class="caps">BIOS</span>&nbsp;firmwares.</p>
 </li>
 <li>
-<p><em>Boot installation files od update during startup</em>
+<p><strong>Boot installation files od update during startup</strong>
 Unfortunately, same problem as command line desribed above.
 There is only different, that if you&rsquo;d like to make recovery <span class="caps">USB</span> of Win10 you need pc with Win10 and so on.
 It can be a challenge and time consuming to find <span class="caps">PC</span> with Win8 for example.
@@ -224,12 +212,12 @@ Neither version above helped to update <span class="caps">BIOS</span> from comma
 <h3 id="switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431">Switch <span class="caps">BIOS</span> from Legacy mode back to <span class="caps">UEFI</span> (Acer Aspire V5 431)<a class="headerlink" href="#switch-bios-from-legacy-mode-back-to-uefi-acer-aspire-v5-431" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p><em>Use recovery windows <span class="caps">USB</span> or windows installation <span class="caps">USB</span></em>
+<p><strong>Use recovery windows <span class="caps">USB</span> or windows installation <span class="caps">USB</span></strong>
 Unfortunately, neither of these helped me, because I did not find in advanced setting the
 option <span class="caps">UEFI</span> Firmware Settings for going to <span class="caps">BIOS</span> as from regular installation of&nbsp;Windows.</p>
 </li>
 <li>
-<p><em>Reset <span class="caps">BIOS</span> (clear <span class="caps">CMOS</span>)</em>
+<p><strong>Reset <span class="caps">BIOS</span> (clear <span class="caps">CMOS</span>)</strong>
 This task can make a brick from your laptop before you will do that I strongly advice you
 to <a href="#mount-harddisk-with-windows-in-linux-or-bsd-and-copy-the-data">backup your data</a>.</p>
 </li>
