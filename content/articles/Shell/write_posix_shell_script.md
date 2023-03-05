@@ -82,6 +82,17 @@ printf '%s\n' "$*" # join the elements of the array with the
 Note:
 In the Bourne shell and ksh88, $IFS must contain the space character for "$@" to work properly (a bug), and in the Bourne shell, you can't access elements above $9 (${10} won't work, you can still do shift 1; echo "$9" or loop over them)).[1]
 
+Also check: 
+[POSIX shell array article](https://www.baeldung.com/linux/posix-shell-array), where is recommend to use the command `set` with double-dash. The double-dash mark the end of options.
+
+```sh
+$ set -- 1 2 3
+```
+Manual page of `ksh93` say about `set --` following:
+
+`--`      Do not change any of the options; useful in setting $1 to a value beginning with -. If no arguments follow this option then the positional parameters are unset.
+
+[stackoverflow topic](https://stackoverflow.com/questions/53747156/array-under-sh-shell-not-bash)
 
 # Sources
 
