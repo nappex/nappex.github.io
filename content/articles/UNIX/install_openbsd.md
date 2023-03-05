@@ -223,12 +223,65 @@ Disk names are create from the name of driver which operates the disk and number
 driver for the disk OpenBSD makes automatically. For example we have one SATA disk. SATA disks are
 operated by driver `sd`. The name of disk will be `sd0`. If you connect another SATA disk it'll be
 `sd1` and so on. USB sticks are operated by `sd` also.
+
 Information about connected disks can be found out with several tools.
+
+### sysctl
 
 First tool is [sysctl(2)](https://man.openbsd.org/man2/sysctl.2) - command to get or set system information.
 
-Honestly I am really happy that OpenBSD do it like that. I've learned a lot. It pushed me to learn how do it and why...
-When you will use distro which show you disk and everthing about them, you don't have any
+```sh
+$ sysctl hw.disknames
+hw.disknames=sd0:,sd1:,wd0:ced4326a18397569,cd0:
+```
+
+It lists all connected disks, if there is hex number after identificator it means Filesystem was recognize by
+OpenBSD. If not there is no native filesystem to OpenBSD on disk (native filesystem is FFS).
+
+Advantage is - easy command to memorize. Quick usage to get quick basic overview about disks.
+
+Disadvantage of this tool is you do not see details about disk. Only the name and if
+the filesystem is native to OpenBSD.
+
+### dmesg
+
+Other tool for to find out connected disks is [dmesg(8)](https://man.openbsd.org/dmesg) (display the system message buffer).
+We can review startup messages, info during boot with this command. There are messages
+about which disks were connected.
+
+```sh
+$ dmesg | grep -E '^[wsc]d\d+'
+```
+
+We grep output for names of expected disk drivers as `wd`, `sd` and `cd` with
+at least one number and the name must be at the start of line. We don't see only the name
+of connected disk but also the sizes and other details. Details are not written in well arranged way.
+So sometimes you have to read carefully and finding the information in output. Especially
+if output is longer.
+
+Advantage - details about disk, you have option to play with pipes and make better output.
+
+Disadvantage - write the right form of regex and format the output can be challenging for some users.
+
+### fdisk
+
+
+### disklabel
+
+
+### Conclusion
+
+Someone can complain that's really annoying approach. Maybe it is not really user friendly.
+In my opinion it is not so much horrible. I was enjoying the juggling with several tools and the
+investigation process to collect info about disk.
+
+Honestly I am really happy that OpenBSD do it like that. I've learned a lot by this way.
+It pushed me to learn how do it and why... Now I know what is under the hood.
+When you will use operation system which show you disk and everthing about them, you don't have any
 reason to learn or dig where the information come from until problems occur.
+I have to admit that I like user friendly gui window where all info about disk are listed
+and you just click to disk which you want to choose without any work too.
+But I feel much better when I know what is happening behind the scene. And what to do manually
+if automatic process will fail.
 
 
