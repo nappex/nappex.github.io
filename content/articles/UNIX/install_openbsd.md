@@ -465,7 +465,7 @@ can confuse kernel.
 To add zeroes run:
 
 ```sh
-# dd if=/dev/zero bs=1m count=1 of=/dev/rsd1c
+$ dd if=/dev/zero bs=1m count=1 of=/dev/rsd1c
 ```
 
 Currently, we have prepared encrypted disk `sd1` for installation. Now you can write `exit`
@@ -475,58 +475,69 @@ to go back to installation.
 
 I don't cover all questions just the most important in my opinion.
 
-Which disk is the root? sd1
+**Which disk is the root? sd1**
+
 It is a disk we created with encryption from RAID partition.
 
-Setup a user? <username>
+**Setup a user? <username>**
+
 I recommend to create a new user. But you can create it later if you want.
 
-Start sshd(8) by default?[yes] no
+**Start sshd(8) by default?[yes] no**
+
 It can be enabled later. If you want to use as laptop I assume you don't need sshd.
 
-Do you expect to run X Window System?[yes]
+**Do you expect to run X Window System?[yes]**
+
 If you are installing on laptop, yes will be probably the right answer.
 
-Do you want the X Window System to be started by xenodm?[no] yes
+**Do you want the X Window System to be started by xenodm?[no] yes**
+
 X Window System can be started by `startx` or `xenodm`. `xenodm` should be more secure.
 If you are not sure you can choose no, it can be enabled later.
 
-Use (W)hole disk MBR, whole disk(G)PT, ... (E)dit? [whole] G
+**Use (W)hole disk MBR, whole disk(G)PT, ... (E)dit? [whole] G**
+
 It sets the partition scheme.
 Use what is suitable for you. This article uses GPT.
 
-Use (A)uto layout, (E)dit auto layout, (C)ustom? [a] c
+**Use (A)uto layout, (E)dit auto layout, (C)ustom? [a] c**
+
 It sets layout of partitions.
 Custom layout invoke `disklabel` command to editing prompt.
 
 There are several rules to follow.
-Don't add partition with letter `c`. This partition is reserver by OpenBSD for whole disk.
-If you use GPT scheme automatically (set by installer). Don't use partition `i` it reserved by default
+
+* Don't add partition with letter `c`. This partition is reserver by OpenBSD for whole disk.
+* If you use GPT scheme automatically (set by installer). Don't use partition `i` it reserved by default
 to EFI boot.
 
 There are several recommendations.
-Use partition `a` for mountpoint `/` (root).
-Use partition `b` for swap.
+
+* Use partition `a` for mountpoint `/` (root).
+* Use partition `b` for swap.
 
 Example of layout. It does not include sizes, because it depends on your needs and size of
 your harddisk.
 
-PARTITION       Mountpoint      Note
-a               /               root
-b               swap            swap space
-c                               whole disk
-d               /tmp            temporary files
-e               /var            variable data
-f               /usr            user system resources
-g               /usr/X11R6      X applications
-h               /usr/local
-i                               EFI BOOT
-j               /usr/src
-k               /usr/obj
-l               /home
+PARTITION   |   Mountpoint  |   Note
+----------- | ------------- | ------
+ a          | /             | root
+ b          | swap          | swap space
+ c          |               | whole disk
+ d          | /tmp          | temporary files
+ e          | /var          | variable data
+ f          | /usr          | user system resources
+ g          | /usr/X11R6    | X applications
+ h          | /usr/local    |
+ i          |               | EFI BOOT
+ j          | /usr/src      |
+ k          | /usr/obj      |
+ l          | /home         |
 
 
-Location of sets? (cd0 disk ...)  [cd0] disk
+**Location of sets? (cd0 disk ...)  [cd0] disk**
+
 This question can be little bit complicated.
 Disk means sd0, sd1, wd0, .... USB stick is disk.
 Sets mean file sets to install. File sets are locate on USB stick.
@@ -535,21 +546,25 @@ USB is not mounted.
 We select disk, because installation is from USB. Then we have to choose which disk is
 out USB.
 
-Is disk already mounted [yes]: no
+**Is disk already mounted [yes]: no**
 
-Which disk contains install media [sd0]: sd2
+**Which disk contains install media [sd0]: sd2**
+
 Most of the time `sd0` is main harddisk. USB should be `sd1` or `sd2`.
 This part will mount your USB.
 
-Which sd2 partitions has install sets [a]:
+**Which sd2 partitions has install sets [a]:**
+
 Select default a.
 
-Pathname to sets [7.2/amd64]:
+**Pathname to sets [7.2/amd64]:**
+
 Select default.
 Then select sets which you want to install. How to select or deselect is nicely described
 in installer.
 
 Congratulations!
+
 After sets install, the installation is done.
 When you restart your laptop it should ask you for password to de-encrypt harddisk.
 
