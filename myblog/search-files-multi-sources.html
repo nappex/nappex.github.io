@@ -100,7 +100,7 @@
 searching through several directories. The search engine in finder is unusable for&nbsp;me.</p>
 <h1 id="find-command">find command<a class="headerlink" href="#find-command" title="Permanent link">&para;</a></h1>
 <p>I&rsquo;ve began solve this problem with <code>find</code> command.</p>
-<div class="highlight"><pre><span></span><code><span class="go">find dir1 dir2 -d 1 -type d -name \*hello\*</span>
+<div class="highlight"><pre><span></span><code>$ find dir1 dir2 -d <span class="m">1</span> -type d -name <span class="se">\*</span>hello<span class="se">\*</span>
 </code></pre></div>
 
 <p>Command above do: find in directories with paths ./dir1 ./dir2, files and directries whose name contains string <code>hello</code>. Option -d means depth and we want to find only files and directories whose are one level below of search parent. So we are searching dir1/<em> not dir1/</em>/*&hellip;</p>
@@ -108,7 +108,7 @@ searching through several directories. The search engine in finder is unusable f
 <h1 id="ls-command">ls command<a class="headerlink" href="#ls-command" title="Permanent link">&para;</a></h1>
 <p>I was searching how can I use command <code>ls</code> in similar way as command <code>find</code>.
 I luckily found the solution. There was problem that <code>ls</code> printing only names of found files. But when you are searching through several directories you need to know absolute path or at least part of path by you can distinguish source dir of the found it file. That can be done with option <code>-d</code> and env variable <code>$PWD</code></p>
-<div class="highlight"><pre><span></span><code><span class="go">ls -d &quot;$PWD&quot;/dir1/* &quot;$PWD&quot;/dir2/* | grep -F hello</span>
+<div class="highlight"><pre><span></span><code>$ ls -d <span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>/dir1/* <span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">&quot;</span>/dir2/* <span class="p">|</span> grep -F hello
 </code></pre></div>
 
 <p>Command above do: list all files in dir1 and dir2 with full path which is ensured by option <code>-d</code> and <code>$PWD</code>. This approach need to contain asterisk at the end of path. Result is piped to grep which filter name that contains string&nbsp;hello.</p>
