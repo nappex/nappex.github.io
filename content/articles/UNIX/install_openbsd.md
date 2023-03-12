@@ -1,6 +1,6 @@
 ---
-Title: OpenBSD installation with disk encryption
-Date: 2023-02-26
+Title: Installation OpenBSD 7.2 within disk encryption
+Date: 2023-03-11
 Category: unix, openbsd
 Tags: advanced, openbsd, unix
 Slug: install-openbsd-encryption
@@ -78,6 +78,11 @@ The tech spec of laptop are:
 * Audio: Realtek ALC269
 * Card reader: Realtek RTL8411
 
+The article describes installation of OpenBSD
+* version 7.2
+* CPU architecture `amd64`
+* image filename `install72.img`
+
 # Install preparation
 
 ## Hardware review, drivers availability
@@ -122,6 +127,10 @@ Disk is handled by driver `sd` without any problem.
 ### Audio
 
 Audio is working pretty well without any extra tweaking after installation.
+
+### WebCam
+
+My first attempt failed, but I did not explore too much so far.
 
 ### Fucntion key to control volume and screen brightness
 
@@ -198,6 +207,10 @@ MacOS or `RUFUS` on Windows.
 
 # Installation OpenBSD with disk Encryption
 
+It seems that the encryption itself how I am describing will not be necessary from OpenBSD 7.3.
+This version should have encryption of disk included in regular installation mode and you will not
+have to make it manually from shell.
+
 When you have prepared USB stick as install media boot it, perhaps with `F12`. If OpenBSD booting went well
 you should see four option to choose in terminal. (I)nstall, (U)pgrade, (A)utoinstall, (S)hell.
 Type a leading letter and enter to confirm the choice. The reason why the letters are in parentheses.
@@ -265,9 +278,33 @@ Disadvantage - write the right form of regex and format the output can be challe
 
 ### fdisk
 
+If you want to use `fdisk` you have to know which disk you want to analyze. This
+command needs disk name as argument. You will have to list available disks with
+`sysctl` and then you can each analyze. Finally you find out from output info which disk
+is the rigth for installation. The output will be more detailed if you use `verbose` option.
+
+```sh
+$ fdisk -v sd0
+```
 
 ### disklabel
 
+Same approach as for `fdisk` can be used for `disklabel` command. Disklabel just print out
+different output than `fdisk`.
+
+You can check sizes of disk by:
+
+```sh
+$ disklabel -p g sd0
+```
+
+or `verbose` option
+
+```sh
+$ disklabel -v sd0
+```
+
+There is keyname `label` which show manufacture name of your disk. It could help you for example.
 
 ### Conclusion
 
@@ -284,4 +321,238 @@ and you just click to disk which you want to choose without any work too.
 But I feel much better when I know what is happening behind the scene. And what to do manually
 if automatic process will fail.
 
+## Fill your disk with random data
+
+New harddisks are filled with zeroes or ones. If you install OS on you laptop some parts change
+to real data. Aversary can recognize which parts of disk is used for real data and which parts
+are unused.
+
+Firstly, we have to create special files which will be representing your disk. If you are
+little skilled in unix you know that is files located in `/dev`. These files are created automatically
+on other unix most of the time. In OpenBSD you have to make it manually if you handle your disk
+from shell by script `MAKEDEV`.
+
+```sh
+$ cd /dev && sh MAKEDEV sd0
+```
+
+You have to change directory to dev, because `MAKEDEV` will create special files in
+current dir. Then just run script on the disk. It will create file sd0a, sd0b, ...., sd0p
+and rsd0a, rsd0b, ...., rsd0p. sd0<letter> is just ordinary special files for your disk. This
+file you will want to use most of the time. rsd<letter> is raw representation of data in your disk.
+This file you will use if you will want to write data on your disk by special way. Carefully
+check if is used sd or rsd in command.
+
+To write random data on your disk use command below, when you created special files in your
+dev directory.
+
+```sh
+$ dd if=/dev/urandom of=/dev/rsd0c bs=1m
+```
+
+It can take a long time. For 250GB SSD disk it takes about 2 hours. Theres is `rsd0c`
+so we using raw special file. Partition `c` is intended for whole disk in OpenBSD.
+
+## Prepare disk for encryption
+
+If you want to encrypt your disk you have to prepare disk from shell before installation.
+This should not be needed from OpenBSD 7.3.
+
+OpenBSD uses two commands for disk preparation.
+
+`fdisk` - is used to create partition scheme (table) as GPT or MBR.
+
+and
+
+`disklabel` - is used to create one or more partitions(logical subsections of harddisk) on disk.
+
+OpenBSD makes encryption with RAID. We have to prepare disk as RAID. Finally we can use special
+features of RAID to encrypt the disk. We can imagine as the low layer is physical disk,
+another layer is software representation of disk by operation system and finally we create
+another layer RAID where encryption is applied.
+
+### Create partition scheme
+
+I cover only creation of GPT scheme. It is most used partition scheme, currently.
+
+```sh
+$ fdisk -gy -b960 sd0
+```
+
+Option `-g` create GPT scheme. Option `-y` answer to all question yes.
+Option `-b960` reserved first space of disk to EFI, boot, PMBR and so on. This space
+will be used for booting. More info can be found [boot_amd64(8)](https://man.openbsd.org/boot_amd64.8)
+or [boot(8)](https://man.openbsd.org/boot.8)
+
+### Create partition as RAID type
+
+When we've created the partition scheme we can fill the scheme(table) with partitions.
+We will need just one for whole disk with RAID type.
+
+To create partitions we use command `disklabel`.
+
+To edit partitions on certain disk use command:
+
+```sh
+$ disklabel -E sd0
+```
+
+It invokes new edit prompt.
+
+```sh
+sd0> a a
+```
+
+First `a` means add partition, second `a` means partition with name `a`.
+
+Other lines are about the setting of new partition. Size, type, etc...
+
+```sh
+offset:[64]
+size:[9999] *
+FS type:[4.2BSD] RAID
+sd0*> w
+sd0>q
+```
+
+Offset, just enter the default value. For size write asterisk `*` to choose whole disk.
+FS type choose `RAID`. We need RAID type to encrypt it. OpenBSD can encrypt only RAID.
+
+Finaly `w`, means write changes to disk. `q` means quit edit prompt of disklabel.
+
+### Encrypt the disk
+
+Currently we have disk `sd0`, we've already created special files `sd0` and `rsd0` in `/dev`.
+Then we've already create partition scheme GPT on disk and finally create one partition
+marked with letter `a` as whole disk.
+
+Command to manage RAID in OpenBSD is `bioctl`.
+
+To encrypt prepared disk write:
+
+```sh
+$ bioctl -c C -l sd0a softraid0
+New passphrase:
+Re-type passphrase:
+sd1 at scsibus2 targ 1 lun 0: <OPENBSD, SR CRYPTO, 005> SCSI2 0/direct fixed
+sd1: 19445MB, 512 bytes/sector, 39824607 sectors
+softraid0: CRYPTO volume attached as sd1
+```
+
+Option `-c` is to select RAID discipline(raidlevel). `C` discipline is encrypt discipline to encrypt disk.
+For example discipline `1C` means `RAID1` + `CRYPTO` = encrypting and mirroring disks discipline.
+
+Option `-l` select disk to encrypt.
+
+softraid0 is softraid managment device node.
+
+It is important to notice that it creates a whole new virtual disk `sd1`, which is created from `sd0a`.
+
+We encrypt the disk with a password. It means we create a key which is located at disk and we just
+make password for this key. It has advantage that we can change the password any time we need.
+
+There is an option to create key and save to disk. Official documentation of OpenBSD label as Keydisk.
+There are also instructions how to make key disk. This approach is probably more safe, but
+you can not change the key. It is really recommended to create backup of key disk if you
+choose this option.
+Personally I did not try to create Keydisk. I'd like to try in future. Then I'll update this section.
+
+### Add zeroes at the start of disk
+
+It is recommended fill start of new disk with zeroes, because info about softraid at the start
+can confuse kernel.
+
+To add zeroes run:
+
+```sh
+# dd if=/dev/zero bs=1m count=1 of=/dev/rsd1c
+```
+
+Currently, we have prepared encrypted disk `sd1` for installation. Now you can write `exit`
+to go back to installation.
+
+## Installation
+
+I don't cover all questions just the most important in my opinion.
+
+Which disk is the root? sd1
+It is a disk we created with encryption from RAID partition.
+
+Setup a user? <username>
+I recommend to create a new user. But you can create it later if you want.
+
+Start sshd(8) by default?[yes] no
+It can be enabled later. If you want to use as laptop I assume you don't need sshd.
+
+Do you expect to run X Window System?[yes]
+If you are installing on laptop, yes will be probably the right answer.
+
+Do you want the X Window System to be started by xenodm?[no] yes
+X Window System can be started by `startx` or `xenodm`. `xenodm` should be more secure.
+If you are not sure you can choose no, it can be enabled later.
+
+Use (W)hole disk MBR, whole disk(G)PT, ... (E)dit? [whole] G
+It sets the partition scheme.
+Use what is suitable for you. This article uses GPT.
+
+Use (A)uto layout, (E)dit auto layout, (C)ustom? [a] c
+It sets layout of partitions.
+Custom layout invoke `disklabel` command to editing prompt.
+
+There are several rules to follow.
+Don't add partition with letter `c`. This partition is reserver by OpenBSD for whole disk.
+If you use GPT scheme automatically (set by installer). Don't use partition `i` it reserved by default
+to EFI boot.
+
+There are several recommendations.
+Use partition `a` for mountpoint `/` (root).
+Use partition `b` for swap.
+
+Example of layout. It does not include sizes, because it depends on your needs and size of
+your harddisk.
+
+PARTITION       Mountpoint      Note
+a               /               root
+b               swap            swap space
+c                               whole disk
+d               /tmp            temporary files
+e               /var            variable data
+f               /usr            user system resources
+g               /usr/X11R6      X applications
+h               /usr/local
+i                               EFI BOOT
+j               /usr/src
+k               /usr/obj
+l               /home
+
+
+Location of sets? (cd0 disk ...)  [cd0] disk
+This question can be little bit complicated.
+Disk means sd0, sd1, wd0, .... USB stick is disk.
+Sets mean file sets to install. File sets are locate on USB stick.
+Unfortunately the USB stick itself is not mounted. We just boot OpenBSD to RAM, but
+USB is not mounted.
+We select disk, because installation is from USB. Then we have to choose which disk is
+out USB.
+
+Is disk already mounted [yes]: no
+
+Which disk contains install media [sd0]: sd2
+Most of the time `sd0` is main harddisk. USB should be `sd1` or `sd2`.
+This part will mount your USB.
+
+Which sd2 partitions has install sets [a]:
+Select default a.
+
+Pathname to sets [7.2/amd64]:
+Select default.
+Then select sets which you want to install. How to select or deselect is nicely described
+in installer.
+
+Congratulations!
+After sets install, the installation is done.
+When you restart your laptop it should ask you for password to de-encrypt harddisk.
+
+I'd like to make other articles about steps after installation. There will be info about
+how to setup you `cwm`, `xterm`, `X Window System` or how speed up your system.
 
