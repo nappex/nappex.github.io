@@ -463,72 +463,134 @@ Personally I did not try to create Keydisk. I&rsquo;d like to try in future. The
 <p>It is recommended fill start of new disk with zeroes, because info about softraid at the start
 can confuse&nbsp;kernel.</p>
 <p>To add zeroes&nbsp;run:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># dd if=/dev/zero bs=1m count=1 of=/dev/rsd1c</span>
+<div class="highlight"><pre><span></span><code>$ dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">bs</span><span class="o">=</span>1m <span class="nv">count</span><span class="o">=</span><span class="m">1</span> <span class="nv">of</span><span class="o">=</span>/dev/rsd1c
 </code></pre></div>
 
 <p>Currently, we have prepared encrypted disk <code>sd1</code> for installation. Now you can write <code>exit</code>
 to go back to&nbsp;installation.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>I don&rsquo;t cover all questions just the most important in my&nbsp;opinion.</p>
-<p>Which disk is the root? sd1
-It is a disk we created with encryption from <span class="caps">RAID</span>&nbsp;partition.</p>
-<p>Setup a user? <username>
-I recommend to create a new user. But you can create it later if you&nbsp;want.</p>
-<p>Start sshd(8) by default?[yes] no
-It can be enabled later. If you want to use as laptop I assume you don&rsquo;t need&nbsp;sshd.</p>
-<p>Do you expect to run X Window System?[yes]
-If you are installing on laptop, yes will be probably the right&nbsp;answer.</p>
-<p>Do you want the X Window System to be started by xenodm?[no] yes
-X Window System can be started by <code>startx</code> or <code>xenodm</code>. <code>xenodm</code> should be more secure.
+<p><strong>Which disk is the root?&nbsp;sd1</strong></p>
+<p>It is a disk we created with encryption from <span class="caps">RAID</span>&nbsp;partition.</p>
+<p><strong>Setup a user? <username></strong></p>
+<p>I recommend to create a new user. But you can create it later if you&nbsp;want.</p>
+<p><strong>Start sshd(8) by default?[yes]&nbsp;no</strong></p>
+<p>It can be enabled later. If you want to use as laptop I assume you don&rsquo;t need&nbsp;sshd.</p>
+<p><strong>Do you expect to run X Window&nbsp;System?[yes]</strong></p>
+<p>If you are installing on laptop, yes will be probably the right&nbsp;answer.</p>
+<p><strong>Do you want the X Window System to be started by xenodm?[no]&nbsp;yes</strong></p>
+<p>X Window System can be started by <code>startx</code> or <code>xenodm</code>. <code>xenodm</code> should be more secure.
 If you are not sure you can choose no, it can be enabled&nbsp;later.</p>
-<p>Use (W)hole disk <span class="caps">MBR</span>, whole disk(G)<span class="caps">PT</span>, &hellip; (E)dit? [whole] G
-It sets the partition scheme.
+<p><strong>Use (W)hole disk <span class="caps">MBR</span>, whole disk(G)<span class="caps">PT</span>, &hellip; (E)dit? [whole]&nbsp;G</strong></p>
+<p>It sets the partition scheme.
 Use what is suitable for you. This article uses <span class="caps">GPT</span>.</p>
-<p>Use (A)uto layout, (E)dit auto layout, (C)ustom? [a] c
-It sets layout of partitions.
+<p><strong>Use (A)uto layout, (E)dit auto layout, (C)ustom? [a]&nbsp;c</strong></p>
+<p>It sets layout of partitions.
 Custom layout invoke <code>disklabel</code> command to editing&nbsp;prompt.</p>
-<p>There are several rules to follow.
-Don&rsquo;t add partition with letter <code>c</code>. This partition is reserver by OpenBSD for whole disk.
-If you use <span class="caps">GPT</span> scheme automatically (set by installer). Don&rsquo;t use partition <code>i</code> it reserved by default
-to <span class="caps">EFI</span>&nbsp;boot.</p>
-<p>There are several recommendations.
-Use partition <code>a</code> for mountpoint <code>/</code> (root).
-Use partition <code>b</code> for&nbsp;swap.</p>
+<p>There are several rules to&nbsp;follow.</p>
+<ul>
+<li>Don&rsquo;t add partition with letter <code>c</code>. This partition is reserver by OpenBSD for whole&nbsp;disk.</li>
+<li>If you use <span class="caps">GPT</span> scheme automatically (set by installer). Don&rsquo;t use partition <code>i</code> it reserved by default
+to <span class="caps">EFI</span>&nbsp;boot.</li>
+</ul>
+<p>There are several&nbsp;recommendations.</p>
+<ul>
+<li>Use partition <code>a</code> for mountpoint <code>/</code> (root).</li>
+<li>Use partition <code>b</code> for&nbsp;swap.</li>
+</ul>
 <p>Example of layout. It does not include sizes, because it depends on your needs and size of
 your&nbsp;harddisk.</p>
-<p><span class="caps">PARTITION</span>       Mountpoint      Note
-a               /               root
-b               swap            swap space
-c                               whole disk
-d               /tmp            temporary files
-e               /var            variable data
-f               /usr            user system resources
-g               /usr/<span class="caps">X11R6</span>      X applications
-h               /usr/local
-i                               <span class="caps">EFI</span> <span class="caps">BOOT</span>
-j               /usr/src
-k               /usr/obj
-l&nbsp;/home</p>
-<p>Location of sets? (cd0 disk &hellip;)  [cd0] disk
-This question can be little bit complicated.
+<table>
+<thead>
+<tr>
+<th><span class="caps">PARTITION</span></th>
+<th>Mountpoint</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>/</td>
+<td>root</td>
+</tr>
+<tr>
+<td>b</td>
+<td>swap</td>
+<td>swap space</td>
+</tr>
+<tr>
+<td>c</td>
+<td></td>
+<td>whole disk</td>
+</tr>
+<tr>
+<td>d</td>
+<td>/tmp</td>
+<td>temporary files</td>
+</tr>
+<tr>
+<td>e</td>
+<td>/var</td>
+<td>variable data</td>
+</tr>
+<tr>
+<td>f</td>
+<td>/usr</td>
+<td>user system resources</td>
+</tr>
+<tr>
+<td>g</td>
+<td>/usr/<span class="caps">X11R6</span></td>
+<td>X applications</td>
+</tr>
+<tr>
+<td>h</td>
+<td>/usr/local</td>
+<td></td>
+</tr>
+<tr>
+<td>i</td>
+<td></td>
+<td><span class="caps">EFI</span> <span class="caps">BOOT</span></td>
+</tr>
+<tr>
+<td>j</td>
+<td>/usr/src</td>
+<td></td>
+</tr>
+<tr>
+<td>k</td>
+<td>/usr/obj</td>
+<td></td>
+</tr>
+<tr>
+<td>l</td>
+<td>/home</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Location of sets? (cd0 disk &hellip;)  [cd0]&nbsp;disk</strong></p>
+<p>This question can be little bit complicated.
 Disk means sd0, sd1, wd0, &#8230;. <span class="caps">USB</span> stick is disk.
 Sets mean file sets to install. File sets are locate on <span class="caps">USB</span> stick.
 Unfortunately the <span class="caps">USB</span> stick itself is not mounted. We just boot OpenBSD to <span class="caps">RAM</span>, but
 <span class="caps">USB</span> is not mounted.
 We select disk, because installation is from <span class="caps">USB</span>. Then we have to choose which disk is
 out <span class="caps">USB</span>.</p>
-<p>Is disk already mounted [yes]:&nbsp;no</p>
-<p>Which disk contains install media [sd0]: sd2
-Most of the time <code>sd0</code> is main harddisk. <span class="caps">USB</span> should be <code>sd1</code> or <code>sd2</code>.
+<p><strong>Is disk already mounted [yes]:&nbsp;no</strong></p>
+<p><strong>Which disk contains install media [sd0]:&nbsp;sd2</strong></p>
+<p>Most of the time <code>sd0</code> is main harddisk. <span class="caps">USB</span> should be <code>sd1</code> or <code>sd2</code>.
 This part will mount your <span class="caps">USB</span>.</p>
-<p>Which sd2 partitions has install sets [a]:
-Select default&nbsp;a.</p>
-<p>Pathname to sets [7.2/amd64]:
-Select default.
+<p><strong>Which sd2 partitions has install sets&nbsp;[a]:</strong></p>
+<p>Select default&nbsp;a.</p>
+<p><strong>Pathname to sets&nbsp;[7.2/amd64]:</strong></p>
+<p>Select default.
 Then select sets which you want to install. How to select or deselect is nicely described
 in&nbsp;installer.</p>
-<p>Congratulations!
-After sets install, the installation is done.
+<p>Congratulations!</p>
+<p>After sets install, the installation is done.
 When you restart your laptop it should ask you for password to de-encrypt&nbsp;harddisk.</p>
 <p>I&rsquo;d like to make other articles about steps after installation. There will be info about
 how to setup you <code>cwm</code>, <code>xterm</code>, <code>X Window System</code> or how speed up your&nbsp;system.</p>
