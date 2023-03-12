@@ -82,7 +82,7 @@ printf '%s\n' "$*" # join the elements of the array with the
 Note:
 In the Bourne shell and ksh88, $IFS must contain the space character for "$@" to work properly (a bug), and in the Bourne shell, you can't access elements above $9 (${10} won't work, you can still do shift 1; echo "$9" or loop over them)).[1]
 
-Also check: 
+Also check:
 [POSIX shell array article](https://www.baeldung.com/linux/posix-shell-array), where is recommend to use the command `set` with double-dash. The double-dash mark the end of options.
 
 ```sh
@@ -96,11 +96,11 @@ Manual page of `ksh93` say about `set --` following:
 
 # Sources
 
-[1] - [stackexchange answer](https://unix.stackexchange.com/questions/137566/arrays-in-unix-bourne-shell/137571#137571)
-[2] - [wikipedia POSIX](https://en.wikipedia.org/wiki/POSIX)
-[3] - [wikipedia Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell)
-[4] - [POSIX shell scripting](https://steinbaugh.com/posts/posix.html)
-[5] - Check POSIX syntax of your script [online](https://www.shellcheck.net/)
-[6] - [stackoverflow answer](https://stackoverflow.com/a/40922501)
-[7] - [unix.stackexchange answer](https://unix.stackexchange.com/questions/48786/how-can-i-test-for-posix-compliance-of-shell-scripts)
+- [1] [stackexchange answer](https://unix.stackexchange.com/questions/137566/arrays-in-unix-bourne-shell/137571#137571)
+- [2] [wikipedia POSIX](https://en.wikipedia.org/wiki/POSIX)
+- [3] [wikipedia Bourne shell](https://en.wikipedia.org/wiki/Bourne_shell)
+- [4] [POSIX shell scripting](https://steinbaugh.com/posts/posix.html)
+- [5] Check POSIX syntax of your script [online](https://www.shellcheck.net/)
+- [6] [stackoverflow answer](https://stackoverflow.com/a/40922501)
+- [7] [unix.stackexchange answer](https://unix.stackexchange.com/questions/48786/how-can-i-test-for-posix-compliance-of-shell-scripts)
 
