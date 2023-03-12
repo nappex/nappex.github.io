@@ -10,23 +10,23 @@
         <link rel="dns-prefetch" href="//fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-        <meta name="author" content="David S" />
+        <meta name="author" content="David" />
 
         <meta property="og:type" content="article" />
         <meta name="twitter:card" content="summary">
 
-<meta name="keywords" content="FreeBSD, beginner, unix, BSD, unix, " />
+<meta name="keywords" content="advanced, tools, unix, unix, " />
 
-<meta property="og:title" content="Užitečné nástroje pro správu FreeBSD "/>
-<meta property="og:url" content="https://nappex.github.io/myblog/useful-BSD-tools" />
-<meta property="og:description" content="Seznam užitečných nástrojů pro začínající uživatele FreeBSD" />
+<meta property="og:title" content="Search files from multiply sources with unix "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/search-files-multi-sources" />
+<meta property="og:description" content="How to quickly grep filename in content of multiple directories" />
 <meta property="og:site_name" content="The Snail&#39;s journey" />
-<meta property="og:article:author" content="David S" />
-<meta property="og:article:published_time" content="2022-05-30T00:00:00+02:00" />
-<meta name="twitter:title" content="Užitečné nástroje pro správu FreeBSD ">
-<meta name="twitter:description" content="Seznam užitečných nástrojů pro začínající uživatele FreeBSD">
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2023-02-24T00:00:00+01:00" />
+<meta name="twitter:title" content="Search files from multiply sources with unix ">
+<meta name="twitter:description" content="How to quickly grep filename in content of multiple directories">
 
-        <title>Užitečné nástroje pro správu FreeBSD  · The Snail&#39;s journey
+        <title>Search files from multiply sources with unix  · The Snail&#39;s journey
 </title>
         <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
@@ -78,8 +78,8 @@
 <div class="row-fluid">
     <header class="page-header span10 offset2">
         <h1>
-            <a href="https://nappex.github.io/myblog/useful-BSD-tools">
-                Užitečné nástroje pro správu&nbsp;FreeBSD
+            <a href="https://nappex.github.io/myblog/search-files-multi-sources">
+                Search files from multiply sources with&nbsp;unix
             </a>
         </h1>
     </header>
@@ -90,49 +90,37 @@
             
             <div class="toc">
 <ul>
-<li><a href="#nastroje-built-in">Nástroje built-in</a><ul>
-<li><a href="#analyza-systemu">Analýza&nbsp;systému</a></li>
-<li><a href="#nastroje-pro-spravu-disku">Nástroje pro správu disků</a><ul>
-<li><a href="#vypis-disku">Výpis&nbsp;disků</a></li>
-</ul>
-</li>
-<li><a href="#sit">Síť</a></li>
-<li><a href="#virtualizace">Virtualizace</a></li>
-</ul>
-</li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#find-command">find&nbsp;command</a></li>
+<li><a href="#ls-command">ls&nbsp;command</a></li>
 </ul>
 </div>
-<h1 id="nastroje-built-in">Nástroje built-in<a class="headerlink" href="#nastroje-built-in" title="Permanent link">&para;</a></h1>
-<p>Tedy vestavěné, které jsou součástí instalace FreeBSD. Tyto nástroje
-je možno používat bez další instalace&nbsp;čehokoliv.</p>
-<h2 id="analyza-systemu">Analýza systému<a class="headerlink" href="#analyza-systemu" title="Permanent link">&para;</a></h2>
-<p><code>vmstat</code></p>
-<p>Jednoduchý příkaz, který nám řekne, kde je problém, zda v <span class="caps">CPU</span>, I/O nebo <span class="caps">RAM</span>.</p>
-<p><code>top</code></p>
-<p><code>ps</code></p>
-<p><code>ps aux</code></p>
-<h2 id="nastroje-pro-spravu-disku">Nástroje pro správu disků<a class="headerlink" href="#nastroje-pro-spravu-disku" title="Permanent link">&para;</a></h2>
-<p>Standardně jsem používal <code>lsblk</code>, ten je ovšem nutné doinstalovat, což může
-být občas při nefunční Wi-Fi a počátečním nastavení systému&nbsp;problém.</p>
-<p><code>gstat -a</code> výpis&nbsp;disků</p>
-<h3 id="vypis-disku">Výpis disků<a class="headerlink" href="#vypis-disku" title="Permanent link">&para;</a></h3>
-<p><code>geom disk list</code></p>
-<p><code>gpart show</code></p>
-<p><code>gpart list</code></p>
-<h2 id="sit">Síť<a class="headerlink" href="#sit" title="Permanent link">&para;</a></h2>
-<p><code>sysctl net.wlan.devices</code></p>
-<p><code>netstat</code></p>
-<h2 id="virtualizace">Virtualizace<a class="headerlink" href="#virtualizace" title="Permanent link">&para;</a></h2>
-<p><code>Bhyve</code></p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>I have a problem find files with my mac on windows server, especially if I am
+searching through several directories. The search engine in finder is unusable for&nbsp;me.</p>
+<h1 id="find-command">find command<a class="headerlink" href="#find-command" title="Permanent link">&para;</a></h1>
+<p>I&rsquo;ve began solve this problem with <code>find</code> command.</p>
+<div class="highlight"><pre><span></span><code><span class="go">find dir1 dir2 -d 1 -type d -name \*hello\*</span>
+</code></pre></div>
+
+<p>Command above do: find in directories with paths ./dir1 ./dir2, files and directries whose name contains string <code>hello</code>. Option -d means depth and we want to find only files and directories whose are one level below of search parent. So we are searching dir1/<em> not dir1/</em>/*&hellip;</p>
+<p>Unfortunately this approach is slow&nbsp;also.</p>
+<h1 id="ls-command">ls command<a class="headerlink" href="#ls-command" title="Permanent link">&para;</a></h1>
+<p>I was searching how can I use command <code>ls</code> in similar way as command <code>find</code>.
+I luckily found the solution. There was problem that <code>ls</code> printing only names of found files. But when you are searching through several directories you need to know absolute path or at least part of path by you can distinguish source dir of the found it file. That can be done with option <code>-d</code> and env variable <code>$PWD</code></p>
+<div class="highlight"><pre><span></span><code><span class="go">ls -d &quot;$PWD&quot;/dir1/* &quot;$PWD&quot;/dir2/* | grep -F hello</span>
+</code></pre></div>
+
+<p>Command above do: list all files in dir1 and dir2 with full path which is ensured by option <code>-d</code> and <code>$PWD</code>. This approach need to contain asterisk at the end of path. Result is piped to grep which filter name that contains string&nbsp;hello.</p>
 
 
              
  
                 <p id="post-share-links">
     Share on:
-      <a href="https://twitter.com/intent/tweet?text=U%C5%BEite%C4%8Dn%C3%A9%20n%C3%A1stroje%20pro%20spr%C3%A1vu%C2%A0FreeBSD&url=https%3A//nappex.github.io/myblog/useful-BSD-tools&hashtags=freebsd,beginner,unix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
- ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/useful-BSD-tools" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
- ❄       <a href="mailto:?subject=U%C5%BEite%C4%8Dn%C3%A9%20n%C3%A1stroje%20pro%20spr%C3%A1vu%C2%A0FreeBSD&amp;body=https%3A//nappex.github.io/myblog/useful-BSD-tools" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+      <a href="https://twitter.com/intent/tweet?text=Search%20files%20from%20multiply%20sources%20with%C2%A0unix&url=https%3A//nappex.github.io/myblog/search-files-multi-sources&hashtags=advanced,tools,unix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/search-files-multi-sources" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Search%20files%20from%20multiply%20sources%20with%C2%A0unix&amp;body=https%3A//nappex.github.io/myblog/search-files-multi-sources" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
 
             
             
@@ -147,35 +135,35 @@ být občas při nefunční Wi-Fi a počátečním nastavení systému&nbsp;prob
 <section>
     <h2>Related Posts</h2>
 <ul class="related-posts-list">
-<li><a href="https://nappex.github.io/myblog/command-line-moves" title="Use your command line more effectively">Use your command line more effectively</a></li>
 <li><a href="https://nappex.github.io/myblog/freebsd-drivers" title="Seznam ovladačů pro FreeBSD">Seznam ovladačů pro FreeBSD</a></li>
 <li><a href="https://nappex.github.io/myblog/install-dwm-to-freebsd" title="Instalace suckless dwm na FreeBSD">Instalace suckless dwm na FreeBSD</a></li>
 <li><a href="https://nappex.github.io/myblog/licenses-explanation" title="Základní přehled licencí">Základní přehled licencí</a></li>
-<li><a href="https://nappex.github.io/myblog/Acer-V5-431-BIOS-OCC" title="Acer V5 431 problems with BIOS(Legacy, UEFI), preparation to UNIX">Acer V5 431 problems with BIOS(Legacy, UEFI), preparation to UNIX</a></li>
+<li><a href="https://nappex.github.io/myblog/write-posix-shell-script" title="How to write POSIX shell script">How to write POSIX shell script</a></li>
+<li><a href="https://nappex.github.io/myblog/install-openbsd-encryption" title="Installation OpenBSD 7.2 within disk encryption">Installation OpenBSD 7.2 within disk encryption</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="previous-article">« <a href="https://nappex.github.io/myblog/NSA-orchestra-transcript-cz" title="Previous: Transcript of NSA operation orchestra in czech">Transcript of NSA operation orchestra in czech</a></li>
-                <li class="next-article"><a href="https://nappex.github.io/myblog/unix-links-to-read" title="Next: Zajímavé čtení o UNIX">Zajímavé čtení o UNIX</a> »</li>
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/Acer-V5-431-BIOS-OCC" title="Previous: Acer V5 431 problems with BIOS(Legacy, UEFI), preparation to UNIX">Acer V5 431 problems with BIOS(Legacy, UEFI), preparation to UNIX</a></li>
+                <li class="next-article"><a href="https://nappex.github.io/myblog/write-posix-shell-script" title="Next: How to write POSIX shell script">How to write POSIX shell script</a> »</li>
             </ul>
             </nav>
             </aside>
         </div>
         <section id="article-sidebar" class="span2">
             <h4>Published</h4>
-            <time itemprop="dateCreated" datetime="2022-05-30T00:00:00+02:00">Mon 30 May 2022</time>
+            <time itemprop="dateCreated" datetime="2023-02-24T00:00:00+01:00">Fri 24 February 2023</time>
             <h4>Category</h4>
-            <a class="category-link" href="https://nappex.github.io/myblog/categories#bsd-unix-ref">BSD, unix</a>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#unix-ref">unix</a>
             <h4>Tags</h4>
             <ul class="list-of-tags tags-in-article">
-                <li><a href="https://nappex.github.io/myblog/tags#beginner-ref">beginner
-                    <span class="superscript">9</span>
+                <li><a href="https://nappex.github.io/myblog/tags#advanced-ref">advanced
+                    <span class="superscript">8</span>
 </a></li>
-                <li><a href="https://nappex.github.io/myblog/tags#freebsd-ref">FreeBSD
-                    <span class="superscript">4</span>
+                <li><a href="https://nappex.github.io/myblog/tags#tools-ref">tools
+                    <span class="superscript">1</span>
 </a></li>
                 <li><a href="https://nappex.github.io/myblog/tags#unix-ref">unix
                     <span class="superscript">9</span>

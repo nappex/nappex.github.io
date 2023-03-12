@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="advanced, openbsd, unix, unix, openbsd, " />
+
+<meta property="og:title" content="Installation OpenBSD 7.2 within disk encryption "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/install-openbsd-encryption" />
+<meta property="og:description" content="OpenBSD installation with disk encryption" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2023-03-11T00:00:00+01:00" />
+<meta name="twitter:title" content="Installation OpenBSD 7.2 within disk encryption ">
+<meta name="twitter:description" content="OpenBSD installation with disk encryption">
+
+        <title>Installation OpenBSD 7.2 within disk encryption  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/install-openbsd-encryption">
+                Installation OpenBSD 7.2 within disk&nbsp;encryption
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#install-preparation">Install preparation</a><ul>
+<li><a href="#hardware-review-drivers-availability">Hardware review, drivers availability</a><ul>
+<li><a href="#cpu"><span class="caps">CPU</span></a></li>
+<li><a href="#gpu"><span class="caps">GPU</span></a></li>
+<li><a href="#wireless-network-card">Wireless network&nbsp;card</a></li>
+<li><a href="#ethernet">Ethernet</a></li>
+<li><a href="#disk">Disk</a></li>
+<li><a href="#audio">Audio</a></li>
+<li><a href="#webcam">WebCam</a></li>
+<li><a href="#fucntion-key-to-control-volume-and-screen-brightness">Fucntion key to control volume and screen&nbsp;brightness</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#wireless-network">Wireless&nbsp;network</a></li>
+<li><a href="#preparation-of-install-media">Preparation of install media</a><ul>
+<li><a href="#donwload-the-right-image-of-openbsd">Donwload the right image of&nbsp;OpenBSD</a></li>
+<li><a href="#verify-the-image-file">Verify the image&nbsp;file</a></li>
+<li><a href="#create-install-media-usb">Create install media - <span class="caps">USB</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#installation-openbsd-with-disk-encryption">Installation OpenBSD with disk Encryption</a><ul>
+<li><a href="#indetify-the-disk-for-installation">Indetify the disk for installation</a><ul>
+<li><a href="#sysctl">sysctl</a></li>
+<li><a href="#dmesg">dmesg</a></li>
+<li><a href="#fdisk">fdisk</a></li>
+<li><a href="#disklabel">disklabel</a></li>
+<li><a href="#conclusion_1">Conclusion</a></li>
+</ul>
+</li>
+<li><a href="#fill-your-disk-with-random-data">Fill your disk with random&nbsp;data</a></li>
+<li><a href="#prepare-disk-for-encryption">Prepare disk for encryption</a><ul>
+<li><a href="#create-partition-scheme">Create partition&nbsp;scheme</a></li>
+<li><a href="#create-partition-as-raid-type">Create partition as <span class="caps">RAID</span>&nbsp;type</a></li>
+<li><a href="#encrypt-the-disk">Encrypt the&nbsp;disk</a></li>
+<li><a href="#add-zeroes-at-the-start-of-disk">Add zeroes at the start of&nbsp;disk</a></li>
+</ul>
+</li>
+<li><a href="#installation">Installation</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>This article can be consider as following part to article <a href="https://nappex.github.io/myblog/Acer-V5-431-BIOS-OCC">how to give a new life
+of old computer</a>
+particulary to laptop Acer. The main motivation of giving a new life
+was to install OpenBSD as main <span class="caps">OS</span>. Another motivation was article about Old Computer Chanllenge - <span class="caps">OCC</span>.
+I am planning if everything happen well, to try using it as my main developing machine.
+The following article should be about what to do after&nbsp;installation.</p>
+<p>All articles about installation OpenBSD I&rsquo;ve met declared that installation process of OpenBSD is so
+easy! That&rsquo;s true if we presume that your level of knowledge meets certain&nbsp;conditions.</p>
+<p><span class="caps">IMHO</span> level of knowledge should&nbsp;be:</p>
+<ul>
+<li>how to mount disk and how the mounting&nbsp;works</li>
+<li>know the diff between partitioning scheme (table) and&nbsp;partitions</li>
+<li>what means /dev/sd0 resp.&nbsp;/dev/rsd0</li>
+<li>how work disks and their drivers on&nbsp;OpenBSD</li>
+<li>how work <span class="caps">RAID</span> and why it is useful (for&nbsp;encryption)</li>
+</ul>
+<p>Someone can complain that is not necessary. Yes that&rsquo;s true. You can just follow installation
+guide and try to insert defaults which should work in the most cases. And if the defaults won&rsquo;t work,
+you will just switch to another option. Especially if you combine this approach with reading
+<a href="https://www.openbsd.org/faq/index.html">OpenBSD <span class="caps">FAQ</span></a> then the success will come for&nbsp;sure.</p>
+<p>Honestly I do not like this approach but I understand it. When someone just started and wants
+to learn things it is good way to start no matter how. Learn by little steps. It is not possible to
+learn everything at the start. Amount of knowledge in <span class="caps">IT</span> world is huge.
+Maybe I suggest to start with something easier. I&rsquo;ve started with Linux distros as Ubuntu, Mint, Fedora.
+These distros have easier installation process than OpenBSD in my opinion. When you gain
+some knowledge from easier distros then you will enjoy process with openbsd more.
+A lot of info metinoned in <a href="https://www.openbsd.org/faq/index.html">OpenBSD <span class="caps">FAQ</span></a> assume
+some your knowledge. Nevertheless the <span class="caps">FAQ</span> are written very nice. I had just one problem.
+I was hurry and then I overlooked some important information. Read the <span class="caps">FAQ</span> carefully.
+Most of the time all info you need is mention there but sometimes the info you need is not,
+so highligt that you notice it at first sight.
+That knowledge can be obtained by reading a several books or by trying things
+with user friendly linux distro where a lot things are pre-set for&nbsp;user.</p>
+<p>Personally I had some basic knowledge when I was started with OpenBSD installation. Because of
+tweaking Linux distros as Mint, Fedora, Debian, Artix, Void in past. Even so I have to read
+some books to know what I am doing. I wanted to make the install properly and I want to know
+what I&rsquo;ve set to my <span class="caps">PC</span>. When I have the <span class="caps">OS</span> which has features as
+open source, flexible, customizable and gives me the power to fully operate my computer
+I want to use that advantage. I love the power to operate my <span class="caps">PC</span> by my rules and not rely
+to external service or settings as Windows or Mac do. Books which I strongly recommend for proper installation
+are from <a href="https://mwl.io/">Michael W. Lucas</a>. I really love this author. He writes books with
+style which perfect suits to my expectations. He explains things from the ground with the context
+and he goes after some introduction context deeper and deeper with language of &ldquo;ordinary&rdquo; people.
+He does not use difficult technical naming or describiton on every corner if not necessary.
+The books which helps me a lot with OpenBSD are <a href="https://mwl.io/nonfiction/os#omf">OpenBSD Mastery: Filesystems</a>
+and <a href="https://mwl.io/nonfiction/os#ao2e">Absolute OpenBSD 2nd edition</a>. The latter book can be little bit
+obsolete because it was written at&nbsp;2014.</p>
+<p>Installation starts with laptop Acer V5 431, where I am able to boot both legacy and <span class="caps">UEFI</span>.
+The tech spec of laptop&nbsp;are:</p>
+<ul>
+<li>Laptop model: Acer V5-431 (<span class="caps">BIOS</span>&nbsp;V2.18)</li>
+<li><span class="caps">CPU</span>: Intel Celeron 1007U (2 cores)&nbsp;1500GHz</li>
+<li><span class="caps">RAM</span>: 4 Gb <span class="caps">DDR3</span> (max is <span class="caps">8GB</span>)</li>
+<li>Disk: Seagate <span class="caps">ST500LT012</span> <span class="caps">500GB</span> <span class="caps">SATA</span> (find out it by <code>$disklabel -p g sd0</code> and check the&nbsp;label)</li>
+<li>Wifi card: Atheros <span class="caps">AR9462</span> (not&nbsp;supported)</li>
+<li>Ethernet: Realtek 8168 (proprietary <a href="https://www.notebookcheck.net/Review-Acer-Aspire-V5-431-Notebook.83411.0.html#1021134-7">dongle</a>)</li>
+<li><span class="caps">GPU</span>: Mesa Intel <span class="caps">HD</span> Graphics 2500 (<span class="caps">IVB</span> <span class="caps">GT1</span>)</li>
+<li>Audio: Realtek <span class="caps">ALC269</span></li>
+<li>Card reader: Realtek <span class="caps">RTL8411</span></li>
+</ul>
+<p>The article describes installation of OpenBSD
+* version 7.2
+* <span class="caps">CPU</span> architecture <code>amd64</code>
+* image filename <code>install72.img</code></p>
+<h1 id="install-preparation">Install preparation<a class="headerlink" href="#install-preparation" title="Permanent link">&para;</a></h1>
+<h2 id="hardware-review-drivers-availability">Hardware review, drivers availability<a class="headerlink" href="#hardware-review-drivers-availability" title="Permanent link">&para;</a></h2>
+<h3 id="cpu"><span class="caps">CPU</span><a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<p>Process unit is amd64 with two cores. Everything should works&nbsp;fine.</p>
+<h3 id="gpu"><span class="caps">GPU</span><a class="headerlink" href="#gpu" title="Permanent link">&para;</a></h3>
+<p>Laptop contains Mesa Intel <span class="caps">HD</span> Graphics 2500, which is supported by OpenBSD driver <code>intel(4)</code>.
+Manual page for this driver declares that support Intel(R) <span class="caps">HD</span> Graphics:&nbsp;2000-6000.</p>
+<p>Only one problem occurs. During startup screen is blinking. When X server is loaded, blinking will stop.
+So far I dont know if it is problem with OpenBSD or&nbsp;laptop.</p>
+<h3 id="wireless-network-card">Wireless network card<a class="headerlink" href="#wireless-network-card" title="Permanent link">&para;</a></h3>
+<p>Unfortunately my wifi card is not support. OpenBSD does not provide driver for it.
+So I solve that issue that I am using external <span class="caps">USB</span> wifi card Atheros 9271 which is supported
+by driver <code>athn</code>. This <span class="caps">USB</span> wifi card should be available for purchase in most&nbsp;eshops.</p>
+<p>Another <span class="caps">USB</span> wifi card which should be fine, working and available in eshops is <span class="caps">TP</span>-Link <span class="caps">TL</span>-<span class="caps">WN722N</span>.
+I dont test <span class="caps">TP</span>-Link card, but driver <code>urtwn(4)</code> listed this&nbsp;WiFi.</p>
+<p>There are dozens of <span class="caps">USB</span> wifi cards which are supported by OpenBSD, but I found two problems
+with them. First problem is that most of them is difficult to buy in eshops and second problem
+is that reviews were not quite good about the quality and&nbsp;reliability.</p>
+<h3 id="ethernet">Ethernet<a class="headerlink" href="#ethernet" title="Permanent link">&para;</a></h3>
+<p>There is also little problem because laptop contain proprietary
+<a href="https://www.notebookcheck.net/Review-Acer-Aspire-V5-431-Notebook.83411.0.html#1021134-7">dongle</a>
+where can be connected either <span class="caps">RJ45</span> or <span class="caps">VGA</span>, but special adapter is needed for&nbsp;both.</p>
+<p>Fortunately ordinary adapter <span class="caps">USB</span>-<span class="caps">RJ45</span> from apple worked&nbsp;fine.</p>
+<h3 id="disk">Disk<a class="headerlink" href="#disk" title="Permanent link">&para;</a></h3>
+<p>Disk is handled by driver <code>sd</code> without any&nbsp;problem.</p>
+<h3 id="audio">Audio<a class="headerlink" href="#audio" title="Permanent link">&para;</a></h3>
+<p>Audio is working pretty well without any extra tweaking after&nbsp;installation.</p>
+<h3 id="webcam">WebCam<a class="headerlink" href="#webcam" title="Permanent link">&para;</a></h3>
+<p>My first attempt failed, but I did not explore too much so&nbsp;far.</p>
+<h3 id="fucntion-key-to-control-volume-and-screen-brightness">Fucntion key to control volume and screen brightness<a class="headerlink" href="#fucntion-key-to-control-volume-and-screen-brightness" title="Permanent link">&para;</a></h3>
+<p>The <code>Fn</code> on keyboard in combination with other keys. Specifically arrow keys on Acer V5.
+This functionality is working out of the box immediately after installation.
+It is really cool. Most of the time I had problem with that funcionality on FreeBSD or Linux&nbsp;distros.</p>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>I do not recommend to buy this old laptop for OpenBSD because of problematic network interfaces.
+You can handle it with a several adapters, but you will find more old laptops whose network
+interfaces will be more compatible (without need of extra adapters) and accexible with&nbsp;OpenBSD.</p>
+<p>That is pity because other things working quite well. Unfortunately network interfaces are
+really important aspect for comfortable usage in my&nbsp;opinion.</p>
+<h2 id="wireless-network">Wireless network<a class="headerlink" href="#wireless-network" title="Permanent link">&para;</a></h2>
+<p>If your laptop has only wifi card without ethernet socket there is a little problem with driver.
+There is problem with driver also if OpenBSD support your wifi card. OpenBSD image does not
+contain all available drivers out of the box. OpenBSD does not want to mess your system with
+drivers which are not intend to use. I like that approach, but it has a drawback.
+You can easily install all available drivers with command <code>fw_update</code>. It will detect your
+hardware and download just drivers you need nothing more. Unfortunately this command takes
+the drivers from internet. If you can not connect to the internet by other option than a wifi.
+You have to manually download on other computer particular driver for your wifi, put on <span class="caps">USB</span> and
+install with <code>fw_update</code> manually. Note the install proces does not need the internet.
+So you can solve missing driver after installation. Theres are instructions in <span class="caps">FAQ</span> chapter
+<a href="https://www.openbsd.org/faq/faq4.html#WifiOnly">Bootstrapping wireless firmware</a>. You will
+find there a link to all available firmwares and download the needed&nbsp;one.</p>
+<h2 id="preparation-of-install-media">Preparation of install media<a class="headerlink" href="#preparation-of-install-media" title="Permanent link">&para;</a></h2>
+<p>I&rsquo;ll cover only preparation of <span class="caps">USB</span> stick. Nowadays other devices are not use a&nbsp;lot.</p>
+<h3 id="donwload-the-right-image-of-openbsd">Donwload the right image of OpenBSD<a class="headerlink" href="#donwload-the-right-image-of-openbsd" title="Permanent link">&para;</a></h3>
+<p>Go to <a href="https://www.openbsd.org/faq/faq4.html#Download">download page</a>. There is main table
+where you click the version you want and directly download the image&nbsp;file.</p>
+<p>There are some little bit confusing parts. If you directly download image you just download
+the image without signing key and without file containing hashes to verify donwloaded image.
+Unfortunately further links to these files are not showed at first&nbsp;sight.</p>
+<p>You have to look at the first sentence below the table and there is html link to <a href="https://www.openbsd.org/ftp.html">mirror sites</a>.
+Currently you can choose the mirror from a list you most prefer. When I was exploring some of these mirrors they look ok.
+The latest version of OpenBSD should be found at all of mirrors, but some of mirrors
+contains also older version for example the 6.8 and older. On top of that in mirrors you found
+all needed files to installation - images, patches, file sets (image contains its, but you can download it separately here).
+You will find there the file with hashes, signature file, public key to verify your image.
+I strongly recommend to verify every file you download from the internet to avoid future problems.
+There is located also file with name <code>INSTALL.&lt;CPU_architecure&gt;</code>. This file is very handy because
+it describes how to install OpenBSD on specific <span class="caps">CPU</span> architecture. If you do not want to read
+any book I recommend to you read this file and <a href="https://www.openbsd.org/faq/index.html"><span class="caps">FAQ</span></a> at&nbsp;least.</p>
+<p>To choose right image you have to know the type of <span class="caps">CPU</span> architecture. Most of laptops are
+amd64 in nowadays, but some of them can be also <span class="caps">ARM</span>. Neverthless you should not have a problem
+to find image for your <span class="caps">CPU</span> architecture if you don&rsquo;t have really exotic&nbsp;hardware.</p>
+<h3 id="verify-the-image-file">Verify the image file<a class="headerlink" href="#verify-the-image-file" title="Permanent link">&para;</a></h3>
+<p>I will not describe how to verify the image. Nice tutorial how to do it is in <a href="https://www.openbsd.org/faq/faq4.html#Download">Download section</a>. Under the table with images available to download. I just mention that you will find
+link to public key in text, but there is no link for file with <span class="caps">SHA256</span> hashes and signature.
+These files you will find in mirrors&nbsp;link.</p>
+<h3 id="create-install-media-usb">Create install media - <span class="caps">USB</span><a class="headerlink" href="#create-install-media-usb" title="Permanent link">&para;</a></h3>
+<p>There are dozen of articles how to write image file of <span class="caps">OS</span> to <span class="caps">USB</span> so I will not replicate them.
+OpenBSD <span class="caps">FAQ</span> show usage with <code>dd</code> program on OpenBSD or Linux. You can use <code>BalenaEtcher</code> on
+MacOS or <code>RUFUS</code> on&nbsp;Windows.</p>
+<h1 id="installation-openbsd-with-disk-encryption">Installation OpenBSD with disk Encryption<a class="headerlink" href="#installation-openbsd-with-disk-encryption" title="Permanent link">&para;</a></h1>
+<p>It seems that the encryption itself how I am describing will not be necessary from OpenBSD 7.3.
+This version should have encryption of disk included in regular installation mode and you will not
+have to make it manually from&nbsp;shell.</p>
+<p>When you have prepared <span class="caps">USB</span> stick as install media boot it, perhaps with <code>F12</code>. If OpenBSD booting went well
+you should see four option to choose in terminal. (I)nstall, (U)pgrade, (A)utoinstall, (S)hell.
+Type a leading letter and enter to confirm the choice. The reason why the letters are in parentheses.
+Install ordinary install process. Upgrade I have not used it yet, but it will be likely option when
+you have already installed OpenBSD and you want to upgrade it to higher version.
+Autoinstall, it should make automatic installation for you, but I did not try it. So I don&rsquo;t know
+details. Shell is shell.
+If you choose any other option than shell you can enter to shell with exclamation mark <code>!</code> and
+if you want to return back type exit. It is not recommended to use <code>Ctrl-C</code>. This information is written
+in prompt. <span class="caps">READ</span> carefully what Installer write to you, all needed informations are mentioned&nbsp;there.</p>
+<h2 id="indetify-the-disk-for-installation">Indetify the disk for installation<a class="headerlink" href="#indetify-the-disk-for-installation" title="Permanent link">&para;</a></h2>
+<p>Choose from option Shell. Now you can operate your computer from live OpenBSD.
+Indetifying disk is one of thing which are not documented well in <span class="caps">FAQ</span>. I didn&rsquo;t find it at least.
+There is a point when OpenBSD documentation assume that the reader has some basic knowledge.
+I did not have it. I suppose all OSes I&rsquo;ve tried in past before OpenBSD served me
+names and basic info about disk in really nice and easy overview. I saw all connected disks
+and the decision which to choose was really without any thinking. OpenBSD will not serve you
+these information. When you want to install OpenBSD you have to know which disk you want to use.
+Disk names are create from the name of driver which operates the disk and number. Choosing the right
+driver for the disk OpenBSD makes automatically. For example we have one <span class="caps">SATA</span> disk. <span class="caps">SATA</span> disks are
+operated by driver <code>sd</code>. The name of disk will be <code>sd0</code>. If you connect another <span class="caps">SATA</span> disk it&rsquo;ll be
+<code>sd1</code> and so on. <span class="caps">USB</span> sticks are operated by <code>sd</code> also.</p>
+<p>Information about connected disks can be found out with several&nbsp;tools.</p>
+<h3 id="sysctl">sysctl<a class="headerlink" href="#sysctl" title="Permanent link">&para;</a></h3>
+<p>First tool is <a href="https://man.openbsd.org/man2/sysctl.2">sysctl(2)</a> - command to get or set system&nbsp;information.</p>
+<div class="highlight"><pre><span></span><code>$ sysctl hw.disknames
+hw.disknames<span class="o">=</span>sd0:,sd1:,wd0:ced4326a18397569,cd0:
+</code></pre></div>
+
+<p>It lists all connected disks, if there is hex number after identificator it means Filesystem was recognize by
+OpenBSD. If not there is no native filesystem to OpenBSD on disk (native filesystem is <span class="caps">FFS</span>).</p>
+<p>Advantage is - easy command to memorize. Quick usage to get quick basic overview about&nbsp;disks.</p>
+<p>Disadvantage of this tool is you do not see details about disk. Only the name and if
+the filesystem is native to&nbsp;OpenBSD.</p>
+<h3 id="dmesg">dmesg<a class="headerlink" href="#dmesg" title="Permanent link">&para;</a></h3>
+<p>Other tool for to find out connected disks is <a href="https://man.openbsd.org/dmesg">dmesg(8)</a> (display the system message buffer).
+We can review startup messages, info during boot with this command. There are messages
+about which disks were&nbsp;connected.</p>
+<div class="highlight"><pre><span></span><code>$ dmesg <span class="p">|</span> grep -E <span class="s1">&#39;^[wsc]d\d+&#39;</span>
+</code></pre></div>
+
+<p>We grep output for names of expected disk drivers as <code>wd</code>, <code>sd</code> and <code>cd</code> with
+at least one number and the name must be at the start of line. We don&rsquo;t see only the name
+of connected disk but also the sizes and other details. Details are not written in well arranged way.
+So sometimes you have to read carefully and finding the information in output. Especially
+if output is&nbsp;longer.</p>
+<p>Advantage - details about disk, you have option to play with pipes and make better&nbsp;output.</p>
+<p>Disadvantage - write the right form of regex and format the output can be challenging for some&nbsp;users.</p>
+<h3 id="fdisk">fdisk<a class="headerlink" href="#fdisk" title="Permanent link">&para;</a></h3>
+<p>If you want to use <code>fdisk</code> you have to know which disk you want to analyze. This
+command needs disk name as argument. You will have to list available disks with
+<code>sysctl</code> and then you can each analyze. Finally you find out from output info which disk
+is the rigth for installation. The output will be more detailed if you use <code>verbose</code> option.</p>
+<div class="highlight"><pre><span></span><code>$ fdisk -v sd0
+</code></pre></div>
+
+<h3 id="disklabel">disklabel<a class="headerlink" href="#disklabel" title="Permanent link">&para;</a></h3>
+<p>Same approach as for <code>fdisk</code> can be used for <code>disklabel</code> command. Disklabel just print out
+different output than <code>fdisk</code>.</p>
+<p>You can check sizes of disk&nbsp;by:</p>
+<div class="highlight"><pre><span></span><code>$ disklabel -p g sd0
+</code></pre></div>
+
+<p>or <code>verbose</code> option</p>
+<div class="highlight"><pre><span></span><code>$ disklabel -v sd0
+</code></pre></div>
+
+<p>There is keyname <code>label</code> which show manufacture name of your disk. It could help you for&nbsp;example.</p>
+<h3 id="conclusion_1">Conclusion<a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
+<p>Someone can complain that&rsquo;s really annoying approach. Maybe it is not really user friendly.
+In my opinion it is not so much horrible. I was enjoying the juggling with several tools and the
+investigation process to collect info about&nbsp;disk.</p>
+<p>Honestly I am really happy that OpenBSD do it like that. I&rsquo;ve learned a lot by this way.
+It pushed me to learn how do it and why&hellip; Now I know what is under the hood.
+When you will use operation system which show you disk and everthing about them, you don&rsquo;t have any
+reason to learn or dig where the information come from until problems occur.
+I have to admit that I like user friendly gui window where all info about disk are listed
+and you just click to disk which you want to choose without any work too.
+But I feel much better when I know what is happening behind the scene. And what to do manually
+if automatic process will&nbsp;fail.</p>
+<h2 id="fill-your-disk-with-random-data">Fill your disk with random data<a class="headerlink" href="#fill-your-disk-with-random-data" title="Permanent link">&para;</a></h2>
+<p>New harddisks are filled with zeroes or ones. If you install <span class="caps">OS</span> on you laptop some parts change
+to real data. Aversary can recognize which parts of disk is used for real data and which parts
+are&nbsp;unused.</p>
+<p>Firstly, we have to create special files which will be representing your disk. If you are
+little skilled in unix you know that is files located in <code>/dev</code>. These files are created automatically
+on other unix most of the time. In OpenBSD you have to make it manually if you handle your disk
+from shell by script <code>MAKEDEV</code>.</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /dev <span class="o">&amp;&amp;</span> sh MAKEDEV sd0
+</code></pre></div>
+
+<p>You have to change directory to dev, because <code>MAKEDEV</code> will create special files in
+current dir. Then just run script on the disk. It will create file sd0a, sd0b, &#8230;., sd0p
+and rsd0a, rsd0b, &#8230;., rsd0p. sd0<letter> is just ordinary special files for your disk. This
+file you will want to use most of the time. rsd<letter> is raw representation of data in your disk.
+This file you will use if you will want to write data on your disk by special way. Carefully
+check if is used sd or rsd in&nbsp;command.</p>
+<p>To write random data on your disk use command below, when you created special files in your
+dev&nbsp;directory.</p>
+<div class="highlight"><pre><span></span><code>$ dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/rsd0c <span class="nv">bs</span><span class="o">=</span>1m
+</code></pre></div>
+
+<p>It can take a long time. For <span class="caps">250GB</span> <span class="caps">SSD</span> disk it takes about 2 hours. Theres is <code>rsd0c</code>
+so we using raw special file. Partition <code>c</code> is intended for whole disk in&nbsp;OpenBSD.</p>
+<h2 id="prepare-disk-for-encryption">Prepare disk for encryption<a class="headerlink" href="#prepare-disk-for-encryption" title="Permanent link">&para;</a></h2>
+<p>If you want to encrypt your disk you have to prepare disk from shell before installation.
+This should not be needed from OpenBSD&nbsp;7.3.</p>
+<p>OpenBSD uses two commands for disk&nbsp;preparation.</p>
+<p><code>fdisk</code> - is used to create partition scheme (table) as <span class="caps">GPT</span> or <span class="caps">MBR</span>.</p>
+<p>and</p>
+<p><code>disklabel</code> - is used to create one or more partitions(logical subsections of harddisk) on&nbsp;disk.</p>
+<p>OpenBSD makes encryption with <span class="caps">RAID</span>. We have to prepare disk as <span class="caps">RAID</span>. Finally we can use special
+features of <span class="caps">RAID</span> to encrypt the disk. We can imagine as the low layer is physical disk,
+another layer is software representation of disk by operation system and finally we create
+another layer <span class="caps">RAID</span> where encryption is&nbsp;applied.</p>
+<h3 id="create-partition-scheme">Create partition scheme<a class="headerlink" href="#create-partition-scheme" title="Permanent link">&para;</a></h3>
+<p>I cover only creation of <span class="caps">GPT</span> scheme. It is most used partition scheme,&nbsp;currently.</p>
+<div class="highlight"><pre><span></span><code>$ fdisk -gy -b960 sd0
+</code></pre></div>
+
+<p>Option <code>-g</code> create <span class="caps">GPT</span> scheme. Option <code>-y</code> answer to all question yes.
+Option <code>-b960</code> reserved first space of disk to <span class="caps">EFI</span>, boot, <span class="caps">PMBR</span> and so on. This space
+will be used for booting. More info can be found <a href="https://man.openbsd.org/boot_amd64.8">boot_amd64(8)</a>
+or <a href="https://man.openbsd.org/boot.8">boot(8)</a></p>
+<h3 id="create-partition-as-raid-type">Create partition as <span class="caps">RAID</span> type<a class="headerlink" href="#create-partition-as-raid-type" title="Permanent link">&para;</a></h3>
+<p>When we&rsquo;ve created the partition scheme we can fill the scheme(table) with partitions.
+We will need just one for whole disk with <span class="caps">RAID</span>&nbsp;type.</p>
+<p>To create partitions we use command <code>disklabel</code>.</p>
+<p>To edit partitions on certain disk use&nbsp;command:</p>
+<div class="highlight"><pre><span></span><code>$ disklabel -E sd0
+</code></pre></div>
+
+<p>It invokes new edit&nbsp;prompt.</p>
+<div class="highlight"><pre><span></span><code>sd0&gt; a a
+</code></pre></div>
+
+<p>First <code>a</code> means add partition, second <code>a</code> means partition with name <code>a</code>.</p>
+<p>Other lines are about the setting of new partition. Size, type,&nbsp;etc&hellip;</p>
+<div class="highlight"><pre><span></span><code>offset:<span class="o">[</span><span class="m">64</span><span class="o">]</span>
+size:<span class="o">[</span><span class="m">9999</span><span class="o">]</span> *
+FS type:<span class="o">[</span><span class="m">4</span>.2BSD<span class="o">]</span> RAID
+sd0*&gt; w
+sd0&gt;q
+</code></pre></div>
+
+<p>Offset, just enter the default value. For size write asterisk <code>*</code> to choose whole disk.
+<span class="caps">FS</span> type choose <code>RAID</code>. We need <span class="caps">RAID</span> type to encrypt it. OpenBSD can encrypt only <span class="caps">RAID</span>.</p>
+<p>Finaly <code>w</code>, means write changes to disk. <code>q</code> means quit edit prompt of&nbsp;disklabel.</p>
+<h3 id="encrypt-the-disk">Encrypt the disk<a class="headerlink" href="#encrypt-the-disk" title="Permanent link">&para;</a></h3>
+<p>Currently we have disk <code>sd0</code>, we&rsquo;ve already created special files <code>sd0</code> and <code>rsd0</code> in <code>/dev</code>.
+Then we&rsquo;ve already create partition scheme <span class="caps">GPT</span> on disk and finally create one partition
+marked with letter <code>a</code> as whole&nbsp;disk.</p>
+<p>Command to manage <span class="caps">RAID</span> in OpenBSD is <code>bioctl</code>.</p>
+<p>To encrypt prepared disk&nbsp;write:</p>
+<div class="highlight"><pre><span></span><code>$ bioctl -c C -l sd0a softraid0
+New passphrase:
+Re-type passphrase:
+sd1 at scsibus2 targ <span class="m">1</span> lun <span class="m">0</span>: &lt;OPENBSD, SR CRYPTO, <span class="m">005</span>&gt; SCSI2 <span class="m">0</span>/direct fixed
+sd1: 19445MB, <span class="m">512</span> bytes/sector, <span class="m">39824607</span> sectors
+softraid0: CRYPTO volume attached as sd1
+</code></pre></div>
+
+<p>Option <code>-c</code> is to select <span class="caps">RAID</span> discipline(raidlevel). <code>C</code> discipline is encrypt discipline to encrypt disk.
+For example discipline <code>1C</code> means <code>RAID1</code> + <code>CRYPTO</code> = encrypting and mirroring disks&nbsp;discipline.</p>
+<p>Option <code>-l</code> select disk to&nbsp;encrypt.</p>
+<p>softraid0 is softraid managment device&nbsp;node.</p>
+<p>It is important to notice that it creates a whole new virtual disk <code>sd1</code>, which is created from <code>sd0a</code>.</p>
+<p>We encrypt the disk with a password. It means we create a key which is located at disk and we just
+make password for this key. It has advantage that we can change the password any time we&nbsp;need.</p>
+<p>There is an option to create key and save to disk. Official documentation of OpenBSD label as Keydisk.
+There are also instructions how to make key disk. This approach is probably more safe, but
+you can not change the key. It is really recommended to create backup of key disk if you
+choose this option.
+Personally I did not try to create Keydisk. I&rsquo;d like to try in future. Then I&rsquo;ll update this&nbsp;section.</p>
+<h3 id="add-zeroes-at-the-start-of-disk">Add zeroes at the start of disk<a class="headerlink" href="#add-zeroes-at-the-start-of-disk" title="Permanent link">&para;</a></h3>
+<p>It is recommended fill start of new disk with zeroes, because info about softraid at the start
+can confuse&nbsp;kernel.</p>
+<p>To add zeroes&nbsp;run:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># dd if=/dev/zero bs=1m count=1 of=/dev/rsd1c</span>
+</code></pre></div>
+
+<p>Currently, we have prepared encrypted disk <code>sd1</code> for installation. Now you can write <code>exit</code>
+to go back to&nbsp;installation.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>I don&rsquo;t cover all questions just the most important in my&nbsp;opinion.</p>
+<p>Which disk is the root? sd1
+It is a disk we created with encryption from <span class="caps">RAID</span>&nbsp;partition.</p>
+<p>Setup a user? <username>
+I recommend to create a new user. But you can create it later if you&nbsp;want.</p>
+<p>Start sshd(8) by default?[yes] no
+It can be enabled later. If you want to use as laptop I assume you don&rsquo;t need&nbsp;sshd.</p>
+<p>Do you expect to run X Window System?[yes]
+If you are installing on laptop, yes will be probably the right&nbsp;answer.</p>
+<p>Do you want the X Window System to be started by xenodm?[no] yes
+X Window System can be started by <code>startx</code> or <code>xenodm</code>. <code>xenodm</code> should be more secure.
+If you are not sure you can choose no, it can be enabled&nbsp;later.</p>
+<p>Use (W)hole disk <span class="caps">MBR</span>, whole disk(G)<span class="caps">PT</span>, &hellip; (E)dit? [whole] G
+It sets the partition scheme.
+Use what is suitable for you. This article uses <span class="caps">GPT</span>.</p>
+<p>Use (A)uto layout, (E)dit auto layout, (C)ustom? [a] c
+It sets layout of partitions.
+Custom layout invoke <code>disklabel</code> command to editing&nbsp;prompt.</p>
+<p>There are several rules to follow.
+Don&rsquo;t add partition with letter <code>c</code>. This partition is reserver by OpenBSD for whole disk.
+If you use <span class="caps">GPT</span> scheme automatically (set by installer). Don&rsquo;t use partition <code>i</code> it reserved by default
+to <span class="caps">EFI</span>&nbsp;boot.</p>
+<p>There are several recommendations.
+Use partition <code>a</code> for mountpoint <code>/</code> (root).
+Use partition <code>b</code> for&nbsp;swap.</p>
+<p>Example of layout. It does not include sizes, because it depends on your needs and size of
+your&nbsp;harddisk.</p>
+<p><span class="caps">PARTITION</span>       Mountpoint      Note
+a               /               root
+b               swap            swap space
+c                               whole disk
+d               /tmp            temporary files
+e               /var            variable data
+f               /usr            user system resources
+g               /usr/<span class="caps">X11R6</span>      X applications
+h               /usr/local
+i                               <span class="caps">EFI</span> <span class="caps">BOOT</span>
+j               /usr/src
+k               /usr/obj
+l&nbsp;/home</p>
+<p>Location of sets? (cd0 disk &hellip;)  [cd0] disk
+This question can be little bit complicated.
+Disk means sd0, sd1, wd0, &#8230;. <span class="caps">USB</span> stick is disk.
+Sets mean file sets to install. File sets are locate on <span class="caps">USB</span> stick.
+Unfortunately the <span class="caps">USB</span> stick itself is not mounted. We just boot OpenBSD to <span class="caps">RAM</span>, but
+<span class="caps">USB</span> is not mounted.
+We select disk, because installation is from <span class="caps">USB</span>. Then we have to choose which disk is
+out <span class="caps">USB</span>.</p>
+<p>Is disk already mounted [yes]:&nbsp;no</p>
+<p>Which disk contains install media [sd0]: sd2
+Most of the time <code>sd0</code> is main harddisk. <span class="caps">USB</span> should be <code>sd1</code> or <code>sd2</code>.
+This part will mount your <span class="caps">USB</span>.</p>
+<p>Which sd2 partitions has install sets [a]:
+Select default&nbsp;a.</p>
+<p>Pathname to sets [7.2/amd64]:
+Select default.
+Then select sets which you want to install. How to select or deselect is nicely described
+in&nbsp;installer.</p>
+<p>Congratulations!
+After sets install, the installation is done.
+When you restart your laptop it should ask you for password to de-encrypt&nbsp;harddisk.</p>
+<p>I&rsquo;d like to make other articles about steps after installation. There will be info about
+how to setup you <code>cwm</code>, <code>xterm</code>, <code>X Window System</code> or how speed up your&nbsp;system.</p>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=Installation%20OpenBSD%207.2%20within%20disk%C2%A0encryption&url=https%3A//nappex.github.io/myblog/install-openbsd-encryption&hashtags=advanced,openbsd,unix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/install-openbsd-encryption" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=Installation%20OpenBSD%207.2%20within%20disk%C2%A0encryption&amp;body=https%3A//nappex.github.io/myblog/install-openbsd-encryption" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/freebsd-drivers" title="Seznam ovladačů pro FreeBSD">Seznam ovladačů pro FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/install-dwm-to-freebsd" title="Instalace suckless dwm na FreeBSD">Instalace suckless dwm na FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/licenses-explanation" title="Základní přehled licencí">Základní přehled licencí</a></li>
+<li><a href="https://nappex.github.io/myblog/search-files-multi-sources" title="Search files from multiply sources with unix">Search files from multiply sources with unix</a></li>
+<li><a href="https://nappex.github.io/myblog/write-posix-shell-script" title="How to write POSIX shell script">How to write POSIX shell script</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/write-posix-shell-script" title="Previous: How to write POSIX shell script">How to write POSIX shell script</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2023-03-11T00:00:00+01:00">Sat 11 March 2023</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#unix-openbsd-ref">unix, openbsd</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#advanced-ref">advanced
+                    <span class="superscript">8</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#openbsd-ref">openbsd
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#unix-ref">unix
+                    <span class="superscript">9</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>

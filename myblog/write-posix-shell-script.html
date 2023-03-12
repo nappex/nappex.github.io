@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://nappex.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="David" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="advanced, unix, shell, posix, unix, shell, posix, " />
+
+<meta property="og:title" content="How to write POSIX shell script "/>
+<meta property="og:url" content="https://nappex.github.io/myblog/write-posix-shell-script" />
+<meta property="og:description" content="How to write highly portable shell script" />
+<meta property="og:site_name" content="The Snail&#39;s journey" />
+<meta property="og:article:author" content="David" />
+<meta property="og:article:published_time" content="2023-02-26T00:00:00+01:00" />
+<meta name="twitter:title" content="How to write POSIX shell script ">
+<meta name="twitter:description" content="How to write highly portable shell script">
+
+        <title>How to write POSIX shell script  · The Snail&#39;s journey
+</title>
+        <link rel="shortcut icon" href="https://nappex.github.io/myblog/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://nappex.github.io/myblog/theme/images/apple-touch-icon-180x180.png" type="image/png" />
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://nappex.github.io/myblog/"><span class=site-name>The Snail's journey</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://nappex.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://nappex.github.io/myblog/categories">Categories</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/tags">Tags</a></li>
+                                <li ><a href="https://nappex.github.io/myblog/archives">Archives</a></li>
+                                <li><form class="navbar-search" action="https://nappex.github.io/myblog/search" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://nappex.github.io/myblog/write-posix-shell-script">
+                How to write <span class="caps">POSIX</span> shell&nbsp;script
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <div class="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#portability">Portability</a></li>
+<li><a href="#arrays">Arrays</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul>
+</div>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h1>
+<p>Bourne shell - was the default shell for Version 7 Unix. Unix-like systems continue to have <code>/bin/sh</code>—which will be the Bourne shell, but rather a symbolic link or hard link to a compatible shell(ksh, bash, zsh, &hellip;)—even when other shells are used by most&nbsp;users.[3]</p>
+<p><span class="caps">POSIX</span> - The Portable Operating System Interface (<span class="caps">POSIX</span>, with pos pronounced as in positive, not as in pose[1]) is a family of standards specified by the <span class="caps">IEEE</span> Computer Society for maintaining compatibility between operating&nbsp;systems.[2]</p>
+<p>Nowadays <code>/bin/sh</code> is not a Bourne shell on any system anymore.
+Even the Solaris was one of the last major system which included it has now switched to a <span class="caps">POSIX</span> <code>sh</code> for its <code>/bin/sh</code> in Solaris 11.[1]
+During early 70s the <code>/bin/sh</code> was the <strong>Thompson shell</strong>.[1]
+The <strong>Bourne shell</strong> replaced the <strong>Thompson shell</strong> in Unix V7 in 1979.[1]
+The <code>/bin/sh</code> has been the <strong>Bourne shell</strong> for many years thereafter (or the <strong>Almquist shell</strong>, a free reimplementation on&nbsp;BSDs).[1]</p>
+<p>One shell that is compatible with most other simple shells, is dash, Debian default system shell, which is a derivative of the older <span class="caps">BSD</span>&nbsp;ash.[6]</p>
+<h1 id="portability">Portability<a class="headerlink" href="#portability" title="Permanent link">&para;</a></h1>
+<p>Unfortunately, making a shell script &lsquo;<span class="caps">POSIX</span>-compliant&rsquo; is usually easier than making it run on any real-world shell. The only real-world sensible recommendation is test your script in several shells. Like the list: dash, posh, lksh, and bash &ndash;posix. Solaris is a world on its own, probably you will need to test against /bin/sh and&nbsp;xpg4/sh.[6]</p>
+<p>Unfortunately, <strong>&lsquo;portable&rsquo;</strong> is usually a stronger requirement than <strong>&lsquo;<span class="caps">POSIX</span>-compliant&rsquo;</strong> for shell scripts. That is, writing something that runs on any <span class="caps">POSIX</span> shell isn&rsquo;t too hard, but getting it to run on any <strong>real-world shell</strong> is&nbsp;harder.[7]</p>
+<p>You can start by installing every shell in your package manager, in particular debian&rsquo;s <strong>posh</strong> sounds like what you want (Policy-compliant Ordinary SHell). Debian&rsquo;s policy is <span class="caps">POSIX</span> with a few exceptions (echo -n specified,&nbsp;local&hellip;).[7]</p>
+<p>Beyond that though, testing has to cover a few shells (/bin/sh especially) on a range of platforms. I test on Solaris (/bin/sh and xpg4/sh), and <span class="caps">BSD</span>. <span class="caps">AIX</span> and <span class="caps">HP</span>-<span class="caps">UX</span> are very compliant and don&rsquo;t cause problems. bash is a little world of its&nbsp;own.[7]</p>
+<p>I&rsquo;d recommend the <a href="http://www.gnu.org/software/autoconf/manual/autoconf.html#Portable-Shell">Autoconf guide to portable shell</a>, which is absolutely brilliant and saves a lot of time. Large chunks of it are obsolete, but that&rsquo;s <span class="caps">OK</span>; just skip TruUnix and Ultrix and so on if you don&rsquo;t&nbsp;care![7]</p>
+<h1 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h1>
+<p>The Bourne shell or the <span class="caps">POSIX</span> sh language specification don&rsquo;t support arrays. Or rather they have only one array: the positional parameters ($1, $2, $@, so one array per function as&nbsp;well).[1]</p>
+<p><code>ksh88</code> did have arrays which you set with <code>$ set -A</code>, but that <strong>didn&rsquo;t get specified in the <span class="caps">POSIX</span> sh</strong> as the syntax is <strong>awkward</strong> and <strong>not very usable!!!</strong>[1] Example: <code>$ set -A array_name 1 2 3</code>, but when you run this line in bash you have a problem. Do not use this kind of array in <span class="caps">POSIX</span> shell&nbsp;script.</p>
+<p>Other shells with array/lists variables include: <code>csh/tcsh</code>, <code>rc</code>, <code>es</code>, <code>bash</code>, <code>yash</code>, <code>zsh</code>, <code>fish</code> each handle arrays with a different syntax.
+<code>csh/tcsh</code>, <code>rc</code>, <code>es</code>, <code>bash</code>  mostly copied the ksh syntax the ksh93 way.
+<code>rc</code> the shell of the once to-be successor of Unix.
+<code>fish</code> and <code>zsh</code> being the most consistent&nbsp;ones.[1]</p>
+<p>In standard <code>sh</code> (also works in modern versions of the Bourne&nbsp;shell):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">set</span> <span class="s1">&#39;1st element&#39;</span> <span class="m">2</span> <span class="m">3</span> <span class="c1"># setting the array</span>
+
+<span class="nb">set</span> -- <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span> more <span class="c1"># adding elements to the end of the array</span>
+
+<span class="nb">shift</span> <span class="m">2</span> <span class="c1"># removing elements (here 2) from the beginning of the array</span>
+
+<span class="nb">printf</span> <span class="s1">&#39;&lt;%s&gt;\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>    <span class="c1"># passing all the elements of the $@ array</span>
+                        <span class="c1"># as arguments to a command</span>
+
+<span class="k">for</span> i <span class="k">do</span> <span class="c1"># looping over the  elements of the $@ array ($1, $2...)</span>
+  <span class="nb">printf</span> <span class="s1">&#39;Looping over &quot;%s&quot;\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$i</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+
+<span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="c1"># accessing individual element of the array.</span>
+                   <span class="c1"># up to the 9th only with the Bourne shell though</span>
+                   <span class="c1"># (only the Bourne shell), and note that you need</span>
+                   <span class="c1"># the braces (as in &quot;${10}&quot;) past the 9th in other</span>
+                   <span class="c1"># shells (except zsh, when not in sh emulation and</span>
+                   <span class="c1"># most ash-based shells).</span>
+
+<span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$#</span><span class="s2"> elements in the array&quot;</span>
+
+<span class="nb">printf</span> <span class="s1">&#39;%s\n&#39;</span> <span class="s2">&quot;</span><span class="nv">$*</span><span class="s2">&quot;</span> <span class="c1"># join the elements of the array with the</span>
+                   <span class="c1"># first character (byte in some implementations)</span>
+                   <span class="c1"># of $IFS (not in the Bourne shell where it&#39;s on</span>
+                   <span class="c1"># space instead regardless of the value of $IFS)</span>
+</code></pre></div>
+
+<p>Note:
+In the Bourne shell and ksh88, <span class="math">\(IFS must contain the space character for "\)</span>@&rdquo; to work properly (a bug), and in the Bourne shell, you can&rsquo;t access elements above <span 10 class="math">\(9 (\)</span> won&rsquo;t work, you can still do shift 1; echo &ldquo;$9&rdquo; or loop over&nbsp;them)).[1]</p>
+<p>Also check: 
+<a href="https://www.baeldung.com/linux/posix-shell-array"><span class="caps">POSIX</span> shell array article</a>, where is recommend to use the command <code>set</code> with double-dash. The double-dash mark the end of&nbsp;options.</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">set</span> -- <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
+</code></pre></div>
+
+<p>Manual page of <code>ksh93</code> say about <code>set --</code> following:</p>
+<p><code>--</code>      Do not change any of the options; useful in setting $1 to a value beginning with -. If no arguments follow this option then the positional parameters are&nbsp;unset.</p>
+<p><a href="https://stackoverflow.com/questions/53747156/array-under-sh-shell-not-bash">stackoverflow&nbsp;topic</a></p>
+<h1 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h1>
+<p>[1] - <a href="https://unix.stackexchange.com/questions/137566/arrays-in-unix-bourne-shell/137571#137571">stackexchange answer</a>
+[2] - <a href="https://en.wikipedia.org/wiki/POSIX">wikipedia <span class="caps">POSIX</span></a>
+[3] - <a href="https://en.wikipedia.org/wiki/Bourne_shell">wikipedia Bourne shell</a>
+[4] - <a href="https://steinbaugh.com/posts/posix.html"><span class="caps">POSIX</span> shell scripting</a>
+[5] - Check <span class="caps">POSIX</span> syntax of your script <a href="https://www.shellcheck.net/">online</a>
+[6] - <a href="https://stackoverflow.com/a/40922501">stackoverflow answer</a>
+[7] - <a href="https://unix.stackexchange.com/questions/48786/how-can-i-test-for-posix-compliance-of-shell-scripts">unix.stackexchange&nbsp;answer</a></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+             
+ 
+                <p id="post-share-links">
+    Share on:
+      <a href="https://twitter.com/intent/tweet?text=How%20to%20write%20POSIX%20shell%C2%A0script&url=https%3A//nappex.github.io/myblog/write-posix-shell-script&hashtags=advanced,unix,shell,posix" target="_blank" rel="nofollow noopener noreferrer" title="Share on Twitter">Twitter</a>
+ ❄       <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//nappex.github.io/myblog/write-posix-shell-script" target="_blank" rel="nofollow noopener noreferrer" title="Share on Facebook">Facebook</a>
+ ❄       <a href="mailto:?subject=How%20to%20write%20POSIX%20shell%C2%A0script&amp;body=https%3A//nappex.github.io/myblog/write-posix-shell-script" target="_blank" rel="nofollow noopener noreferrer" title="Share via Email">Email</a>
+
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+<section>
+    <h2>Related Posts</h2>
+<ul class="related-posts-list">
+<li><a href="https://nappex.github.io/myblog/freebsd-drivers" title="Seznam ovladačů pro FreeBSD">Seznam ovladačů pro FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/install-dwm-to-freebsd" title="Instalace suckless dwm na FreeBSD">Instalace suckless dwm na FreeBSD</a></li>
+<li><a href="https://nappex.github.io/myblog/licenses-explanation" title="Základní přehled licencí">Základní přehled licencí</a></li>
+<li><a href="https://nappex.github.io/myblog/search-files-multi-sources" title="Search files from multiply sources with unix">Search files from multiply sources with unix</a></li>
+<li><a href="https://nappex.github.io/myblog/install-openbsd-encryption" title="Installation OpenBSD 7.2 within disk encryption">Installation OpenBSD 7.2 within disk encryption</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="https://nappex.github.io/myblog/search-files-multi-sources" title="Previous: Search files from multiply sources with unix">Search files from multiply sources with unix</a></li>
+                <li class="next-article"><a href="https://nappex.github.io/myblog/install-openbsd-encryption" title="Next: Installation OpenBSD 7.2 within disk encryption">Installation OpenBSD 7.2 within disk encryption</a> »</li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2023-02-26T00:00:00+01:00">Sun 26 February 2023</time>
+            <h4>Category</h4>
+            <a class="category-link" href="https://nappex.github.io/myblog/categories#unix-shell-posix-ref">unix, shell, posix</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://nappex.github.io/myblog/tags#advanced-ref">advanced
+                    <span class="superscript">8</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#posix-ref">posix
+                    <span class="superscript">1</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#shell-ref">shell
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://nappex.github.io/myblog/tags#unix-ref">unix
+                    <span class="superscript">9</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+    <a href="https://github.com/nappex" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#1B1817"/><path fill="#fff" d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+    </a>
+    <a href="mailto:d.stroch@gmail.com" title="" target="_blank" rel="nofollow noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Gmail" role="img" viewBox="0 0 512 512"><rect width="512" height="512" rx="15%" fill="#fff"/><rect width="362" height="272" x="75" y="120" fill="#f2f2f2" rx="8%"/><path fill="#d54c3f" d="M120 392H97c-12 0-22-10-22-23V143h45z"/><path fill="#b63524" d="M392 392h23c12 0 22-10 22-23V143h-45z"/><path fill-opacity=".05" d="M256 286L120 392V187z"/><path fill-opacity=".08" d="M82 159l235 233h75V159z"/><path stroke-linecap="round" fill="none" stroke="#de5145" stroke-width="45" d="M97 143l159 115 159-115"/><path fill="#f2f2f2" d="M415 120c-5 0-10 2-13 4L256 230 110 124c-3-2-8-4-13-4z"/></svg>
+    </a>
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://nappex.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
