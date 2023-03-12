@@ -149,7 +149,7 @@ The <code>/bin/sh</code> has been the <strong>Bourne shell</strong> for many yea
 
 <p>Note:
 In the Bourne shell and ksh88, <span class="math">\(IFS must contain the space character for "\)</span>@&rdquo; to work properly (a bug), and in the Bourne shell, you can&rsquo;t access elements above <span 10 class="math">\(9 (\)</span> won&rsquo;t work, you can still do shift 1; echo &ldquo;$9&rdquo; or loop over&nbsp;them)).[1]</p>
-<p>Also check: 
+<p>Also check:
 <a href="https://www.baeldung.com/linux/posix-shell-array"><span class="caps">POSIX</span> shell array article</a>, where is recommend to use the command <code>set</code> with double-dash. The double-dash mark the end of&nbsp;options.</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">set</span> -- <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
 </code></pre></div>
@@ -158,13 +158,15 @@ In the Bourne shell and ksh88, <span class="math">\(IFS must contain the space c
 <p><code>--</code>      Do not change any of the options; useful in setting $1 to a value beginning with -. If no arguments follow this option then the positional parameters are&nbsp;unset.</p>
 <p><a href="https://stackoverflow.com/questions/53747156/array-under-sh-shell-not-bash">stackoverflow&nbsp;topic</a></p>
 <h1 id="sources">Sources<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h1>
-<p>[1] - <a href="https://unix.stackexchange.com/questions/137566/arrays-in-unix-bourne-shell/137571#137571">stackexchange answer</a>
-[2] - <a href="https://en.wikipedia.org/wiki/POSIX">wikipedia <span class="caps">POSIX</span></a>
-[3] - <a href="https://en.wikipedia.org/wiki/Bourne_shell">wikipedia Bourne shell</a>
-[4] - <a href="https://steinbaugh.com/posts/posix.html"><span class="caps">POSIX</span> shell scripting</a>
-[5] - Check <span class="caps">POSIX</span> syntax of your script <a href="https://www.shellcheck.net/">online</a>
-[6] - <a href="https://stackoverflow.com/a/40922501">stackoverflow answer</a>
-[7] - <a href="https://unix.stackexchange.com/questions/48786/how-can-i-test-for-posix-compliance-of-shell-scripts">unix.stackexchange&nbsp;answer</a></p>
+<ul>
+<li>[1] <a href="https://unix.stackexchange.com/questions/137566/arrays-in-unix-bourne-shell/137571#137571">stackexchange&nbsp;answer</a></li>
+<li>[2] <a href="https://en.wikipedia.org/wiki/POSIX">wikipedia <span class="caps">POSIX</span></a></li>
+<li>[3] <a href="https://en.wikipedia.org/wiki/Bourne_shell">wikipedia Bourne&nbsp;shell</a></li>
+<li>[4] <a href="https://steinbaugh.com/posts/posix.html"><span class="caps">POSIX</span> shell&nbsp;scripting</a></li>
+<li>[5] Check <span class="caps">POSIX</span> syntax of your script <a href="https://www.shellcheck.net/">online</a></li>
+<li>[6] <a href="https://stackoverflow.com/a/40922501">stackoverflow&nbsp;answer</a></li>
+<li>[7] <a href="https://unix.stackexchange.com/questions/48786/how-can-i-test-for-posix-compliance-of-shell-scripts">unix.stackexchange&nbsp;answer</a></li>
+</ul>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
