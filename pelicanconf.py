@@ -102,8 +102,10 @@ DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+from markdown.extensions.tables import TableExtension
 
 MARKDOWN = {
+    'extensions': [TableExtension()],
     'extension_configs': {
         'markdown.extensions.extra': {},
         'markdown.extensions.admonition': {},
