@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="license" content="https://creativecommons.org/licenses/by/4.0/">
+    <meta name="referrer" content="origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta itemprop="publish-date" content="2023-12-31">
+    <title>FreeBSD: virtualize Debian 12 with bhyve</title>
+    <link rel="icon" type="image/png" size="16x16" href="/images/favicon-16x16.png">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+
+
+  <body>
+
+<!--    Navigation is made by Erik Terwan    -->
+<!--          24th of November 2015          -->
+<!--              MIT License                -->
+
+    <nav role="navigation">
+      <div id="menuToggle">
+        <!--
+        A fake / hidden checkbox is used as click reciever,
+        so you can use the :checked selector on it.
+        -->
+        <input type="checkbox" />
+
+        <!--
+        Some spans to act as a hamburger.
+        They are acting like a real hamburger,
+        not that McDonalds stuff.
+        -->
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <!--
+        Too bad the menu has to be inside of the button
+        but hey, it's pure CSS magic.
+        -->
+        <ul id="menu">
+          <a href="/"><li>Home</li></a>
+          <a href="/posts/"><li>Posts</li></a>
+          <a href="/categories/"><li>Categories</li></a>
+          <a href="/resources/"><li>Resources</li></a>
+          <a href="/about/"><li>About</li></a>
+          <a href="/contact/"><li>Contact</li></a>
+        </ul>
+      </div>
+    </nav>
+
+    <header>
+    </header>
+
+    <main>
+
+      <h1>FreeBSD: virtualize Debian 12 with bhyve</h1>
+      <p><span id="pubdate">Published on: 2023-12-31</span></p>
+      <p>
+        Virtualization with bhyve (<a href="https://wiki.freebsd.org/bhyve">pronounced "beehive"</a>) was amazing adventure. I've learnt a lot thanks to bhyve.
+      </p>
+      <p>
+        Bhyve can be used on systems based on <a href="https://en.wikipedia.org/wiki/Illumos">Illumos</a> includes <a href="https://en.wikipedia.org/wiki/SmartOS">SmartOS</a>, <a href="https://en.wikipedia.org/wiki/OpenIndiana">OpenIndiana</a> and <a href="https://omnios.org/">OmniOS</a>. There is also port for MacOS called <a href="https://github.com/machyve/xhyve">xhyve</a>
+      </p>
+
+      <h2>Table of Contents:</h2>
+
+      <h2>Bhyve virtualization guides</h2>
+      <ul>
+        <li>
+          <a href="https://docs.freebsd.org/en/books/handbook/virtualization/#virtualization-host-bhyve">Official FreeBSD handbook</a>
+        </li>
+        <li>
+          <a href="https://wiki.freebsd.org/bhyve">FreeBSD wiki</a>
+        </li>
+        <li>
+          <a href="https://www.cyberciti.biz/faq/how-to-install-linux-vm-on-freebsd-using-bhyve-and-zfs/">Cyberciti.biz</a>
+        </li>
+        <li>
+          <a href="https://vermaden.wordpress.com/2023/08/18/freebsd-bhyve-virtualization/">Vermaden - bhyve virtualization</a>
+        </li>
+        <li>
+          <a href="https://www.root.cz/clanky/virtualizace-pomoci-bhyve-s-vyuzitim-zfs-na-freebsd-13/">bhyve virtualization - czech lang</a>
+      </ul>
+
+      <h2>Kick off</h2>
+      <p>
+        The start was confusing for me because there are a lot terms at the beginning.
+        <a href="https://docs.freebsd.org/en/books/handbook/virtualization/">Official FreeBSD handbook</a> describes usage of <code>bhyve</code>, but most other guides on the internet use <code>vm</code>.
+        There is a list of terms i've met.
+      </p>
+
+      <ol>
+        <li>bhyve</li>
+        <li>bhyvectl</li>
+        <li>vm-bhyve</li>
+        <li>vm-bhyve-devel</li>
+        <li>bhyve libvirt/virt-manager</li>
+        <li>iohyve</li>
+      </ol>
+
+      <p>
+        All of these seem same. All use bhyve to create and control virtual machines. I am still not able to bring out the proper differences between them.
+        But I supposed that the low level is <code>bhyve</code> and <code>bhyvectl</code>. The rest of the list are layer above the <code>bhyve</code> itself they are <a href="https://github.com/churchers/vm-bhyve">Management system for FreeBSD bhyve virtual machines</a>.
+        Anyway do not trust me I am not sure about that.
+      </p>
+      <p>
+        <b>bhyve</b> - is a <a href="https://en.wikipedia.org/wiki/Hypervisor">hypervisor</a> that runs guest operating systems inside a virtual machine.
+      </p>
+      <p>
+        <b>bhyvectl</b> - is a control utility for active bhyve(8) virtual machine instances.
+      </p>
+
+      <p>
+        <b>vm-bhyve</b> - is a management system for FreeBSD bhyve virtual machines. This utility should simplified the creation, control and configuration of virtual machines. Utilitu is run by command <code>$ vm</code>. This utility is most of the time recommended for work with bhyve in guides on the internet.
+      </p>
+
+      <p>
+        <b>bhyve libvirt/virt-manager</b> - there is a <a href="https://en.wikipedia.org/wiki/Virt-manager">libvirt/virt-manager</a> a bhyve is as its backend, I supposed.
+      </p>
+
+      <p>
+        Other terms used in relation to bhyve
+      </p>
+
+      <ol>
+        <li>bhyveload</li>
+        <li>grub2-bhyve</li>
+      </ol>
+
+
+      <h2 id="environ-config"><a class="anchor" href="#environ-config"></a>Environment configuration</h2>
+      <ul>
+        <li><b>Host computer:</b> Lenovo ThinkPad T470</li>
+        <li><b>Host OS:</b> FreeBSD 14.0-RELEASE-p3</li>
+        <li><b>Host graphic environment:</b> KDE plasma</li>
+        <li><b>Guest OS:</b> Debian 12.4</li>
+        <li><b>Guest disk type:</b> nvme</li>
+        <li><b>Guest boot firmware interface:</b> UEFI</li>
+        <li><b>vm-bhyve version:</b> 1.5 (rev. 105102)</li>
+      </ul>
+
+      <h2 id="install-packages">Necessary packages to run bhyve with Linux guest</h2>
+      <pre><code class="language-sh">
+$ pkg install -y \
+          vm-bhyve \
+          grub2-bhyve \
+          bhyve-firmware \
+          edk2-bhyve \
+          uefi-edk2-bhyve-csm \
+          tigervnc-viewer
+      </code></pre>
+
+
+      <h2>Bhyve templates - configuration options</h2>
+
+      <p>
+        My template for debian 12<code></code>
+      </p>
+
+      <pre><code class="language-ini">
+# cat /vm/.templates/debian-desktop-zvol.conf
+
+loader="uefi"
+cpu=2
+memory=8G
+network0_type="virtio-net"
+network0_switch="public"
+disk0_type="nvme"
+disk0_name="disk0.img"
+disk0_dev="sparse-zvol"
+graphics="yes"
+graphics_res="1300x700"
+graphics_wait="yes"
+graphics_port="5999"
+graphics_listen="0.0.0.0"
+      </code></pre>
+
+      <ol>
+        <li><b>loader</b> - type of boot loader</li>
+        <li><b>cpu</b> - number of used cpu cores</li>
+        <li><b>memory</b> - size of used memory. If I understand well it should be max memory which will be used but virtual machine should use only as much memory as is needed at particular moment.</li>
+        <li><b>loader</b> - type of boot loader</li>
+        <li><b>loader</b> - type of boot loader</li>
+      </ol>
+
+      <h3>Mouse problem</h3>
+      <p>
+        I suppose all guides on the internet about bhyve recommend add to config file option
+        <code>xhci_mouse="YES"</code> to enable middle button of your mouse in <code>vnc viewer</code>.
+        When I put this option to config my mouse have not worked at all.
+        I've read that can be caused by vnc viewer, but try with <code>tightvnc</code> did not help.
+        Then I've found this <a href="https://forums.freebsd.org/threads/mouse-disappeared-on-debian-guest-after-kernel-update-in-it.90532/#post-627927">forum answer</a>, which
+        advice to omit this option because it can cause trouble with mouse for linux.
+        It helped. If you have a problem with mouse try to play with <code>xhci_mouse</code>.
+      </p>
+
+      <h2>Prepare ZFS volume (zvol) for virtual machine</h2>
+
+      <pre><code class="language-sh">
+$ zfs create -o mountpoint=/vm zroot/vm
+      </code></pre>
+
+      <h2>Prepare virtual machine & debian guest</h2>
+
+      <pre><code class="language-sh">
+$ sudo vm create -t debian-desktop-zvol debian12
+      </code></pre>
+
+      <p>
+        This command will create a new virtual machine by specified template with option <code>-t</code>.
+      </p>
+      <p>The usage is: <code>vm [-t template] name</code>.</p>
+      <p>
+        The name is name of virtual machine. More information can be found by <code>man vm</code>.
+      </p>
+
+      <pre><code class="language-sh">
+$ sudo vm install debian12 debian-12.4.0-amd64-DVD-1.iso
+      </code></pre>
+
+      <p>
+        It attached the ISO to virtual machine. Thanks to this command bhyve can boot debian from ISO.
+        If you have problem with booting before the installation was done rerun this command to reattach the ISO to virtual machine.
+        Start a guest installation for the named virtual machine, using the specified ISO.
+        The iso argument should be the filename of an ISO or image file downloaded into the <code>$vm_dir/.iso</code>
+      </p>
+
+      <h2>Fix problem with boot</h2>
+      <p>
+        I had problem with booting of debian12 guest when I restarted FreeBSD or the virtual machine itself.
+        It was really strange to me, because when I created the new virtual machine with debian everything worked,
+        even though I've restarted debian after installation the booting process was fine.
+        Boot problem occured when I powered off or rebooted my FreeBSD or restarted the whole virtual machine.
+        Then I've got this boot error <code>BdsDxe: failed to load Boot0001 "UEFI bhyve-NVMe" from ...</code>.
+        The error means that UEFI firmware can not find EFI bootloader. The boot problem is described <a href="https://forums.freebsd.org/threads/i-got-error-bdsdxe-failed-to-load-boot0001-when-i-boot-kali-linux-vm-via-uefi-firmware.82773/#post-540191">here</a> with Kali Linux.
+        Computer then try the network boot <code>>>Start PXE over IPv4</code>. If none of available boot options is succeed, then
+        UEFI started <b>UEFI Interactive Shell</b>.
+      </p>
+
+      <p>Full content of error message is:</p>
+      <pre><code class="language-sh">
+BdsDxe: failed to load Boot0001 "UEFI bhyve-NVMe NVME-4-0 from PciRoot(0x0)/Pci(0x4,0x0)/NVMe(0x1,01-00-.....): Not Found"
+
+>>Start PXE over IPv4.
+  PXE-E18: Server response timeout.
+BdsDxe: failed to load Boot0002 "UEFI PXEv4 (MAC:.....)" from ...: Not Found
+
+>>Start PXE over IPv6.
+      </code></pre>
+
+      <p>
+        Two reasons can caused the boot problem, it depends when it occurs.
+      </p>
+
+      <ol>
+        <li>
+          <p>
+            ISO file is not attached or mount as CD or DVD. It can happened if you run <code>vm install debian12 debian-12.4.0-amd64-DVD-1.iso</code> and then you restart virtual machine or the FreeBSD host, then the ISO is detached from virtual machine and your storage device NVMe is empty (even most likely without a filesystem) because no installation has taken a place.
+            So ISO missing and NVMe storage is empty, so EFI bootloader file can not exist anywhere. The solution is to re-attach the ISO to virtual machine by re-run the install command. Then <b>bhyve</b> can locate the EFI bootloader file from ISO again.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The second one is that the Debian installation put EFI bootloader file to path <code>boot/efi/EFI/debian/grubx64.efi</code> by default.
+            Unfortunately <b>bhyve</b> is looking for EFI bootloader in different location <code>boot/efi/EFI/BOOT/bootx64.efi</code>.
+            So it is obvious that <b>bhyve</b> can not find the EFI bootloader.
+          </p>
+          <p>
+            The solution is to copy the <code>debian/grubx64.efi</code> to <code>BOOT/bootx64.efi</code>.
+            There are two options how do it.
+            You can copy EFI bootloader file at the end of debian installation or with UEFI Interactive Shell. Both cases are described in next chapters.
+            Below are links which describes the solutions.
+          </p>
+
+          <ul>
+            <li><a href="https://npulse.net/en/blog/125-bhyve-uefi-drops-into-efi-shell-linux-wont-boot-easy-workaround">npulse.net - uefi drops into efi shell</a></li>
+            <li><a href="https://www.davidschlachter.com/misc/freebsd-bhyve-uefi-shell">davidschlachter blog article</a></li>
+            <li><a href="https://github.com/churchers/vm-bhyve/issues/336">vm-bhyve github issue</a></li>
+            <li><a href="https://blog.tkrn.io/freenas-11-boot-failed-efi-misc-device-fix-debian/">tkrn blog</a></li>
+            <li><a href="https://www.cyberciti.biz/faq/how-to-install-linux-vm-on-freebsd-using-bhyve-and-zfs/">cyberciti bhyve guide</a></li>
+          </ul>
+        </li>
+
+      </ol>
+
+      <h3>Copy EFI bootloader at the end of debian installation</h3>
+      <p>
+        The whole idea is to execute shell at the end of installation and copy the debian EFI bootloader to path, where it will be found by <code>bhyve</code>.
+        Steps with pictures is described <a href="https://www.cyberciti.biz/faq/how-to-install-linux-vm-on-freebsd-using-bhyve-and-zfs/">in article on cyberciti</a>
+      </p>
+
+      <h3>Copy EFI bootloader with UEFI Interactive Shell</h3>
+      <p>
+        If you forget to copy at the end of installation you can copy EFI bootloader file with <b>UEFI Interactive Shell</b>.
+        UEFI Shell is little different than the shell from UNIX. For example slashes in path are backslashes.
+        The command <code>ls</code> works only if are in some disk, where you are not by default. You have to enter to some first.
+        I've found <a href="https://www.sys-hint.com/3893-How-to-Use-UEFI-Interactive-Shell-and-Its-Common-Commands">this article about UEFI Shell</a>, where is fine guide to UEFI Shell.
+      </p>
+      <p>
+        You can get to UEFI Interactive Shell through the BIOS or just wait until all boot options failed and UEFI executes the Shell automatically.
+      </p>
+
+      <p>
+        Start point to use UEFI Interactive Shell is <code>help</code> command.
+        Help will list you all command which can be use with the Shell. Unfortunately
+        you can not scroll in console and <code>less</code> is not available.
+        Fortunately command <code>help</code> has option <code>-b</code> which is enabling pager.
+        This option is really useful and different from common shell in UNIX for me.
+        You can also use help with any command to get usage desciption of particular command for example <code>help map</code>
+      </p>
+
+      <p>
+        Another step is to enter to particular storage device to copy EFI bootloader file to the right location in perspective of <b>bhyve</b>.
+        To list all available storace devices use command <code>map</code>. If you add other storage device during working in
+        UEFI INteractive Shell you have to refresh the list with option <code>-r</code>, so to see a new added storage device
+        run <code>$ map -r</code> then. or you can use verbose variant as <code>$ map -v</code>
+      </p>
+
+      <p>
+        You should get something as below, where <code>BLK0</code> can something different <code>FS0</code> for example.
+      </p>
+
+      <pre><code class="language-sh">
+Mapping table
+      BLK0: Alias(s):
+            PciRoot(0x0)/Pci(0x4,0x0)/NVMe(0x1,<number of the NVMe>)
+      </code></pre>
+
+      <p>
+        To find particular storage device should be easy. There should be only one disk.
+        If there are more storages the right should be the NVMe with number in parentheses which is same
+        as the number of NVMe disk mentioned in Boot0001 error. The <code>NVMe(0x1,01-00-......)</code>.
+      </p>
+
+      <p>
+        Enter to particular storage to write its name with semicolon.
+        The prompt should change from <code>Shell> </code> to name of particular storage device.
+      </p>
+
+      <pre><code class="language-sh">
+Shel> BLK0:
+BLK0:\>
+      </code></pre>
+
+      <h2>Supervise the virtual machine</h2>
+
+      <pre><code class="language-sh">
+$ tail -f /vms/fbsd13/vm-bhyve.log
+      </code></pre>
+
+      <pre><code class="language-sh">
+$ vm list
+      </code></pre>
+
+      <pre><code class="language-sh">
+$ vm info debian12
+      </code></pre>
+
+      <pre><code class="language-sh">
+$ vm image list
+      </code></pre>
+
+      <h3>bhyve-webadmin utility</h3>
+      <p>
+        <a href="https://github.com/DaVieS007/bhyve-webadmin">bhyve-webadmin</a> does have a Graphical user Interface via webinterface and also a CLI and an API.
+        The software provides webGUI to let you manage Virtual Machines remotely.
+      </p>
+      <p>
+        The graphical and secure webcontrol panel for FreeBSD Bhyve's Virtual Machines is <a href="https://bhyve.npulse.net/">BVCP Application</a> (Bhyve Virtual-Machine Control Panel).
+      </p>
+
+    </main>
+
+    <footer>
+    </footer>
+
+  </body>
+
+</html>
+
