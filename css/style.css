@@ -7,7 +7,7 @@ body {
   background: #cbb9aa;
   color:#000000;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 13pt;
+  font-size: 14pt;
 }
 
 main {
@@ -94,7 +94,7 @@ pre {
   background: #f4f4f4;
   border: 1px solid #ddd;
   border-left: 3px solid tomato;
-  font-size: 14pt;
+  font-size: 13pt;
   font-family: monospace;
   line-height: 1.6;
   white-space: pre;
